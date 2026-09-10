@@ -1,5 +1,5 @@
 /**
- * Дамп только новых и изменённых файлов между двумя папками проекта.
+ * Дамп новых и изменённых файлов между двумя папками проекта.
  *
  * Использование:
  *   node diff-dump.js
@@ -13,8 +13,9 @@
  *   ##### REMOVED:  — файл есть только в src
  *
  * Дальше идёт содержимое добавленных и изменённых файлов.
- * Удалённые файлы попадают только в сводку, restore.js их НЕ удаляет.
- * Применить изменения: node restore.js .diff_dump.txt ./my-service
+ * Удалённые файлы попадают только в сводку — restore.js сотрёт их
+ * лишь при запуске с флагом --delete.
+ * Применить изменения: node restore.js .diff_dump.txt ./my-service --delete
  */
 
 import crypto from 'crypto';
@@ -132,13 +133,7 @@ for (const relativePath of [...destinationPaths].sort(comparePaths)) {
 
 // ----- Writing the dump -------------------------------------------------------
 
-const chunks = [
-    Buffer.from(
-        `##### DIFF DUMP: ${path.resolve(sourceDirectory)} -> ` +
-            `${path.resolve(destinationDirectory)} | ${projectType} #####\n`,
-        'utf-8',
-    ),
-];
+const chunks = [Buffer.from(`##### DIFF DUMP: ${projectType} #####\n`, 'utf-8')];
 
 for (const relativePath of added) {
     chunks.push(Buffer.from(`##### ADDED: ${relativePath} #####\n`, 'utf-8'));

@@ -2,29 +2,44 @@
  * Восстановление файлов из дампа.
  *
  * Использование:
- *   node restore.js <файл дампа> [папка назначения]
+ *   node restore.js <файл дампа> [папка назначения] [--delete]
  *   node restore.js dump.txt ./restored
+ *   node restore.js .diff_dump.txt ./my-service --delete
  *
  * По умолчанию: дамп — .code_dump.txt, папка назначения — ./restored
  *
  * Работает и с полным дампом (dump.js), и с дампом изменений (diff-dump.js).
- * Существующие файлы перезаписываются, недостающие папки создаются.
- * Файлы, помеченные в дампе как REMOVED, НЕ удаляются — только перечислены в сводке.
- * Записывать за пределы папки назначения скрипт не будет.
+ * Новые файлы создаются вместе с папками, существующие перезаписываются.
+ *
+ * Файлы, помеченные в дампе как REMOVED, удаляются только с флагом --delete.
+ * Без него они просто перечисляются в выводе — так можно проверить список
+ * перед реальным применением.
+ * Вместе с ними удаляются папки, которые из-за этого стали пустыми.
+ * Записывать и удалять за пределами папки назначения скрипт не будет.
  */
 
 import fs from 'fs';
 import path from 'path';
 
 const dumpFile = process.argv[2] || '.code_dump.txt';
-const targetDirectory = process.argv[3] || './restored';
+const targetDirectory = process.argv[3] && !process.argv[3].startsWith('--') ? process.argv[3] : './restored';
+const applyDeletions = process.argv.includes('--delete');
 
 const fileMarker = Buffer.from('\n##### FILE: ', 'utf-8');
 const headerPattern = /^##### FILE: (.+) \| (\d+) \| (text|base64)(?: \| (added|modified))? #####$/;
+const removedPattern = /^##### REMOVED: (.+) #####$/gm;
+
+const ignoredWhenEmpty = ['.DS_Store', 'Thumbs.db'];
 
 // ----- Parsing ----------------------------------------------------------------
 
-function parseDump(dump) {
+function parseRemoved(dump) {
+    const firstMarker = dump.indexOf(fileMarker);
+    const summary = dump.subarray(0, firstMarker === -1 ? dump.length : firstMarker + 1).toString('utf-8');
+    return [...summary.matchAll(removedPattern)].map((match) => match[1]);
+}
+
+function parseFiles(dump) {
     const entries = [];
     let markerPosition = dump.indexOf(fileMarker);
 
@@ -72,14 +87,76 @@ function resolveSafePath(rootDirectory, relativePath) {
     return resolvedPath;
 }
 
-// ----- Writing files ----------------------------------------------------------
+// ----- Deleting ---------------------------------------------------------------
+
+function deleteFiles(rootDirectory, relativePaths) {
+    const deleted = [];
+
+    for (const relativePath of relativePaths) {
+        let fullPath;
+        try {
+            fullPath = resolveSafePath(rootDirectory, relativePath);
+        } catch (error) {
+            console.error(error.message);
+            continue;
+        }
+
+        try {
+            if (fs.existsSync(fullPath)) {
+                fs.rmSync(fullPath, { force: true });
+                deleted.push(relativePath);
+            }
+        } catch (error) {
+            console.error(`Failed to delete file ${fullPath}: ${error.message}`);
+        }
+    }
+
+    return deleted;
+}
+
+function removeEmptyDirectories(rootDirectory, relativePaths) {
+    const resolvedRoot = path.resolve(rootDirectory);
+    const candidates = new Set();
+
+    for (const relativePath of relativePaths) {
+        let directory = path.dirname(path.resolve(resolvedRoot, relativePath));
+
+        while (directory !== resolvedRoot && directory.startsWith(resolvedRoot + path.sep)) {
+            candidates.add(directory);
+            directory = path.dirname(directory);
+        }
+    }
+
+    // Deepest first, so a parent is checked only after its children are gone
+    const sorted = [...candidates].sort((a, b) => b.split(path.sep).length - a.split(path.sep).length);
+    let removedCount = 0;
+
+    for (const directory of sorted) {
+        try {
+            const entries = fs.readdirSync(directory).filter((name) => !ignoredWhenEmpty.includes(name));
+            if (entries.length === 0) {
+                fs.rmSync(directory, { recursive: true, force: true });
+                removedCount += 1;
+            }
+        } catch (error) {
+            // Directory is already gone or not accessible — nothing to do
+        }
+    }
+
+    return removedCount;
+}
+
+// ----- Main -------------------------------------------------------------------
 
 if (!fs.existsSync(dumpFile)) {
     console.error(`Dump file '${dumpFile}' not found.`);
     process.exit(1);
 }
 
-const entries = parseDump(fs.readFileSync(dumpFile));
+const dump = fs.readFileSync(dumpFile);
+const entries = parseFiles(dump);
+const removedPaths = parseRemoved(dump);
+
 let restoredCount = 0;
 let truncatedCount = 0;
 
@@ -105,7 +182,24 @@ for (const entry of entries) {
     }
 }
 
+let deletedCount = 0;
+let removedDirectoriesCount = 0;
+
+if (removedPaths.length > 0) {
+    if (applyDeletions) {
+        const deleted = deleteFiles(targetDirectory, removedPaths);
+        deletedCount = deleted.length;
+        removedDirectoriesCount = removeEmptyDirectories(targetDirectory, deleted);
+    } else {
+        console.log(`Skipped ${removedPaths.length} removed files (pass --delete to apply):`);
+        for (const relativePath of removedPaths) {
+            console.log(`  ${relativePath}`);
+        }
+    }
+}
+
 console.log(
     `Restored ${restoredCount} of ${entries.length} files into ${path.resolve(targetDirectory)}` +
-        (truncatedCount > 0 ? ` (${truncatedCount} truncated)` : ''),
+        (truncatedCount > 0 ? `, ${truncatedCount} truncated` : '') +
+        (deletedCount > 0 ? `, deleted ${deletedCount} files and ${removedDirectoriesCount} empty directories` : ''),
 );

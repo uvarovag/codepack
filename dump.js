@@ -9,12 +9,17 @@
  * Пути могут быть папками (обходятся рекурсивно) или отдельными файлами.
  * По умолчанию: путь — текущая папка, файл дампа — .code_dump.txt
  *
+ * Если передана одна папка, пути в дампе считаются от неё.
+ * Если передано несколько путей — от текущей директории запуска,
+ * поэтому запускать нужно из корня проекта.
+ *
  * Тип проекта задаётся константой projectType ниже: 'ts' | 'java' | 'py'.
  * Он влияет только на список игнорируемых папок (node_modules, target, .venv и т.п.).
  * Явно указанный файл дампится всегда, даже если подходит под исключения.
  *
- * Пути в дампе — относительно текущей директории запуска,
- * поэтому разворачивать нужно из того же места: node restore.js dump.txt ./restored
+ * Дамп переносим между компьютерами и ОС: пути относительные, слэши прямые.
+ * Права на исполнение (chmod +x) не сохраняются.
+ * Развернуть обратно: node restore.js dump.txt ./restored
  */
 
 import fs from 'fs';
@@ -73,6 +78,22 @@ function parseArguments(argv) {
 
 const { inputPaths, outputFile } = parseArguments(process.argv.slice(2));
 
+// A single directory is dumped relative to itself, so the dump has no extra nesting
+function resolveBaseDirectory(paths) {
+    if (paths.length === 1) {
+        try {
+            if (fs.statSync(paths[0]).isDirectory()) {
+                return path.resolve(paths[0]);
+            }
+        } catch (error) {
+            return process.cwd();
+        }
+    }
+    return process.cwd();
+}
+
+const baseDirectory = resolveBaseDirectory(inputPaths);
+
 // ----- Collecting -------------------------------------------------------------
 
 function isBinary(content) {
@@ -84,7 +105,7 @@ function comparePaths(a, b) {
 }
 
 function toRelativePath(fullPath) {
-    return path.relative(process.cwd(), path.resolve(fullPath)).split(path.sep).join('/');
+    return path.relative(baseDirectory, path.resolve(fullPath)).split(path.sep).join('/');
 }
 
 function collectDirectory(directory, collected) {
@@ -137,25 +158,29 @@ function collectInputPaths(paths) {
 // ----- Writing the dump -------------------------------------------------------
 
 const resolvedOutputFile = path.resolve(outputFile);
-const relativePaths = [...new Set(collectInputPaths(inputPaths).map(toRelativePath))].sort(comparePaths);
+const relativePaths = [...new Set(collectInputPaths(inputPaths).map(toRelativePath))]
+    .filter((relativePath) => !relativePath.startsWith('..'))
+    .sort(comparePaths);
 
 if (relativePaths.length === 0) {
     console.error('Nothing to dump.');
     process.exit(1);
 }
 
-const chunks = [Buffer.from(`##### CODE DUMP: ${inputPaths.join(' ')} | ${projectType} #####\n`, 'utf-8')];
+const chunks = [Buffer.from(`##### CODE DUMP: ${projectType} #####\n`, 'utf-8')];
 let textCount = 0;
 let binaryCount = 0;
 
 for (const relativePath of relativePaths) {
-    if (path.resolve(relativePath) === resolvedOutputFile) {
+    const fullPath = path.join(baseDirectory, relativePath);
+
+    if (fullPath === resolvedOutputFile) {
         continue;
     }
 
     let content;
     try {
-        content = fs.readFileSync(relativePath);
+        content = fs.readFileSync(fullPath);
     } catch (error) {
         console.error(`Failed to read file ${relativePath}: ${error.message}`);
         continue;
