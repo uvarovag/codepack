@@ -5,7 +5,10 @@
  *   node diff-dump.js
  *
  * Пути задаются константами ниже: sourceDirectory (было) и destinationDirectory (стало).
- * Тип проекта — константа projectType: 'ts' | 'java' | 'py', влияет на игнорируемые папки.
+ * Тип проекта — константа projectType: 'ts' | 'java' | 'py'.
+ *
+ * Состав файлов берётся из git с учётом .gitignore, если папка — репозиторий,
+ * иначе обычным обходом со списком исключений из констант.
  *
  * В начало дампа пишется сводка изменений:
  *   ##### ADDED:    — файл есть только в dst
@@ -18,6 +21,7 @@
  * Применить изменения: node restore.js .diff_dump.txt ./my-service --delete
  */
 
+import { execFileSync } from 'child_process';
 import crypto from 'crypto';
 import fs from 'fs';
 import path from 'path';
@@ -69,7 +73,33 @@ function comparePaths(a, b) {
     return a.localeCompare(b, undefined, { numeric: true });
 }
 
-function collectFiles(directory, rootDirectory, collected) {
+function isExcluded(relativePath) {
+    const segments = relativePath.split('/');
+    const fileName = segments[segments.length - 1];
+
+    if (excludedFileNames.includes(fileName)) {
+        return true;
+    }
+    return segments.slice(0, -1).some((segment) => excludedDirectories.includes(segment));
+}
+
+// Returns null when the directory is not a git repository or git is unavailable
+function collectByGit(directory) {
+    let output;
+    try {
+        output = execFileSync('git', ['-C', directory, 'ls-files', '--cached', '--others', '--exclude-standard'], {
+            encoding: 'utf-8',
+            maxBuffer: 256 * 1024 * 1024,
+            stdio: ['ignore', 'pipe', 'ignore'],
+        });
+    } catch (error) {
+        return null;
+    }
+
+    return output.split('\n').filter(Boolean).filter((relativePath) => !isExcluded(relativePath));
+}
+
+function collectByWalk(directory, rootDirectory, collected) {
     let entries;
     try {
         entries = fs.readdirSync(directory, { withFileTypes: true });
@@ -85,13 +115,18 @@ function collectFiles(directory, rootDirectory, collected) {
             if (excludedDirectories.includes(entry.name)) {
                 continue;
             }
-            collectFiles(fullPath, rootDirectory, collected);
+            collectByWalk(fullPath, rootDirectory, collected);
         } else if (entry.isFile() && !excludedFileNames.includes(entry.name)) {
             collected.push(path.relative(rootDirectory, fullPath).split(path.sep).join('/'));
         }
     }
 
     return collected;
+}
+
+function collectFiles(directory) {
+    const gitFiles = collectByGit(directory);
+    return gitFiles === null ? collectByWalk(directory, directory, []) : gitFiles;
 }
 
 function hashFile(fullPath) {
@@ -107,8 +142,8 @@ for (const directory of [sourceDirectory, destinationDirectory]) {
     }
 }
 
-const sourcePaths = new Set(collectFiles(sourceDirectory, sourceDirectory, []));
-const destinationPaths = new Set(collectFiles(destinationDirectory, destinationDirectory, []));
+const sourcePaths = new Set(collectFiles(sourceDirectory));
+const destinationPaths = new Set(collectFiles(destinationDirectory));
 
 const added = [];
 const modified = [];

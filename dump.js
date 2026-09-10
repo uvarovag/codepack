@@ -9,12 +9,15 @@
  * Пути могут быть папками (обходятся рекурсивно) или отдельными файлами.
  * По умолчанию: путь — текущая папка, файл дампа — .code_dump.txt
  *
- * Если передана одна папка, пути в дампе считаются от неё.
- * Если передано несколько путей — от текущей директории запуска,
- * поэтому запускать нужно из корня проекта.
+ * Если папка является git-репозиторием, состав файлов берётся из git
+ * с учётом .gitignore (включая вложенные и глобальный).
+ * Если git недоступен — обычный обход со списком исключений из констант ниже.
+ * Поверх git дополнительно применяются excludedDirectories и excludedFileNames.
  *
- * Тип проекта задаётся константой projectType ниже: 'ts' | 'java' | 'py'.
- * Он влияет только на список игнорируемых папок (node_modules, target, .venv и т.п.).
+ * Если передана одна папка, пути в дампе считаются от неё.
+ * Если передано несколько путей — от текущей директории запуска.
+ *
+ * Тип проекта задаётся константой projectType: 'ts' | 'java' | 'py'.
  * Явно указанный файл дампится всегда, даже если подходит под исключения.
  *
  * Дамп переносим между компьютерами и ОС: пути относительные, слэши прямые.
@@ -22,6 +25,7 @@
  * Развернуть обратно: node restore.js dump.txt ./restored
  */
 
+import { execFileSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 
@@ -108,7 +112,37 @@ function toRelativePath(fullPath) {
     return path.relative(baseDirectory, path.resolve(fullPath)).split(path.sep).join('/');
 }
 
-function collectDirectory(directory, collected) {
+function isExcluded(relativePath) {
+    const segments = relativePath.split('/');
+    const fileName = segments[segments.length - 1];
+
+    if (excludedFileNames.includes(fileName)) {
+        return true;
+    }
+    return segments.slice(0, -1).some((segment) => excludedDirectories.includes(segment));
+}
+
+// Returns null when the directory is not a git repository or git is unavailable
+function collectByGit(directory) {
+    let output;
+    try {
+        output = execFileSync('git', ['-C', directory, 'ls-files', '--cached', '--others', '--exclude-standard'], {
+            encoding: 'utf-8',
+            maxBuffer: 256 * 1024 * 1024,
+            stdio: ['ignore', 'pipe', 'ignore'],
+        });
+    } catch (error) {
+        return null;
+    }
+
+    return output
+        .split('\n')
+        .filter(Boolean)
+        .filter((relativePath) => !isExcluded(relativePath))
+        .map((relativePath) => path.join(directory, relativePath));
+}
+
+function collectByWalk(directory, collected) {
     let entries;
     try {
         entries = fs.readdirSync(directory, { withFileTypes: true });
@@ -124,7 +158,7 @@ function collectDirectory(directory, collected) {
             if (excludedDirectories.includes(entry.name)) {
                 continue;
             }
-            collectDirectory(fullPath, collected);
+            collectByWalk(fullPath, collected);
         } else if (entry.isFile() && !excludedFileNames.includes(entry.name)) {
             collected.push(fullPath);
         }
@@ -145,10 +179,16 @@ function collectInputPaths(paths) {
             continue;
         }
 
-        if (stats.isDirectory()) {
-            collectDirectory(inputPath, collected);
-        } else if (stats.isFile()) {
+        if (stats.isFile()) {
             collected.push(inputPath); // Explicit files bypass the exclusion lists
+            continue;
+        }
+
+        const gitFiles = collectByGit(inputPath);
+        if (gitFiles === null) {
+            collectByWalk(inputPath, collected);
+        } else {
+            collected.push(...gitFiles);
         }
     }
 
@@ -159,7 +199,13 @@ function collectInputPaths(paths) {
 
 const resolvedOutputFile = path.resolve(outputFile);
 const relativePaths = [...new Set(collectInputPaths(inputPaths).map(toRelativePath))]
-    .filter((relativePath) => !relativePath.startsWith('..'))
+    .filter((relativePath) => {
+        if (relativePath.startsWith('..')) {
+            console.error(`Skipped '${relativePath}': outside of the base directory`);
+            return false;
+        }
+        return true;
+    })
     .sort(comparePaths);
 
 if (relativePaths.length === 0) {
