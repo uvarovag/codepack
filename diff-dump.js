@@ -18,6 +18,13 @@
  * Дальше идёт содержимое добавленных и изменённых файлов.
  * Удалённые файлы попадают только в сводку — restore.js сотрёт их
  * лишь при запуске с флагом --delete.
+ *
+ * Дамп ограничен по длине константой maxDumpLines (по умолчанию 10000 строк
+ * на файл дампа, 0 — без ограничения). Содержимое одного файла никогда не
+ * разрывается между дамп-файлами. Если дамп получился в несколько файлов,
+ * к outputFile перед расширением добавляется .partN — restore.js сам
+ * подхватит все части при восстановлении.
+ *
  * Применить изменения: node restore.js .diff_dump.txt ./my-service --delete
  */
 
@@ -33,6 +40,7 @@ const projectType = 'java'; // 'ts' | 'java' | 'py'
 const sourceDirectory = './src-project';
 const destinationDirectory = './dst-project';
 const outputFile = '.diff_dump.txt';
+const maxDumpLines = 10000; // 0 = no limit
 
 const commonExcludedDirectories = ['.git', '.idea', '.vscode'];
 
@@ -72,6 +80,25 @@ function isBinary(content) {
 function comparePaths(a, b) {
     return a.localeCompare(b, undefined, { numeric: true });
 }
+
+function countNewlines(buffer) {
+    let count = 0;
+    for (let i = 0; i < buffer.length; i += 1) {
+        if (buffer[i] === 0x0a) {
+            count += 1;
+        }
+    }
+    return count;
+}
+
+// dump.txt -> dump.part1.txt, .diff_dump.txt -> .diff_dump.part1.txt
+function buildPartFileName(filePath, partNumber) {
+    const ext = path.extname(filePath);
+    const base = filePath.slice(0, filePath.length - ext.length);
+    return `${base}.part${partNumber}${ext}`;
+}
+
+const effectiveMaxLines = Number.isFinite(maxDumpLines) && maxDumpLines > 0 ? maxDumpLines : Infinity;
 
 function isExcluded(relativePath) {
     const segments = relativePath.split('/');
@@ -168,16 +195,36 @@ for (const relativePath of [...destinationPaths].sort(comparePaths)) {
 
 // ----- Writing the dump -------------------------------------------------------
 
-const chunks = [Buffer.from(`##### DIFF DUMP: ${projectType} #####\n`, 'utf-8')];
+const summaryChunks = [Buffer.from(`##### DIFF DUMP: ${projectType} #####\n`, 'utf-8')];
 
 for (const relativePath of added) {
-    chunks.push(Buffer.from(`##### ADDED: ${relativePath} #####\n`, 'utf-8'));
+    summaryChunks.push(Buffer.from(`##### ADDED: ${relativePath} #####\n`, 'utf-8'));
 }
 for (const relativePath of modified) {
-    chunks.push(Buffer.from(`##### MODIFIED: ${relativePath} #####\n`, 'utf-8'));
+    summaryChunks.push(Buffer.from(`##### MODIFIED: ${relativePath} #####\n`, 'utf-8'));
 }
 for (const relativePath of removed) {
-    chunks.push(Buffer.from(`##### REMOVED: ${relativePath} #####\n`, 'utf-8'));
+    summaryChunks.push(Buffer.from(`##### REMOVED: ${relativePath} #####\n`, 'utf-8'));
+}
+const summaryLines = summaryChunks.reduce((sum, chunk) => sum + countNewlines(chunk), 0);
+
+function partHeader() {
+    return Buffer.from(`##### DIFF DUMP: ${projectType} #####\n`, 'utf-8');
+}
+
+// The ADDED/MODIFIED/REMOVED summary lives only in the first batch;
+// restore.js only ever reads it from the very start of the dump.
+const batches = [];
+let currentBatch = [...summaryChunks];
+let currentBatchLines = summaryLines;
+let currentBatchBaseLines = summaryLines;
+
+function startNewBatch() {
+    batches.push(currentBatch);
+    const header = partHeader();
+    currentBatch = [header];
+    currentBatchLines = countNewlines(header);
+    currentBatchBaseLines = currentBatchLines;
 }
 
 const addedPaths = new Set(added);
@@ -198,17 +245,40 @@ for (const relativePath of changedPaths) {
     const status = addedPaths.has(relativePath) ? 'added' : 'modified';
     const encoding = isBinary(content) ? 'base64' : 'text';
     const payload = encoding === 'base64' ? Buffer.from(content.toString('base64'), 'utf-8') : content;
-
-    chunks.push(
-        Buffer.from(`##### FILE: ${relativePath} | ${payload.length} | ${encoding} | ${status} #####\n`, 'utf-8'),
+    const header = Buffer.from(
+        `##### FILE: ${relativePath} | ${payload.length} | ${encoding} | ${status} #####\n`,
+        'utf-8',
     );
-    chunks.push(payload);
-    chunks.push(Buffer.from('\n', 'utf-8'));
+    const trailingNewline = Buffer.from('\n', 'utf-8');
+    const entryLines = countNewlines(header) + countNewlines(payload) + countNewlines(trailingNewline);
+
+    // Never split one file's content across two dump files: only roll over
+    // to a new batch if the current one already holds at least one file.
+    if (currentBatchLines > currentBatchBaseLines && currentBatchLines + entryLines > effectiveMaxLines) {
+        startNewBatch();
+    }
+
+    currentBatch.push(header, payload, trailingNewline);
+    currentBatchLines += entryLines;
     writtenCount += 1;
 }
 
-fs.writeFileSync(outputFile, Buffer.concat(chunks));
-console.log(
-    `Saved ${writtenCount} files to ${outputFile}: ` +
-        `${added.length} added, ${modified.length} modified, ${removed.length} removed`,
-);
+batches.push(currentBatch);
+
+if (batches.length === 1) {
+    fs.writeFileSync(outputFile, Buffer.concat(batches[0]));
+    console.log(
+        `Saved ${writtenCount} files to ${outputFile}: ` +
+            `${added.length} added, ${modified.length} modified, ${removed.length} removed`,
+    );
+} else {
+    const partFiles = batches.map((batch, index) => {
+        const partFile = buildPartFileName(outputFile, index + 1);
+        fs.writeFileSync(partFile, Buffer.concat(batch));
+        return partFile;
+    });
+    console.log(
+        `Saved ${writtenCount} files across ${batches.length} dump files (max ${effectiveMaxLines} lines each): ` +
+            `${partFiles.join(', ')} — ${added.length} added, ${modified.length} modified, ${removed.length} removed`,
+    );
+}

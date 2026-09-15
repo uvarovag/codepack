@@ -2,9 +2,10 @@
  * Дамп файлов и папок в один текстовый файл.
  *
  * Использование:
- *   node dump.js <путь> [путь ...] [-o файл дампа]
+ *   node dump.js <путь> [путь ...] [-o файл дампа] [-l макс_строк]
  *   node dump.js ./my-service
  *   node dump.js ./src ./pom.xml ./README.md -o dump.txt
+ *   node dump.js ./src -o dump.txt -l 5000
  *
  * Пути могут быть папками (обходятся рекурсивно) или отдельными файлами.
  * По умолчанию: путь — текущая папка, файл дампа — .code_dump.txt
@@ -20,9 +21,18 @@
  * Тип проекта задаётся константой projectType: 'ts' | 'java' | 'py'.
  * Явно указанный файл дампится всегда, даже если подходит под исключения.
  *
+ * Дамп ограничен по длине: -l / --max-lines задаёт максимум строк на файл
+ * дампа (по умолчанию 10000, 0 — без ограничения). Содержимое одного файла
+ * никогда не разрывается между дамп-файлами: если очередной файл целиком не
+ * помещается в лимит текущего дамп-файла, он целиком уходит в следующий.
+ * Если дамп получился в несколько файлов, к outputFile перед расширением
+ * добавляется .partN (например dump.txt -> dump.part1.txt, dump.part2.txt).
+ * Если файл всего один, имя не меняется.
+ *
  * Дамп переносим между компьютерами и ОС: пути относительные, слэши прямые.
  * Права на исполнение (chmod +x) не сохраняются.
- * Развернуть обратно: node restore.js dump.txt ./restored
+ * Развернуть обратно: node restore.js dump.txt ./restored (restore.js сам
+ * подхватит все .partN файлы дампа, если дамп был разбит на батчи).
  */
 
 import { execFileSync } from 'child_process';
@@ -32,6 +42,8 @@ import path from 'path';
 // ----- Configuration ----------------------------------------------------------
 
 const projectType = 'java'; // 'ts' | 'java' | 'py'
+
+const defaultMaxDumpLines = 10000;
 
 const commonExcludedDirectories = ['.git', '.idea', '.vscode'];
 
@@ -67,20 +79,28 @@ const excludedFileNames = excludedFileNamesByType[projectType];
 function parseArguments(argv) {
     const inputPaths = [];
     let outputFile = '.code_dump.txt';
+    let maxLines = defaultMaxDumpLines;
 
     for (let i = 0; i < argv.length; i += 1) {
         if (argv[i] === '-o') {
             outputFile = argv[i + 1];
+            i += 1;
+        } else if (argv[i] === '-l' || argv[i] === '--max-lines') {
+            maxLines = Number(argv[i + 1]);
             i += 1;
         } else {
             inputPaths.push(argv[i]);
         }
     }
 
-    return { inputPaths: inputPaths.length > 0 ? inputPaths : ['.'], outputFile };
+    return {
+        inputPaths: inputPaths.length > 0 ? inputPaths : ['.'],
+        outputFile,
+        maxLines: Number.isFinite(maxLines) && maxLines > 0 ? maxLines : Infinity,
+    };
 }
 
-const { inputPaths, outputFile } = parseArguments(process.argv.slice(2));
+const { inputPaths, outputFile, maxLines } = parseArguments(process.argv.slice(2));
 
 // A single directory is dumped relative to itself, so the dump has no extra nesting
 function resolveBaseDirectory(paths) {
@@ -106,6 +126,27 @@ function isBinary(content) {
 
 function comparePaths(a, b) {
     return a.localeCompare(b, undefined, { numeric: true });
+}
+
+function countNewlines(buffer) {
+    let count = 0;
+    for (let i = 0; i < buffer.length; i += 1) {
+        if (buffer[i] === 0x0a) {
+            count += 1;
+        }
+    }
+    return count;
+}
+
+function escapeRegExp(value) {
+    return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+// dump.txt -> dump.part1.txt, .code_dump.txt -> .code_dump.part1.txt
+function buildPartFileName(filePath, partNumber) {
+    const ext = path.extname(filePath);
+    const base = filePath.slice(0, filePath.length - ext.length);
+    return `${base}.part${partNumber}${ext}`;
 }
 
 function toRelativePath(fullPath) {
@@ -198,6 +239,14 @@ function collectInputPaths(paths) {
 // ----- Writing the dump -------------------------------------------------------
 
 const resolvedOutputFile = path.resolve(outputFile);
+const outputExt = path.extname(resolvedOutputFile);
+const outputBaseNoExt = resolvedOutputFile.slice(0, resolvedOutputFile.length - outputExt.length);
+const outputPartPattern = new RegExp(`^${escapeRegExp(outputBaseNoExt)}\\.part\\d+${escapeRegExp(outputExt)}$`);
+
+function isOutputFile(fullPath) {
+    return fullPath === resolvedOutputFile || outputPartPattern.test(fullPath);
+}
+
 const relativePaths = [...new Set(collectInputPaths(inputPaths).map(toRelativePath))]
     .filter((relativePath) => {
         if (relativePath.startsWith('..')) {
@@ -213,14 +262,26 @@ if (relativePaths.length === 0) {
     process.exit(1);
 }
 
-const chunks = [Buffer.from(`##### CODE DUMP: ${projectType} #####\n`, 'utf-8')];
+function dumpHeader() {
+    return Buffer.from(`##### CODE DUMP: ${projectType} #####\n`, 'utf-8');
+}
+
+const batches = [];
+let currentBatch = [dumpHeader()];
+let currentBatchLines = countNewlines(currentBatch[0]);
 let textCount = 0;
 let binaryCount = 0;
+
+function startNewBatch() {
+    batches.push(currentBatch);
+    currentBatch = [dumpHeader()];
+    currentBatchLines = countNewlines(currentBatch[0]);
+}
 
 for (const relativePath of relativePaths) {
     const fullPath = path.join(baseDirectory, relativePath);
 
-    if (fullPath === resolvedOutputFile) {
+    if (isOutputFile(fullPath)) {
         continue;
     }
 
@@ -234,10 +295,18 @@ for (const relativePath of relativePaths) {
 
     const encoding = isBinary(content) ? 'base64' : 'text';
     const payload = encoding === 'base64' ? Buffer.from(content.toString('base64'), 'utf-8') : content;
+    const header = Buffer.from(`##### FILE: ${relativePath} | ${payload.length} | ${encoding} #####\n`, 'utf-8');
+    const trailingNewline = Buffer.from('\n', 'utf-8');
+    const entryLines = countNewlines(header) + countNewlines(payload) + countNewlines(trailingNewline);
 
-    chunks.push(Buffer.from(`##### FILE: ${relativePath} | ${payload.length} | ${encoding} #####\n`, 'utf-8'));
-    chunks.push(payload);
-    chunks.push(Buffer.from('\n', 'utf-8'));
+    // Never split one file's content across two dump files: only roll over
+    // to a new batch if the current one already holds at least one file.
+    if (currentBatchLines > 1 && currentBatchLines + entryLines > maxLines) {
+        startNewBatch();
+    }
+
+    currentBatch.push(header, payload, trailingNewline);
+    currentBatchLines += entryLines;
 
     if (encoding === 'base64') {
         binaryCount += 1;
@@ -246,5 +315,19 @@ for (const relativePath of relativePaths) {
     }
 }
 
-fs.writeFileSync(outputFile, Buffer.concat(chunks));
-console.log(`Saved ${textCount + binaryCount} files to ${outputFile} (${binaryCount} encoded as base64)`);
+batches.push(currentBatch);
+
+if (batches.length === 1) {
+    fs.writeFileSync(outputFile, Buffer.concat(batches[0]));
+    console.log(`Saved ${textCount + binaryCount} files to ${outputFile} (${binaryCount} encoded as base64)`);
+} else {
+    const partFiles = batches.map((batch, index) => {
+        const partFile = buildPartFileName(outputFile, index + 1);
+        fs.writeFileSync(partFile, Buffer.concat(batch));
+        return partFile;
+    });
+    console.log(
+        `Saved ${textCount + binaryCount} files across ${batches.length} dump files ` +
+            `(max ${maxLines} lines each): ${partFiles.join(', ')} (${binaryCount} encoded as base64)`,
+    );
+}

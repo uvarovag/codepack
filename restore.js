@@ -8,6 +8,10 @@
  *
  * По умолчанию: дамп — .code_dump.txt, папка назначения — ./restored
  *
+ * Если дамп был разбит на батчи (dump.txt.partN, см. dump.js/diff-dump.js),
+ * достаточно указать любое из имён (базовое или любой из .partN файлов) —
+ * остальные части будут найдены рядом автоматически и собраны по порядку.
+ *
  * Работает и с полным дампом (dump.js), и с дампом изменений (diff-dump.js).
  * Новые файлы создаются вместе с папками, существующие перезаписываются.
  *
@@ -74,6 +78,48 @@ function parseFiles(dump) {
     }
 
     return entries;
+}
+
+function escapeRegExp(value) {
+    return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+// Given any one dump file name, finds all its .partN siblings (if any) in
+// the same directory and returns them sorted in restore order. Falls back
+// to the single given file when the dump was not split into batches.
+function resolveDumpFiles(inputPath) {
+    const directory = path.dirname(inputPath) || '.';
+    const ext = path.extname(inputPath);
+    let base = path.basename(inputPath, ext);
+
+    const partSelfMatch = /^(.*)\.part\d+$/.exec(base);
+    if (partSelfMatch) {
+        base = partSelfMatch[1];
+    }
+
+    const partPattern = new RegExp(`^${escapeRegExp(base)}\\.part(\\d+)${escapeRegExp(ext)}$`);
+
+    let entries;
+    try {
+        entries = fs.readdirSync(directory);
+    } catch (error) {
+        entries = [];
+    }
+
+    const parts = entries
+        .map((name) => {
+            const match = partPattern.exec(name);
+            return match ? { name, number: Number(match[1]) } : null;
+        })
+        .filter(Boolean)
+        .sort((a, b) => a.number - b.number)
+        .map((part) => path.join(directory, part.name));
+
+    if (parts.length > 0) {
+        return parts;
+    }
+
+    return fs.existsSync(inputPath) ? [inputPath] : [];
 }
 
 function resolveSafePath(rootDirectory, relativePath) {
@@ -148,12 +194,18 @@ function removeEmptyDirectories(rootDirectory, relativePaths) {
 
 // ----- Main -------------------------------------------------------------------
 
-if (!fs.existsSync(dumpFile)) {
+const dumpFiles = resolveDumpFiles(dumpFile);
+
+if (dumpFiles.length === 0) {
     console.error(`Dump file '${dumpFile}' not found.`);
     process.exit(1);
 }
 
-const dump = fs.readFileSync(dumpFile);
+if (dumpFiles.length > 1) {
+    console.log(`Restoring from ${dumpFiles.length} batch files: ${dumpFiles.join(', ')}`);
+}
+
+const dump = Buffer.concat(dumpFiles.map((file) => fs.readFileSync(file)));
 const entries = parseFiles(dump);
 const removedPaths = parseRemoved(dump);
 
