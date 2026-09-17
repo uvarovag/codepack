@@ -2,10 +2,11 @@
  * Дамп файлов и папок в один текстовый файл.
  *
  * Использование:
- *   node dump.js <путь> [путь ...] [-o файл дампа] [-l макс_строк]
+ *   node dump.js <путь> [путь ...] [-o файл дампа] [-l макс_строк] [--only список]
  *   node dump.js ./my-service
  *   node dump.js ./src ./pom.xml ./README.md -o dump.txt
  *   node dump.js ./src -o dump.txt -l 5000
+ *   node dump.js ./my-lib/dist --only .d.ts,package.json -o lib-types.txt
  *
  * Пути могут быть папками (обходятся рекурсивно) или отдельными файлами.
  * По умолчанию: путь — текущая папка, файл дампа — .code_dump.txt
@@ -20,6 +21,14 @@
  *
  * Тип проекта задаётся константой projectType: 'ts' | 'java' | 'py'.
  * Явно указанный файл дампится всегда, даже если подходит под исключения.
+ *
+ * -i / --only задаёт список через запятую, ограничивающий дамп только
+ * подходящими файлами: значение с точки (.d.ts, .json) сравнивается как
+ * расширение/суффикс имени файла, без точки (package.json) — как точное имя.
+ * Полезно, чтобы вытащить из dist собранной библиотеки только .d.ts и
+ * package.json — этого достаточно, чтобы затем сгенерировать документацию
+ * по использованию библиотеки без самого кода реализации.
+ * Пример: node dump.js ./my-lib/dist --only .d.ts,package.json
  *
  * Дамп ограничен по длине: -l / --max-lines задаёт максимум строк на файл
  * дампа (по умолчанию 10000, 0 — без ограничения). Содержимое одного файла
@@ -80,6 +89,7 @@ function parseArguments(argv) {
     const inputPaths = [];
     let outputFile = '.code_dump.txt';
     let maxLines = defaultMaxDumpLines;
+    let onlyPatterns = [];
 
     for (let i = 0; i < argv.length; i += 1) {
         if (argv[i] === '-o') {
@@ -87,6 +97,12 @@ function parseArguments(argv) {
             i += 1;
         } else if (argv[i] === '-l' || argv[i] === '--max-lines') {
             maxLines = Number(argv[i + 1]);
+            i += 1;
+        } else if (argv[i] === '-i' || argv[i] === '--only') {
+            onlyPatterns = argv[i + 1]
+                .split(',')
+                .map((pattern) => pattern.trim())
+                .filter(Boolean);
             i += 1;
         } else {
             inputPaths.push(argv[i]);
@@ -97,10 +113,20 @@ function parseArguments(argv) {
         inputPaths: inputPaths.length > 0 ? inputPaths : ['.'],
         outputFile,
         maxLines: Number.isFinite(maxLines) && maxLines > 0 ? maxLines : Infinity,
+        onlyPatterns,
     };
 }
 
-const { inputPaths, outputFile, maxLines } = parseArguments(process.argv.slice(2));
+const { inputPaths, outputFile, maxLines, onlyPatterns } = parseArguments(process.argv.slice(2));
+
+// A pattern starting with '.' matches by suffix (extension), e.g. '.d.ts';
+// otherwise it matches the exact file name, e.g. 'package.json'.
+function matchesOnly(fileName) {
+    if (onlyPatterns.length === 0) {
+        return true;
+    }
+    return onlyPatterns.some((pattern) => (pattern.startsWith('.') ? fileName.endsWith(pattern) : fileName === pattern));
+}
 
 // A single directory is dumped relative to itself, so the dump has no extra nesting
 function resolveBaseDirectory(paths) {
@@ -255,6 +281,7 @@ const relativePaths = [...new Set(collectInputPaths(inputPaths).map(toRelativePa
         }
         return true;
     })
+    .filter((relativePath) => matchesOnly(path.basename(relativePath)))
     .sort(comparePaths);
 
 if (relativePaths.length === 0) {

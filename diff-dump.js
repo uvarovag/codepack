@@ -7,6 +7,12 @@
  * Пути задаются константами ниже: sourceDirectory (было) и destinationDirectory (стало).
  * Тип проекта — константа projectType: 'ts' | 'java' | 'py'.
  *
+ * Константа onlyPatterns ограничивает дамп только подходящими файлами:
+ * значение с точки (.d.ts, .json) сравнивается как расширение/суффикс имени
+ * файла, без точки (package.json) — как точное имя. Пустой массив — без
+ * ограничения. Удобно для сравнения двух версий dist собранной библиотеки
+ * по .d.ts и package.json, без файлов реализации.
+ *
  * Состав файлов берётся из git с учётом .gitignore, если папка — репозиторий,
  * иначе обычным обходом со списком исключений из констант.
  *
@@ -41,6 +47,7 @@ const sourceDirectory = './src-project';
 const destinationDirectory = './dst-project';
 const outputFile = '.diff_dump.txt';
 const maxDumpLines = 10000; // 0 = no limit
+const onlyPatterns = []; // e.g. ['.d.ts', 'package.json'] — [] = no restriction
 
 const commonExcludedDirectories = ['.git', '.idea', '.vscode'];
 
@@ -100,6 +107,16 @@ function buildPartFileName(filePath, partNumber) {
 
 const effectiveMaxLines = Number.isFinite(maxDumpLines) && maxDumpLines > 0 ? maxDumpLines : Infinity;
 
+// A pattern starting with '.' matches by suffix (extension), e.g. '.d.ts';
+// otherwise it matches the exact file name, e.g. 'package.json'.
+function matchesOnly(relativePath) {
+    if (onlyPatterns.length === 0) {
+        return true;
+    }
+    const fileName = path.basename(relativePath);
+    return onlyPatterns.some((pattern) => (pattern.startsWith('.') ? fileName.endsWith(pattern) : fileName === pattern));
+}
+
 function isExcluded(relativePath) {
     const segments = relativePath.split('/');
     const fileName = segments[segments.length - 1];
@@ -153,7 +170,8 @@ function collectByWalk(directory, rootDirectory, collected) {
 
 function collectFiles(directory) {
     const gitFiles = collectByGit(directory);
-    return gitFiles === null ? collectByWalk(directory, directory, []) : gitFiles;
+    const files = gitFiles === null ? collectByWalk(directory, directory, []) : gitFiles;
+    return files.filter(matchesOnly);
 }
 
 function hashFile(fullPath) {
