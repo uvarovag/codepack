@@ -1,0 +1,22 @@
+Title: Skeleton | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/skeleton/
+---
+Skeleton family: LineSkeleton (single line, size = typography token like "h3"/"bodyM"), RectSkeleton (width*/height* required), TextSkeleton (lines* count, optional width). animationType="shimmer"(default)|"pulse"; animationDuration ms (0 disables). withSkeleton(Component) HOC applies skeleton look to any component via skeleton={true} prop — background replaced, text made transparent; pass aria-busy={skeleton} for a11y. animationConfig={type, duration, customGradientColor, customFadeInColor, customFadeOutColor} customizes the HOC's animation.
+LIVE EDITOR
+function App() { return <RectSkeleton width="12rem" height="8rem" animationType="shimmer" />; }
+LIVE EDITOR (HOC)
+const ButtonSkeleton = withSkeleton(Button);
+function App() { return <ButtonSkeleton text="Загрузка..." skeleton aria-busy />; }
+
+API (LineSkeleton / RectSkeleton / TextSkeleton share these + own)​
+Property Type Default Description
+view "default"|"lighter"
+size "h1".."h5"|"bodyM"|"bodyL"|"bodyS"|"bodyXS"|"bodyXXS"|"dsplL"|"dsplM"|"dsplS"|"textL"|"textM"|"textS"|"textXS" — LineSkeleton/TextSkeleton only
+customGradientColor string — shimmer gradient
+customFadeInColor / customFadeOutColor string — pulse colors
+roundness 0|4|8|12|14|16|18|20|24|28|32|250
+animationType "shimmer"|"pulse" 'shimmer'
+animationDuration number
+lighter boolean
+width* / height* string|number — RectSkeleton only
+lines* number; width string|number — TextSkeleton only (width applies per-line, random by default)

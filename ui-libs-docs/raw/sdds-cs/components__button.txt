@@ -1,0 +1,40 @@
+Title: Button | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/button/
+---
+Button — кнопки в нескольких размерах и цветах, текст и/или иконка. value отображается справа от основного текста; value и contentRight взаимоисключающие.
+
+LIVE EDITOR
+function App() {
+return (
+<div>
+<Button text="Текст" />
+<Button text="Текст" contentLeft={<IconDownload color="inherit" />} />
+<Button text="Текст" contentRight={<IconDownload color="inherit" />} />
+<Button text="Текст" isLoading />
+<Button text="Текст" isLoading loader={<div>Loader...</div>} />
+</div>
+);
+}
+
+size: "s" | "m". stretching: "auto"(default, подстраивается под контент) | "filled"(на всю ширину) | "fixed". contentPlacing: "default"(центр) | "relaxed"(по краям). view: "secondary" | "accent" | "clear". pin: "square-square" | "square-clear" | "clear-square" | "clear-clear" | "clear-circle" | "circle-clear" | "circle-circle". as="a" для рендера как <a>. Градиентный текст через class sdds-core-text-node.
+
+API​
+Property Type Default Description
+size "s" | "m" | "sr" — Размер кнопки
+view "clear" | "accent" | "secondary" — Вид кнопки
+appearance "default" | "outline" default Стиль для UI-конфигурации, выбор набора токенов
+text string — Текстовая надпись
+contentLeft / contentRight ReactNode — Слот для контента, например Icon
+focused boolean — Кнопка сфокусирована
+value string | number — Значение кнопки
+blur "small" | "medium" | "large" — @deprecated для кнопок без прозрачности не работает
+stretching "auto" | "filled" | "fixed" — fixed: фикс. ширина; filled: вся доступная ширина; auto: по контенту
+isLoading boolean — состояние загрузки
+contentPlacing ContentPlacing 'default' положение контента по ширине
+additionalContent ReactNode — доп. контент
+loader ReactNode — слот для контента загрузки
+stretch boolean — @deprecated использовать stretching
+square boolean — @deprecated использовать IconButton для 1:1
+pin "square-square"|"square-clear"|"clear-square"|"clear-clear"|"clear-circle"|"circle-clear"|"circle-circle" — border-radius
+outlined boolean — @deprecated использовать focused
+shiftLeft / shiftRight boolean — @deprecated отрицательный сдвиг влево/вправо на паддинг

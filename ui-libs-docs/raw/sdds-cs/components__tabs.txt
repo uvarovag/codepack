@@ -1,0 +1,40 @@
+Title: Tabs | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/tabs/
+---
+Tabs (raw sdds-cs — cs-core has its own Tabs/TabContent, re-exported by cs-portal, shadowing this one; see raw/cs-core.json "TabContent"/"Tabs"). Tabs = container, TabItem = item (invalid outside Tabs). value and contentRight on TabItem are mutually exclusive. orientation="horizontal"(default)|"vertical". clip="scroll"(default, horizontal overflow scrolls)|"showAll" (overflow visible, pair with a Dropdown "ShowAll" TabItem for overflow items). Keyboard nav requires wiring index + itemIndex + onIndexChange yourself (TabsController is deprecated in favor of this). ArrowLeft/Right/Home/End (horizontal) or ArrowUp/Down/Home/End (vertical).
+LIVE EDITOR
+function App() {
+const [index, setIndex] = useState(0);
+return (
+<Tabs view="filled" stretch size="s">
+{items.map((_, i) => <TabItem view="secondary" selected={i===index} onClick={() => setIndex(i)}>{`Label${i+1}`}</TabItem>)}
+</Tabs>
+);
+}
+
+API​
+Tabs​
+Property Type Default Description
+view "clear"|"filled"|"divider"
+size "xs"|"s"|"m"|"l"|"h1".."h5"
+stretch boolean false; disabled boolean false
+pilled boolean — @deprecated
+clip "scroll"|"showAll" 'scroll'
+index number — active index, for keyboard nav
+orientation "horizontal"|"vertical"
+hasDivider boolean true
+dividerAlign "right"|"left" left — vertical only
+
+TabItem​
+Property Type Default Description
+view "clear"|"default"|"secondary"|"divider"; size "s"
+disabled boolean false; pilled boolean — @deprecated
+truncate boolean; selected boolean
+disableScroll boolean false — don't auto-scroll into view when selected
+contentLeft / contentRight ReactNode; actionContent ReactNode — e.g. close icon
+onIndexChange ((index) => void); itemIndex number — keyboard nav wiring
+maxItemWidth Width<string|number> 'auto'
+orientation "horizontal"|"vertical"
+animated boolean true — @deprecated
+isActive boolean — @deprecated use selected
+value string|number

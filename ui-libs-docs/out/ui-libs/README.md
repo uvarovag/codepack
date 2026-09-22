@@ -1,0 +1,387 @@
+# UI libraries — offline reference
+
+Versions: cs-portal 1.27.0 · cs-core 8.13.0 · sdds-cs 0.370.0 · plasma-icons 1.249.0 (site shows 1.250.0 — icons added since aren't installed yet).
+
+## The rule
+
+**Priority — what to reach for:** `@sber-front-cs-core/cs-portal` for components and `@salutejs/plasma-icons` for icons come first, as co-equal top priority, each for its own concern (icons are never a fallback of last resort — go straight to [icons.md](icons.md)). `@sber-front-cs-core/cs-core` is second, only when cs-portal has no match. `@salutejs/sdds-cs` is last, only for the named exceptions in [levels.md](levels.md).
+
+**Import path — always:** `import { X } from '@sber-front-cs-core/cs-portal'`, including for icons (`import { IconMagic } from '@sber-front-cs-core/cs-portal'`), whichever tier you found the thing in above. Only the named exceptions in [levels.md](levels.md) import from `@salutejs/sdds-cs` directly. **Never** import from `@sber-front-cs-core/cs-core` or `@salutejs/plasma-icons` — they exist only as cs-portal's implementation detail.
+
+## How to use this doc
+Search the table below for the symbol or concept you need, open the linked file, load nothing else.
+For an icon, skip the table and go straight to [icons.md](icons.md).
+For the cascade rules, shadowing/collision details, and exceptions: [levels.md](levels.md).
+For known gotchas (legacy/new pairs, dead links, naming traps): [gotchas.md](gotchas.md).
+
+## Files
+
+```
+cs-portal/   app-shell · layout · forms-mutations · widgets · remote-hooks-utils
+cs-core/     pages-layouts · forms-inputs · data-display · feedback-modals ·
+             navigation · table · charts · app-remote-utils
+sdds-cs/     actions · inputs-forms · data-display · feedback-overlays ·
+             navigation-layout · typography-tokens
+icons.md     all @salutejs/plasma-icons names by category
+levels.md    cascade, re-export chain, shadowing/collision table
+gotchas.md   legacy/new pairs, dead links, naming traps
+```
+
+## Symbol index (354 entries)
+
+| Symbol | Level | File |
+|---|---|---|
+| Accordion | sdds-cs | [sdds-cs/data-display.md](sdds-cs/data-display.md) |
+| AccordionContent | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| AccordionContentNew | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| AccordionItem | sdds-cs | [sdds-cs/data-display.md](sdds-cs/data-display.md) |
+| AccordionPage | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| AccordionPageNew | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| AnchorMenu | cs-core | [cs-core/navigation.md](cs-core/navigation.md) |
+| Attach | sdds-cs | [sdds-cs/inputs-forms.md](sdds-cs/inputs-forms.md) |
+| Attachment | cs-portal | [cs-portal/widgets.md](cs-portal/widgets.md) |
+| Avatar | sdds-cs | [sdds-cs/data-display.md](sdds-cs/data-display.md) |
+| AvatarGroup | sdds-cs | [sdds-cs/data-display.md](sdds-cs/data-display.md) |
+| Badge | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| Badge | sdds-cs | [sdds-cs/data-display.md](sdds-cs/data-display.md) |
+| bodyL | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| bodyLBold | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| bodyM | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| bodyMBold | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| bodyS | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| bodySBold | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| bodyXS | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| bodyXSBold | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| bodyXXS | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| bodyXXSBold | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| Box | cs-portal | [cs-portal/layout.md](cs-portal/layout.md) |
+| Breadcrumbs | sdds-cs | [sdds-cs/navigation-layout.md](sdds-cs/navigation-layout.md) |
+| buildFilters | cs-portal | [cs-portal/remote-hooks-utils.md](cs-portal/remote-hooks-utils.md) |
+| buildSorts | cs-portal | [cs-portal/remote-hooks-utils.md](cs-portal/remote-hooks-utils.md) |
+| BulkActions | cs-core | [cs-core/feedback-modals.md](cs-core/feedback-modals.md) |
+| Button | sdds-cs | [sdds-cs/actions.md](sdds-cs/actions.md) |
+| ButtonGroup | sdds-cs | [sdds-cs/actions.md](sdds-cs/actions.md) |
+| Card | sdds-cs | [sdds-cs/data-display.md](sdds-cs/data-display.md) |
+| CardContent | sdds-cs | [sdds-cs/data-display.md](sdds-cs/data-display.md) |
+| CardInnerContent | sdds-cs | [sdds-cs/data-display.md](sdds-cs/data-display.md) |
+| Carousel | sdds-cs | [sdds-cs/data-display.md](sdds-cs/data-display.md) |
+| Cell | sdds-cs | [sdds-cs/data-display.md](sdds-cs/data-display.md) |
+| Chat | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| Checkbox | sdds-cs | [sdds-cs/inputs-forms.md](sdds-cs/inputs-forms.md) |
+| Chip | sdds-cs | [sdds-cs/actions.md](sdds-cs/actions.md) |
+| ChipGroup | sdds-cs | [sdds-cs/actions.md](sdds-cs/actions.md) |
+| ClearButton | cs-core | [cs-core/feedback-modals.md](cs-core/feedback-modals.md) |
+| Col | sdds-cs | [sdds-cs/navigation-layout.md](sdds-cs/navigation-layout.md) |
+| CollapsingPageHeader | cs-portal | [cs-portal/layout.md](cs-portal/layout.md) |
+| Combobox | cs-core | [cs-core/forms-inputs.md](cs-core/forms-inputs.md) |
+| CommunicationDrawer | cs-portal | [cs-portal/widgets.md](cs-portal/widgets.md) |
+| ConfirmModal | cs-core | [cs-core/feedback-modals.md](cs-core/feedback-modals.md) |
+| ConfirmProvider | cs-core | [cs-core/feedback-modals.md](cs-core/feedback-modals.md) |
+| Content | cs-portal | [cs-portal/layout.md](cs-portal/layout.md) |
+| Controller | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| Counter | sdds-cs | [sdds-cs/data-display.md](sdds-cs/data-display.md) |
+| createApp | cs-portal | [cs-portal/app-shell.md](cs-portal/app-shell.md) |
+| createMultiRegistryItem | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| createProtectedRouteMiddleware | cs-portal | [cs-portal/app-shell.md](cs-portal/app-shell.md) |
+| createPubSupApi | cs-portal | [cs-portal/app-shell.md](cs-portal/app-shell.md) |
+| createReduxStore | cs-portal | [cs-portal/app-shell.md](cs-portal/app-shell.md) |
+| createRemoteApp | cs-core | [cs-core/app-remote-utils.md](cs-core/app-remote-utils.md) |
+| createRemoteComponent | cs-portal | [cs-portal/remote-hooks-utils.md](cs-portal/remote-hooks-utils.md) |
+| createWidgetCounter | cs-portal | [cs-portal/widgets.md](cs-portal/widgets.md) |
+| createWidgetHorizontalBarChart | cs-portal | [cs-portal/widgets.md](cs-portal/widgets.md) |
+| createWidgetPieChart | cs-portal | [cs-portal/widgets.md](cs-portal/widgets.md) |
+| CSProvider | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| CURRENCY_SYMBOL | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| DataField | cs-core | [cs-core/forms-inputs.md](cs-core/forms-inputs.md) |
+| DatePicker | sdds-cs | [sdds-cs/inputs-forms.md](sdds-cs/inputs-forms.md) |
+| DatePickerRange | sdds-cs | [sdds-cs/inputs-forms.md](sdds-cs/inputs-forms.md) |
+| DisplayBoolean | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| DisplayDate | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| DisplayDateRange | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| DisplayDateTime | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| DisplayLink | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| DisplayNumber | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| DisplayPercent | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| DisplayPrice | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| DisplayText | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| DisplayTime | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| DisplayTimeRange | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| DisplayUnit | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| Divider | sdds-cs | [sdds-cs/data-display.md](sdds-cs/data-display.md) |
+| DocChain | cs-portal | [cs-portal/widgets.md](cs-portal/widgets.md) |
+| downloadBlob | cs-core | [cs-portal/remote-hooks-utils.md](cs-portal/remote-hooks-utils.md) |
+| DraggableRows | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| Drawer | cs-portal | [cs-portal/layout.md](cs-portal/layout.md) |
+| Drawer | sdds-cs | [sdds-cs/feedback-overlays.md](sdds-cs/feedback-overlays.md) |
+| Dropdown | sdds-cs | [sdds-cs/actions.md](sdds-cs/actions.md) |
+| dsplL | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| dsplLBold | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| dsplM | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| dsplMBold | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| dsplS | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| dsplSBold | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| EllipsisInfo | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| EmptyPages | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| EmptyStates | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| ENABLE_SPLIT | cs-core | [cs-core/app-remote-utils.md](cs-core/app-remote-utils.md) |
+| EntitySearch | cs-core | [cs-core/feedback-modals.md](cs-core/feedback-modals.md) |
+| ErrorFallback | cs-portal | [cs-portal/layout.md](cs-portal/layout.md) |
+| Event | cs-portal | [cs-portal/widgets.md](cs-portal/widgets.md) |
+| EventDrawer | cs-portal | [cs-portal/widgets.md](cs-portal/widgets.md) |
+| EventsHistory | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| ExternalNavigationProvider | cs-core | [cs-core/navigation.md](cs-core/navigation.md) |
+| extractFilename | cs-portal | [cs-portal/remote-hooks-utils.md](cs-portal/remote-hooks-utils.md) |
+| FALLBACK_VALUE | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| FC_HIDDEN | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| FC_MANDATORY | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| FC_OPTIONAL | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| FC_READONLY | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| FileUploader | cs-core | [cs-core/forms-inputs.md](cs-core/forms-inputs.md) |
+| FlexBox | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| Flow | sdds-cs | [sdds-cs/data-display.md](sdds-cs/data-display.md) |
+| Footer | cs-portal | [cs-portal/layout.md](cs-portal/layout.md) |
+| format | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| formatBoolean | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| formatDate | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| formatDateRange | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| formatDateTime | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| formatNumber | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| formatRange | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| formatTime | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| formatTimeRange | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| FormElementFlex | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| FormElementGrid | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| FormFlex | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| FormGrid | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| FormGroupFlex | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| FormGroupGrid | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| FormProvider | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| FRACTION_DIGITS | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| getBorderRadiusSize | cs-core | [cs-core/app-remote-utils.md](cs-core/app-remote-utils.md) |
+| getFileExtension | cs-portal | [cs-portal/remote-hooks-utils.md](cs-portal/remote-hooks-utils.md) |
+| getIsRequired | cs-core | [cs-core/forms-inputs.md](cs-core/forms-inputs.md) |
+| getMessagesFromResponse | cs-portal | [cs-portal/remote-hooks-utils.md](cs-portal/remote-hooks-utils.md) |
+| getNestedValue | cs-portal | [cs-portal/remote-hooks-utils.md](cs-portal/remote-hooks-utils.md) |
+| getNotificationClient | cs-portal | [cs-portal/app-shell.md](cs-portal/app-shell.md) |
+| getStack | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| getTextFromMessage | cs-portal | [cs-portal/remote-hooks-utils.md](cs-portal/remote-hooks-utils.md) |
+| getTextMessagesFromResponse | cs-portal | [cs-portal/remote-hooks-utils.md](cs-portal/remote-hooks-utils.md) |
+| glassedCSS | cs-core | [cs-core/app-remote-utils.md](cs-core/app-remote-utils.md) |
+| GlobalAction | cs-core | [cs-core/feedback-modals.md](cs-core/feedback-modals.md) |
+| GlobalBulkActions | cs-core | [cs-core/feedback-modals.md](cs-core/feedback-modals.md) |
+| GlobalBulkActionsProvider | cs-core | [cs-core/feedback-modals.md](cs-core/feedback-modals.md) |
+| globalCSS | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| globalShowToasts | cs-core | [cs-core/feedback-modals.md](cs-core/feedback-modals.md) |
+| Grid | sdds-cs | [sdds-cs/navigation-layout.md](sdds-cs/navigation-layout.md) |
+| h1 | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| h1Bold | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| h2 | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| h2Bold | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| h3 | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| h3Bold | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| h4 | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| h4Bold | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| h5 | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| h5Bold | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| Header | cs-portal | [cs-portal/layout.md](cs-portal/layout.md) |
+| HighlightComponent | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| HorizontalBar | cs-core | [cs-core/charts.md](cs-core/charts.md) |
+| HostProvider | cs-core | [cs-core/app-remote-utils.md](cs-core/app-remote-utils.md) |
+| Icon* | plasma-icons | [icons.md](icons.md) |
+| IconButton | sdds-cs | [sdds-cs/actions.md](sdds-cs/actions.md) |
+| IconTabContent | cs-core | [cs-core/navigation.md](cs-core/navigation.md) |
+| IconTabs | cs-core | [cs-core/navigation.md](cs-core/navigation.md) |
+| Image | sdds-cs | [sdds-cs/data-display.md](sdds-cs/data-display.md) |
+| importRemote | cs-core | [cs-core/app-remote-utils.md](cs-core/app-remote-utils.md) |
+| Indicator | sdds-cs | [sdds-cs/data-display.md](sdds-cs/data-display.md) |
+| infiniteQueryOptions | cs-core | [cs-core/table.md](cs-core/table.md) |
+| Informer | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| InlineList | cs-portal | [cs-portal/layout.md](cs-portal/layout.md) |
+| INVALID_VALUE | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| invalidateAttachmentTags | cs-portal | [cs-portal/widgets.md](cs-portal/widgets.md) |
+| invalidateBySubscribe | cs-portal | [cs-portal/app-shell.md](cs-portal/app-shell.md) |
+| Layout | cs-portal | [cs-portal/layout.md](cs-portal/layout.md) |
+| LazyComponent | cs-portal | [cs-portal/remote-hooks-utils.md](cs-portal/remote-hooks-utils.md) |
+| Line | cs-core | [cs-core/charts.md](cs-core/charts.md) |
+| Link | sdds-cs | [sdds-cs/actions.md](sdds-cs/actions.md) |
+| LinkedDocs | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| Loader | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| LoaderPage | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| MessageView | cs-portal | [cs-portal/layout.md](cs-portal/layout.md) |
+| MIN_DESKTOP | cs-core | [cs-core/app-remote-utils.md](cs-core/app-remote-utils.md) |
+| MIN_TABLET | cs-core | [cs-core/app-remote-utils.md](cs-core/app-remote-utils.md) |
+| MobileModal | cs-core | [cs-core/feedback-modals.md](cs-core/feedback-modals.md) |
+| Modal | cs-core | [cs-core/feedback-modals.md](cs-core/feedback-modals.md) |
+| Modal | sdds-cs | [sdds-cs/feedback-overlays.md](sdds-cs/feedback-overlays.md) |
+| ModalRegistryProvider | cs-portal | [cs-portal/app-shell.md](cs-portal/app-shell.md) |
+| MultiAttachment | cs-portal | [cs-portal/widgets.md](cs-portal/widgets.md) |
+| MultiDisplayLink | cs-portal | [cs-portal/layout.md](cs-portal/layout.md) |
+| MultiDisplayText | cs-portal | [cs-portal/layout.md](cs-portal/layout.md) |
+| MultiRegistryPage | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| MultiSegments | cs-core | [cs-core/navigation.md](cs-core/navigation.md) |
+| MultiValueLink | cs-portal | [cs-portal/layout.md](cs-portal/layout.md) |
+| MultiValueText | cs-portal | [cs-portal/layout.md](cs-portal/layout.md) |
+| MutationAutocomplete | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| MutationCheckbox | cs-core | [cs-core/forms-inputs.md](cs-core/forms-inputs.md) |
+| MutationCheckboxGroup | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| MutationCombobox | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| MutationDatePicker | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| MutationDatePickerRange | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| MutationMask | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| MutationNumberFormat | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| MutationNumberInput | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| MutationRadioGroup | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| MutationSelect | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| MutationSubmit | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| MutationSwitch | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| MutationTextArea | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| MutationTextField | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| MutationTreeCheckbox | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| MutationUploadSet | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| navigateFallback | cs-core | [cs-core/navigation.md](cs-core/navigation.md) |
+| NO_DATA_VALUE | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| NumberInput | sdds-cs | [sdds-cs/inputs-forms.md](sdds-cs/inputs-forms.md) |
+| Overlay | cs-core | [cs-core/feedback-modals.md](cs-core/feedback-modals.md) |
+| Overlay | sdds-cs | [sdds-cs/feedback-overlays.md](sdds-cs/feedback-overlays.md) |
+| p13nApi | cs-core | [cs-core/app-remote-utils.md](cs-core/app-remote-utils.md) |
+| Page | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| PageHeader | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| PageHeaderDetail | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| PageHeaderDetailGroup | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| Pagination | sdds-cs | [sdds-cs/navigation-layout.md](sdds-cs/navigation-layout.md) |
+| Paper | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| PaperCard | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| PaperCardElement | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| PaperCardElementCatalog | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| parseField | cs-portal | [cs-portal/remote-hooks-utils.md](cs-portal/remote-hooks-utils.md) |
+| PdfHighlighter | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| PdfViewer | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| Pie | cs-core | [cs-core/charts.md](cs-core/charts.md) |
+| Popover | cs-core | [cs-core/feedback-modals.md](cs-core/feedback-modals.md) |
+| Popover | sdds-cs | [sdds-cs/feedback-overlays.md](sdds-cs/feedback-overlays.md) |
+| PopoverFrame | cs-core | [cs-core/feedback-modals.md](cs-core/feedback-modals.md) |
+| Popup | sdds-cs | [sdds-cs/feedback-overlays.md](sdds-cs/feedback-overlays.md) |
+| Portal | sdds-cs | [sdds-cs/feedback-overlays.md](sdds-cs/feedback-overlays.md) |
+| price | sdds-cs | [sdds-cs/data-display.md](sdds-cs/data-display.md) |
+| progress | sdds-cs | [sdds-cs/data-display.md](sdds-cs/data-display.md) |
+| ProtectedRoute | cs-portal | [cs-portal/app-shell.md](cs-portal/app-shell.md) |
+| Radiobox | sdds-cs | [sdds-cs/inputs-forms.md](sdds-cs/inputs-forms.md) |
+| Range | sdds-cs | [sdds-cs/inputs-forms.md](sdds-cs/inputs-forms.md) |
+| RectSkeleton | sdds-cs | [sdds-cs/data-display.md](sdds-cs/data-display.md) |
+| RegistryPage | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| RemoteComponent | cs-portal | [cs-portal/remote-hooks-utils.md](cs-portal/remote-hooks-utils.md) |
+| removeDraggableRowsItem | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| RenderItem | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| Row | sdds-cs | [sdds-cs/navigation-layout.md](sdds-cs/navigation-layout.md) |
+| SearchHelpers | cs-core | [cs-core/feedback-modals.md](cs-core/feedback-modals.md) |
+| SearchModal | cs-core | [cs-core/feedback-modals.md](cs-core/feedback-modals.md) |
+| Segment | sdds-cs | [sdds-cs/actions.md](sdds-cs/actions.md) |
+| SegmentGroup | sdds-cs | [sdds-cs/actions.md](sdds-cs/actions.md) |
+| SegmentItem | sdds-cs | [sdds-cs/actions.md](sdds-cs/actions.md) |
+| SegmentProvider | cs-core | [cs-core/navigation.md](cs-core/navigation.md) |
+| SegmentProvider | sdds-cs | [sdds-cs/actions.md](sdds-cs/actions.md) |
+| Segments | cs-core | [cs-core/navigation.md](cs-core/navigation.md) |
+| setTopDocument | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| Sheet | sdds-cs | [sdds-cs/feedback-overlays.md](sdds-cs/feedback-overlays.md) |
+| showToast | cs-core | [cs-core/feedback-modals.md](cs-core/feedback-modals.md) |
+| Sider | cs-portal | [cs-portal/layout.md](cs-portal/layout.md) |
+| SLA | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| Slider | sdds-cs | [sdds-cs/inputs-forms.md](sdds-cs/inputs-forms.md) |
+| SmartPdfViewer | cs-portal | [cs-portal/widgets.md](cs-portal/widgets.md) |
+| SmartStatusTrack | cs-portal | [cs-portal/widgets.md](cs-portal/widgets.md) |
+| SmartUploadSet | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| Spinner | sdds-cs | [sdds-cs/data-display.md](sdds-cs/data-display.md) |
+| SplitContainer | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| Spoiler | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| StandAloneWrapper | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| StatusPage | cs-portal | [cs-portal/layout.md](cs-portal/layout.md) |
+| StatusTrack | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| Steps | sdds-cs | [sdds-cs/data-display.md](sdds-cs/data-display.md) |
+| Switch | sdds-cs | [sdds-cs/inputs-forms.md](sdds-cs/inputs-forms.md) |
+| TabContent | cs-core | [cs-core/navigation.md](cs-core/navigation.md) |
+| TabItem | sdds-cs | [sdds-cs/navigation-layout.md](sdds-cs/navigation-layout.md) |
+| Table | cs-core | [cs-core/table.md](cs-core/table.md) |
+| Table | sdds-cs | [sdds-cs/data-display.md](sdds-cs/data-display.md) |
+| TableFilterSegmentsItem | cs-core | [cs-core/table.md](cs-core/table.md) |
+| TableGlobalFilter | cs-core | [cs-core/table.md](cs-core/table.md) |
+| TableMultiQuickFilters | cs-core | [cs-core/table.md](cs-core/table.md) |
+| tableQueryBuilder | cs-core | [cs-core/table.md](cs-core/table.md) |
+| TabPage | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| Tabs | cs-core | [cs-core/navigation.md](cs-core/navigation.md) |
+| Tabs | sdds-cs | [sdds-cs/navigation-layout.md](sdds-cs/navigation-layout.md) |
+| TaskModal | cs-core | [cs-core/feedback-modals.md](cs-core/feedback-modals.md) |
+| TextCopyButton | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| textL | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| textLBold | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| textM | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| textMBold | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| TextMenu | cs-core | [cs-core/navigation.md](cs-core/navigation.md) |
+| textS | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| textSBold | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| TextSkeleton | sdds-cs | [sdds-cs/data-display.md](sdds-cs/data-display.md) |
+| textXS | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| textXSBold | sdds-cs (pinned) | [sdds-cs/typography-tokens.md](sdds-cs/typography-tokens.md) |
+| Thread | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| Tile | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| TileContainer | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| TimePicker | sdds-cs | [sdds-cs/inputs-forms.md](sdds-cs/inputs-forms.md) |
+| Toast | sdds-cs | [sdds-cs/feedback-overlays.md](sdds-cs/feedback-overlays.md) |
+| Tooltip | sdds-cs | [sdds-cs/feedback-overlays.md](sdds-cs/feedback-overlays.md) |
+| TotalAmountCard | cs-portal | [cs-portal/layout.md](cs-portal/layout.md) |
+| Tracker | cs-portal | [cs-portal/widgets.md](cs-portal/widgets.md) |
+| Tree | sdds-cs | [sdds-cs/data-display.md](sdds-cs/data-display.md) |
+| UploadList | cs-core | [cs-core/forms-inputs.md](cs-core/forms-inputs.md) |
+| UploadSet | cs-core | [cs-core/forms-inputs.md](cs-core/forms-inputs.md) |
+| useAction | cs-portal | [cs-portal/remote-hooks-utils.md](cs-portal/remote-hooks-utils.md) |
+| useActionTrigger | cs-portal | [cs-portal/remote-hooks-utils.md](cs-portal/remote-hooks-utils.md) |
+| useCloseModal | cs-portal | [cs-portal/app-shell.md](cs-portal/app-shell.md) |
+| useConfirm | cs-core | [cs-core/feedback-modals.md](cs-core/feedback-modals.md) |
+| useController | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| useExternalNavigate | cs-core | [cs-core/navigation.md](cs-core/navigation.md) |
+| useFieldArray | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| useForm | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| useFormContext | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| useFormState | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| useGlobalBulkActions | cs-core | [cs-core/feedback-modals.md](cs-core/feedback-modals.md) |
+| useHost | cs-core | [cs-core/app-remote-utils.md](cs-core/app-remote-utils.md) |
+| useIsModalOpened | cs-portal | [cs-portal/app-shell.md](cs-portal/app-shell.md) |
+| useMutationMessages | cs-core | [cs-core/forms-inputs.md](cs-core/forms-inputs.md) |
+| useMutationSubmit | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| useOpenModal | cs-portal | [cs-portal/app-shell.md](cs-portal/app-shell.md) |
+| UserProvider | cs-portal | [cs-portal/app-shell.md](cs-portal/app-shell.md) |
+| useSegment | cs-core | [cs-core/navigation.md](cs-core/navigation.md) |
+| useSegment | sdds-cs | [sdds-cs/actions.md](sdds-cs/actions.md) |
+| useSelectItems | cs-portal | [cs-portal/remote-hooks-utils.md](cs-portal/remote-hooks-utils.md) |
+| useSmartTable | cs-core | [cs-core/table.md](cs-core/table.md) |
+| useTabContent | cs-core | [cs-core/navigation.md](cs-core/navigation.md) |
+| useTable | cs-core | [cs-core/table.md](cs-core/table.md) |
+| useUser | cs-portal | [cs-portal/app-shell.md](cs-portal/app-shell.md) |
+| useUserType | cs-portal | [cs-portal/app-shell.md](cs-portal/app-shell.md) |
+| useWatch | cs-portal | [cs-portal/forms-mutations.md](cs-portal/forms-mutations.md) |
+| ValueBoolean | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| ValueDate | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| ValueDateRange | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| ValueDateTime | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| ValueLink | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| ValueNumber | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| ValuePercent | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| ValuePrice | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| ValueText | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| ValueTime | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| ValueTimeRange | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| ValueUnit | cs-core | [cs-core/data-display.md](cs-core/data-display.md) |
+| VerticalBar | cs-core | [cs-core/charts.md](cs-core/charts.md) |
+| ViewContainer | sdds-cs | [sdds-cs/navigation-layout.md](sdds-cs/navigation-layout.md) |
+| WidgetCounter | cs-portal | [cs-portal/widgets.md](cs-portal/widgets.md) |
+| WidgetErrorFallback | cs-portal | [cs-portal/layout.md](cs-portal/layout.md) |
+| WidgetHorizontalBar | cs-core | [cs-core/charts.md](cs-core/charts.md) |
+| WidgetHorizontalBarChart | cs-portal | [cs-portal/widgets.md](cs-portal/widgets.md) |
+| WidgetLine | cs-core | [cs-core/charts.md](cs-core/charts.md) |
+| WidgetPaper | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |
+| WidgetPie | cs-core | [cs-core/charts.md](cs-core/charts.md) |
+| WidgetPieChart | cs-portal | [cs-portal/widgets.md](cs-portal/widgets.md) |
+| WidgetStackedHorizontalBar | cs-core | [cs-core/charts.md](cs-core/charts.md) |
+| WidgetVerticalBar | cs-core | [cs-core/charts.md](cs-core/charts.md) |
+| withReduxProvider | cs-portal | [cs-portal/app-shell.md](cs-portal/app-shell.md) |
+| withSkeleton | sdds-cs | [sdds-cs/data-display.md](sdds-cs/data-display.md) |
+| WizardPage | cs-core | [cs-core/pages-layouts.md](cs-core/pages-layouts.md) |

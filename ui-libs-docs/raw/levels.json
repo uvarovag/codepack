@@ -1,0 +1,2630 @@
+{
+ "generatedAt": "2026-09-22T14:08:34.576Z",
+ "sddsScraped": true,
+ "counts": {
+  "csPortalExplicit": 138,
+  "csCoreOnly": 152,
+  "shadowed": 30,
+  "collisions": 0,
+  "appImportsPortal": 97,
+  "appImportsSdds": 18,
+  "appImportsIcons": 0,
+  "unassigned": 0
+ },
+ "symbols": [
+  {
+   "symbol": "bodyL",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "bodyLBold",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "bodyM",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "bodyMBold",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "bodyS",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "bodySBold",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "bodyXS",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "bodyXSBold",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "bodyXXS",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "bodyXXSBold",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "dsplL",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "dsplLBold",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "dsplM",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "dsplMBold",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "dsplS",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "dsplSBold",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "h1",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "h1Bold",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "h2",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "h2Bold",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "h3",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "h3Bold",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "h4",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "h4Bold",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "h5",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "h5Bold",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "textL",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "textLBold",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "textM",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "textMBold",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "textS",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "textSBold",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "textXS",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "textXSBold",
+   "origin": "sdds-cs",
+   "fromSpec": "@salutejs/sdds-cs",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "sdds-cs/typography-tokens.md"
+  },
+  {
+   "symbol": "Controller",
+   "origin": "react-hook-form",
+   "fromSpec": "react-hook-form",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "FormProvider",
+   "origin": "react-hook-form",
+   "fromSpec": "react-hook-form",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "useForm",
+   "origin": "react-hook-form",
+   "fromSpec": "react-hook-form",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "useFieldArray",
+   "origin": "react-hook-form",
+   "fromSpec": "react-hook-form",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "useController",
+   "origin": "react-hook-form",
+   "fromSpec": "react-hook-form",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "useFormContext",
+   "origin": "react-hook-form",
+   "fromSpec": "react-hook-form",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "useFormState",
+   "origin": "react-hook-form",
+   "fromSpec": "react-hook-form",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "useWatch",
+   "origin": "react-hook-form",
+   "fromSpec": "react-hook-form",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "Badge",
+   "origin": "cs-core",
+   "fromSpec": "@sber-front-cs-core/cs-core",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "Combobox",
+   "origin": "cs-core",
+   "fromSpec": "@sber-front-cs-core/cs-core",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-core/forms-inputs.md"
+  },
+  {
+   "symbol": "Popover",
+   "origin": "cs-core",
+   "fromSpec": "@sber-front-cs-core/cs-core",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-core/feedback-modals.md"
+  },
+  {
+   "symbol": "Overlay",
+   "origin": "cs-core",
+   "fromSpec": "@sber-front-cs-core/cs-core",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-core/feedback-modals.md"
+  },
+  {
+   "symbol": "Modal",
+   "origin": "cs-core",
+   "fromSpec": "@sber-front-cs-core/cs-core",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-core/feedback-modals.md"
+  },
+  {
+   "symbol": "Tabs",
+   "origin": "cs-core",
+   "fromSpec": "@sber-front-cs-core/cs-core",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-core/navigation.md"
+  },
+  {
+   "symbol": "showToast",
+   "origin": "cs-core",
+   "fromSpec": "@sber-front-cs-core/cs-core",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-core/feedback-modals.md"
+  },
+  {
+   "symbol": "Table",
+   "origin": "cs-core",
+   "fromSpec": "@sber-front-cs-core/cs-core",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-core/table.md"
+  },
+  {
+   "symbol": "SegmentProvider",
+   "origin": "cs-core",
+   "fromSpec": "@sber-front-cs-core/cs-core",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-core/navigation.md"
+  },
+  {
+   "symbol": "useSegment",
+   "origin": "cs-core",
+   "fromSpec": "@sber-front-cs-core/cs-core",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-core/navigation.md"
+  },
+  {
+   "symbol": "Box",
+   "origin": "cs-portal",
+   "fromSpec": "./components/Box",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-portal/layout.md"
+  },
+  {
+   "symbol": "StatusPage",
+   "origin": "cs-portal",
+   "fromSpec": "./components/StatusPage",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-portal/layout.md"
+  },
+  {
+   "symbol": "CollapsingPageHeader",
+   "origin": "cs-portal",
+   "fromSpec": "./components/CollapsingPageHeader",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/layout.md"
+  },
+  {
+   "symbol": "TotalAmountCard",
+   "origin": "cs-portal",
+   "fromSpec": "./components/TotalAmountCard",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/layout.md"
+  },
+  {
+   "symbol": "ErrorFallback",
+   "origin": "cs-portal",
+   "fromSpec": "./components/ErrorFallback",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/layout.md"
+  },
+  {
+   "symbol": "WidgetErrorFallback",
+   "origin": "cs-portal",
+   "fromSpec": "./components/ErrorFallback",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/layout.md"
+  },
+  {
+   "symbol": "Content",
+   "origin": "cs-portal",
+   "fromSpec": "./components/layout/Content",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/layout.md"
+  },
+  {
+   "symbol": "Footer",
+   "origin": "cs-portal",
+   "fromSpec": "./components/layout/Footer",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/layout.md"
+  },
+  {
+   "symbol": "Header",
+   "origin": "cs-portal",
+   "fromSpec": "./components/layout/Header",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/layout.md"
+  },
+  {
+   "symbol": "Layout",
+   "origin": "cs-portal",
+   "fromSpec": "./components/layout/Layout",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/layout.md"
+  },
+  {
+   "symbol": "Sider",
+   "origin": "cs-portal",
+   "fromSpec": "./components/layout/Sider",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/layout.md"
+  },
+  {
+   "symbol": "Drawer",
+   "origin": "cs-portal",
+   "fromSpec": "./components/Drawer",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/layout.md"
+  },
+  {
+   "symbol": "MessageView",
+   "origin": "cs-portal",
+   "fromSpec": "./components/MessageView",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/layout.md"
+  },
+  {
+   "symbol": "InlineList",
+   "origin": "cs-portal",
+   "fromSpec": "./components/InlineList",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/layout.md"
+  },
+  {
+   "symbol": "ProtectedRoute",
+   "origin": "cs-portal",
+   "fromSpec": "./components/ProtectedRoute",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/app-shell.md"
+  },
+  {
+   "symbol": "WidgetCounter",
+   "origin": "cs-portal",
+   "fromSpec": "./components/widgets/WidgetCounter",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/widgets.md"
+  },
+  {
+   "symbol": "WidgetHorizontalBarChart",
+   "origin": "cs-portal",
+   "fromSpec": "./components/widgets/WidgetHorizontalBarChart",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/widgets.md"
+  },
+  {
+   "symbol": "WidgetPieChart",
+   "origin": "cs-portal",
+   "fromSpec": "./components/widgets/WidgetPieChart",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/widgets.md"
+  },
+  {
+   "symbol": "MultiValueText",
+   "origin": "cs-portal",
+   "fromSpec": "./components/multi",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/layout.md"
+  },
+  {
+   "symbol": "MultiDisplayText",
+   "origin": "cs-portal",
+   "fromSpec": "./components/multi",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/layout.md"
+  },
+  {
+   "symbol": "MultiDisplayLink",
+   "origin": "cs-portal",
+   "fromSpec": "./components/multi",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/layout.md"
+  },
+  {
+   "symbol": "MultiValueLink",
+   "origin": "cs-portal",
+   "fromSpec": "./components/multi",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/layout.md"
+  },
+  {
+   "symbol": "useMutationSubmit",
+   "origin": "cs-portal",
+   "fromSpec": "./mutations/hooks/useMutationSubmit",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "MutationAutocomplete",
+   "origin": "cs-portal",
+   "fromSpec": "./mutations/components/MutationAutocomplete",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "MutationCheckboxGroup",
+   "origin": "cs-portal",
+   "fromSpec": "./mutations/components/MutationCheckboxGroup",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "MutationCombobox",
+   "origin": "cs-portal",
+   "fromSpec": "./mutations/components/MutationCombobox",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "MutationDatePicker",
+   "origin": "cs-portal",
+   "fromSpec": "./mutations/components/MutationDatePickers",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "MutationDatePickerRange",
+   "origin": "cs-portal",
+   "fromSpec": "./mutations/components/MutationDatePickers",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "MutationMask",
+   "origin": "cs-portal",
+   "fromSpec": "./mutations/components/MutationMask",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "MutationNumberFormat",
+   "origin": "cs-portal",
+   "fromSpec": "./mutations/components/MutationNumberFormat",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "MutationNumberInput",
+   "origin": "cs-portal",
+   "fromSpec": "./mutations/components/MutationNumberInput",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "MutationRadioGroup",
+   "origin": "cs-portal",
+   "fromSpec": "./mutations/components/MutationRadioGroup",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "MutationSelect",
+   "origin": "cs-portal",
+   "fromSpec": "./mutations/components/MutationSelect",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "MutationSubmit",
+   "origin": "cs-portal",
+   "fromSpec": "./mutations/components/MutationSubmit",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "MutationSwitch",
+   "origin": "cs-portal",
+   "fromSpec": "./mutations/components/MutationSwitch",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "MutationTextArea",
+   "origin": "cs-portal",
+   "fromSpec": "./mutations/components/MutationTextArea",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "MutationTextField",
+   "origin": "cs-portal",
+   "fromSpec": "./mutations/components/MutationTextField",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "MutationTreeCheckbox",
+   "origin": "cs-portal",
+   "fromSpec": "./mutations/components/MutationTreeCheckbox",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "MutationUploadSet",
+   "origin": "cs-portal",
+   "fromSpec": "./mutations/components/MutationUploadSet",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "FC_HIDDEN",
+   "origin": "cs-portal",
+   "fromSpec": "./mutations/constants",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "FC_READONLY",
+   "origin": "cs-portal",
+   "fromSpec": "./mutations/constants",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "FC_OPTIONAL",
+   "origin": "cs-portal",
+   "fromSpec": "./mutations/constants",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "FC_MANDATORY",
+   "origin": "cs-portal",
+   "fromSpec": "./mutations/constants",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "SmartUploadSet",
+   "origin": "cs-portal",
+   "fromSpec": "./smarts/SmartUploadSet",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/forms-mutations.md"
+  },
+  {
+   "symbol": "SmartStatusTrack",
+   "origin": "cs-portal",
+   "fromSpec": "./smarts/SmartStatusTrack",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/widgets.md"
+  },
+  {
+   "symbol": "SmartPdfViewer",
+   "origin": "cs-portal",
+   "fromSpec": "./smarts/SmartPdfViewer",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/widgets.md"
+  },
+  {
+   "symbol": "EventDrawer",
+   "origin": "cs-portal",
+   "fromSpec": "./widgets/Event",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/widgets.md"
+  },
+  {
+   "symbol": "Event",
+   "origin": "cs-portal",
+   "fromSpec": "./widgets/Event",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/widgets.md"
+  },
+  {
+   "symbol": "Tracker",
+   "origin": "cs-portal",
+   "fromSpec": "./widgets/Tracker",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/widgets.md"
+  },
+  {
+   "symbol": "Attachment",
+   "origin": "cs-portal",
+   "fromSpec": "./widgets/attachment",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/widgets.md"
+  },
+  {
+   "symbol": "MultiAttachment",
+   "origin": "cs-portal",
+   "fromSpec": "./widgets/attachment",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/widgets.md"
+  },
+  {
+   "symbol": "invalidateAttachmentTags",
+   "origin": "cs-portal",
+   "fromSpec": "./widgets/attachment",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/widgets.md"
+  },
+  {
+   "symbol": "CommunicationDrawer",
+   "origin": "cs-portal",
+   "fromSpec": "./widgets/Communication",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/widgets.md"
+  },
+  {
+   "symbol": "DocChain",
+   "origin": "cs-portal",
+   "fromSpec": "./widgets/DocChain",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/widgets.md"
+  },
+  {
+   "symbol": "useSelectItems",
+   "origin": "cs-portal",
+   "fromSpec": "./hooks",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-portal/remote-hooks-utils.md"
+  },
+  {
+   "symbol": "useActionTrigger",
+   "origin": "cs-portal",
+   "fromSpec": "./hooks",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/remote-hooks-utils.md"
+  },
+  {
+   "symbol": "useAction",
+   "origin": "cs-portal",
+   "fromSpec": "./hooks",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-portal/remote-hooks-utils.md"
+  },
+  {
+   "symbol": "UserProvider",
+   "origin": "cs-portal",
+   "fromSpec": "./hooks",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/app-shell.md"
+  },
+  {
+   "symbol": "useUser",
+   "origin": "cs-portal",
+   "fromSpec": "./hooks",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/app-shell.md"
+  },
+  {
+   "symbol": "useUserType",
+   "origin": "cs-portal",
+   "fromSpec": "./hooks",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/app-shell.md"
+  },
+  {
+   "symbol": "getMessagesFromResponse",
+   "origin": "cs-portal",
+   "fromSpec": "./utils/responseMessages",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/remote-hooks-utils.md"
+  },
+  {
+   "symbol": "getTextFromMessage",
+   "origin": "cs-portal",
+   "fromSpec": "./utils/responseMessages",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/remote-hooks-utils.md"
+  },
+  {
+   "symbol": "getTextMessagesFromResponse",
+   "origin": "cs-portal",
+   "fromSpec": "./utils/responseMessages",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/remote-hooks-utils.md"
+  },
+  {
+   "symbol": "getNestedValue",
+   "origin": "cs-portal",
+   "fromSpec": "./utils/getNestedValue",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/remote-hooks-utils.md"
+  },
+  {
+   "symbol": "extractFilename",
+   "origin": "cs-portal",
+   "fromSpec": "./utils/extractFilename",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/remote-hooks-utils.md"
+  },
+  {
+   "symbol": "getFileExtension",
+   "origin": "cs-portal",
+   "fromSpec": "./utils/getFileExtension",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-portal/remote-hooks-utils.md"
+  },
+  {
+   "symbol": "createReduxStore",
+   "origin": "cs-portal",
+   "fromSpec": "./utils/createReduxStore",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-portal/app-shell.md"
+  },
+  {
+   "symbol": "parseField",
+   "origin": "cs-portal",
+   "fromSpec": "./utils/parseField",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/remote-hooks-utils.md"
+  },
+  {
+   "symbol": "buildFilters",
+   "origin": "cs-portal",
+   "fromSpec": "./utils/oDataQuery",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/remote-hooks-utils.md"
+  },
+  {
+   "symbol": "buildSorts",
+   "origin": "cs-portal",
+   "fromSpec": "./utils/oDataQuery",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/remote-hooks-utils.md"
+  },
+  {
+   "symbol": "withReduxProvider",
+   "origin": "cs-portal",
+   "fromSpec": "./providers",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-portal/app-shell.md"
+  },
+  {
+   "symbol": "createApp",
+   "origin": "cs-portal",
+   "fromSpec": "./app",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-portal/app-shell.md"
+  },
+  {
+   "symbol": "getNotificationClient",
+   "origin": "cs-portal",
+   "fromSpec": "./app",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/app-shell.md"
+  },
+  {
+   "symbol": "createWidgetCounter",
+   "origin": "cs-portal",
+   "fromSpec": "./app",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/widgets.md"
+  },
+  {
+   "symbol": "createWidgetPieChart",
+   "origin": "cs-portal",
+   "fromSpec": "./app",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/widgets.md"
+  },
+  {
+   "symbol": "createWidgetHorizontalBarChart",
+   "origin": "cs-portal",
+   "fromSpec": "./app",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/widgets.md"
+  },
+  {
+   "symbol": "createProtectedRouteMiddleware",
+   "origin": "cs-portal",
+   "fromSpec": "./app",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/app-shell.md"
+  },
+  {
+   "symbol": "createRemoteComponent",
+   "origin": "cs-portal",
+   "fromSpec": "./remote",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-portal/remote-hooks-utils.md"
+  },
+  {
+   "symbol": "RemoteComponent",
+   "origin": "cs-portal",
+   "fromSpec": "./remote",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-portal/remote-hooks-utils.md"
+  },
+  {
+   "symbol": "LazyComponent",
+   "origin": "cs-portal",
+   "fromSpec": "./remote",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/remote-hooks-utils.md"
+  },
+  {
+   "symbol": "createPubSupApi",
+   "origin": "cs-portal",
+   "fromSpec": "./websocket",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/app-shell.md"
+  },
+  {
+   "symbol": "invalidateBySubscribe",
+   "origin": "cs-portal",
+   "fromSpec": "./websocket",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/app-shell.md"
+  },
+  {
+   "symbol": "ModalRegistryProvider",
+   "origin": "cs-portal",
+   "fromSpec": "./modalRegistry",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/app-shell.md"
+  },
+  {
+   "symbol": "useCloseModal",
+   "origin": "cs-portal",
+   "fromSpec": "./modalRegistry",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/app-shell.md"
+  },
+  {
+   "symbol": "useOpenModal",
+   "origin": "cs-portal",
+   "fromSpec": "./modalRegistry",
+   "usedByApps": true,
+   "tier": "A",
+   "file": "cs-portal/app-shell.md"
+  },
+  {
+   "symbol": "useIsModalOpened",
+   "origin": "cs-portal",
+   "fromSpec": "./modalRegistry",
+   "usedByApps": false,
+   "tier": "A",
+   "file": "cs-portal/app-shell.md"
+  }
+ ],
+ "csCoreOnly": [
+  {
+   "symbol": "Chat",
+   "origin": "cs-core",
+   "fromSpec": "./components/Chat",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "StatusTrack",
+   "origin": "cs-core",
+   "fromSpec": "./components/StatusTrack",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "Paper",
+   "origin": "cs-core",
+   "fromSpec": "./layouts/Paper",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "Informer",
+   "origin": "cs-core",
+   "fromSpec": "./components/Informer",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "FlexBox",
+   "origin": "cs-core",
+   "fromSpec": "./layouts/FlexBox",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "FormFlex",
+   "origin": "cs-core",
+   "fromSpec": "./layouts/Form",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "FormGroupFlex",
+   "origin": "cs-core",
+   "fromSpec": "./layouts/Form",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "FormElementFlex",
+   "origin": "cs-core",
+   "fromSpec": "./layouts/Form",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "FormGrid",
+   "origin": "cs-core",
+   "fromSpec": "./layouts/Form",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "FormGroupGrid",
+   "origin": "cs-core",
+   "fromSpec": "./layouts/Form",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "FormElementGrid",
+   "origin": "cs-core",
+   "fromSpec": "./layouts/Form",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "PageHeader",
+   "origin": "cs-core",
+   "fromSpec": "./pages/PageHeader",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "PageHeaderDetail",
+   "origin": "cs-core",
+   "fromSpec": "./pages/PageHeader",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "PageHeaderDetailGroup",
+   "origin": "cs-core",
+   "fromSpec": "./pages/PageHeader",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "TabContent",
+   "origin": "cs-core",
+   "fromSpec": "./components/TabContent",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/navigation.md"
+  },
+  {
+   "symbol": "PdfViewer",
+   "origin": "cs-core",
+   "fromSpec": "./components/PdfViewer",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "PdfHighlighter",
+   "origin": "cs-core",
+   "fromSpec": "./components/PdfHighlighter",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "GlobalAction",
+   "origin": "cs-core",
+   "fromSpec": "./components/GlobalAction",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/feedback-modals.md"
+  },
+  {
+   "symbol": "SplitContainer",
+   "origin": "cs-core",
+   "fromSpec": "./pages/SplitContainer",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "Page",
+   "origin": "cs-core",
+   "fromSpec": "./pages/Page",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "TabPage",
+   "origin": "cs-core",
+   "fromSpec": "./pages/TabPage",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "MutationCheckbox",
+   "origin": "cs-core",
+   "fromSpec": "./components/mutation",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/forms-inputs.md"
+  },
+  {
+   "symbol": "MobileModal",
+   "origin": "cs-core",
+   "fromSpec": "./components/Modal",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/feedback-modals.md"
+  },
+  {
+   "symbol": "DataField",
+   "origin": "cs-core",
+   "fromSpec": "./components/DataField",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/forms-inputs.md"
+  },
+  {
+   "symbol": "FileUploader",
+   "origin": "cs-core",
+   "fromSpec": "./components/FileUploader",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/forms-inputs.md"
+  },
+  {
+   "symbol": "StandAloneWrapper",
+   "origin": "cs-core",
+   "fromSpec": "./layouts/StandAloneWrapper",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "globalCSS",
+   "origin": "cs-core",
+   "fromSpec": "./layouts/StandAloneWrapper",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "Spoiler",
+   "origin": "cs-core",
+   "fromSpec": "./components/Spoiler",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "EllipsisInfo",
+   "origin": "cs-core",
+   "fromSpec": "./components/EllipsisInfo",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "CSProvider",
+   "origin": "cs-core",
+   "fromSpec": "./layouts/CSProvider",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "ConfirmModal",
+   "origin": "cs-core",
+   "fromSpec": "./components/Confirm",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/feedback-modals.md"
+  },
+  {
+   "symbol": "ConfirmProvider",
+   "origin": "cs-core",
+   "fromSpec": "./components/Confirm",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/feedback-modals.md"
+  },
+  {
+   "symbol": "TextCopyButton",
+   "origin": "cs-core",
+   "fromSpec": "./components/TextCopyButton",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "BulkActions",
+   "origin": "cs-core",
+   "fromSpec": "./components/bulkActions",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/feedback-modals.md"
+  },
+  {
+   "symbol": "TextMenu",
+   "origin": "cs-core",
+   "fromSpec": "./navigations/TextMenu",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/navigation.md"
+  },
+  {
+   "symbol": "AnchorMenu",
+   "origin": "cs-core",
+   "fromSpec": "./navigations/AnchorMenu",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/navigation.md"
+  },
+  {
+   "symbol": "EmptyStates",
+   "origin": "cs-core",
+   "fromSpec": "./components/EmptyStates",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "LoaderPage",
+   "origin": "cs-core",
+   "fromSpec": "./pages/LoaderPage",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "EmptyPages",
+   "origin": "cs-core",
+   "fromSpec": "./pages/EmptyPages",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "Loader",
+   "origin": "cs-core",
+   "fromSpec": "./components/Loader",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "UploadList",
+   "origin": "cs-core",
+   "fromSpec": "./components/upload/UploadList",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/forms-inputs.md"
+  },
+  {
+   "symbol": "ClearButton",
+   "origin": "cs-core",
+   "fromSpec": "./components/ClearButton",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/feedback-modals.md"
+  },
+  {
+   "symbol": "EventsHistory",
+   "origin": "cs-core",
+   "fromSpec": "./components/EventsHistory",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "SLA",
+   "origin": "cs-core",
+   "fromSpec": "./components/SLA",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "UploadSet",
+   "origin": "cs-core",
+   "fromSpec": "./components/upload/UploadSet",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/forms-inputs.md"
+  },
+  {
+   "symbol": "Thread",
+   "origin": "cs-core",
+   "fromSpec": "./components/Thread",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "LinkedDocs",
+   "origin": "cs-core",
+   "fromSpec": "./components/LinkedDocs",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "PaperCard",
+   "origin": "cs-core",
+   "fromSpec": "./layouts/PaperCard",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "PaperCardElement",
+   "origin": "cs-core",
+   "fromSpec": "./layouts/PaperCard",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "PaperCardElementCatalog",
+   "origin": "cs-core",
+   "fromSpec": "./layouts/PaperCard",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "PopoverFrame",
+   "origin": "cs-core",
+   "fromSpec": "./components/Popover/PopoverFrame",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/feedback-modals.md"
+  },
+  {
+   "symbol": "RenderItem",
+   "origin": "cs-core",
+   "fromSpec": "./components/RenderItem",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "Tile",
+   "origin": "cs-core",
+   "fromSpec": "./components/Tile",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "TileContainer",
+   "origin": "cs-core",
+   "fromSpec": "./components/Tile",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "DisplayBoolean",
+   "origin": "cs-core",
+   "fromSpec": "./components/display",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "DisplayDate",
+   "origin": "cs-core",
+   "fromSpec": "./components/display",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "DisplayDateRange",
+   "origin": "cs-core",
+   "fromSpec": "./components/display",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "DisplayDateTime",
+   "origin": "cs-core",
+   "fromSpec": "./components/display",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "DisplayLink",
+   "origin": "cs-core",
+   "fromSpec": "./components/display",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "DisplayNumber",
+   "origin": "cs-core",
+   "fromSpec": "./components/display",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "DisplayPercent",
+   "origin": "cs-core",
+   "fromSpec": "./components/display",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "DisplayPrice",
+   "origin": "cs-core",
+   "fromSpec": "./components/display",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "DisplayText",
+   "origin": "cs-core",
+   "fromSpec": "./components/display",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "DisplayTime",
+   "origin": "cs-core",
+   "fromSpec": "./components/display",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "DisplayTimeRange",
+   "origin": "cs-core",
+   "fromSpec": "./components/display",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "DisplayUnit",
+   "origin": "cs-core",
+   "fromSpec": "./components/display",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "ValueBoolean",
+   "origin": "cs-core",
+   "fromSpec": "./components/display",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "ValueDate",
+   "origin": "cs-core",
+   "fromSpec": "./components/display",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "ValueDateRange",
+   "origin": "cs-core",
+   "fromSpec": "./components/display",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "ValueDateTime",
+   "origin": "cs-core",
+   "fromSpec": "./components/display",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "ValueLink",
+   "origin": "cs-core",
+   "fromSpec": "./components/display",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "ValueNumber",
+   "origin": "cs-core",
+   "fromSpec": "./components/display",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "ValuePercent",
+   "origin": "cs-core",
+   "fromSpec": "./components/display",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "ValuePrice",
+   "origin": "cs-core",
+   "fromSpec": "./components/display",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "ValueText",
+   "origin": "cs-core",
+   "fromSpec": "./components/display",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "ValueTime",
+   "origin": "cs-core",
+   "fromSpec": "./components/display",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "ValueTimeRange",
+   "origin": "cs-core",
+   "fromSpec": "./components/display",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "ValueUnit",
+   "origin": "cs-core",
+   "fromSpec": "./components/display",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "GlobalBulkActions",
+   "origin": "cs-core",
+   "fromSpec": "./components/bulkActions",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/feedback-modals.md"
+  },
+  {
+   "symbol": "GlobalBulkActionsProvider",
+   "origin": "cs-core",
+   "fromSpec": "./components/bulkActions",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/feedback-modals.md"
+  },
+  {
+   "symbol": "RegistryPage",
+   "origin": "cs-core",
+   "fromSpec": "./pages/RegistryPage",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "MultiRegistryPage",
+   "origin": "cs-core",
+   "fromSpec": "./pages/MultiRegistryPage",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "TaskModal",
+   "origin": "cs-core",
+   "fromSpec": "./components/TaskModal",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/feedback-modals.md"
+  },
+  {
+   "symbol": "Segments",
+   "origin": "cs-core",
+   "fromSpec": "./components/segments",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/navigation.md"
+  },
+  {
+   "symbol": "MultiSegments",
+   "origin": "cs-core",
+   "fromSpec": "./components/segments",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/navigation.md"
+  },
+  {
+   "symbol": "SearchModal",
+   "origin": "cs-core",
+   "fromSpec": "./components/SearchModal",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/feedback-modals.md"
+  },
+  {
+   "symbol": "EntitySearch",
+   "origin": "cs-core",
+   "fromSpec": "./components/EntitySearch",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/feedback-modals.md"
+  },
+  {
+   "symbol": "SearchHelpers",
+   "origin": "cs-core",
+   "fromSpec": "./components/SearchHelpers",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/feedback-modals.md"
+  },
+  {
+   "symbol": "DraggableRows",
+   "origin": "cs-core",
+   "fromSpec": "./components/DraggableRows",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "AccordionContent",
+   "origin": "cs-core",
+   "fromSpec": "./components/AccordionContentLegacy",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "AccordionContentNew",
+   "origin": "cs-core",
+   "fromSpec": "./components/AccordionContent",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "IconTabs",
+   "origin": "cs-core",
+   "fromSpec": "./components/IconTabs",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/navigation.md"
+  },
+  {
+   "symbol": "IconTabContent",
+   "origin": "cs-core",
+   "fromSpec": "./components/IconTabContent",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/navigation.md"
+  },
+  {
+   "symbol": "AccordionPage",
+   "origin": "cs-core",
+   "fromSpec": "./pages/AccordionPageLegacy",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "AccordionPageNew",
+   "origin": "cs-core",
+   "fromSpec": "./pages/AccordionPage",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "WizardPage",
+   "origin": "cs-core",
+   "fromSpec": "./pages/WizardPage",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "useTable",
+   "origin": "cs-core",
+   "fromSpec": "./table",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/table.md"
+  },
+  {
+   "symbol": "useSmartTable",
+   "origin": "cs-core",
+   "fromSpec": "./table",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/table.md"
+  },
+  {
+   "symbol": "infiniteQueryOptions",
+   "origin": "cs-core",
+   "fromSpec": "./table",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/table.md"
+  },
+  {
+   "symbol": "tableQueryBuilder",
+   "origin": "cs-core",
+   "fromSpec": "./table",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/table.md"
+  },
+  {
+   "symbol": "TableMultiQuickFilters",
+   "origin": "cs-core",
+   "fromSpec": "./table",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/table.md"
+  },
+  {
+   "symbol": "TableGlobalFilter",
+   "origin": "cs-core",
+   "fromSpec": "./table",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/table.md"
+  },
+  {
+   "symbol": "TableFilterSegmentsItem",
+   "origin": "cs-core",
+   "fromSpec": "./table",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/table.md"
+  },
+  {
+   "symbol": "HighlightComponent",
+   "origin": "cs-core",
+   "fromSpec": "./components/Highlight",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "WidgetPaper",
+   "origin": "cs-core",
+   "fromSpec": "./widgets/WidgetPaper",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "WidgetPie",
+   "origin": "cs-core",
+   "fromSpec": "./widgets/WidgetPie",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/charts.md"
+  },
+  {
+   "symbol": "WidgetHorizontalBar",
+   "origin": "cs-core",
+   "fromSpec": "./widgets/WidgetHorizontalBar",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/charts.md"
+  },
+  {
+   "symbol": "WidgetVerticalBar",
+   "origin": "cs-core",
+   "fromSpec": "./widgets/WidgetVerticalBar",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/charts.md"
+  },
+  {
+   "symbol": "WidgetStackedHorizontalBar",
+   "origin": "cs-core",
+   "fromSpec": "./widgets/WidgetStackedHorizontalBar",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/charts.md"
+  },
+  {
+   "symbol": "Pie",
+   "origin": "cs-core",
+   "fromSpec": "./widgets/Pie",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/charts.md"
+  },
+  {
+   "symbol": "HorizontalBar",
+   "origin": "cs-core",
+   "fromSpec": "./widgets/bars/HorizontalBar",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/charts.md"
+  },
+  {
+   "symbol": "VerticalBar",
+   "origin": "cs-core",
+   "fromSpec": "./widgets/bars/VerticalBar",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/charts.md"
+  },
+  {
+   "symbol": "Line",
+   "origin": "cs-core",
+   "fromSpec": "./widgets/Line",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/charts.md"
+  },
+  {
+   "symbol": "WidgetLine",
+   "origin": "cs-core",
+   "fromSpec": "./widgets/WidgetLine",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/charts.md"
+  },
+  {
+   "symbol": "createRemoteApp",
+   "origin": "cs-core",
+   "fromSpec": "./hocs/createRemoteApp",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/app-remote-utils.md"
+  },
+  {
+   "symbol": "useTabContent",
+   "origin": "cs-core",
+   "fromSpec": "./components/TabContent",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/navigation.md"
+  },
+  {
+   "symbol": "useConfirm",
+   "origin": "cs-core",
+   "fromSpec": "./hooks/notifications",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/feedback-modals.md"
+  },
+  {
+   "symbol": "useMutationMessages",
+   "origin": "cs-core",
+   "fromSpec": "./hooks/useMutationMessages",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/forms-inputs.md"
+  },
+  {
+   "symbol": "useExternalNavigate",
+   "origin": "cs-core",
+   "fromSpec": "./hooks/useExternalNavigate",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/navigation.md"
+  },
+  {
+   "symbol": "ExternalNavigationProvider",
+   "origin": "cs-core",
+   "fromSpec": "./hooks/useExternalNavigate",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/navigation.md"
+  },
+  {
+   "symbol": "navigateFallback",
+   "origin": "cs-core",
+   "fromSpec": "./hooks/useExternalNavigate",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/navigation.md"
+  },
+  {
+   "symbol": "useGlobalBulkActions",
+   "origin": "cs-core",
+   "fromSpec": "./components/bulkActions",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/feedback-modals.md"
+  },
+  {
+   "symbol": "globalShowToasts",
+   "origin": "cs-core",
+   "fromSpec": "./components/bulkActions",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/feedback-modals.md"
+  },
+  {
+   "symbol": "useHost",
+   "origin": "cs-core",
+   "fromSpec": "./hooks/useHost",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/app-remote-utils.md"
+  },
+  {
+   "symbol": "HostProvider",
+   "origin": "cs-core",
+   "fromSpec": "./hooks/useHost",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/app-remote-utils.md"
+  },
+  {
+   "symbol": "getBorderRadiusSize",
+   "origin": "cs-core",
+   "fromSpec": "./utils",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/app-remote-utils.md"
+  },
+  {
+   "symbol": "getIsRequired",
+   "origin": "cs-core",
+   "fromSpec": "./utils",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/forms-inputs.md"
+  },
+  {
+   "symbol": "CURRENCY_SYMBOL",
+   "origin": "cs-core",
+   "fromSpec": "./utils/formatters",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "FALLBACK_VALUE",
+   "origin": "cs-core",
+   "fromSpec": "./utils/formatters",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "FRACTION_DIGITS",
+   "origin": "cs-core",
+   "fromSpec": "./utils/formatters",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "INVALID_VALUE",
+   "origin": "cs-core",
+   "fromSpec": "./utils/formatters",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "NO_DATA_VALUE",
+   "origin": "cs-core",
+   "fromSpec": "./utils/formatters",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "format",
+   "origin": "cs-core",
+   "fromSpec": "./utils/formatters",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "formatBoolean",
+   "origin": "cs-core",
+   "fromSpec": "./utils/formatters",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "formatDate",
+   "origin": "cs-core",
+   "fromSpec": "./utils/formatters",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "formatDateRange",
+   "origin": "cs-core",
+   "fromSpec": "./utils/formatters",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "formatDateTime",
+   "origin": "cs-core",
+   "fromSpec": "./utils/formatters",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "formatNumber",
+   "origin": "cs-core",
+   "fromSpec": "./utils/formatters",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "formatTime",
+   "origin": "cs-core",
+   "fromSpec": "./utils/formatters",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "formatTimeRange",
+   "origin": "cs-core",
+   "fromSpec": "./utils/formatters",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "formatRange",
+   "origin": "cs-core",
+   "fromSpec": "./utils/formatters",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "downloadBlob",
+   "origin": "cs-core",
+   "fromSpec": "./utils",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-portal/remote-hooks-utils.md"
+  },
+  {
+   "symbol": "createMultiRegistryItem",
+   "origin": "cs-core",
+   "fromSpec": "./pages/MultiRegistryPage",
+   "tier": "A",
+   "usedByApps": false,
+   "file": "cs-core/pages-layouts.md"
+  },
+  {
+   "symbol": "importRemote",
+   "origin": "cs-core",
+   "fromSpec": "./utils",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/app-remote-utils.md"
+  },
+  {
+   "symbol": "MIN_TABLET",
+   "origin": "cs-core",
+   "fromSpec": "./constants",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/app-remote-utils.md"
+  },
+  {
+   "symbol": "ENABLE_SPLIT",
+   "origin": "cs-core",
+   "fromSpec": "./constants",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/app-remote-utils.md"
+  },
+  {
+   "symbol": "MIN_DESKTOP",
+   "origin": "cs-core",
+   "fromSpec": "./constants",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/app-remote-utils.md"
+  },
+  {
+   "symbol": "glassedCSS",
+   "origin": "cs-core",
+   "fromSpec": "./constants",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/app-remote-utils.md"
+  },
+  {
+   "symbol": "removeDraggableRowsItem",
+   "origin": "cs-core",
+   "fromSpec": "./components/DraggableRows",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "getStack",
+   "origin": "cs-core",
+   "fromSpec": "./components/LinkedDocs",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "setTopDocument",
+   "origin": "cs-core",
+   "fromSpec": "./components/LinkedDocs",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/data-display.md"
+  },
+  {
+   "symbol": "p13nApi",
+   "origin": "cs-core",
+   "fromSpec": "./api",
+   "tier": "B",
+   "usedByApps": false,
+   "file": "cs-core/app-remote-utils.md"
+  }
+ ],
+ "shadowed": [
+  {
+   "symbol": "Badge",
+   "portalGives": "cs-core",
+   "alsoIn": [
+    "sdds-cs (site)"
+   ]
+  },
+  {
+   "symbol": "Combobox",
+   "portalGives": "cs-core",
+   "alsoIn": [
+    "sdds-cs (site)"
+   ]
+  },
+  {
+   "symbol": "Popover",
+   "portalGives": "cs-core",
+   "alsoIn": [
+    "sdds-cs (site)"
+   ]
+  },
+  {
+   "symbol": "Overlay",
+   "portalGives": "cs-core",
+   "alsoIn": [
+    "sdds-cs (site)"
+   ]
+  },
+  {
+   "symbol": "Modal",
+   "portalGives": "cs-core",
+   "alsoIn": [
+    "sdds-cs (site)"
+   ]
+  },
+  {
+   "symbol": "Tabs",
+   "portalGives": "cs-core",
+   "alsoIn": [
+    "sdds-cs (site)"
+   ]
+  },
+  {
+   "symbol": "showToast",
+   "portalGives": "cs-core",
+   "alsoIn": [
+    "sdds-cs (site)"
+   ]
+  },
+  {
+   "symbol": "Table",
+   "portalGives": "cs-core",
+   "alsoIn": [
+    "sdds-cs (site)"
+   ]
+  },
+  {
+   "symbol": "useMutationSubmit",
+   "portalGives": "cs-portal",
+   "alsoIn": [
+    "cs-core"
+   ]
+  },
+  {
+   "symbol": "MutationAutocomplete",
+   "portalGives": "cs-portal",
+   "alsoIn": [
+    "cs-core"
+   ]
+  },
+  {
+   "symbol": "MutationCheckboxGroup",
+   "portalGives": "cs-portal",
+   "alsoIn": [
+    "cs-core"
+   ]
+  },
+  {
+   "symbol": "MutationCombobox",
+   "portalGives": "cs-portal",
+   "alsoIn": [
+    "cs-core"
+   ]
+  },
+  {
+   "symbol": "MutationDatePicker",
+   "portalGives": "cs-portal",
+   "alsoIn": [
+    "cs-core"
+   ]
+  },
+  {
+   "symbol": "MutationDatePickerRange",
+   "portalGives": "cs-portal",
+   "alsoIn": [
+    "cs-core"
+   ]
+  },
+  {
+   "symbol": "MutationMask",
+   "portalGives": "cs-portal",
+   "alsoIn": [
+    "cs-core"
+   ]
+  },
+  {
+   "symbol": "MutationNumberFormat",
+   "portalGives": "cs-portal",
+   "alsoIn": [
+    "cs-core"
+   ]
+  },
+  {
+   "symbol": "MutationNumberInput",
+   "portalGives": "cs-portal",
+   "alsoIn": [
+    "cs-core"
+   ]
+  },
+  {
+   "symbol": "MutationRadioGroup",
+   "portalGives": "cs-portal",
+   "alsoIn": [
+    "cs-core"
+   ]
+  },
+  {
+   "symbol": "MutationSelect",
+   "portalGives": "cs-portal",
+   "alsoIn": [
+    "cs-core"
+   ]
+  },
+  {
+   "symbol": "MutationSubmit",
+   "portalGives": "cs-portal",
+   "alsoIn": [
+    "cs-core"
+   ]
+  },
+  {
+   "symbol": "MutationSwitch",
+   "portalGives": "cs-portal",
+   "alsoIn": [
+    "cs-core"
+   ]
+  },
+  {
+   "symbol": "MutationTextArea",
+   "portalGives": "cs-portal",
+   "alsoIn": [
+    "cs-core"
+   ]
+  },
+  {
+   "symbol": "MutationTextField",
+   "portalGives": "cs-portal",
+   "alsoIn": [
+    "cs-core"
+   ]
+  },
+  {
+   "symbol": "MutationTreeCheckbox",
+   "portalGives": "cs-portal",
+   "alsoIn": [
+    "cs-core"
+   ]
+  },
+  {
+   "symbol": "MutationUploadSet",
+   "portalGives": "cs-portal",
+   "alsoIn": [
+    "cs-core"
+   ]
+  },
+  {
+   "symbol": "getMessagesFromResponse",
+   "portalGives": "cs-portal",
+   "alsoIn": [
+    "cs-core"
+   ]
+  },
+  {
+   "symbol": "getNestedValue",
+   "portalGives": "cs-portal",
+   "alsoIn": [
+    "cs-core"
+   ]
+  },
+  {
+   "symbol": "createApp",
+   "portalGives": "cs-portal",
+   "alsoIn": [
+    "cs-core"
+   ]
+  },
+  {
+   "symbol": "createRemoteComponent",
+   "portalGives": "cs-portal",
+   "alsoIn": [
+    "cs-core"
+   ]
+  },
+  {
+   "symbol": "RemoteComponent",
+   "portalGives": "cs-portal",
+   "alsoIn": [
+    "cs-core"
+   ]
+  }
+ ],
+ "collisions": [],
+ "sddsDirectTierA": [
+  "Tooltip",
+  "Counter",
+  "IconButton",
+  "Spinner",
+  "BodyS",
+  "textNegative",
+  "textSecondary",
+  "BodyM",
+  "Divider",
+  "TextArea",
+  "onLightSurfaceSolidSecondary",
+  "textPrimary",
+  "textAccent",
+  "surfaceSolidTertiary",
+  "Button",
+  "RectSkeleton"
+ ],
+ "appIconImports": [
+  "IconArrowDown",
+  "IconClose",
+  "IconDocumentGlassOutline",
+  "IconDotsHorizontalOutline",
+  "IconEditFill",
+  "IconEditOutline",
+  "IconFullscreenOff",
+  "IconFullscreenOn",
+  "IconHelpCircleOutline",
+  "IconHistory",
+  "IconInfoCircleOutline",
+  "IconMagic",
+  "IconMessagePersonChatOutline",
+  "IconPinDashFill",
+  "IconPinOutline",
+  "IconPlayOutline",
+  "IconPlus",
+  "IconResetOutline",
+  "IconSendFill",
+  "IconSendOutline",
+  "IconStopOutline",
+  "IconTrashOutline"
+ ],
+ "typographyMixins": [
+  "bodyL",
+  "bodyLBold",
+  "bodyM",
+  "bodyMBold",
+  "bodyS",
+  "bodySBold",
+  "bodyXS",
+  "bodyXSBold",
+  "bodyXXS",
+  "bodyXXSBold",
+  "dsplL",
+  "dsplLBold",
+  "dsplM",
+  "dsplMBold",
+  "dsplS",
+  "dsplSBold",
+  "h1",
+  "h1Bold",
+  "h2",
+  "h2Bold",
+  "h3",
+  "h3Bold",
+  "h4",
+  "h4Bold",
+  "h5",
+  "h5Bold",
+  "textL",
+  "textLBold",
+  "textM",
+  "textMBold",
+  "textS",
+  "textSBold",
+  "textXS",
+  "textXSBold"
+ ],
+ "unassigned": []
+}

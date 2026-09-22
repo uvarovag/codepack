@@ -1,0 +1,41 @@
+Title: Slider | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/slider/
+---
+Slider — numeric value picker. value as number = single handle, as [number,number] = range (double). onChange fires while dragging; onChangeCommitted fires on release. orientation="horizontal"(default)|"vertical". showScale shows min/max; scaleTicks for custom tick marks (numbers or {value,label,labelAlign}). showCurrentValue / currentValueVisibility "hover"|"always". step + multipleStepSize (PageUp/PageDown, % of range).
+LIVE EDITOR
+function App() {
+const [value, setValue] = useState(30);
+return <Slider min={0} max={100} value={value} label="Громкость" onChange={setValue} onChangeCommitted={setValue} />;
+}
+LIVE EDITOR (range)
+function App() {
+const [value, setValue] = useState([10, 80]);
+return <Slider min={0} max={100} value={value} label="Цена" onChange={setValue} onChangeCommitted={setValue} />;
+}
+
+API​
+Property Type Default Description
+view "default"|"accent"; size "s"
+pointerSize "none"|"small"|"large" 'small'
+disabled boolean
+min* / max* number
+label string; labelPlacement "top"|"left"|"none" (deprecated variants exist)
+step number 1; multipleStepSize number 10 (% of range for PageUp/PageDown)
+onChange ((value:number)=>void) | ((value:number[])=>void)
+name string — form field name
+value / defaultValue number|number[]
+orientation "horizontal"|"vertical" horizontal
+scaleAlign "none"|"top"|"bottom"|"side" bottom
+sliderAlign "none"|"center"|"right"|"left" left
+reversed boolean; labelReversed boolean
+valuePlacement "none"|"top"|"bottom"|"right"|"left" bottom/right
+ariaLabel string|string[] — per-handle a11y label
+showScale boolean; scaleTicks number[]|{value,label,labelAlign}[]
+tickType "separator"|"bullet" bullet
+pointerVisibility "hover"|"always" always
+currentValueVisibility "hover"|"always" always
+hideMinValueDiff / hideMaxValueDiff number
+labelContent ReactNode
+type "single"|"double"
+onChangeCommitted ((value)=>void)
+onChangeTextField / onBlurTextField / onKeyDownTextField — when a TextField is attached to show/edit value

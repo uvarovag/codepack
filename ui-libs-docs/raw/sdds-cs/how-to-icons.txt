@@ -1,0 +1,9 @@
+Title: Как работать с иконками | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/how-to-icons/
+---
+Icons ship as @salutejs/plasma-icons, used as plain React components. Prefer sized entry points: @salutejs/plasma-icons/16, /24, /36 (only imported icons end up in the bundle) — fall back to importing directly from @salutejs/plasma-icons if an icon isn't available in all sizes. size prop: "xs"=16px, "s"=24px, "m"=36px (icons from a sized entry point already default to the matching size: /16→xs, /24→s, /36→m). color prop (default var(--plasma-colors-primary)): accepts a CSS var, currentColor, inherit, a plain color, or a CSS gradient. className/style supported for custom spacing/alignment/animation; for a fully custom size not in {xs,s,m}, set width/height via style. AVOID the generic <Icon icon="iconName" /> component — it can pull the entire icon set into the bundle; always import the specific icon component directly.
+LIVE EDITOR
+function App() {
+return <IconSearch size="s" color="var(--plasma-colors-accent)" />;
+}
+Custom size example: <IconPlasma color="inherit" style={{ width: '2rem', height: '2rem' }} />

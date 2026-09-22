@@ -1,0 +1,30 @@
+Title: Tree | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/tree/
+---
+Tree — multi-level expandable list with selection/checkbox support. Only required: items. TreeItem = { key: React.Key, title?: ReactNode|((data)=>ReactNode), className?, style?, disabled?, icon?, children?: TreeItem[], contentRight? }. checkable enables checkboxes; multiple for multi-select. draggable + onDrop/allowDrop for drag'n'drop reordering (onDrop gives dropKey/dragKey/dropPosition, you mutate the items array yourself). loadData for async lazy-loading children (returns a Promise, resolves when done).
+LIVE EDITOR
+function App() { return <Tree items={treeData} defaultExpandAll checkable multiple />; }
+
+API​
+Property Type Default Description
+view "default"; size "s"
+items* TreeItem[]
+checkable boolean false; multiple boolean false
+checkedKeys / defaultCheckedKeys Key[]
+expandedKeys / defaultExpandedKeys Key[]
+selectedKeys / defaultSelectedKeys Key[]
+defaultExpandAll boolean false
+autoExpandParent boolean false — auto-open ancestors of a given expandedKeys entry
+onTreeSelect / onTreeCheck / onTreeExpand — (keys, info) => void
+arrowPlacement "right"|"left" left
+virtual boolean true; height number; itemHeight number — required together for virtualization
+fullWidthItemSelection boolean false
+hasIcon boolean false; icon ReactNode — shared fallback icon
+renderTitle ((item) => ReactNode)
+singleLine boolean true
+mode "radio"|"default" default
+draggable boolean false
+onDragStart/onDragEnter/onDragOver/onDragLeave/onDragEnd/onDrop — native-like DnD handlers
+allowDrop ((options) => boolean)
+loadData ((treeNode) => Promise<any>); onLoadData ((loadedKeys, info) => void)
+variant "normal"|"tight" normal

@@ -1,0 +1,63 @@
+Title: Tooltip | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/beta/tooltip/
+---
+Beta-компонентыTooltip
+Tooltip
+beta
+ИМПОРТ BETA-КОМПОНЕНТОВ
+
+Импорт осуществляется из директории @salutejs/sdds-cs/beta.
+Например:
+import * as Beta from '@salutejs/sdds-cs/beta';
+import { Tooltip } from '@salutejs/sdds-cs/beta';
+
+Описание​
+
+Tooltip — легковесное всплывающее окно, привязанное к целевому элементу (target). Оно предназначено для коротких пояснений, меток и инструкций.
+
+Быстрый старт​
+LIVE EDITOR
+function App() {
+return (
+<Beta.Tooltip target={<Button text="Наведи курсор" />} trigger="hover">
+Текст подсказки
+</Beta.Tooltip>
+);
+}
+
+Свойство target принимает ReactElement, а текст подсказки передаётся в children.
+
+Примеры​
+Trigger / Portal
+
+trigger принимает значения click (по умолчанию), hover и focus.
+
+LIVE EDITOR
+function App() {
+return (
+<div style={{ display: 'flex', gap: '0.5rem' }}>
+<Beta.Tooltip target={<Button text="Click" />}>По клику</Beta.Tooltip>
+<Beta.Tooltip trigger="hover" target={<Button text="Hover" />}>По наведению</Beta.Tooltip>
+<Beta.Tooltip trigger="focus" target={<Button text="Focus" />}>По фокусу</Beta.Tooltip>
+</div>
+);
+}
+
+API​
+Property Type Default Description
+view "default" | "secondary" — Вид компонента.
+size "s" | "m" — Размер компонента.
+children* string — Контент всплывающего окна.
+target* ReactElement<any, string | JSXElementConstructor<any>> — Целевой элемент взаимодействия с всплывающим окном.
+iconSlot ReactNode — Слот для иконки слева.
+trigger "click" | "focus" | "hover" click Способ скрытия/раскрытия окна.
+placement Placement bottom Сторона раскрытия окна относительно target-элемента.
+hasTail boolean true Включение хвостика у окна.
+flip boolean false Коррекция placement, если окно выходит за пределы экрана.
+shift boolean false Смещение окна при соприкосновении с границами экрана.
+offset number 0 Отступ всплывающего окна относительно target.
+delayOpen / delayClose number 0 Задержка перед раскрытием/скрытием, мс (при trigger === 'hover').
+zIndex number 1000 CSS-свойство z-index всплывающего окна.
+portal string | RefObject<HTMLElement | null> — Портал для окна. Принимает id контейнера или ref.
+
+Notes: beta component, import from '@salutejs/sdds-cs/beta' — NOT re-exported by cs-portal.

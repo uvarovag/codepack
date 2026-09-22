@@ -1,0 +1,46 @@
+Title: Autocomplete | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/autocomplete/
+---
+Autocomplete — поле ввода с подсказками в выпадающем списке. Расширенная версия TextField — все пропсы TextField поддерживаются. Подсказки фильтруются без учёта регистра по умолчанию, можно переопределить через filter. Формат suggestions: { label: string; contentLeft?: ReactNode; contentRight?: ReactNode }.
+
+LIVE EDITOR
+function App() {
+const mockData = [{ label: 'Алексей Смирнов' }, /* ... */];
+return <Autocomplete suggestions={mockData} listMaxHeight="250px" label="Label" placeholder="Placeholder" leftHelper="Введите имя Алексей" />;
+}
+
+Клавиатурная навигация соответствует W3C Combobox: Tab/Escape закрывает, Enter выбирает, Home/End/ArrowUp/ArrowDown перемещают фокус.
+
+API​ (own props beyond TextField)
+Property Type Default Description
+suggestions T[] — массив подсказок
+threshold number 2 мин. число символов для открытия дропдауна
+filter ((data: T) => boolean) — колбэк фильтра подсказок
+onSuggestionSelect ((data: T) => void) — колбэк при выборе подсказки
+renderItem ((item: T) => ReactNode) — кастомный рендер элемента списка
+renderList ((data?: T[]) => ReactNode) — кастомный рендер списка
+renderListEnd (() => ReactNode) — рендер элемента в конце списка
+beforeList / afterList ReactNode — контент в начале/конце списка
+virtual boolean false — виртуализация списка
+listMaxHeight string 25rem — макс. высота списка
+listWidth string — ширина списка
+portal / hintPortal string | RefObject<HTMLElement|null> — портал для списка / окна подсказки
+flip boolean false — показ списка сверху при нехватке места снизу
+zIndex ZIndex — z-index списка
+hasDivider boolean — показать разделитель
+textBefore / textAfter string — вспомогательный текст слева/справа
+clear boolean — @deprecated use appearance="clear"
+--- inherited from TextField (common) ---
+value / defaultValue string — значение поля
+label string — метка
+contentLeft / contentRight ReactElement — слоты
+required / optional boolean — обязательность; requiredPlacement "right"|"left" right; hasRequiredIndicator boolean false; optionalText string
+leftHelper / rightHelper ReactNode — вспомогательный текст снизу
+titleCaption ReactNode — метка справа
+keepPlaceholder boolean — одновременно label и placeholder
+size "s" l — размер; view "default"|"negative" default
+disabled / readOnly boolean
+labelPlacement "outer"|"inner" outer
+onScroll ((e) => void)
+rootClassName string / rootStyle CSSProperties
+onSearch — @deprecated (двойной deprecated в исходнике)

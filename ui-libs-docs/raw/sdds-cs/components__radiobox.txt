@@ -1,0 +1,25 @@
+Title: Radiobox | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/radiobox/
+---
+Radiobox — should be grouped inside RadioGroup (radios share `name`). label/description accept JSX; singleLine=false default (multiline).
+LIVE EDITOR
+function App() {
+return (
+<RadioGroup aria-labelledby="rg-title">
+<H3 id="rg-title">Заголовок</H3>
+<Radiobox name="radio-1" label="Опция 1" description="Описание 1" defaultChecked />
+<Radiobox name="radio-1" label="Опция 2" />
+</RadioGroup>
+);
+}
+
+API (Radiobox)​
+Property Type Default Description
+size "s"; view "accent"; disabled boolean
+type / name string
+value string|number|readonly string[]
+checked / defaultChecked boolean
+placeholder string; required boolean; minLength/maxLength number
+onChange / onFocus / onBlur handlers
+label / description ReactNode; singleLine boolean
+checkIcon / indeterminateIcon ReactNode

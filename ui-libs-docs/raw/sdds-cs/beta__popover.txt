@@ -1,0 +1,70 @@
+Title: Popover | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/beta/popover/
+---
+Beta-компонентыPopover
+Popover
+beta
+ИМПОРТ BETA-КОМПОНЕНТОВ
+
+Импорт осуществляется из директории @salutejs/sdds-cs/beta.
+Например:
+import * as Beta from '@salutejs/sdds-cs/beta';
+import { Popover } from '@salutejs/sdds-cs/beta';
+
+Описание​
+
+Popover — всплывающее окно, привязанное к целевому элементу (target). Оно отображает дополнительный контент по клику, наведению или фокусу.
+
+Компонент поддерживает настройку триггера, позиции, смещения, хвостика, задержек открытия и закрытия, портала и изменения размера.
+
+Быстрый старт​
+LIVE EDITOR
+function App() {
+return (
+<Beta.Popover target={<Button text="Открыть" />}>
+Контент всплывающего окна
+</Beta.Popover>
+);
+}
+
+Свойство target принимает ReactElement, а содержимое окна передаётся через children.
+
+Примеры​
+Trigger / Resizable / Portal
+
+trigger определяет способ открытия: click (по умолчанию), hover или focus.
+
+LIVE EDITOR
+function App() {
+return (
+<div style={{ display: 'flex', gap: '0.5rem' }}>
+<Beta.Popover target={<Button text="Click" />}>Открытие по клику</Beta.Popover>
+<Beta.Popover trigger="hover" target={<Button text="Hover" />}>Открытие по наведению</Beta.Popover>
+<Beta.Popover trigger="focus" target={<Button text="Focus" />}>Открытие по фокусу</Beta.Popover>
+</div>
+);
+}
+
+API​
+Property Type Default Description
+size "s" | "m" — Размер компонента.
+view "default" | "info" — Вид компонента.
+target* ReactElement<any, string | JSXElementConstructor<any>> — Целевой элемент взаимодействия с всплывающим окном.
+offset number 0 Отступ всплывающего окна относительно target.
+onToggle ((isOpen: boolean) => void) — Событие сворачивания/разворачивания всплывающего окна.
+resizable boolean | {disabled?, directions?, defaultSize?, ...} false Настройка resizable-режима.
+opened boolean — Управление скрытием/раскрытием всплывающего окна.
+placement Placement bottom Сторона раскрытия окна относительно target-элемента.
+zIndex number 1000 CSS-свойство z-index всплывающего окна.
+portal string | RefObject<HTMLElement | null> — Портал для всплывающего окна. Принимает id контейнера или ref. Без portal рендерится перед </body>.
+flip boolean false Коррекция placement, если окно выходит за пределы экрана.
+shift boolean false Смещение окна при соприкосновении с границами экрана.
+trigger "click" | "focus" | "hover" click Способ скрытия/раскрытия окна.
+onResizeStart / onResizeEnd ((resizableContainer?) => void) — Обработчики начала/остановки ресайза.
+hasTail boolean true Включение хвостика у окна.
+defaultOpened boolean false Раскрыто ли окно по умолчанию.
+delayOpen / delayClose number 0 Задержка перед раскрытием/скрытием, мс (при trigger === 'hover').
+outsideClick boolean true Закрывать окно при клике вне области (при trigger === 'click').
+appearance "default" | "closeInner" — (list truncated on source page)
+
+Notes: beta component, import from '@salutejs/sdds-cs/beta' — NOT re-exported by cs-portal (cs-portal only re-exports the main '@salutejs/sdds-cs' entry point, not /beta).

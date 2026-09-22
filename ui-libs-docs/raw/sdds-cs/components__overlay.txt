@@ -1,0 +1,12 @@
+Title: Overlay | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/overlay/
+---
+Overlay — backdrop for popup components (Modal, Toast, etc).
+API​
+Property Type Default Description
+zIndex* string
+backgroundColorProperty* string
+withBlur boolean
+transparent boolean — for stacking multiple popups
+isClickable boolean true
+onOverlayClick ((event: MouseEvent) => void)

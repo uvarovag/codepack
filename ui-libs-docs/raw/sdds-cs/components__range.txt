@@ -1,0 +1,25 @@
+Title: Range | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/range/
+---
+Range — two-field numeric/text range input (firstValue/secondValue), like DatePickerRange but plain text fields. dividerVariant="none"|"dash"|"icon" (+ dividerIcon). firstValueError/secondValueError/...Success/...Edited drive validation styling per-field.
+LIVE EDITOR
+function App() {
+return <Range label="Диапазон" leftHelper="От-До" firstPlaceholder="От" secondPlaceholder="До" dividerVariant="dash" />;
+}
+
+API​
+Property Type Default Description
+disabled / readOnly boolean
+label string; leftHelper string
+contentLeft / contentRight ReactNode
+firstValue / secondValue TextfieldPrimitiveValue
+firstValueError/secondValueError/firstValueSuccess/secondValueSuccess/firstValueEdited/secondValueEdited boolean
+firstPlaceholder / secondPlaceholder string
+firstTextfieldContentLeft/Right, secondTextfieldContentLeft/Right ReactElement
+firstTextfieldTextAfter/Before, secondTextfieldTextAfter/Before string
+autoComplete string
+requiredIndicatorPlacement "right"|"left" right; required boolean; hasRequiredIndicator boolean false
+onChangeFirstValue / onChangeSecondValue
+onSearchFirstValue / onSearchSecondValue — Enter in field
+onFocusFirstTextfield/onFocusSecondTextfield/onBlurFirstTextfield/onBlurSecondTextfield
+dividerVariant "none"|"dash"|"icon"; dividerIcon ReactNode

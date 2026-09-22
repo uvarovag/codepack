@@ -1,0 +1,51 @@
+Title: Tour | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/Tour/
+---
+Tour — spotlight product-tour overlay, highlights target elements step by step. steps: TourStep[] = { target: string(CSS selector)|RefObject|HTMLElement, placement?, highlightOffset?, highlightBorderRadius?, title?, description? }. renderStep* is required: (current, length, last, step, goToStep) => ReactNode — you build the step card yourself (or use the bundled TourCard component for a ready-made card with image/pagination/buttons). Controlled via open/current/onChange/onClose (or defaultOpen/defaultCurrent uncontrolled). withOverlay dims background; renderHighlight lets you replace the default spotlight box-shadow with custom markup, given {left, top, width, height, borderRadius}.
+LIVE EDITOR
+function App() {
+const ref1 = useRef(null); const ref2 = useRef(null);
+const [open, setOpen] = useState(false); const [current, setCurrent] = useState(0);
+const steps = [{ target: ref1, title: 'Шаг 1', description: '...' }, { target: ref2, title: 'Шаг 2', description: '...', placement: 'top' }];
+const renderStep = (cur, length, last, step, goToStep) => (
+<div>
+{step.title}<br/>{step.description}
+{cur > 0 && <Button onClick={() => goToStep(cur - 1)}>Назад</Button>}
+{last ? <Button onClick={() => setOpen(false)}>Закрыть</Button> : <Button onClick={() => goToStep(cur + 1)}>Далее</Button>}
+</div>
+);
+return (
+<>
+<Button ref={ref1}>Элемент 1</Button><Button ref={ref2}>Элемент 2</Button>
+<Button onClick={() => setOpen(true)}>Запустить тур</Button>
+<Tour open={open} current={current} onChange={setCurrent} onClose={() => setOpen(false)} steps={steps} renderStep={renderStep} highlightBorderRadius="1rem" hasTail />
+</>
+);
+}
+
+API (Tour)​
+Property Type Default Description
+view "default"; size "s"
+steps* TourStep[]
+renderStep* (current, length, last, step, goToStep) => ReactNode
+current / defaultCurrent number
+open / defaultOpen boolean
+withOverlay boolean; overlayColor Color
+zIndex ZIndex
+offset [number,number] [12,12] — card offset from target
+highlightOffset number 4; highlightBorderRadius BorderRadius<string|number>
+renderHighlight ((props: {left,top,width,height,borderRadius}) => ReactNode) — replaces default spotlight
+hasTail boolean false; tailColor Color; tailWidth number 20; tailHeight number 8
+onChange ((current) => void); onClose (() => void)
+
+TourCard (optional ready-made step card, pass as the return of renderStep)​
+Property Type Default Description
+orientation "horizontal"|"vertical" horizontal
+contentDirection "row-reverse"|"row" row-reverse — image vs content order, horizontal only
+title / description string
+image ImageProps — src, alt, ratio...
+showPagination boolean true; paginationVisibleItems number 3; paginationType "dot"|"compact" dot (compact = horizontal only)
+stepCurrent / stepLength number; goToStep ((index) => void)
+actionButtons ReactNode; skipButton ReactNode
+showClose boolean true; onClose (() => void)
+view / size string

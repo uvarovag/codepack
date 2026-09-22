@@ -1,0 +1,138 @@
+#!/usr/bin/env node
+/**
+ * Builds out/ui-libs/README.md: the priority/import rule block + the full
+ * symbol -> file index table. cs-portal/cs-core/typography rows come from
+ * raw/levels.json (structured). sdds-cs rows are scraped from the already
+ * -written final sdds-cs/*.md files by grepping their `### Heading` lines,
+ * since the sdds-cs raw material ended up as hand-condensed text, not JSON.
+ */
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const RAW = path.resolve(__dirname, '../raw');
+const OUT_DIR = path.resolve(__dirname, '../out/ui-libs');
+
+const readJSON = (name) => JSON.parse(fs.readFileSync(path.join(RAW, name), 'utf-8'));
+const levels = readJSON('levels.json');
+
+// ----- versions: from cs-portal-ext/package.json (via parse-dts.mjs) + the
+// icons scrape — never hardcoded here, or a library bump leaves README stale.
+const csPortal = readJSON('cs-portal.json');
+const icons = readJSON('icons.json');
+const dep = (name) => (csPortal.dependencies || {})[name];
+const versions = {
+    'cs-portal': csPortal.version,
+    'cs-core': dep('@sber-front-cs-core/cs-core'),
+    'sdds-cs': dep('@salutejs/sdds-cs'),
+    'plasma-icons': dep('@salutejs/plasma-icons'),
+};
+for (const [pkg, v] of Object.entries(versions)) {
+    if (!v) throw new Error(`raw/cs-portal.json carries no version for ${pkg} — re-run parse-dts.mjs`);
+    versions[pkg] = v.replace(/^[\^~]/, '');
+}
+
+// ----- rows from levels.json (cs-portal explicit + cs-core-only + typography) --
+
+const rows = [];
+const seen = new Set();
+
+function addRow(symbol, level, file) {
+    const key = symbol + '|' + file;
+    if (seen.has(key)) return;
+    seen.add(key);
+    rows.push({ symbol, level, file });
+}
+
+for (const s of [...levels.symbols, ...levels.csCoreOnly]) {
+    if (!s.file) continue;
+    const level = s.file.startsWith('sdds-cs/') ? 'sdds-cs (pinned)' : s.origin === 'cs-core' ? 'cs-core' : 'cs-portal';
+    addRow(s.symbol, level, s.file);
+}
+
+// ----- rows scraped from the final sdds-cs/*.md and icons.md files ------------
+
+const sddsDir = path.join(OUT_DIR, 'sdds-cs');
+for (const f of fs.readdirSync(sddsDir)) {
+    if (!f.endsWith('.md')) continue;
+    const text = fs.readFileSync(path.join(sddsDir, f), 'utf-8');
+    const headingRe = /^### ([^\n(]+)/gm;
+    let m;
+    while ((m = headingRe.exec(text))) {
+        // headings can be "Name" or "Name / OtherName" or "Name (raw sdds-cs)" etc.
+        const raw = m[1].trim();
+        const names = raw
+            .split(/\s*\/\s*/)
+            .map((n) => n.replace(/`/g, '').trim())
+            .filter((n) => /^[A-Za-z][A-Za-z0-9_]*$/.test(n));
+        for (const name of names) {
+            addRow(name, 'sdds-cs', `sdds-cs/${f}`);
+        }
+    }
+}
+
+// icons.md is one row, not per-icon (1246 of them, listed inside icons.md itself)
+addRow('Icon*', 'plasma-icons', 'icons.md');
+
+rows.sort((a, b) => a.symbol.localeCompare(b.symbol));
+
+// ----- render README.md --------------------------------------------------------
+
+const lines = [];
+lines.push('# UI libraries — offline reference');
+lines.push('');
+const iconsSiteNote =
+    icons.siteVersion && icons.siteVersion !== versions['plasma-icons']
+        ? ` (site shows ${icons.siteVersion} — icons added since aren't installed yet)`
+        : '';
+lines.push(`Versions: ${Object.entries(versions).map(([pkg, v]) => `${pkg} ${v}`).join(' · ')}${iconsSiteNote}.`);
+lines.push('');
+lines.push('## The rule');
+lines.push('');
+lines.push(
+    '**Priority — what to reach for:** `@sber-front-cs-core/cs-portal` for components and ' +
+        '`@salutejs/plasma-icons` for icons come first, as co-equal top priority, each for its own ' +
+        "concern (icons are never a fallback of last resort — go straight to [icons.md](icons.md)). " +
+        '`@sber-front-cs-core/cs-core` is second, only when cs-portal has no match. `@salutejs/sdds-cs` ' +
+        'is last, only for the named exceptions in [levels.md](levels.md).',
+);
+lines.push('');
+lines.push(
+    "**Import path — always:** `import { X } from '@sber-front-cs-core/cs-portal'`, including for " +
+        'icons (`import { IconMagic } from \'@sber-front-cs-core/cs-portal\'`), whichever tier you found ' +
+        'the thing in above. Only the named exceptions in [levels.md](levels.md) import from ' +
+        "`@salutejs/sdds-cs` directly. **Never** import from `@sber-front-cs-core/cs-core` or " +
+        "`@salutejs/plasma-icons` — they exist only as cs-portal's implementation detail.",
+);
+lines.push('');
+lines.push('## How to use this doc');
+lines.push('Search the table below for the symbol or concept you need, open the linked file, load nothing else.');
+lines.push('For an icon, skip the table and go straight to [icons.md](icons.md).');
+lines.push('For the cascade rules, shadowing/collision details, and exceptions: [levels.md](levels.md).');
+lines.push('For known gotchas (legacy/new pairs, dead links, naming traps): [gotchas.md](gotchas.md).');
+lines.push('');
+lines.push('## Files');
+lines.push('');
+lines.push('```');
+lines.push('cs-portal/   app-shell · layout · forms-mutations · widgets · remote-hooks-utils');
+lines.push('cs-core/     pages-layouts · forms-inputs · data-display · feedback-modals ·');
+lines.push('             navigation · table · charts · app-remote-utils');
+lines.push('sdds-cs/     actions · inputs-forms · data-display · feedback-overlays ·');
+lines.push('             navigation-layout · typography-tokens');
+lines.push('icons.md     all @salutejs/plasma-icons names by category');
+lines.push('levels.md    cascade, re-export chain, shadowing/collision table');
+lines.push('gotchas.md   legacy/new pairs, dead links, naming traps');
+lines.push('```');
+lines.push('');
+lines.push(`## Symbol index (${rows.length} entries)`);
+lines.push('');
+lines.push('| Symbol | Level | File |');
+lines.push('|---|---|---|');
+for (const r of rows) {
+    lines.push(`| ${r.symbol} | ${r.level} | [${r.file}](${r.file}) |`);
+}
+lines.push('');
+
+fs.writeFileSync(path.join(OUT_DIR, 'README.md'), lines.join('\n'));
+console.log(`README.md: ${rows.length} symbol rows, ${lines.length} lines total.`);

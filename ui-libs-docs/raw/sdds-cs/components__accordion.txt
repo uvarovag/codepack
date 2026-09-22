@@ -1,0 +1,90 @@
+Title: Accordion | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/accordion/
+---
+КомпонентыData DisplayAccordion
+Accordion
+
+Компонент выпадающей информации
+
+AccordionItem
+
+Компонент представляет собой заголовок и контент, который раскрывается при нажатии.
+
+Примеры Accordion​
+Default / View / Size / Stretching
+LIVE EDITOR
+function App() {
+return (
+<div>
+<Accordion>
+<AccordionItem title="...">...</AccordionItem>
+</Accordion>
+</div>
+);
+}
+
+Использование Accordion в Controlled варианте​
+LIVE EDITOR
+function App() {
+const [activeFirst, setActiveFirst] = useState(false);
+const contentRight = (active, setActive) => (
+<IconButton view="secondary" size="s" onClick={() => setActive(!active)}>
+<IconPlus size="xs" />
+</IconButton>
+);
+return (
+<Accordion size="s" singleActive={true}>
+<AccordionItem opened={activeFirst} contentRight={contentRight(activeFirst, setActiveFirst)} defaultIconContent="arrow" defaultIconPlacement="left" title="...">...</AccordionItem>
+</Accordion>
+);
+}
+
+Использование Accordion SingleActive​ — Accordion size="s" singleActive={true}, AccordionItem defaultIconContent="arrow" defaultIconPlacement="left".
+
+Использование Accordion с eventKey и defaultActiveEventKey​ — Accordion defaultActiveEventKey={[1,2]}, AccordionItem eventKey={1}.
+
+Встроенная иконка AccordionItem​ — defaultIconContent задаёт вид встроенной иконки: arrow — залитая стрелка, chevron — контурный шеврон, sign — знак плюс/минус, clear — без иконки. defaultIconPlacement размещает её слева или справа.
+
+Использование AccordionItem с кастомной иконкой contentRight и анимацией​ — если передать contentRight, компонент полностью отдаёт управление иконкой снаружи и не применяет встроенную анимацию поворота (она работает только для встроенной иконки через defaultIconContent). Чтобы анимировать кастомную иконку, нужно самому менять её стиль в зависимости от opened.
+LIVE EDITOR
+function App() {
+const [activeFirst, setActiveFirst] = useState(false);
+const getIcon = (opened) => (
+<IconPlus size="xs" style={{ transition: '0.2s', transform: opened ? 'rotate(225deg)' : 'rotate(0deg)' }} />
+);
+return (
+<Accordion size="s">
+<AccordionItem defaultIconContent="clear" opened={activeFirst} onClick={(index, opened) => setActiveFirst(opened)} contentRight={getIcon(activeFirst)} title="...">...</AccordionItem>
+</Accordion>
+);
+}
+
+API​
+Accordion​
+Property Type Default Description
+view "clear" | "default"
+size "s"
+singleActive boolean
+defaultActiveEventKey number[]
+disabled boolean
+stretching "filled" | "fixed"
+onChange ((index?: number, value?: boolean) => void) | undefined
+
+AccordionItem​
+Property Type Default Description
+type "clear" | "arrow" | "sign"
+defaultIconContent AccordionItemDefaultIconContent
+defaultIconPlacement AccordionItemDefaultIconPlacement
+contentLeft ReactNode
+alignWithTitle boolean
+contentRight ReactNode
+pin "square-square" | "square-clear" | "clear-square" | "clear-clear" | "clear-circle" | "circle-clear" | "circle-circle"
+title ReactNode
+onChange ((index: number, value: boolean) => void)
+disabled boolean
+opened boolean
+eventKey number
+index number
+view string
+titleProps HTMLAttributes<HTMLElement>
+bodyProps HTMLAttributes<HTMLDivElement>

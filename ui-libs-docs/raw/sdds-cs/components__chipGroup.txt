@@ -1,0 +1,15 @@
+Title: ChipGroup | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/chipGroup/
+---
+ChipGroup — обёртка для Chip. isCommonChipStyles=true (default) makes group override each Chip's view/size.
+LIVE EDITOR
+function App() { return <ChipGroup view="secondary" gap="wide">{Array(5).fill(true).map((_,i)=><Chip text={`Chip ${i}`} />)}</ChipGroup>; }
+
+API​
+Property Type Default Description
+view "default"|"accent"|"secondary" — вид группы (если isCommonChipStyles=true)
+size "s" — размер группы (если isCommonChipStyles=true)
+gap "dense"|"wide" dense
+shape "default"|"segmented" default
+isCommonChipStyles boolean true
+isWrapped boolean — перенос элементов на новый ряд при нехватке ширины

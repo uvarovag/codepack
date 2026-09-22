@@ -1,0 +1,49 @@
+Title: Attach | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/attach/
+---
+Attach — компонент, позволяющий прикрепить локальный файл.
+
+LIVE EDITOR (basic)
+function App() {
+return <Attach text="Загрузить файл" />;
+}
+
+Внешний вид: view, size, buttonType. Расположение: flow = "auto"(default) | "horizontal" | "vertical" — расположение прикреплённого файла относительно кнопки. Подсказка: helperText + helperTextView. Несколько файлов: multiple. Фильтр форматов: acceptedFileFormats (как HTML accept). Контролируемый режим: files + onChange (e.target.files) + onClear(fileInfo.file). ref форвардится на <input type="file">, поэтому файлы попадают в FormData при сабмите формы (name на Attach).
+
+LIVE EDITOR (controlled)
+function App() {
+const [files, setFiles] = useState([]);
+return (
+<Attach flow="horizontal" files={files} onChange={(e) => setFiles(Array.from(e.target.files || []))} onClear={(fileInfo) => setFiles((prev) => prev.filter((f) => f !== fileInfo.file))} />
+);
+}
+
+API​
+Property Type Default Description
+view "clear" | "accent" | "secondary" — Вид Attach
+helperTextView "default" | "negative" — Вид вспомогательного текста
+size "s" — Размер Attach
+text string — Текстовая надпись
+contentLeft / contentRight ReactNode — Слот для контента (например Icon)
+contentPlacing ContentPlacing 'default' Положение контента по ширине
+isLoading boolean — состояние загрузки; loader ReactNode — слот для контента загрузки
+stretch boolean — @deprecated, использовать stretching
+stretching Stretching — fixed/filled/auto ширина
+square boolean — @deprecated, использовать IconButton для 1:1
+focused boolean — кнопка сфокусирована
+pin "square-square"|"square-clear"|"clear-square"|"clear-clear"|"clear-circle"|"circle-clear"|"circle-circle" — border-radius
+appearance "default" | "outline" default — стиль UI-конфигурации, набор токенов
+outlined boolean — @deprecated, использовать focused
+shiftLeft / shiftRight boolean — @deprecated отрицательный сдвиг
+blur "small"|"medium"|"large" — @deprecated, для кнопок без прозрачности не работает
+files File[] — массив файлов для контролируемого режима
+acceptedFileFormats string[] — допустимые форматы (HTML accept)
+hideButtonOnAttach boolean false — скрыть кнопку после выбора файла
+hasAttachment boolean true — отображать прикреплённый файл
+helperText string — вспомогательный текст под кнопкой
+customIcon ReactNode — кастомная иконка слева
+onClear ((fileInfo: FileInfo) => void) — колбэк при удалении файла
+flow "horizontal"|"vertical"|"auto" 'auto' расположение элементов
+dropdownOptions DropdownOptions — настройка выпадающего списка прикреплённых файлов
+buttonType "button"|"iconButton" 'button' тип кнопки
+icon ReactNode — иконка

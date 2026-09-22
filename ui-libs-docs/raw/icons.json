@@ -1,0 +1,5160 @@
+{
+ "siteVersion": "1.250.0",
+ "installedVersion": "1.249.0",
+ "versionNote": "Site shows 1.250.0; @salutejs/plasma-icons installed in cs-portal-ext/cs-core-ext is 1.249.0 — icons added in 1.250.0 may not be available yet.",
+ "extractionMethod": "DOM: each icon tile is a <div> containing an svg (icon-root-container) and a sibling label <div> whose text is \"{camelCaseName}{Outline|Fill}{buildStamp}\"; build stamp suffix stripped, name PascalCased and prefixed with \"Icon\".",
+ "source": "https://plasma.sberdevices.ru/icons/ (Plasma Icons tab, Outline + Fill styles)",
+ "totalIcons": 1246,
+ "knownGaps": {
+  "note": "The site's Outline/Fill toggle appears to filter by name suffix, so icons with NO style suffix (single-variant icons) never render under either tab and are absent from `categories` below. Confirmed real (imported from '@salutejs/plasma-icons' in cs-core-ext/cs-portal-ext dist bundles) but missing from the scrape:",
+  "icons": ["IconArrowBack", "IconArrowDiagRightUp", "IconArrowDown", "IconArrowRight", "IconChevronRight", "IconChevronUp", "IconClip", "IconClose", "IconCross", "IconDisclosureUp", "IconDone", "IconDoubleDisclosureUp", "IconDownload", "IconDrag", "IconPercent", "IconSearch", "IconSwapVert"],
+  "alsoLikelyPresentButUnverified": ["IconChevronDown", "IconDisclosureDown", "IconDoubleDisclosureDown", "IconDoubleDisclosureRight", "IconFullscreenOff", "IconFullscreenOn", "IconInfo", "IconMagic", "IconPlus", "IconRefresh", "IconRotateCw", "IconTree", "IconVisible", "IconDoneDouble"]
+ },
+ "categories": [
+  {
+   "nameRu": "Коммуникация",
+   "nameEn": "Communication",
+   "count": 67,
+   "icons": [
+    {
+     "name": "IconCallBlockFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCallBlockOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCallCircleEndFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCallCircleEndOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCallCircleFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCallCircleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCallDashFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCallDashOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCallEndBlockFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCallEndBlockOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCallEndFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCallEndOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCallFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCallIncomingFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCallIncomingOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCallMissedFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCallMissedOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCallOutgoingFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCallOutgoingOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCallOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconChatFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconChatHumanFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconChatHumanOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconChatOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconChatTranscriptionFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconChatTranscriptionOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconFeedbackCircleFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMessageAddFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMessageAddOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMessageAltFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMessageAltOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMessageAttentionFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMessageAttentionOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMessageChatFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMessageChatOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMessageCloseFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMessageCloseOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMessageDraftFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMessageDraftOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMessageFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMessageGoToFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMessageGoToOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMessageNewFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMessageNewOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMessageOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMessagePersonChatFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMessagePersonChatOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMessagePersonFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMessagePersonOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMessageQuestionFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMessageQuestionOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMessageRequestFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMessageRequestOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMessageTranscriptionFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMessageTranscriptionOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMessageVideoFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMessageVideoOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconNewsFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconNewsOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconNewsPaperFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconNewsPaperOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPostcardFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPostcardOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPostFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPostOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSendFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSendOutline",
+     "style": "outline"
+    }
+   ]
+  },
+  {
+   "nameRu": "Логотип",
+   "nameEn": "Logo",
+   "count": 22,
+   "icons": [
+    {
+     "name": "IconAndroidFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconAppleLogoFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBitbucketOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCatalogFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCatalogOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDzenAltFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDzenFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDzenOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconGigaFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconGigaOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconGosuslugiOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMaxFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconOdnoklassnikiFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconRuTubeAltFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconRuTubeFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSaluteFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSaluteOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTelegramFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconVkAltFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconVkFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconVkOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconWebFill",
+     "style": "fill"
+    }
+   ]
+  },
+  {
+   "nameRu": "Навигация",
+   "nameEn": "Navigation",
+   "count": 20,
+   "icons": [
+    {
+     "name": "IconDotsHorizontalOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDotsVerticalCenteredOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDotsVerticalOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconHomeAltFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconHomeAltOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconHouseFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconHouseHandsetFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconHouseHandsetOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconHouseOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconHousePercentFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconHousePercentOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPanelSidebarDFocusOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPanelSidebarLFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPanelSidebarLFocusFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPanelSidebarLFocusOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPanelSidebarLOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPanelSidebarRFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPanelSidebarRFocusFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPanelSidebarRFocusOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPanelSidebarROutline",
+     "style": "outline"
+    }
+   ]
+  },
+  {
+   "nameRu": "Другое",
+   "nameEn": "Other",
+   "count": 143,
+   "icons": [
+    {
+     "name": "IconAiFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconAiOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBankFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBankOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconButton2x1LFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconButton2x1LOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconButton2x1RFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconButton2x1ROutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconButton2x2BotLFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconButton2x2BotLOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconButton2x2BotRFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconButton2x2BotROutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconButton2x2TopLFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconButton2x2TopLOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconButton2x2TopRFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconButton2x2TopROutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconButton3x2CFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconButton3x2COutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconButton3x2LFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconButton3x2LOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconButton3x2RFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconButton3x2ROutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCapsuleFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCapsuleOpenFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCapsuleOpenOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCapsuleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCheckEngineFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconChoiceFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconChoiceOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCircleFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCircleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconClosePanelFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCoatOfArmsFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCoatOfArmsOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconColumnCheckboxFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconColumnCheckboxOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCookieFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCookieOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCrownFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCrownOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCubeFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCubeOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDishwasherBrillianceFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDishwasherBrillianceOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDishwasherFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDishwasherIntensiveFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDishwasherIntensiveOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDishwasherNormalFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDishwasherNormalOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDishwasherOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDishwasherSelfcleanFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDishwasherSelfcleanOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDishwasherSuper60Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDishwasherSuper60Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDoorLClosedFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDoorLClosedOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDoorLOpenFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDoorLOpenOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDoorRClosedFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDoorRClosedOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDoorROpenFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDoorROpenOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDropDashFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDropDashOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDropFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDropOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDropsGroupFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDropsGroupOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconFireFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconFireOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconFlaskFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconFlaskOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconFloorTypeFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconFloorTypeOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconFocusFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconFocusOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconGlassCareFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconGlassCareOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconGlassFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconGlassOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconGlobeDashFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconGlobeDashOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconGyroOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconKeyFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconKeyOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMagicDailyFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMagicDailyOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMicroscopeFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMicroscopeOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMovementOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconObjectsSymbolsFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconObjectsSymbolsOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconOpenPanelFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconOpenPanelOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPlanetDashOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPlanetOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPoopFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPoopOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconProductExportFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconProductExportOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconProductImportFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconProductImportOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconQueueDashFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconQueueDashOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconQueueFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconQueueOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconRedCrossFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconRedCrossOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconRobotFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconRobotOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconRombFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconRombOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconScissorsFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconShowerFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSquareFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSquareOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconStacksFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconStacksOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconStickerFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconStickerOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconStickerSquareFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconStickerSquareOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSymbolsFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSymbolsOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTableLampFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTableLampOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTagBadgeFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTagBadgeOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTargetOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTaskHorizFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTaskHorizOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconThermometerFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconThermometerOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTowTruckFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTowTruckOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTrafficLightFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTrafficLightOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTriangleFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTriangleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconWarningTriangleFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconWarningTriangleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconWasherFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconWasherOutline",
+     "style": "outline"
+    }
+   ]
+  },
+  {
+   "nameRu": "Животные",
+   "nameEn": "Animal",
+   "count": 4,
+   "icons": [
+    {
+     "name": "IconAnimalFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconAnimalOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPawFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPawOutline",
+     "style": "outline"
+    }
+   ]
+  },
+  {
+   "nameRu": "Стрелки",
+   "nameEn": "Arrows",
+   "count": 32,
+   "icons": [
+    {
+     "name": "IconArrowWideDownFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconArrowWideDownOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconArrowWideLeftFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconArrowWideLeftOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconArrowWideRightFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconArrowWideRightOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconArrowWideUpFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconArrowWideUpOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBackwardFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBackwardOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconChevronCircleDownFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconChevronCircleDownOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconChevronCircleLeftFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconChevronCircleLeftOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconChevronCircleRightFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconChevronCircleRightOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconChevronCircleUpFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconChevronCircleUpOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDisclosureDownFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDisclosureDownOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDisclosureLeftFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDisclosureLeftOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDisclosureRightFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDisclosureRightOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDisclosureUpFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDisclosureUpOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconShareFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconShareOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSwapHorizCircFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSwapHorizCircOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSwapVertCircFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSwapVertCircOutline",
+     "style": "outline"
+    }
+   ]
+  },
+  {
+   "nameRu": "Commerce",
+   "nameEn": "Commerce",
+   "count": 124,
+   "icons": [
+    {
+     "name": "IconAppleFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconAppleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBallFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBallOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBankCardDoneFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBankCardDoneOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBankCardErrorFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBankCardErrorOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBankCardFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBankCardForwardFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBankCardForwardOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBankCardLockFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBankCardLockOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBankCardOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBankCardStackFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBankCardStackOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBikeFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBikeOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBirrFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBirrOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBoardingPassFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBoardingPassOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBuildingsAddFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBuildingsAddOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBuildingsFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBuildingsOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCakeFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCakeOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCandyFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCandyOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCartBagFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCartBagOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCartFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCartOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCashATMFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCashATMOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCashFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCashOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCoinBirrFallingFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCoinBirrFallingOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCoinBirrFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCoinBirrOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCoinDirhamFallingFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCoinDirhamFallingOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCoinDirhamFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCoinDirhamOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCoinFallingFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCoinFallingOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCoinFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCoinHeartFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCoinHeartOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCoinOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCoinPoundFallingFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCoinPoundFallingOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCoinPoundFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCoinPoundOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCoinRandFallingFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCoinRandFallingOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCoinRandFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCoinRandOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCoinRealFallingFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCoinRealFallingOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCoinRealFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCoinRealOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCoinRialFallingFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCoinRialFallingOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCoinRialFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCoinRialOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCoinRubleFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCoinRubleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCoinRupiahFallingFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCoinRupiahFallingOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCoinRupiahFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCoinRupiahOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCoinYuanFallingFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCoinYuanFallingOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCoinYuanFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCoinYuanOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCouponDiscountFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCouponDiscountOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDeliveryFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDeliveryOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDirhamFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDirhamOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconFootballFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconFootballOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconGiftFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconGiftOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconInternationalTradeFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconInternationalTradeOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconInternationalTradeRubleFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconInternationalTradeRubleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconInternationalTradeRupiahFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconInternationalTradeRupiahOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMoneybagFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMoneybagOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPiggyBankFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPiggyBankOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPoundFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPoundOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconRandFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconRandOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconRealFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconRealOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconRialFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconRialOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconRubleFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconRubleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconRupiahFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconRupiahOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSafeDiagramFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSafeDiagramOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSafeFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSafeOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSctivityFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSctivityOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconWalletAppleFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconWalletAppleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconWalletFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconWalletOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconWhistleFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconWhistleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconYuanFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconYuanOutline",
+     "style": "outline"
+    }
+   ]
+  },
+  {
+   "nameRu": "Данные",
+   "nameEn": "Data",
+   "count": 6,
+   "icons": [
+    {
+     "name": "IconChartDistributionFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconChartDistributionOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconChartPieFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconChartPieOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDataBaseFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDataBaseOutline",
+     "style": "outline"
+    }
+   ]
+  },
+  {
+   "nameRu": "Дизайн",
+   "nameEn": "Design",
+   "count": 40,
+   "icons": [
+    {
+     "name": "IconBendFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBendOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBlurFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBlurOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBrightness0Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBrightness0Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBrightness1Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBrightness1Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBrightness2Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBrightness2Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBrightnessmaxFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBrightnessmaxOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconColorFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconColorOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconColorSwatchFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconColorSwatchOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconContrast0Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconContrast0Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconContrast1Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconContrast1Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconContrast2Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconContrast2Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconContrastMaxFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconContrastMaxOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconGradientColorOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPaletteFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPaletteOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPictureCopyFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPictureCopyOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPictureFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPictureOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPictureSquareFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPictureSquareOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconShadowDownOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconShadowLeftOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconShadowRightOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconShadowUpOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconShapeFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconShapeOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSolidColorOutline",
+     "style": "outline"
+    }
+   ]
+  },
+  {
+   "nameRu": "Устройства",
+   "nameEn": "Devices",
+   "count": 132,
+   "icons": [
+    {
+     "name": "IconAntennaFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconAntennaOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBulbDiodeFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBulbDiodeOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBulbFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBulbOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBulbSberFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBulbSberOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBulbSbFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBulbSbOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCalculatorFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCalculatorOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDevicesFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDeviceShareFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDeviceShareOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDevicesOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconEthernetFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconEthernetOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconFlashDriveFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconFlashDriveOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconGamepadFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconGamepadOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconHdmiFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconHdmiOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconHeadphonesFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconHeadphonesOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconInputsFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconInputsOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconKeyboardFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconKeyboardOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconLightbulbFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconLightbulbOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconNotebookDownloadFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconNotebookDownloadOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconNotebookFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconNotebookOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconNotebookWavesFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconNotebookWavesOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPcMouseFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPcMouseOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPowerWireCableFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPowerWireCableOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPowerWireDashFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPowerWireDashOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPowerWireFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPowerWireOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPrinterFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPrinterOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconRadioFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconRadioOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconRegionalFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconRegionalOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconRemoteControllerFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconRemoteControllerOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSbBoomMiniCastFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSbBoomMiniCastOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSbBoomMiniErrorFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSbBoomMiniErrorOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSbBoomMiniFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSbBoomMiniOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSbBoomMiniSoundFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSbBoomMiniSoundOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSbBoxFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSbBoxOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSbBoxPackFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSbBoxPackOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSbBoxTimeFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSbBoxTimeOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSbBoxTopFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSbBoxTopOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSbDotCastFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSbDotCastOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSbDotErrorFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSbDotErrorOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSbDotFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSbDotOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSbDotSoundFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSbDotSoundOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSberboomMiniCastFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSberboomMiniCastOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSberboomMiniErrorFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSberboomMiniErrorOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSberboomMiniFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSberboomMiniOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSberboxFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSberboxOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSberboxPackFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSberboxPackOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSberboxTimeFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSberboxTimeOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSberboxTopFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSberboxTopOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSberportalBulbFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSberportalBulbOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSberportalFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSberportalOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSbHomeCastFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSbHomeCastOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSbHomeErrorFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSbHomeErrorOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSbHomeFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSbHomeOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSbHomeSoundFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSbHomeSoundOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSbPortalBulbFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSbPortalBulbOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSbPortalFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSbPortalOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTvBulbFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTvBulbOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTvDashFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTvDashOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTvFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTvModeFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTvModeOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTvOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTvPlayFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTvPlayOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTvSaluteFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTvSaluteOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconUsbAFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconUsbAOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconUsbCFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconUsbCOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconVgaFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconVgaOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconWatchRectangleFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconWatchRectangleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconWatchRoundClockFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconWatchRoundClockOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconWatchRoundFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconWatchRoundOutline",
+     "style": "outline"
+    }
+   ]
+  },
+  {
+   "nameRu": "Файл",
+   "nameEn": "File",
+   "count": 80,
+   "icons": [
+    {
+     "name": "IconBlankCsvFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBlankCsvOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBlankDocFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBlankDocOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBlankFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBlankGenerateAltFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBlankGenerateAltOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBlankGenerateFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBlankGenerateOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBlankJpgFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBlankJpgOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBlankOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBlankPdfFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBlankPdfOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBlankPlusAltFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBlankPlusAltOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBlankPlusFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBlankPlusOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBlankPngFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBlankPngOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBlankPptxFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBlankPptxOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBlankTextFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBlankTextOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBlankTxtFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBlankTxtOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBlankVisibilityOffFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBlankVisibilityOffOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBlankVisibilityOnFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBlankVisibilityOnOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBlankXlsFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBlankXlsOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBlankXmlFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBlankXmlOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBookFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBookOpenFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBookOpenOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBookOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCertificateFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCertificateOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDocumentAddFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDocumentAddOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDocumentAttachFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDocumentAttachOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDocumentAutopayFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDocumentAutopayOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDocumentBackwardFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDocumentBackwardOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDocumentExportFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDocumentExportOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDocumentFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDocumentForwardFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDocumentForwardOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDocumentGlassFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDocumentGlassOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDocumentImportFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDocumentImportOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDocumentInquirerFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDocumentInquirerOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDocumentOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDocumentPasteFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDocumentPasteOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconFileCheckFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconFileCheckOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconFileErrorFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconFileErrorOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconFileGlassFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconFileGlassOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconFileStackFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconFileStackOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconFileTextFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconFileTextOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconFolderFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconFolderOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconFolderPlusFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconFolderPlusOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPassportFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPassportOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTicketFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTicketOutline",
+     "style": "outline"
+    }
+   ]
+  },
+  {
+   "nameRu": "Инструменты",
+   "nameEn": "Instruments",
+   "count": 39,
+   "icons": [
+    {
+     "name": "IconBoxFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBoxOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCardsOrderCenterHorizFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCardsOrderCenterHorizOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCardsOrderCenterVertFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCardsOrderCenterVertOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCardsOrderFrontHorizFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCardsOrderFrontHorizOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCardsOrderFrontVertFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCardsOrderFrontVertOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCardstackFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCardstackHorizFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCardstackHorizOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCardstackOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCaseBusinessFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCaseBusinessOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCaseDiagramFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCaseDiagramOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCaseFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCaseOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCursorFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCursorOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconFlasherFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconFlasherOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconFlashlightFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconFlashlightOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconHummerFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconHummerOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconLayerBlurOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconRulerFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconRulerOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSecurityCameraFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSecurityCameraOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSensorFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSensorOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSensorTemperatureFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSensorTemperatureOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconWrenchFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconWrenchOutline",
+     "style": "outline"
+    }
+   ]
+  },
+  {
+   "nameRu": "Медиа",
+   "nameEn": "Media",
+   "count": 98,
+   "icons": [
+    {
+     "name": "IconCameraDashFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCameraDashOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCameraPhotoFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCameraPhotoOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCameraReverseFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCameraReverseOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCameraVideoAddFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCameraVideoAddOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCameraVideoFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCameraVideoOffFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCameraVideoOffOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCameraVideoOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCameraVideoRecFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCameraVideoRecOffFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCameraVideoRecOffOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCameraVideoRecOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMegaphoneFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMegaphoneLoudFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMegaphoneLoudOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMegaphoneOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMicErrorFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMicErrorOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMicFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMicOffFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMicOffOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMicOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMoviesFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMoviesOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMusicAlbumFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMusicAlbumOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMusicFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMusicMicFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMusicMicOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMusicOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMusicPodcastFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMusicPodcastOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMusicWithLightFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMusicWithLightOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMuteFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMuteOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconNextFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconNextOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconNoteFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconNoteOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPauseFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPauseOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPlayCircleFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPlayCircleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPlayFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPlayOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPreviousFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPreviousOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconRepeatCircleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconRepeatOneOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconRepeatOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconRewindBackwardFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconRewindBackwardOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconRewindForwardFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconRewindForwardOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconScenarioAutoFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconScenarioAutoOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconScenarioFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconScenarioOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconScenarioSyncAuto35Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconScenarioSyncAuto35Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconScenarioSyncAuto45Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconScenarioSyncAuto45Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconScenarioSyncAuto65Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconScenarioSyncAuto65Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconShuffleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconStopFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconStopOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconVideoArchive24Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconVideoArchive24Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconVideoClipFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconVideoClipOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconVideoProcessFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconVideoProcessOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconVideoRecordFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconVideoRecordOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconViewBeautyFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconViewBeautyOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconViewPersonFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconViewPersonOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconViewPersonPanelLFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconViewPersonPanelLOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconViewPersonPanelRFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconViewPersonPanelROutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconViewScreen4Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconViewScreen4Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconViewSplit4Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconViewSplit4Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconVolumeLevel0Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconVolumeLevel0Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconVolumeLevel1Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconVolumeLevel1Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconVolumeLevel2Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconVolumeLevel2Outline",
+     "style": "outline"
+    }
+   ]
+  },
+  {
+   "nameRu": "Операции",
+   "nameEn": "Operation",
+   "count": 132,
+   "icons": [
+    {
+     "name": "IconAddFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconAddOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBackspaceFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBackspaceOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBookmarkDashFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBookmarkDashOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBookmarkFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBookmarkOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBookmarkStackFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBookmarkStackOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBookmarkStarFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBookmarkStarOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCopyFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCopyOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDashboardFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDashboardOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconEditFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconEditOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconEraserFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconEraserOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconExportDoneOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconExportOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconFilterFunnelFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconFilterFunnelOffFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconFilterFunnelOffOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconFilterFunnelOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconFlagFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconFlagOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconFlipHorizontalFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconFlipHorizontalOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconFlipVerticalFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconFlipVerticalOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconGroupAltFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconGroupAltOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconGroupFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconGroupOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconHierarchyFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconLoginFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconLogoutFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMarkerFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMarkerOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMessagesFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMessagesOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconOpenFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconOpenOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPinDashFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPinDashOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPinFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPinListFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPinListOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPinOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPipFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPipOffFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPipOffOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPipOnFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPipOnOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPipOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconResetOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconResizeCorneredFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconScreenShareErrorFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconScreenShareErrorOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconScreenSharePinFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconScreenSharePinOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconScreenShareUnpinFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconScreenShareUnpinOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSearchAIFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSearchAIOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSearchFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSelectionScreenOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSettingsFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSettingsOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconShareScreenFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconShareScreenMobileFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconShareScreenMobileOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconShareScreenOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconShareScreenTabletFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconShareScreenTabletOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSpeedHighOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSpeedLowOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSpeedMediumOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSwitchSettingsFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSwitchSettingsOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSwitchToggleOffFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSwitchToggleOffOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSwitchToggleOnFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSwitchToggleOnOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTableColumnFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTableColumnOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTableColumnPinFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTableCornerPinFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTableFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTableOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTablePinFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTableRowFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTableRowOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTableRowPinFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTextAlignCenterOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTextAlignLeftOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTextAlignRightOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTranscribeTextVoiceErrorFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTranscribeTextVoiceFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTranscribeTextVoiceOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTranscriptionVoiceTextErrorFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTranscriptionVoiceTextErrorOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTranscriptionVoiceTextFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTranscriptionVoiceTextOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTranslateFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTranslateOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTrashFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTrashOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconUngroupAltFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconUngroupAltOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconUploadFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconUploadOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconWhiteboardFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconWhiteboardOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconWindowFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconWindowMaximizeLFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconWindowMaximizeLOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconWindowMaximizeRFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconWindowMaximizeROutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconWindowMinimizeLFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconWindowMinimizeLOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconWindowMinimizeRFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconWindowMinimizeROutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconWindowMultiFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconWindowMultiOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconWindowOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconZoomMinusFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconZoomMinusOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconZoomPlusFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconZoomPlusOutline",
+     "style": "outline"
+    }
+   ]
+  },
+  {
+   "nameRu": "Чувства",
+   "nameEn": "Senses",
+   "count": 12,
+   "icons": [
+    {
+     "name": "IconBrainFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBrainOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconHandActionDashFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconHandActionDashOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconHandActionFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconHandActionOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconHandFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconHandOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconHandPointerFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconHandPointerOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconHandTapFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconHandTapOutline",
+     "style": "outline"
+    }
+   ]
+  },
+  {
+   "nameRu": "Статус",
+   "nameEn": "Status",
+   "count": 30,
+   "icons": [
+    {
+     "name": "IconAttentionCircleFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconAttentionCircleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconAttentionTriangleFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconAttentionTriangleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBlockFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBlockOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCloseCircleFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCloseCircleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCloseSquareFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCloseSquareOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDoneCircleFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDoneCircleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDoneSquareFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDoneSquareOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconHelpCircleFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconHelpCircleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconInfoCircleFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconInfoCircleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconInProgressFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconInProgressOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMinusCircleFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMinusCircleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMinusSquareFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMinusSquareOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPlusCircleFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPlusCircleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPlusSquareFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPlusSquareOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconVerificationFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconVerificationOutline",
+     "style": "outline"
+    }
+   ]
+  },
+  {
+   "nameRu": null,
+   "nameEn": "Table",
+   "count": 6,
+   "icons": [
+    {
+     "name": "IconRowHeightFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconRowHeightMaxFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconRowHeightMaxOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconRowHeightMinFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconRowHeightMinOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconRowHeightOutline",
+     "style": "outline"
+    }
+   ]
+  },
+  {
+   "nameRu": "Технологии",
+   "nameEn": "Technology",
+   "count": 72,
+   "icons": [
+    {
+     "name": "IconAppsFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconAppsOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBattery100Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBattery100Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBattery10Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBattery10Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBattery20Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBattery20Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBattery40Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBattery40Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBattery60Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBattery60Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBattery80Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBattery80Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBatteryChargeFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBatteryChargeOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBatteryEmptyFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBatteryEmptyOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBatteryHoriz100Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBatteryHoriz100Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBatteryHoriz10Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBatteryHoriz10Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBatteryHoriz20Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBatteryHoriz20Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBatteryHoriz40Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBatteryHoriz40Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBatteryHoriz60Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBatteryHoriz60Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBatteryHoriz80Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBatteryHoriz80Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBatteryHorizChargeFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBatteryHorizChargeOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBatteryHorizEmptyFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBatteryHorizEmptyOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCloudDashFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCloudDashOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCloudDownloadFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCloudDownloadOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCloudErrorFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCloudErrorOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCloudFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCloudOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCloudUploadFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCloudUploadOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMailClosedFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMailClosedOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMailErrorFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMailErrorOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMailFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMailOpenFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMailOpenOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMailOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMailPlusFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMailPlusOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMailTrayFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMailTrayOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMailWavesFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMailWavesOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMobileAutorotateFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMobileAutorotateOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMobileFrontFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMobileFrontOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMobilePlusFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMobilePlusOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMobileVibrationFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMobileVibrationOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMobileWavesFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMobileWavesOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconNetworkFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconNetworkOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconScene3dFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconScene3dOutline",
+     "style": "outline"
+    }
+   ]
+  },
+  {
+   "nameRu": "Время",
+   "nameEn": "Time",
+   "count": 30,
+   "icons": [
+    {
+     "name": "IconAlarmAddFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconAlarmAddOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconAlarmCircleFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconAlarmCircleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconAlarmDoneFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconAlarmDoneOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCalendarEventFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCalendarEventOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCalendarFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCalendarOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconClockCircleFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconClockCircleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconHourglassBotFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconHourglassBotOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconHourglassFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconHourglassOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconHourglassTopFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconHourglassTopOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTimer45Fill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTimer45Outline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTimerAddFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTimerAddOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTimerExpressFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTimerExpressOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTimerExpressSpeedFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTimerExpressSpeedOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTimerFastFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTimerFastOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTimerFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTimerOutline",
+     "style": "outline"
+    }
+   ]
+  },
+  {
+   "nameRu": "Переключатель",
+   "nameEn": "Toggle",
+   "count": 57,
+   "icons": [
+    {
+     "name": "IconBellDashFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBellDashOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBellDoneFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBellDoneOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBellErrorFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBellErrorOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBellFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBellOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCardsGridFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCardsGridOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCardsListFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCardsListOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconDislikeFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconDislikeOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconHeartBoxFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconHeartBoxOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconHeartCircleFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconHeartCircleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconHeartDashFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconHeartDashOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconHeartFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconHeartOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconLightningFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconLightningOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconLikeFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconLikeOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconLockFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconLockOpenFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconLockOpenOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconLockOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconShieldChildFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconShieldChildOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconShieldDashFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconShieldDashOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconShieldDoneFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconShieldDoneOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconShieldFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconShieldLinesCirclesFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconShieldLinesCirclesOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconShieldLinesFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconShieldLinesOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconShieldOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSleepFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSleepOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconStarCircleFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconStarCircleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconStarDashFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconStarDashOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconStarFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconStarFourFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconStarFourOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconStarHalfFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconStarLightFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconStarLightOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconStarOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconStarRecommendFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconStarRecommendOutline",
+     "style": "outline"
+    }
+   ]
+  },
+  {
+   "nameRu": "Путешествие",
+   "nameEn": "Travel",
+   "count": 40,
+   "icons": [
+    {
+     "name": "IconBusFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBusOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCanisterFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCanisterOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCarFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCarOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCarTaxFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCarTaxOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconCompassFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconCompassOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconGasStationFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconGasStationOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconGlobeFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconGlobeOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconHelicopterFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconHelicopterOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconLocationArrowFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconLocationArrowOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconLocationPinFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconLocationPinOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconLocationPointFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconLocationPointOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMapFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMapOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconParkingFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconParkingOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPlaneDashFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPlaneDashOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPlaneFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPlaneFlyFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPlaneFlyOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPlaneOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSpeedometerFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSpeedometerOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSteeringWheelFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSteeringWheelOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconTravelCarFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconTravelCarOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconWheelFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconWheelOutline",
+     "style": "outline"
+    }
+   ]
+  },
+  {
+   "nameRu": "Пользователь",
+   "nameEn": "User",
+   "count": 48,
+   "icons": [
+    {
+     "name": "IconAddSmileFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconAddSmileOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconBeautificationFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBeautificationOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconEarDashFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconEarDashOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconEarErrorFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconEarErrorOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconEarFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconEarOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconEducationFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconEducationOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconEyeClosedFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconEyeClosedOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconEyeFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconEyeOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconGlassesFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconGlassesOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconKidsFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconKidsLockFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconKidsLockOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconKidsOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconMaskFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconMaskOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPeopleGroupBigFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPeopleGroupBigOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPeopleGroupFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPeopleGroupOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconPramFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconPramOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconProfileBadgeFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconProfileBadgeOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconProfileCircleFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconProfileCircleOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconProfileCrossFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconProfileCrossOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconProfileFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconProfileOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconProfilePinFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconProfilePinOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconProfilePlusFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconProfilePlusOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconProfileSquareFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconProfileSquareOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconProfileUnpinFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconProfileUnpinOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSmileFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSmileOutline",
+     "style": "outline"
+    }
+   ]
+  },
+  {
+   "nameRu": "Погода",
+   "nameEn": "Weather",
+   "count": 12,
+   "icons": [
+    {
+     "name": "IconBeachUmbrellaFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconBeachUmbrellaOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSunFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSunOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSunriseFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSunriseOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconSunsetFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconSunsetOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconUmbrellaFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconUmbrellaOutline",
+     "style": "outline"
+    },
+    {
+     "name": "IconWeatherFill",
+     "style": "fill"
+    },
+    {
+     "name": "IconWeatherOutline",
+     "style": "outline"
+    }
+   ]
+  }
+ ]
+}

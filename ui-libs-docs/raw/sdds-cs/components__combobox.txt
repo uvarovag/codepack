@@ -1,0 +1,57 @@
+Title: Combobox | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/combobox/
+---
+Combobox (raw sdds-cs version — cs-core also has its own Combobox, shadowed/overridden by cs-portal's export; see raw/cs-core.json "Combobox"). Only required prop: items. Item shape: { value: string, label: string, placement?: Placement (default 'bottom-start'), items?: ItemOption[] (nested submenu), disabled?, contentLeft?, contentRight?, className?, listMaxHeight? }. multiple:boolean switches single (value/defaultValue: string) vs multi (string[]). mode="radio" in single mode disallows deselect-by-reclick. Multi-mode extras: selectAllOptions, isTargetAmount, targetAmount, renderValue, chipClickArea. treeView:boolean renders nested items as a tree with highlightable search. Works with react-hook-form via {...register('name')} and native forms.
+
+LIVE EDITOR (single, nested items)
+function App() {
+const [value, setValue] = useState('');
+const items = [
+{ value: 'north_america', label: 'Северная Америка' },
+{ value: 'south_america', label: 'Южная Америка', items: [
+{ value: 'brazil', label: 'Бразилия' },
+{ value: 'argentina', label: 'Аргентина' },
+]},
+];
+return <Combobox items={items} value={value} onChange={setValue} placeholder="Placeholder" label="Label" helperText="Helper text" />;
+}
+
+LIVE EDITOR (multiple, target amount)
+function App() {
+const [value, setValue] = useState(['brazil']);
+return <Combobox multiple label="Label" placeholder="Placeholder" items={items} value={value} onChange={setValue} isTargetAmount />;
+}
+
+API (own props; also inherits TextField-like input props: size, view, disabled, readOnly, labelPlacement)​
+Property Type Default Description
+items* T[] — список элементов (required)
+value / defaultValue string | string[] — по multiple
+onChange ChangeEventHandler | ((value, item) => void) | ((value[], item) => void)
+multiple boolean — режим множественного выбора
+mode "radio"|"default" default — radio: нельзя отменить выбор (только single)
+treeView boolean false — вид дерева
+filter ((item: T, textValue: string) => boolean) — фильтрация
+onChangeValue ((value: string) => void) — изменение строки поиска
+onToggle ((isOpen: boolean) => void)
+placement Placement bottom-start
+zIndex / flip / shift — позиционирование дропдауна (как Popover)
+portal string | RefObject<HTMLElement|null>
+listMaxHeight / listWidth — размеры списка
+virtual boolean false — виртуализация (не работает в многоуровневых списках)
+alwaysOpened boolean false
+closeAfterSelect boolean — default true(single)/false(multiple)/false(alwaysOpened)
+renderItem / renderValue / renderSelectionIcon — кастомный рендер
+beforeList / afterList ReactNode
+emptyStateDescription ReactNode
+isTargetAmount / targetAmount / selectAllOptions / chipClickArea — multiple-only helpers
+singleLine boolean true — label элемента в одну строку
+hasDivider boolean
+appearance "clear"|"default"|"viewMode" default
+contentLeft / contentRight ReactElement
+label / helperText / textBefore / textAfter / placeholder string
+required / optional boolean; requiredPlacement "right"|"left" right; hasRequiredIndicator boolean false; optionalText string
+keepPlaceholder boolean
+filterValue ((value: string) => boolean)
+size "s"; view "default"|"negative"; disabled/readOnly boolean false; labelPlacement "outer"|"inner"
+chipView "default" — вид чипа в multiple-режиме
+hint* props (hintSize, hintView, hintText, hintTrigger, hintTargetIcon, hintTargetPlacement, hintPlacement, hintHasArrow, hintOffset, hintWidth, hintContentLeft, hintPortal) — tooltip/hint configuration, same shape as other inputs

@@ -1,0 +1,30 @@
+Title: Toast (Legacy) | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/toast-legacy/
+---
+Toast (Legacy). NOTE: `showToast` name is ambiguous across the cascade — cs-portal's `showToast` (re-exported explicitly from cs-core) is what `import { showToast } from cs-portal` gives you; it is NOT this legacy one nor the new sdds-cs Toast one. Only reach for this legacy API if working directly with sdds-cs's ToastProvider/useToast.
+Wrap app in <ToastProvider>. useToast() -> { showToast(args: ShowToastArgs), hideToast() }.
+LIVE EDITOR
+function App() {
+function Inner() {
+const { showToast } = useToast();
+return <Button onClick={() => showToast({ text: 'Подсказка', position: 'bottom', hasClose: true, timeout: 3000 })} text="Вызвать" />;
+}
+return <ToastProvider><Inner /></ToastProvider>;
+}
+
+API​
+ShowToastArgs (arg to showToast)​
+text? string; contentLeft? ReactNode; position? ToastPosition ('top'|'bottom'); role? ToastRole; fade? boolean; offset? number (rem); pilled? boolean; hasClose? boolean; size? string; view? string; timeout? number (undefined = stays until closed); textColor? string; onHide? (() => void); onShow? (() => void)
+
+Component props​
+Property Type Default Description
+view "default"|"dark"|"light"
+size "s"
+closeIconType "thin"
+pilled boolean
+text string
+contentLeft ReactNode
+width string|number
+hasClose boolean
+textColor string
+onCloseButtonClick (() => void)

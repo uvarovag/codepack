@@ -1,0 +1,18 @@
+Title: NumberFormat | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/number-format/
+---
+NumberFormat — text input for numbers, built on TextField, inherits its props (size, view, disabled, label...). thousandsGroupStyle: 'thousand' (123 456 789), 'lakh' (indian, 12 34 56 789), 'wan' (chinese, 1 2345 6789), 'none'. decimalScale + fixedDecimalScale control decimal digits. allowNegative / allowLeadingZeros. Standalone helper: numberFormatter(stringValue, options) applies the same formatting rules outside a component.
+LIVE EDITOR
+function App() { return <NumberFormat size="s" thousandSeparator=" " decimalSeparator="." decimalScale={4} fixedDecimalScale defaultValue="123456.789" />; }
+
+API (own props; also inherits TextField's size/view/label/hint*/required/etc.)​
+Property Type Default Description
+thousandSeparator string|boolean ' '
+decimalSeparator string '.'
+thousandsGroupStyle "none"|"thousand"|"lakh"|"wan"
+decimalScale number 3
+fixedDecimalScale boolean
+allowNegative / allowLeadingZeros boolean
+prefix / suffix string
+isAllowed ((values: NumberFormatValues) => boolean) — validate input; false blocks onChange
+onChange (event?, values?: {floatValue, formattedValue, value}) => void

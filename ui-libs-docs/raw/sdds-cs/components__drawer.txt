@@ -1,0 +1,38 @@
+Title: Drawer | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/drawer/
+---
+Drawer — slide-out panel. Requires <PopupProvider> wrapping the app root: import { PopupProvider } from '@salutejs/sdds-cs'; wrap ReactDOM render tree. placement="left"(default)|"right"|"top"|"bottom". asModal=true adds overlay + blocks scroll/focus; false = non-modal. frame targets a specific container (id or ref) instead of document. Subcomponents: DrawerHeader (hasClose, closePlacement, actions), DrawerContent, DrawerFooter. animationInfo={enter, exit} for custom CSS keyframe animation strings.
+LIVE EDITOR
+function App() {
+const [isOpen, setIsOpen] = useState(false);
+return (
+<PopupProvider>
+<Button text="Open" onClick={() => setIsOpen(true)} />
+<Drawer opened={isOpen} onClose={() => setIsOpen(false)} placement="right" asModal width="25vw" height="100vh">
+<DrawerHeader hasClose onClose={() => setIsOpen(false)}><H3>Header</H3></DrawerHeader>
+<DrawerContent>Content</DrawerContent>
+<DrawerFooter><H3>Footer</H3></DrawerFooter>
+</Drawer>
+</PopupProvider>
+);
+}
+
+API​
+Property Type Default Description
+view "default" default; size "m" m; borderRadius "none"|"default" none
+children ReactNode
+offset [number,number]|[string,string]
+frame string|RefObject<HTMLElement|null>
+opened boolean (isOpen deprecated alias)
+placement "top"|"bottom"|"right"|"left"
+positionFixed boolean false — apply position:fixed when frame != document
+overlay ReactNode; zIndex string
+popupInfo PopupInfo
+withAnimation boolean; animationInfo DrawerAnimationInfo {enter, exit}
+width / height string|number 100%
+customBackgroundColor / customContentBackgroundColor string
+asModal boolean; withBlur boolean
+overlayProps DrawerOverlayProps
+closeOnEsc / closeOnOverlayClick boolean
+onEscKeyDown / onOverlayClick / onClose callbacks
+initialFocusRef / focusAfterRef RefObject<HTMLElement>

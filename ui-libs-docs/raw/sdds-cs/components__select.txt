@@ -1,0 +1,36 @@
+Title: Select | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/select/
+---
+Select — similar to Combobox but no free-text search by default (Combobox has search/filter built in — use it if you need search). Only required: items (same item shape as Combobox: value, label, placement?, items? nested, disabled?, contentLeft?, contentRight?, className?, listMaxHeight?). multiselect switches single(string)/multi(string[]) value. mode="radio" for single non-deselectable. target="textfield-like"(default, mimics TextField, inherits its props)|"button-like". renderValue/renderTarget/renderItem/renderSelectionIcon for customization.
+LIVE EDITOR
+function App() {
+const [value, setValue] = useState('');
+return <Select items={items} value={value} onChange={setValue} label="Single" placeholder="Placeholder" helperText="Helper text" />;
+}
+
+API (own; textfield-like target also inherits TextField props)​
+Property Type Default Description
+items* K[]
+value / defaultValue string|string[]; multiselect boolean
+onChange ChangeEventHandler | ((value, item) => void) | ((value[], item) => void)
+target "textfield-like"|"button-like" textfield-like
+mode "radio"|"default" default
+onToggle ((isOpen) => void)
+placement SelectPlacement bottom; zIndex ZIndex
+singleLine boolean true
+isTargetAmount boolean false — show count instead of listing values
+renderValue / renderTarget / renderItem / renderSelectionIcon — customization callbacks
+selectAllOptions SelectAllProps; chipClickArea "full"|"close-icon" full
+treeView boolean false; arrowPlacement "right"|"left" left
+variant "normal"|"tight" normal
+listMaxHeight / listWidth
+portal string|RefObject<HTMLElement|null>
+helperText string
+closeAfterSelect boolean — default true(single)/false(multi)
+beforeList / afterList ReactNode; virtual boolean false; emptyStateDescription ReactNode
+flip / shift boolean false
+keepPlaceholder boolean
+required boolean; requiredPlacement "right"|"left" right; hasRequiredIndicator boolean false; optional boolean; optionalText string
+hint* family (same as Combobox/TextField)
+chipType "text"|"default" default; chipView "default" — multiselect chip appearance
+size "s"; view "default"|"negative"; disabled boolean false; readOnly boolean; labelPlacement "outer"|"inner"

@@ -1,0 +1,24 @@
+Title: Toast | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/toast/
+---
+Toast — new toast system (vs toast-legacy). Insert <ToastContainer /> once anywhere in the app; call showToast(text, options: ShowToastType) from anywhere. Options on showToast override ToastContainer's defaults per-toast.
+LIVE EDITOR
+function App() {
+return (
+<>
+<ToastContainer textColor="green" />
+<Button onClick={() => showToast("Кастомный тост", { textColor: "blue", pilled: true, duration: 3000 })}>Show</Button>
+</>
+);
+}
+
+API (ShowToastType / ToastContainer props)​
+Property Type Default Description
+view "default"; size "s"; pilled boolean
+position ToastPosition bottom-center
+duration number — undefined = stays until manually closed
+hasClose boolean true
+contentLeft ReactNode
+width Width<string|number>
+textColor Color
+onCloseButtonClick (() => void) — @deprecated

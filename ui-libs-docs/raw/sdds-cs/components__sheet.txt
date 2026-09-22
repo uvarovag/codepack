@@ -1,0 +1,30 @@
+Title: Sheet | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/sheet/
+---
+Sheet — bottom sheet overlay. children = body content; contentHeader/contentFooter for pinned slots (isHeaderFixed/isFooterFixed keeps them fixed while body scrolls). withOverlay=true(default) dims background and clicking it closes; withOverlay=false lets user interact with content behind. withBlur adds blur to overlay. snapPoints (CSS sizes like '320px','50%','40dvh') for stop positions; initialSnapPoint; onSnapPointChange.
+LIVE EDITOR
+function App() {
+const [opened, setOpened] = useState(false);
+return (
+<>
+<Button onClick={() => setOpened(true)}>Открыть</Button>
+<Sheet opened={opened} onClose={() => setOpened(false)} contentHeader={<h4>header</h4>} contentFooter={<p>footer</p>} isHeaderFixed isFooterFixed>
+<div>body</div>
+</Sheet>
+</>
+);
+}
+
+API​
+Property Type Default Description
+view "default"
+handlePlacement "outer"|"inner"
+opened boolean
+onClose* (() => void) — swipe down, overlay click, or ESC
+onOverlayClick / onEscKeyDown — custom overrides (default onClose)
+closeOnEsc boolean true
+contentHeader / contentFooter ReactNode; isHeaderFixed / isFooterFixed boolean false
+hasHandle boolean true
+withOverlay boolean true; withBlur boolean false; withTransition boolean true
+throttleMs number — throttle onScroll; hasScrollEvents boolean true
+snapPoints SheetSnapPoints; initialSnapPoint string; onSnapPointChange ((snapPoint) => void)

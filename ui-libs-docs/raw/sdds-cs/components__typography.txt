@@ -1,0 +1,16 @@
+Title: Typography | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/typography/
+---
+Typography components replace raw HTML tags (h1, p, etc). Font: SB Sans Text/Display/TextMono (loaded via CDN link tags at app level, not per-component). as prop changes the rendered tag (e.g. <BodyM as="h3">). breakWord (default true, syllable-wrap) and noWrap (default false) control text wrapping. Weight via medium / bold / extraBold booleans (config-dependent). isItalic for italics. isNumeric for tabular/monospace numbers (Numbers group).
+Components: Hero — DsplL, DsplM, DsplS. Headings — H1, H2, H3, H4, H5. Interface — BodyL, BodyM, BodyS, BodyXS, BodyXXS (labels/buttons/captions). Text — TextL, TextM, TextS, TextXS (article body/descriptions).
+LIVE EDITOR
+function App() { return <><H2 medium>Heading</H2><BodyM as="span" bold>Label</BodyM></>; }
+
+API (shared across all typography components)​
+Property Type Default Description
+as ElementType — override rendered tag
+bold / medium / extraBold boolean — font weight variants (component-config dependent)
+isItalic boolean
+isNumeric boolean — monospace/tabular numbers
+breakWord boolean true
+noWrap boolean false

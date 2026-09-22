@@ -1,0 +1,27 @@
+Title: Pagination | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/pagination/
+---
+Pagination. slots = max page-number buttons shown at once. count = total items (or pages if hasPerPage unset). type="default"|"compact" (compact shows only current page). hasPerPage shows a per-page-size dropdown (perPage/perPageList). hasQuickJump shows a "jump to page" input. leftContent/rightContent for custom nav buttons (first/prev/next/last). Controlled via value + perPage + onChange(page?, perPage?).
+LIVE EDITOR
+function App() {
+const [page, setPage] = useState(1);
+return <Pagination slots={9} count={2000} value={page} hasPerPage perPage={20} hasQuickJump onChange={(p, pp) => { if(p) setPage(p); }} />;
+}
+
+API​
+Property Type Default Description
+view "default"; viewCurrentPage "default"; size "s"
+type "default"|"compact"
+leftContent / rightContent ReactNode; helperText ReactNode; singleLine boolean false
+count number — total pages/items
+value / defaultValue number — selected page
+hasQuickJump boolean; hasPerPage boolean
+perPage / defaultPerPage number; perPageList number[]
+disabledPages string[]
+slots 1-15 — number of PageButtons shown
+pilled boolean; square boolean; isCommonButtonStyles boolean
+placeholderQuickJump / textQuickJump / textPerPage string
+listWidth Width<string|number>
+onChange ((page?, perPage?) => void)
+onFocusQuickJump / onBlurQuickJump
+onChangePageValue / onChangePerPageValue — @deprecated use onChange

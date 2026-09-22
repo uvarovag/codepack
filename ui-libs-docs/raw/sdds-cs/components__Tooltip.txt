@@ -1,0 +1,27 @@
+Title: Tooltip | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/Tooltip/
+---
+Tooltip (component, not the beta one) — wraps target via `target` prop, opens in given placement (or an array for auto-fallback). Meant to wrap icons from @salutejs/plasma-icons. trigger="none"|"click"|"hover" (opened=true/false for manual control). Use ViewContainer view="onDark"|"onLight" wrapper to theme it for dark/light backgrounds.
+LIVE EDITOR
+function App() { return <Tooltip target={<Button>Btn</Button>} text="По ховеру" placement="right" hasArrow trigger="hover" mouseEnterDelay={0} mouseLeaveDelay={300} />; }
+
+API​
+Property Type Default Description
+text* ReactNode
+opened boolean
+target ReactElement | ... — element the tooltip attaches to
+placement Placement|ComputedPlacement[]
+hasArrow boolean; animated boolean
+offset [number,number] [0,8]
+frame string|RefObject<HTMLElement>
+usePortal boolean true
+minWidth / maxWidth string|number
+onDismiss (() => void) — Esc close
+contentLeft ReactNode
+zIndex string 9200
+size string; view string
+trigger "none"|"click"|"hover"
+mouseEnterDelay number 0; mouseLeaveDelay number 300
+hoverTimeout number 300 — @deprecated use mouseLeaveDelay
+children — @deprecated use target
+arrow / isVisible / isOpen — @deprecated (use hasArrow/opened)

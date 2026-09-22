@@ -1,0 +1,40 @@
+Title: Modal | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/modal/
+---
+Modal (raw sdds-cs — cs-core also has its own Modal/MobileModal, cs-portal re-exports cs-core's Modal, shadowing this one). Requires <PopupProvider> wrapping app root. Similar to Popup but adds overlay + blocks scroll/focus. hasBody wraps children in a styled container with padding + close X. Width not set by default (fits content) — pass style={{width:...}} on Modal itself (works with hasBody too). draggable enables drag-to-move. resizable enables resize handles (same shape as Popover's resizable). isFocusTrapped=true (default) traps Tab focus inside; focusTrapSelectors for portal-rendered content outside the modal's DOM subtree.
+LIVE EDITOR
+function App() {
+const [isOpen, setIsOpen] = useState(false);
+return (
+<PopupProvider>
+<Button text="Open" onClick={() => setIsOpen(true)} />
+<Modal opened={isOpen} onClose={() => setIsOpen(false)} placement="center" offset={[0,0]} hasBody style={{ width: '25rem' }}>
+Content
+</Modal>
+</PopupProvider>
+);
+}
+
+API​
+Property Type Default Description
+withBlur boolean — blur подложки
+closeOnEsc / closeOnOverlayClick boolean true
+onEscKeyDown / onOverlayClick — custom handlers (default: onClose)
+isFocusTrapped boolean true
+initialFocusRef string|RefObject<HTMLElement>
+focusTrapSelectors string[] — доп. DOM-поддеревья (portal-контент) для focus trap
+focusAfterRef RefObject<HTMLElement> — фокус после закрытия (по умолчанию последний активный элемент)
+onClose (() => void)
+view / size string
+opened boolean (isOpen deprecated)
+placement PopupPlacement — center|left|right|top|bottom + комбинации
+offset [number,number]|[string,string]
+frame string|RefObject<HTMLElement|null>
+positionFixed boolean false
+children ReactNode; overlay ReactNode; zIndex string
+popupInfo PopupInfo
+withAnimation boolean
+draggable boolean
+resizable boolean|{disabled?, directions?, defaultSize?, minWidth?, minHeight?, maxWidth?, maxHeight?, icons?, iconSize?, hiddenIcons?}
+hasBody boolean — стилизованная обёртка с паддингами
+hasClose boolean — крестик закрытия

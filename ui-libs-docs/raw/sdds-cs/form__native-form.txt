@@ -1,0 +1,28 @@
+Title: Нативная форма | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/form/native-form/
+---
+Plain <form> + FormData approach: give each input a `name`, read via `new FormData(event.target)` in onSubmit.
+LIVE EDITOR
+function App() {
+const onSubmit = (event) => {
+event.preventDefault();
+const formData = new FormData(event.target);
+for (const [name, value] of formData) console.log(name, value);
+};
+return (
+<form onSubmit={onSubmit}>
+<TextField name="textfield" placeholder="Textfield" />
+<TextArea name="textarea" autoResize placeholder="Textarea" />
+<Checkbox name="checkbox" label="Checkbox" />
+<Switch name="switch" label="Switch" labelPosition="after" />
+<RadioGroup aria-labelledby="lang"><Radiobox name="radiobox" value="c" label="C" /></RadioGroup>
+<Slider name="slider" label="Slider" type="single" min={0} max={100} />
+<DatePicker label="DatePicker" name="datepicker" />
+<Combobox label="Combobox" name="combobox" items={items} />
+<Select label="Select" name="select" items={items} />
+<Button type="submit">Отправить</Button>
+</form>
+);
+}
+
+Validation: either a custom solution or a library like yup. sdds-cs also exposes useValidation({ validationType: 'email'|'password', options, onValidate }) -> { handleValidationBlur, handleValidationKeyDown } for wiring per-field validation with configurable rules (minLength, maxLength, includeUppercase, includeDigits, whitelistDomains, etc.), used together with view="negative" + leftHelper for error display.

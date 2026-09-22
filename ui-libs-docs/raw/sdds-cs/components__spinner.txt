@@ -1,0 +1,12 @@
+Title: Spinner | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/spinner/
+---
+Spinner — loading indicator.
+LIVE EDITOR
+function App() { return <Spinner size={32} />; }
+
+API​
+Property Type Default Description
+view "default"|"accent"|"positive"|"negative"|"secondary"|"warning"|"tertiary"|"paragraph"
+width / height string|number
+size string|number

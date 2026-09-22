@@ -1,0 +1,14 @@
+Title: Counter | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/counter/
+---
+Counter — numeric badge. maxCount caps display as "N+" (e.g. count=100 maxCount=99 -> "99+"). thousandSeparator default ' ' (space), can be a custom string or false to disable.
+LIVE EDITOR
+function App() { return <><Counter count={10} maxCount={9} /><Counter count={1234567} thousandSeparator="," /></>; }
+
+API​
+Property Type Default Description
+view "default"|"negative" default — вид
+size "s" xs — размер
+count* number — отображаемое число (не < 1)
+maxCount number — макс. отображаемое число
+thousandSeparator string|boolean ' ' — разделитель тысяч

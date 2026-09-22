@@ -1,0 +1,18 @@
+Title: Mask | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/mask/
+---
+Mask — input built on TextField, inherits most of its props (size, view, disabled, label...). mask string tokens: 0=digit, a=A-Za-z, я=А-Яа-яЁё, q/2=literal char, *=any char, \a=escape (literal "a"). maskChar for placeholder char; maskString for a full placeholder overlay (overrides maskChar). alwaysShowMask keeps mask visible always; showStartChars shows fixed prefix (e.g. "+7").
+LIVE EDITOR
+function App() { return <Mask label="Телефон" mask="+7 (000) 000 - 00 - 00" maskChar="_" alwaysShowMask size="s" />; }
+
+API (mask-specific; also inherits TextField's size/view/appearance/label/hint*/required/etc.)​
+Property Type Default Description
+mask string — маска (см. токены выше)
+maskChar string — символ маскирования
+maskString string — строка для незаполненной части (игнорирует maskChar если задан)
+maskFormat IMaskItem[] — набор соответствий маски и значения
+showMask boolean — показывать маску во время ввода
+alwaysShowMask boolean — показывать маску всегда
+showStartChars boolean — показывать префикс маски
+reformat ((params) => IInputState) — кастомное форматирование
+onValueChange ((params: {maskedValue, value}) => void)

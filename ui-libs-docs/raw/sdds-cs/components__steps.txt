@@ -1,0 +1,28 @@
+Title: Steps | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/steps/
+---
+Steps — step/progress indicator. items: {indicator, title, content?, status: 'active'|'inactive'|'completed', height?/width?}[]. onChange(item, index, prevIndex) fires on step click — caller updates statuses manually (uncontrolled-ish). current for external control without onChange. orientation="horizontal"(default)|"vertical" (use hasLine for a connecting line, recommended in vertical). Steps can nest (e.g. inside an Accordion) — give outer steps a height when their content has variable height.
+LIVE EDITOR
+function App() {
+const [items, setItems] = useState([{indicator:1,title:'Шаг 1',status:'active'},{indicator:2,title:'Шаг 2',status:'inactive'}]);
+const onChange = (item, index, prevIndex) => {
+if (prevIndex !== undefined) items[prevIndex].status = 'completed';
+items[index].status = 'active';
+setItems([...items]);
+};
+return <Steps items={items} onChange={onChange} />;
+}
+
+API​
+Property Type Default Description
+view "default"; size "s"
+items StepItemProps[] []
+itemView string
+orientation "horizontal"|"vertical" horizontal
+contentAlign "left"|"center" left
+hasLine boolean true
+hasContent "all"|"active"|"none" all
+hasLoader boolean — show loader instead of active step's indicator
+current number — active step index (uncontrolled)
+status StepStatus — overrides item.status for current step
+onChange ((item, index, prevIndex?) => void) — makes indicators/titles clickable

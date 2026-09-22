@@ -1,0 +1,32 @@
+Title: Notification | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/notification/
+---
+Notification — toast-like overlay. Wrap app (or a subtree) in <NotificationsProvider placement="top-right">. Use useNotifications() -> { addNotification, closeNotification } (or global addNotification/closeNotification import if only one provider on the page). addNotification({id, title, children, icon, view, ...}, timeoutMs) — timeoutMs=0|null means stays forever; returns the notification id. onTimeoutClose fires on auto-close.
+LIVE EDITOR
+function App() {
+function Example() {
+const { addNotification, closeNotification } = useNotifications();
+const show = () => addNotification({ id: 'incoming-call', title: 'Входящий вызов', children: 'Принять?', icon: <IconBell color="inherit" size="xs" />, view: 'positive' }, 3000);
+return <Button text="Show" onClick={show} />;
+}
+return <NotificationsProvider><Example /></NotificationsProvider>;
+}
+
+API​
+Notification (options passed to addNotification)​
+Property Type Default Description
+size "xs"|"xxs" — согласовать с размером Button внутри
+view "default"
+layout "horizontal"|"vertical"
+closeIconType "thin"
+maxWidth / width — CSS width/maxWidth
+title ReactNode; children ReactNode; actions ReactNode; icon ReactNode
+textColor / titleColor / backgroundColor string — override view's default colors
+onCloseButtonClick / onTimeoutClose (() => void)
+showCloseIcon boolean true; customCloseIcon ReactNode
+iconPlacement "top"|"left"
+
+NotificationsProvider​
+Property Type Default Description
+frame string document
+placement PopupPlacement — 'center'|'top'|'bottom'|'right'|'left' + combos like 'top-right'

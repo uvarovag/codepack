@@ -1,0 +1,19 @@
+Title: Grid | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/grid/
+---
+Grid/Row/Col — responsive grid. Breakpoints: smallS 0-559 (6 cols), mediumS 560-785 (12), mediumM 786-959 (18), largeS 960-1199 (24), largeM 1200+ (30). Row = negative-margin flex wrapper (not nestable in itself). Col: size (columns), offset (shift right by n cols); both take adaptive per-breakpoint objects e.g. smallM={{size:1}}.
+LIVE EDITOR
+function App() {
+return (
+<Grid>
+<Row>
+<Col size={3}>A</Col>
+<Col size={4} offset={1}>B</Col>
+</Row>
+</Grid>
+);
+}
+
+API​
+Grid: view "default"; maxWidth string @deprecated.
+Col: size number; offset number; per-breakpoint ScreenConfig props: small/medium/large × XXS/XS/S/M/L/XL/XXL (e.g. smallM, mediumL, largeXL); legacy @deprecated: offsetS/M/L/XL/XXL, sizeS/M/L/XL/XXL.

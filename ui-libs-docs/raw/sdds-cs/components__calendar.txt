@@ -1,0 +1,43 @@
+Title: Calendar | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/calendar/
+---
+Calendar family: Calendar (universal, switches basic/double/range via isRange+isDouble props), CalendarBase (single), CalendarDouble (two months), CalendarBaseRange (single, range picking), CalendarDoubleRange (two months, range picking).
+
+LIVE EDITOR (Calendar, universal)
+function App() {
+const [value, setValue] = React.useState(undefined);
+return (
+<Calendar
+isRange={false} isDouble={false}
+value={value} onChangeValue={setValue}
+date={{ day: 6, monthIndex: 5, year: 2022 }}
+min={new Date(2022,4,0)} max={new Date(2022,6,15)}
+eventList={[{ date: new Date(2022,5,6) }, { date: new Date(2022,5,10), color: 'red' }]}
+disabledList={[{ date: new Date(2022,5,11) }]}
+/>
+);
+}
+Sizes: CalendarBase size="l"|"m"|"s"|"xs". Grid type: type="Days"|"Months"|"Quarters"|"Years". locale="ru"(default)|"en". onChangeVisibleDate(date) fires when the visible period changes (arrow nav, header month/year pick, or value forcing a new period) — NOT on drill level switch (days→months→years).
+
+API (shared props across all 5 variants)​
+Property Type Default Description
+size / view string — размер/вид календаря
+type "Days"|"Months"|"Years"|"Quarters" — конечный тип отображаемой сетки
+min / max Date — границы диапазона дат
+date DateObject — состояние отображаемого периода
+focusedDate DateType — дата, определяющая отображаемый период
+renderFromDate Date — с какой даты начинать сетку при отсутствии значения
+includeEdgeDates boolean — включать ли граничные min/max в диапазон
+eventTooltipOptions EventTooltipOptions — тултип для событий
+eventList / disabledList EventDay[] / DisabledDay[] — события/отключённые дни
+eventMonthList / disabledMonthList — то же для помесячного вида
+eventQuarterList / disabledQuarterList — то же для поквартального вида
+eventYearList / disabledYearList — то же для погодового вида
+locale Locales — язык (влияет на дни/месяцы)
+stretched boolean — растянуть на всю ширину/высоту
+onChangeVisibleDate ((date: Date) => void) — период сменился при навигации
+
+Non-shared (per variant)​
+Calendar: value* Date|[DateType,DateType] (в зав. от isRange); isRange boolean; isDouble boolean; onChangeValue* (обе сигнатуры); onChangeStartOfRange, onChangeSingleValue (range helpers).
+CalendarBase / CalendarDouble: value* CalendarValueType (single date); onChangeValue* (value: Date, dateInfo?) => void.
+CalendarBaseRange / CalendarDoubleRange: value* [DateType, DateType]; onChangeValue* (values: [DateType,DateType], dateInfo?) => void; onChangeStartOfRange, onChangeSingleValue.

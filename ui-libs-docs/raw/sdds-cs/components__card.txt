@@ -1,0 +1,24 @@
+Title: Card | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/card/
+---
+Card — визуальный контейнер (изображения/текст/кнопки в один блок). Card is the base container; CardContent is nested content with its own rounding + overflow:hidden; CardInnerContent fits inside CardContent bounds (position:absolute, doesn't affect card size).
+LIVE EDITOR
+function App() {
+return (
+<Card orientation="horizontal" backgroundType="solid" selected style={{ width: '250px' }}>
+<CardContent orientation='vertical' aspectRatio='1/1'>
+<CardInnerContent>
+<div style={{ padding: '30px' }}><H3>Заголовок</H3><TextS>Подзаголовок</TextS></div>
+</CardInnerContent>
+</CardContent>
+</Card>
+);
+}
+
+API​
+Property Type Default Description
+view "default"
+size "s" | "m" | "l"
+orientation "horizontal" | "vertical"
+selected boolean
+backgroundType "none" | "solid"

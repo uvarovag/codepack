@@ -1,0 +1,22 @@
+Title: IconButton | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/IconButton/
+---
+IconButton — icon-only button, icon passed as children. size="s"|"m". view="accent"(default)|"secondary"|"clear". pin for corner rounding (same 7 values as Button).
+LIVE EDITOR
+function App() { return <IconButton size="s" view="secondary" pin="circle-circle"><IconClose color="inherit" /></IconButton>; }
+
+API (same shape as Button)​
+Property Type Default Description
+size "s"|"m"; view "clear"|"accent"|"secondary"
+appearance "default"|"outline" default
+text string; contentLeft/contentRight ReactNode
+focused / disabled boolean
+value string|number
+blur "small"|"medium"|"large" — @deprecated
+stretching Stretching; isLoading boolean; contentPlacing ContentPlacing 'default'
+additionalContent ReactNode; loader ReactNode
+stretch boolean — @deprecated use stretching
+square boolean — @deprecated (this IS the icon-only variant)
+pin "square-square"|"square-clear"|"clear-square"|"clear-clear"|"clear-circle"|"circle-clear"|"circle-circle"
+outlined boolean — @deprecated use focused
+shiftLeft / shiftRight boolean — @deprecated

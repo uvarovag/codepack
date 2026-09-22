@@ -1,0 +1,11 @@
+Title: Поддержка компонентов (Form) | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/form/components/
+---
+Form-integratable sdds-cs inputs: TextField, TextArea, Radiobox, Checkbox, Autocomplete, Switch, Slider (single/double), DatePicker, DatePickerRange, Combobox, Select (incl. multiple).
+- TextField/TextArea/Radiobox/Checkbox/Autocomplete/Switch: RHF uses defaultValues; native form uses defaultValue on the component. Return type matches native elements.
+- Slider single: defaultValue + returned value = number.
+- Slider double: RHF defaultValue is number[], returns a single string "MIN - MAX". Native form: defaultValue number[], returns TWO form entries with the same field name (first=min, second=max).
+- DatePicker: native form defaultValue/return = string.
+- DatePickerRange: native form defaultValue = string[]; returns two entries same name (first=min, second=max).
+- Combobox/Select (single): defaultValue/return = string.
+- Combobox/Select multiple: RHF defaultValue string[], returns string[]. Native form: defaultValue number[]... returns one form entry per selected item, same field name repeated.

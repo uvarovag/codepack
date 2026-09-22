@@ -1,0 +1,13 @@
+Title: Link | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/link/
+---
+Link — inline hyperlink, meant to be used inside a typography component (e.g. <TextS><Link href="/">text</Link></TextS>). underline="none"(default)|"hover"|"always".
+LIVE EDITOR
+function App() { return <TextS>Скачайте <Link href="/" target="_blank" underline="hover">приложение.</Link></TextS>; }
+
+API​
+Property Type Default Description
+view "clear"|"default"|"accent"|"positive"|"negative"|"secondary"|"warning"|"tertiary"|"paragraph"
+disabled boolean
+underline "none"|"hover"|"always" 'none'
+size string

@@ -1,0 +1,22 @@
+Title: ButtonGroup | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/buttonGroup/
+---
+ButtonGroup — обёртка для Button, принимает группу кнопок (children). isCommonButtonStyles=true (default) makes the group override each Button's view/size; set false to let each Button keep its own view/size.
+LIVE EDITOR
+function App() {
+return (
+<ButtonGroup size="s" view="secondary" orientation="horizontal" gap="dense" shape="segmented">
+{Array(5).fill(true).map((_, i) => <Button text={`Button ${i}`} />)}
+</ButtonGroup>
+);
+}
+
+API​
+Property Type Default Description
+view "clear"|"accent"|"secondary" — вид (если isCommonButtonStyles=true)
+size "s"|"sr" — размер (если isCommonButtonStyles=true)
+orientation "horizontal"|"vertical" horizontal — flex-direction
+gap "none"|"dense"|"wide" dense — отступы между кнопками
+shape "default"|"segmented" default — скругления кнопок внутри группы
+stretching "auto"|"filled" auto — ширина группы
+isCommonButtonStyles boolean true — переопределять ли view/size для всех кнопок группой

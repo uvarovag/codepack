@@ -1,0 +1,27 @@
+Title: Cell | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/cell/
+---
+Cell — стилизованный слот для контента (list-item style row): title/subtitle/label + contentLeft/contentRight slots. Helper subcomponents: CellTextbox, CellTextboxLabel, CellTextboxTitle, CellTextboxSubtitle for custom styling.
+LIVE EDITOR
+function App() {
+return (
+<Cell
+contentLeft={<Avatar size="m" url="https://..." />}
+size="s"
+contentRight={<IconChevronRight color="inherit" size="xs" />}
+title="Title" subtitle="Subtitle" label="Label"
+/>
+);
+}
+
+API​
+Property Type Default Description
+view "default"
+size "s" | "xs"
+contentLeft / contentRight ReactNode — слот слева/справа, например Icon
+alignContentLeft / alignContentRight AlignProp — вертикальное выравнивание контента
+stretching "auto"|"filled"|"fixed" — ширина cell
+content ReactNode — @deprecated используйте contentLeft
+description string — @deprecated используйте title
+subtitle string — слот Subtitle
+label string — слот Label

@@ -1,0 +1,13 @@
+{
+ "url": "https://plasma.sberdevices.ru/sdds-cs/how-to-icons/",
+ "title": "Как работать с иконками | SDDS CS",
+ "text": "Icons ship as a separate package @salutejs/plasma-icons and are used as regular React components.\n\nInstall: npm install --save @salutejs/plasma-icons\n\nImport: prefer sized entry points @salutejs/plasma-icons/16, /24, or /36 so only imported components end up in the bundle. If an icon isn't available in all sizes, import it directly from @salutejs/plasma-icons instead.\nSized entry points set the base SVG asset: /16 = 16px base, /24 = 24px base, /36 = 36px base.\n\nSize prop: icons support a `size` prop — xs = 16px, s = 24px, m = 36px. An icon imported from a sized entry point already has a matching default size (xs for /16, s for /24, m for /36).\n\nColor: set via `color` prop. Defaults to var(--plasma-colors-primary). Accepts a CSS variable, currentColor, inherit, a plain color, or a CSS gradient.\n\nclassName/style: icons accept className and style for spacing, alignment, animation.\n\nCustom size: if xs/s/m don't fit, set width/height directly via `style` (e.g. { width: '1.5rem', height: '1.5rem' }) with color=\"inherit\" — useful when the icon's size should follow its parent container rather than a design token.\n\nAVOID: the package also exports a generic `Icon` component that takes an icon name string (`<Icon icon=\"iconApps\" />`). Do NOT use this in application UI — it can pull every icon into the bundle. Always import the specific icon component directly.",
+ "examples": [
+  "import { IconSearch } from '@salutejs/plasma-icons/24';\n\nfunction App() {\n  return <IconSearch />;\n}",
+  "<IconSearch size=\"xs\" />\n<IconSearch size=\"s\" />\n<IconSearch size=\"m\" />",
+  "<IconSearch color=\"var(--plasma-colors-accent)\" />\n<IconStarFill color=\"linear-gradient(90deg, #2af598 0%, #009efd 100%)\" />",
+  "import { IconSearch } from '@salutejs/plasma-icons/24';\n\nexport const SearchIcon = () => (\n  <IconSearch className=\"search-icon\" style={{ marginRight: '0.5rem' }} />\n);",
+  "<IconPlasma color=\"inherit\" style={{ width: '1.5rem', height: '1.5rem' }} />",
+  "// AVOID in app UI — pulls every icon into the bundle\nimport { Icon } from '@salutejs/plasma-icons';\nexport const AppsIcon = () => <Icon icon=\"iconApps\" />;"
+ ]
+}

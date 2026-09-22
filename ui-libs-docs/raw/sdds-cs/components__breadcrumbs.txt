@@ -1,0 +1,24 @@
+Title: Breadcrumbs | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/breadcrumbs/
+---
+Breadcrumbs — навигационная цепочка «хлебные крошки». items (required) is a union per-item: {onClick?, title, disabled?} | {href?, title, disabled?} | {renderItem: () => ReactNode}. showItems collapses middle items with "...".
+LIVE EDITOR
+function App() {
+const items = [
+{ title: 'Home', href: '/' },
+{ title: 'Without link' },
+{ title: 'Disabled', disabled: true },
+{ title: 'On Click', onClick: () => alert('On Click') },
+{ renderItem: () => <span>Custom</span> },
+{ title: 'Main' },
+];
+return <Breadcrumbs items={items} showItems={3} />;
+}
+
+API​
+Property Type Default Description
+view "default"
+size "s"
+separator ReactNode
+items* BreadcrumbsItem[]
+showItems number

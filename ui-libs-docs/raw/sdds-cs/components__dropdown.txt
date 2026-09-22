@@ -1,0 +1,32 @@
+Title: Dropdown | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/dropdown/
+---
+Dropdown — multi-level dropdown menu, wraps a target via children (e.g. a Button). Only required prop: items. Item shape: { value: string|number, label: string, placement?, items?: ItemOption[] (nested), beforeList?, disabled?, contentLeft?, contentRight?, dividerBefore?, dividerAfter?, className?, trigger?, listMaxHeight?, hidden? }. Keyboard: matches W3C Combobox + partial TreeView (Tab closes, Enter/Space toggles/selects, Home/End/PageUp/PageDown/ArrowUp/Down navigate, ArrowRight opens submenu, ArrowLeft closes it).
+LIVE EDITOR
+function App() {
+const items = [{ value: 'na', label: 'Северная Америка' }, { value: 'sa', label: 'Южная Америка', items: [{ value: 'br', label: 'Бразилия' }] }];
+return <Dropdown items={items}><Button text="Список стран" /></Dropdown>;
+}
+
+API​
+Property Type Default Description
+children ReactNode — target для открытия
+disabled boolean
+offset [number,number] [0,8]
+onToggle ((isOpen, event?) => void)
+items* T[]
+placement DropdownPlacement bottom
+zIndex ZIndex 1000
+closeOnOverlayClick boolean true
+variant "normal"|"tight" normal
+listMaxHeight / listWidth
+portal string|RefObject<HTMLElement|null>
+renderItem ((item: T) => ReactNode)
+beforeList / afterList ReactNode
+alwaysOpened boolean false
+trigger DropdownTrigger click — "click"|"hover"
+onHover ((index, item) => void); onItemSelect ((item, event) => void)
+openByRightClick boolean false
+closeOnSelect boolean true
+itemRole string option — WAI-ARIA role
+size "s"; view "default"

@@ -1,0 +1,38 @@
+Title: React Hook Form | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/form/react-hook-form/
+---
+sdds-cs inputs work with react-hook-form via {...register('name')} for simple inputs. NOTE: cs-portal re-exports react-hook-form's Controller, FormProvider, useForm, useFieldArray, useController, useFormContext, useFormState, useWatch directly — `import { useForm, Controller } from '@sber-front-cs-core/cs-portal'` is the correct import in this codebase, not a separate react-hook-form dependency.
+LIVE EDITOR (basic register)
+function App() {
+const { register, handleSubmit } = useForm();
+const onSubmit = (data) => console.log(data);
+return (
+<form onSubmit={handleSubmit(onSubmit)}>
+<TextField {...register('textfield')} placeholder="Textfield" />
+<Checkbox {...register('checkbox')} label="Checkbox" />
+<Slider {...register('slider')} type="single" min={0} max={100} />
+<Combobox {...register('combobox')} items={items} />
+<Button type="submit">Отправить</Button>
+</form>
+);
+}
+
+DatePicker/DatePickerRange gotcha: pass name and onChange directly rather than {...register(...)} — register's min/max types are incompatible. Because DatePicker's onChange signature is non-standard, prefer Controller for required-field integration; Controller's field.ref lands on DatePicker's real <input>, so setFocus() and auto-scroll-to-error-on-submit work correctly.
+LIVE EDITOR (Controller + DatePicker)
+function App() {
+const { control, handleSubmit, formState: { errors } } = useForm();
+return (
+<form onSubmit={handleSubmit(console.log)}>
+<Controller
+name="birthDate"
+control={control}
+rules={{ required: true }}
+render={({ field }) => (
+<DatePicker {...field} label="Дата рождения" valueError={Boolean(errors.birthDate)} leftHelper={errors.birthDate ? 'Заполните поле' : undefined} />
+)}
+/>
+</form>
+);
+}
+
+Validation example uses yupResolver(schema) from @hookform/resolvers/yup with useForm({ resolver }); errors surfaced via view="negative" + leftHelper={formState.errors.field?.message}.

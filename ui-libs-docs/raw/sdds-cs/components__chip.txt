@@ -1,0 +1,21 @@
+Title: Chip | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/chip/
+---
+Chip — text and/or icon, several sizes/colors. text or children. contentLeft/contentRight for icon slots. hasClear (default true) shows a close icon; contentClearButton customizes it. view="default"|"secondary"|"accent". Gradient text via class sdds-core-text-node.
+LIVE EDITOR
+function App() { return <Chip text="Chip" size="s" view="accent" contentLeft={<IconDownload color="inherit" />} />; }
+
+API​
+Property Type Default Description
+view "default"|"accent"|"secondary" 'primary'
+size "s"|"xs" 'm'
+text string
+contentLeft / contentRight ReactNode
+hasClear boolean true
+contentClearButton ReactNode
+pilled boolean false
+pin "square-square"|"square-clear"|"clear-square"|"clear-clear"|"clear-circle"|"circle-clear"|"circle-circle"
+readOnly boolean false
+onClear (() => void) — @deprecated use onClickClose
+onClickClose ((event: MouseEvent) => void) — колбэк по клику на крестик
+appearance string

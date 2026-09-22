@@ -1,0 +1,13 @@
+Title: Divider | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/divider/
+---
+Divider — визуальный разделитель. orientation="horizontal"(default)|"vertical". length controls width(horizontal) or height(vertical); number = %, string = CSS unit.
+LIVE EDITOR
+function App() { return <Divider orientation="vertical" length="100%" />; }
+
+API​
+Property Type Default Description
+view "default"|"dark"|"light"|"inverse" 'default'
+size "m" 'm'
+orientation "horizontal"|"vertical" 'horizontal'
+length string|number '100%'

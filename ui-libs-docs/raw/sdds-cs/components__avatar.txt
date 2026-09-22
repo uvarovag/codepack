@@ -1,0 +1,31 @@
+Title: Avatar | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/avatar/
+---
+Avatar. size="xxl"|"l"|"m"|"s"|"fit". name="Имя Фамилия" shows initials (no url needed). status="active"|"inactive". isScalable grows avatar on hover. a11y: role, tabIndex, aria-label (name covers aria-label); statusLabels for status voice-over, default {active:'Активен', inactive:'Неактивен'}.
+LIVE EDITOR
+function App() {
+return <><Avatar size="m" url="https://..." /><Avatar name="Иван Фадеев" status="active" /></>;
+}
+
+API​
+Property Type Default Description
+view "default"
+size "s" | "xxl" | "m" | "fit" — Размер аватара
+focused boolean — Фокус
+shape "circled" circled — 'circled' | 'rounded'
+counterView "default"|"accent"|"positive"|"negative" default — Вид Counter
+name string — ФИО человека
+url string — Ссылка на фотографию
+customText string — Кастомный текст вместо фото
+status "active"|"inactive" — Статус профиля
+isScalable boolean — Масштабируемый при наведении
+statusLabels StatusLabels {active:'Активен',inactive:'Неактивен'} — словарь озвучки [a11y]
+hasExtra boolean — доп. элемент; type "badge"|"counter"; extraPlacement "top-left"|"top-right"|"bottom-left"|"bottom-right"
+customBorderRadius string|number — для fit
+badgeView string default — вид Badge
+pilled boolean false
+text string / customColor / customBackgroundColor string
+clear / transparent boolean — @deprecated use appearance
+contentLeft / contentRight ReactNode
+count / maxCount number — Counter: отображаемое/макс. число (не < 1)
+thousandSeparator string|boolean ' ' — разделитель тысяч

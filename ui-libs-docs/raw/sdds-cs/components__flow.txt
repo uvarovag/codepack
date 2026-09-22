@@ -1,0 +1,15 @@
+Title: Flow | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/flow/
+---
+Flow — layout container for ordered children (media, cards, text blocks). Default: display:flex + flex-wrap:wrap. With itemsPerLine>0: flex-wrap:nowrap, preemptive grid-like columns/rows.
+LIVE EDITOR
+function App() { return <Flow orientation="vertical" mainAxisGap="0.5ch" crossAxisGap="1ch" itemsPerLine={2}>{items}</Flow>; }
+
+API​
+Property Type Default Description
+className string; style CSSProperties
+orientation "horizontal"|"vertical" horizontal
+arrangement "center"|"end"|"start"|"spaceBetween"|"spaceAround" — расположение по главной оси
+alignment "center"|"end"|"start" — выравнивание по второстепенной оси
+mainAxisGap / crossAxisGap string|number
+itemsPerLine number — если > 0: grid-режим, иначе flex+wrap

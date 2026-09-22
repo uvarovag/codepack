@@ -1,0 +1,1511 @@
+{
+ "package": "cs-portal",
+ "version": "1.27.0",
+ "dependencies": {
+  "@emotion/cache": "11.14.0",
+  "@emotion/react": "11.14.0",
+  "@emotion/styled": "11.14.1",
+  "@module-federation/bridge-react": "2.8.1",
+  "@module-federation/runtime": "2.5.1",
+  "@reduxjs/toolkit": "2.12.0",
+  "@salutejs/plasma-icons": "1.249.0",
+  "@salutejs/sdds-cs": "0.370.0",
+  "@sber-front-cs-core/cs-core": "8.13.0",
+  "@stomp/stompjs": "7.1.1",
+  "react": "19.2.8",
+  "react-dom": "19.2.8",
+  "react-hook-form": "7.88.0",
+  "react-redux": "9.3.0",
+  "react-router": "7.18.3",
+  "react-router-dom": "7.18.3",
+  "styled-components": "5.3.11"
+ },
+ "reExportAll": [
+  "@salutejs/sdds-themes/es/tokens/sdds_cs",
+  "@salutejs/sdds-cs",
+  "@salutejs/plasma-icons",
+  "@sber-front-cs-core/cs-core"
+ ],
+ "exports": [
+  {
+   "symbol": "bodyL",
+   "localName": "bodyL",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "bodyLBold",
+   "localName": "bodyLBold",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "bodyM",
+   "localName": "bodyM",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "bodyMBold",
+   "localName": "bodyMBold",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "bodyS",
+   "localName": "bodyS",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "bodySBold",
+   "localName": "bodySBold",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "bodyXS",
+   "localName": "bodyXS",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "bodyXSBold",
+   "localName": "bodyXSBold",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "bodyXXS",
+   "localName": "bodyXXS",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "bodyXXSBold",
+   "localName": "bodyXXSBold",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "dsplL",
+   "localName": "dsplL",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "dsplLBold",
+   "localName": "dsplLBold",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "dsplM",
+   "localName": "dsplM",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "dsplMBold",
+   "localName": "dsplMBold",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "dsplS",
+   "localName": "dsplS",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "dsplSBold",
+   "localName": "dsplSBold",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "h1",
+   "localName": "h1",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "h1Bold",
+   "localName": "h1Bold",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "h2",
+   "localName": "h2",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "h2Bold",
+   "localName": "h2Bold",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "h3",
+   "localName": "h3",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "h3Bold",
+   "localName": "h3Bold",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "h4",
+   "localName": "h4",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "h4Bold",
+   "localName": "h4Bold",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "h5",
+   "localName": "h5",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "h5Bold",
+   "localName": "h5Bold",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "textL",
+   "localName": "textL",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "textLBold",
+   "localName": "textLBold",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "textM",
+   "localName": "textM",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "textMBold",
+   "localName": "textMBold",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "textS",
+   "localName": "textS",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "textSBold",
+   "localName": "textSBold",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "textXS",
+   "localName": "textXS",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "textXSBold",
+   "localName": "textXSBold",
+   "isType": false,
+   "from": "@salutejs/sdds-cs",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "Controller",
+   "localName": "Controller",
+   "isType": false,
+   "from": "react-hook-form",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "FormProvider",
+   "localName": "FormProvider",
+   "isType": false,
+   "from": "react-hook-form",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "useForm",
+   "localName": "useForm",
+   "isType": false,
+   "from": "react-hook-form",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "useFieldArray",
+   "localName": "useFieldArray",
+   "isType": false,
+   "from": "react-hook-form",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "useController",
+   "localName": "useController",
+   "isType": false,
+   "from": "react-hook-form",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "useFormContext",
+   "localName": "useFormContext",
+   "isType": false,
+   "from": "react-hook-form",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "useFormState",
+   "localName": "useFormState",
+   "isType": false,
+   "from": "react-hook-form",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "useWatch",
+   "localName": "useWatch",
+   "isType": false,
+   "from": "react-hook-form",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "Control",
+   "localName": "Control",
+   "isType": true,
+   "from": "react-hook-form",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "UseFieldArrayRemove",
+   "localName": "UseFieldArrayRemove",
+   "isType": true,
+   "from": "react-hook-form",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "UseFormReturn",
+   "localName": "UseFormReturn",
+   "isType": true,
+   "from": "react-hook-form",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "Badge",
+   "localName": "Badge",
+   "isType": false,
+   "from": "@sber-front-cs-core/cs-core",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "Combobox",
+   "localName": "Combobox",
+   "isType": false,
+   "from": "@sber-front-cs-core/cs-core",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "Popover",
+   "localName": "Popover",
+   "isType": false,
+   "from": "@sber-front-cs-core/cs-core",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "Overlay",
+   "localName": "Overlay",
+   "isType": false,
+   "from": "@sber-front-cs-core/cs-core",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "Modal",
+   "localName": "Modal",
+   "isType": false,
+   "from": "@sber-front-cs-core/cs-core",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "Tabs",
+   "localName": "Tabs",
+   "isType": false,
+   "from": "@sber-front-cs-core/cs-core",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "showToast",
+   "localName": "showToast",
+   "isType": false,
+   "from": "@sber-front-cs-core/cs-core",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "Table",
+   "localName": "Table",
+   "isType": false,
+   "from": "@sber-front-cs-core/cs-core",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "SegmentProvider",
+   "localName": "SegmentProvider",
+   "isType": false,
+   "from": "@sber-front-cs-core/cs-core",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "useSegment",
+   "localName": "useSegment",
+   "isType": false,
+   "from": "@sber-front-cs-core/cs-core",
+   "resolvedDir": null,
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "Box",
+   "localName": "Box",
+   "isType": false,
+   "from": "./components/Box",
+   "resolvedDir": "components/Box",
+   "description": "Универсальный layout-компонент на основе `div`.\n\nПринимает подмножество CSS-свойств как пропсы для быстрого управления\nотступами, размерами, flexbox и позиционированием без написания CSS-классов.\n\n@param {TBoxProps} props\n@param {ReactNode} [props.children]\n@param {CSSProperties['display']} [props.display]\n@param {CSSProperties['flexDirection']} [props.flexDirection]\n@param {CSSProperties['gap']} [props.gap]\n@param {CSSProperties['padding']} [props.padding]\n@param {CSSProperties['width']} [props.width]\n@param {string} [props.className] - Дополнительный CSS-класс\n@param {MouseEventHandler} [props.onClick]\n\n@example\n<Box display=\"flex\" gap=\"16px\" padding=\"24px\">\n  <Box width=\"200px\">Левая колонка</Box>\n  <Box flexGrow={1}>Контент</Box>\n</Box>",
+   "propsTypeName": "TBoxProps",
+   "propsRaw": "export type TBoxProps = PropsWithChildren<TCSSPropsTypes & TDivPropsTypes>;"
+  },
+  {
+   "symbol": "StatusPage",
+   "localName": "StatusPage",
+   "isType": false,
+   "from": "./components/StatusPage",
+   "resolvedDir": "components/StatusPage",
+   "description": "Страница-заглушка для статусных состояний приложения.\n\n@param {TStatusPageProps} props\n@param {TView} props.view - Тип отображаемой страницы:\n  `'notFound'` — 404, `'notAccess'` — 403, `'loading'` — загрузка, `'error'` — ошибка\n@param {string} [props.description] - Дополнительное описание\n@param {Function} [props.onClick] - Обработчик кнопки действия (например «Обновить»)\n\n@example\nif (isLoading) return <StatusPage view=\"loading\" />\nif (error?.status === 404) return <StatusPage view=\"notFound\" />\nif (error?.status === 403) return <StatusPage view=\"notAccess\" />",
+   "propsTypeName": "TStatusPageProps",
+   "propsRaw": "export type TStatusPageProps = {\n    description?: string;\n    view: TView;\n    onClick?: () => void;\n};"
+  },
+  {
+   "symbol": "CollapsingPageHeader",
+   "localName": "CollapsingPageHeader",
+   "isType": false,
+   "from": "./components/CollapsingPageHeader",
+   "resolvedDir": "components/CollapsingPageHeader",
+   "description": "Заголовок страницы со сворачиваемым контентом.\n\nОтображает заголовок, подзаголовок, хлебные крошки, бейджи статусов,\nметки и аналитический контент. Контент можно скрывать/показывать\nкнопкой или управлять состоянием снаружи через `isOpenContent`.\nПри загрузке показывает skeleton-анимацию.\n\n@param {TPageHeaderProps} props\n@param {string} props.title - Основной заголовок (номер и дата объекта)\n@param {string | null} [props.subtitle] - Подзаголовок; обрезается в многоточие при переполнении\n@param {ReactNode} [props.breadcrumbs] - Блок навигации по пути к объекту\n@param {ReactNode} [props.statusBadges] - Бейджи бизнес-статуса объекта\n@param {ReactNode} [props.tagBadges] - Метки объекта (рекомендуется обернуть в Fragment)\n@param {ReactNode} [props.actionsToolbar] - Кнопки системных действий\n@param {boolean} [props.isOpenContent] - Управление состоянием открытия извне\n@param {Function} [props.onOpenContentChange] - Callback изменения состояния открытия\n@param {ReactNode} [props.content] - Аналитический контент (рекомендуется использовать FormFlex)\n@param {boolean} [props.isLoading] - Флаг загрузки (активирует skeleton)\n@param {number} [props.skeletonCount] - Количество skeleton-блоков FormGroupFlex\n\n@example\n<CollapsingPageHeader\n  title=\"Заказ №12345 от 01.01.2024\"\n  subtitle=\"Поставка оборудования\"\n  breadcrumbs={<Breadcrumbs items={crumbs} />}\n  statusBadges={<StatusBadge status=\"active\" />}\n  content={<FormFlex>...</FormFlex>}\n  isLoading={isFetching}\n/>",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const CollapsingPageHeader: ({ actionsToolbar, breadcrumbs, content, isLoading, isOpenContent: controlledIsOpenContent, onOpenContentChange, skeletonCount, statusBadges, subtitle, tagBadges, title, }: TPageHeaderProps) => React.JSX.Element;"
+  },
+  {
+   "symbol": "TotalAmountCard",
+   "localName": "TotalAmountCard",
+   "isType": false,
+   "from": "./components/TotalAmountCard",
+   "resolvedDir": "components/TotalAmountCard",
+   "description": "Карточка итоговой суммы со скрываемым дополнительным контентом.\n\nОтображает основную сумму крупным шрифтом и опциональный список\nдополнительных полей (цена, единицы, число, текст, дата, произвольный рендер),\nкоторые можно скрыть. Поддерживает информеры и skeleton-загрузку.\n\n@param {TTotalAmountCardProps} props\n@param {string} [props.title='Итого'] - Заголовок карточки\n@param {TItemTypeMap['price']} props.totalPrice - Основная сумма (всегда видима)\n@param {TTotalAmountCardItem[]} [props.extraContent] - Список скрываемых элементов\n@param {TInformerProps | TInformerProps[]} [props.informerContent] - Информер(ы)\n@param {boolean} [props.isLoading] - Состояние загрузки\n@param {boolean} [props.isVisible] - Видимость карточки\n\n@example\n<TotalAmountCard\n  totalPrice={{ label: 'Сумма', value: 150000, symbol: '₽' }}\n  extraContent={[\n    { type: 'price', label: 'НДС', value: 25000, symbol: '₽' },\n    { type: 'text', label: 'Статус', value: 'Оплачено' },\n  ]}\n  isLoading={isFetching}\n/>",
+   "propsTypeName": "TTotalAmountCardProps",
+   "propsRaw": "export type TTotalAmountCardProps = {\n    /**\n     * Заголовок карточки, по умолчанию \"Итого\"\n     */\n    title?: string;\n    /**\n     * Основная сумма, выделена большим шрифтом, нескрываемый контент\n     */\n    totalPrice: TItemTypeMap['price'];\n    /**\n     * Список элементов скрываемого контента\n     */\n    extraContent?: TTotalAmountCardItem[];\n    /**\n     * Блок для информера / информеров\n     */\n    informerContent?: TInformerProps | TInformerProps[];\n    /**\n     * Состояние загрузки\n     */\n    isLoading?: boolean;\n    /**\n     * Отображение карточки\n     */\n    isVisible?: boolean;\n    /**\n     * Текст для тултипа основной суммы\n     */\n    textTooltip?: string;\n};"
+  },
+  {
+   "symbol": "ErrorFallback",
+   "localName": "ErrorFallback",
+   "isType": false,
+   "from": "./components/ErrorFallback",
+   "resolvedDir": "components/ErrorFallback",
+   "description": "Компонент отображения ошибки RTK Query.\n\nПоказывает человекочитаемое сообщение об ошибке на основе\n`FetchBaseQueryError` или `SerializedError`.\n\n@param {TErrorFallbackProps} props\n@param {FetchBaseQueryError | SerializedError | undefined} props.error — Объект ошибки из RTK Query\n@param {TErrorFallbackViewMode} [props.viewMode='page'] — Режим отображения:\n  - `'page'` (по умолчанию) — `404 → notFound`, другие 4xx → `error`\n  - `'widget'` — `404 → notFoundInWidget`, другие 4xx → `errorInWidget`\n\n@example\n// Page-режим (по умолчанию)\nconst { data, error } = useGetOrderQuery(id)\nif (error) return <ErrorFallback error={error} />\n\n@example\n// Widget-режим\nif (error) return <ErrorFallback error={error} viewMode=\"widget\" />",
+   "propsTypeName": "TErrorFallbackProps",
+   "propsRaw": "export type TErrorFallbackProps = {\n    error: FetchBaseQueryError | SerializedError | undefined;\n    /** Режим отображения ошибок. По умолчанию 'page'. */\n    viewMode?: TErrorFallbackViewMode;\n};"
+  },
+  {
+   "symbol": "WidgetErrorFallback",
+   "localName": "WidgetErrorFallback",
+   "isType": false,
+   "from": "./components/ErrorFallback",
+   "resolvedDir": "components/ErrorFallback",
+   "description": "@deprecated Используйте `ErrorFallback` с `viewMode=\"widget\"`:\n  `<ErrorFallback error={error} viewMode=\"widget\" />`\n\nКомпонент отображения ошибки RTK Query для виджетов.",
+   "propsTypeName": "TWidgetErrorFallbackProps",
+   "propsRaw": "export type TWidgetErrorFallbackProps = TErrorFallbackProps;"
+  },
+  {
+   "symbol": "Content",
+   "localName": "Content",
+   "isType": false,
+   "from": "./components/layout/Content",
+   "resolvedDir": "components/layout/Content",
+   "description": "Компонент области основного контента в layout.\n\nЗанимает оставшееся пространство (flex: 1), поддерживает overflow.\n\n@param {PropsWithChildren} props\n\n@example\n<Layout>\n  <Header />\n  <Content><Outlet /></Content>\n  <Footer />\n</Layout>",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const Content: ({ children }: PropsWithChildren) => import(\"react\").JSX.Element;"
+  },
+  {
+   "symbol": "Footer",
+   "localName": "Footer",
+   "isType": false,
+   "from": "./components/layout/Footer",
+   "resolvedDir": "components/layout/Footer",
+   "description": "Компонент футера в layout.\n\n@param {PropsWithChildren} props\n\n@example\n<Footer>\n  <Button>Сохранить</Button>\n</Footer>",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const Footer: ({ children }: PropsWithChildren) => import(\"react\").JSX.Element;"
+  },
+  {
+   "symbol": "Header",
+   "localName": "Header",
+   "isType": false,
+   "from": "./components/layout/Header",
+   "resolvedDir": "components/layout/Header",
+   "description": "Компонент шапки в layout.\n\n@param {PropsWithChildren} props\n\n@example\n<Header>\n  <CollapsingPageHeader title=\"Заказ №123\" />\n</Header>",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const Header: ({ children }: PropsWithChildren) => import(\"react\").JSX.Element;"
+  },
+  {
+   "symbol": "Layout",
+   "localName": "Layout",
+   "isType": false,
+   "from": "./components/layout/Layout",
+   "resolvedDir": "components/layout/Layout",
+   "description": "Корневой layout-компонент страницы.\n\nFlex-контейнер с вертикальной ориентацией.\nИспользуется совместно с `Header`, `Content`, `Footer`, `Sider`.\n\n@param {PropsWithChildren<TLayoutProps>} props\n@param {CSSProperties['gap']} [props.gap] - Отступ между дочерними блоками\n\n@example\n<Layout gap=\"16px\">\n  <Header><CollapsingPageHeader title=\"...\" /></Header>\n  <Layout>\n    <Sider><NavigationMenu /></Sider>\n    <Content><Outlet /></Content>\n  </Layout>\n  <Footer><ActionButtons /></Footer>\n</Layout>",
+   "propsTypeName": "TLayoutProps",
+   "propsRaw": "export type TLayoutProps = {\n    gap?: CSSProperties['gap'];\n};"
+  },
+  {
+   "symbol": "Sider",
+   "localName": "Sider",
+   "isType": false,
+   "from": "./components/layout/Sider",
+   "resolvedDir": "components/layout/Sider",
+   "description": "Компонент боковой панели в layout.\n\n@param {PropsWithChildren<TSiderProps>} props\n@param {CSSProperties['width']} [props.width='400px'] - Ширина панели\n\n@example\n<Sider width=\"300px\"><NavigationMenu /></Sider>",
+   "propsTypeName": "TSiderProps",
+   "propsRaw": "export type TSiderProps = {\n    width?: CSSProperties['width'];\n};"
+  },
+  {
+   "symbol": "Drawer",
+   "localName": "Drawer",
+   "isType": false,
+   "from": "./components/Drawer",
+   "resolvedDir": "components/Drawer",
+   "description": "Боковая панель (drawer) с заголовком, контентом и опциональным футером.\n\nОбёртка над `Drawer` из `@salutejs/sdds-cs` с унифицированным API.\nПоддерживает модальный режим и привязку к DOM-фрейму.\n\n@param {TDrawerProps} props\n@param {ReactNode | string} props.title - Заголовок панели\n@param {ReactNode} props.content - Основной контент\n@param {ReactNode} [props.footer] - Контент футера\n@param {'s' | 'm'} [props.size] - Размер панели\n@param {boolean} [props.opened] - Состояние открытия\n@param {Function} [props.onClose] - Callback закрытия\n@param {boolean} [props.asModal] - Открывать как модальное окно\n@param {PopupProps['frame']} [props.frame] - DOM-элемент для привязки\n@param {number} [props.zIndex] - z-index панели\n\n@example\n<Drawer\n  title=\"Редактирование\"\n  content={<EditForm />}\n  footer={<Button onClick={onClose}>Закрыть</Button>}\n  opened={isOpen}\n  onClose={() => setIsOpen(false)}\n  size=\"m\"\n/>",
+   "propsTypeName": "TDrawerProps",
+   "propsRaw": "export type TDrawerProps = {\n    title: ReactNode | string;\n    content: ReactNode;\n    footer?: ReactNode;\n    size?: 's' | 'm';\n} & Pick<ComponentProps<typeof Drawer>, 'asModal' | 'frame' | 'onClose' | 'opened' | 'zIndex'>;"
+  },
+  {
+   "symbol": "MessageView",
+   "localName": "MessageView",
+   "isType": false,
+   "from": "./components/MessageView",
+   "resolvedDir": "components/MessageView",
+   "description": "Компонент отображения списка системных сообщений.\n\nГруппирует сообщения по семантике (E/W/I/S), поддерживает\nинтерактивные подсказки (`suggestions`) для каждого сообщения.\n\n@param {TMessageViewProps} props\n@param {TMessage[]} props.messages - Массив сообщений для отображения\n\n@example\n<MessageView\n  messages={[\n    { message: 'Поле обязательно', semantic: 'E', target: 'name' },\n    { message: 'Сохранено', semantic: 'S' },\n  ]}\n/>",
+   "propsTypeName": "TMessageViewProps",
+   "propsRaw": "export type TMessageViewProps = {\n    messages: TMessages;\n};"
+  },
+  {
+   "symbol": "InlineList",
+   "localName": "InlineList",
+   "isType": false,
+   "from": "./components/InlineList",
+   "resolvedDir": "components/InlineList",
+   "description": null,
+   "propsTypeName": "TInlineListProps",
+   "propsRaw": "export type TInlineListProps = {\n    items?: ReactNode[];\n    separator?: ReactNode;\n    maxVisibleItems?: number;\n};"
+  },
+  {
+   "symbol": "ProtectedRoute",
+   "localName": "ProtectedRoute",
+   "isType": false,
+   "from": "./components/ProtectedRoute",
+   "resolvedDir": "components/ProtectedRoute",
+   "description": "Компонент защищённого маршрута на основе RTK Query.\n\nВыполняет запрос через `useQuery`, проверяет доступ через `selectFromQueryResult`.\nРендерит `children` если доступ разрешён, иначе показывает страницу ошибки.\n\n@template ResultType - Тип данных из RTK Query\n@template QueryArg - Тип аргумента запроса\n@template BaseQuery - Базовый query функции RTK\n\n@param {TProtectedRouteProps<ResultType, QueryArg, BaseQuery>} props\n@param {TypedUseQuery} props.useQuery - RTK Query хук для проверки доступа\n@param {Function} props.selectFromQueryResult - Селектор: `true` — доступ разрешён\n@param {ReactNode} props.children - Контент защищённого маршрута\n\n@example\n<ProtectedRoute\n  useQuery={useGetPermissionsQuery}\n  selectFromQueryResult={(data) => data?.canViewOrders}\n>\n  <OrdersPage />\n</ProtectedRoute>",
+   "propsTypeName": "TProtectedRouteProps",
+   "propsRaw": "export type TProtectedRouteProps<ResultType, QueryArg, BaseQuery extends BaseQueryFn> = PropsWithChildren<{\n    useQuery: TypedUseQuery<ResultType, QueryArg, BaseQuery>;\n    selectFromQueryResult: (data: ResultType) => boolean | undefined;\n}>;"
+  },
+  {
+   "symbol": "WidgetCounter",
+   "localName": "WidgetCounter",
+   "isType": false,
+   "from": "./components/widgets/WidgetCounter",
+   "resolvedDir": "components/widgets/WidgetCounter",
+   "description": null,
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const WidgetCounter: ({ count, isError, ...props }: TWidgetCounterProps) => import(\"react\").JSX.Element;"
+  },
+  {
+   "symbol": "WidgetHorizontalBarChart",
+   "localName": "WidgetHorizontalBarChart",
+   "isType": false,
+   "from": "./components/widgets/WidgetHorizontalBarChart",
+   "resolvedDir": "components/widgets/WidgetHorizontalBarChart",
+   "description": null,
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const WidgetHorizontalBarChart: ({ data, isError, ...props }: TWidgetHorizontalBarChartProps) => import(\"react\").JSX.Element;"
+  },
+  {
+   "symbol": "WidgetPieChart",
+   "localName": "WidgetPieChart",
+   "isType": false,
+   "from": "./components/widgets/WidgetPieChart",
+   "resolvedDir": "components/widgets/WidgetPieChart",
+   "description": null,
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const WidgetPieChart: ({ data, isError, ...props }: TWidgetPieChartProps) => import(\"react\").JSX.Element;"
+  },
+  {
+   "symbol": "MultiValueText",
+   "localName": "MultiValueText",
+   "isType": false,
+   "from": "./components/multi",
+   "resolvedDir": "components/multi",
+   "description": "Компонент отображения нескольких текстовых значений в строку.\n\nРендерит массив `values` как список `ValueText` через `InlineList`.\n\n@param {TMultiValueTextProps} props\n@param {{ key?: Key, text: string }[]} props.values - Массив текстовых значений\n@param {ReactNode} [props.separator] - Разделитель (по умолчанию `, `)\n@param {number} [props.maxVisibleItems] - Максимум видимых элементов\n\n@example\n<MultiValueText values={[{ text: 'Иванов И.И.' }, { text: 'Петров П.П.' }]} />",
+   "propsTypeName": "TMultiValueTextProps",
+   "propsRaw": "export type TMultiValueTextProps = Prettify<{\n    values: {\n        key?: Key;\n        text: TValueTextProps['value'];\n    }[];\n} & Omit<TValueTextProps, 'value'> & Omit<TInlineListProps, 'items'>>;"
+  },
+  {
+   "symbol": "MultiDisplayText",
+   "localName": "MultiDisplayText",
+   "isType": false,
+   "from": "./components/multi",
+   "resolvedDir": "components/multi",
+   "description": "Display-компонент текстового поля с лейблом из метаданных схемы.\n\nАвтоматически подтягивает `label` из `meta.title` если `label` не передан явно.\n\n@param {TWithMetaProps} props\n@param {string} [props.label] - Явный лейбл поля\n@param {TMetaSchemeProperty} [props.meta] - Метаданные поля (используется `title`)\n\n@example\n<MultiDisplayText meta={{ title: 'Наименование' }} value=\"ООО Ромашка\" />",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const MultiDisplayText: {\n    (props: {\n        values: {\n            key?: import(\"react\").Key;\n            text: import(\"@sber-front-cs-core/cs-core/dist/utils/formatters\").TFormatterValue<string | number>;\n        }[];\n        color?: string | undefined;\n        className?: string | undefined | undefined;\n        frame?: import(\"@sber-front-cs-core/cs-core/dist/internal/types\").TSDDSPortal | undefined;\n        bold?: boolean | undefined;\n        size?: (\"s\" | \"m\") | undefined;\n        as?: keyof import(\"@salutejs/plasma-new-hope\").AllowedTextHTMLElements | undefined;\n        noWrap?: boolean | undefined;\n        breakWord?: boolean | undefined;\n        portal?: (import(\"@sber-front-cs-core/cs-core/dist/internal/types\").TSDDSPortal & (string | import(\"react\").RefObject<HTMLElement | null>)) | undefined;\n        countLineClamp?: number | undefined;\n        showCopyButton?: boolean | undefined;\n        isEllipsisInfo?: boolean | undefined;\n        separator?: import(\"react\").ReactNode;\n        maxVisibleItems?: number | undefined;\n    } & import(\"./types\").TWithMetaProps): import(\"react\").JSX.Element;\n    displayName: string;\n};"
+  },
+  {
+   "symbol": "MultiDisplayLink",
+   "localName": "MultiDisplayLink",
+   "isType": false,
+   "from": "./components/multi",
+   "resolvedDir": "components/multi",
+   "description": "Display-компонент ссылочного поля с лейблом из метаданных схемы.\n\n@param {TWithMetaProps} props\n@param {string} [props.label] - Явный лейбл поля\n@param {TMetaSchemeProperty} [props.meta] - Метаданные поля (используется `title`)\n\n@example\n<MultiDisplayLink meta={{ title: 'Документ' }} value=\"Договор №1\" onClick={handleClick} />",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const MultiDisplayLink: {\n    (props: {\n        values: import(\"../value/types\").TMultiValueLinkValue[];\n        onClick?: ((value: import(\"../value/types\").TMultiValueLinkValue) => void) | undefined;\n    } & Omit<Omit<{\n        value: import(\"@sber-front-cs-core/cs-core/dist/utils/formatters\").TFormatterValue<string | number>;\n        navigate?: import(\"react-router\").NavigateFunction | undefined;\n        size?: \"s\" | \"m\" | undefined;\n        showCopyButton?: boolean | undefined;\n        bold?: boolean | undefined;\n        color?: string | undefined;\n        className?: string | undefined | undefined;\n        as?: keyof import(\"@salutejs/plasma-new-hope\").AllowedTextHTMLElements | undefined;\n        breakWord?: boolean | undefined;\n        id?: string | undefined | undefined;\n        content?: string | undefined | undefined;\n        title?: string | undefined | undefined;\n        onChange?: import(\"react\").ChangeEventHandler<HTMLAnchorElement, Element> | undefined;\n        slot?: string | undefined | undefined;\n        style?: import(\"react\").CSSProperties | undefined;\n        view?: \"secondary\" | \"accent\" | \"negative\" | \"warning\" | \"positive\" | \"paragraph\" | \"tertiary\" | \"clear\" | \"default\" | undefined;\n        disabled?: boolean | undefined;\n        type?: string | undefined | undefined;\n        defaultChecked?: boolean | undefined | undefined;\n        defaultValue?: string | number | readonly string[] | undefined;\n        suppressContentEditableWarning?: boolean | undefined | undefined;\n        suppressHydrationWarning?: boolean | undefined | undefined;\n        accessKey?: string | undefined | undefined;\n        autoCapitalize?: \"off\" | \"none\" | \"on\" | \"sentences\" | \"words\" | \"characters\" | undefined | (string & {}) | undefined;\n        autoFocus?: boolean | undefined | undefined;\n        contentEditable?: \"inherit\" | (boolean | \"true\" | \"false\") | \"plaintext-only\" | undefined;\n        contextMenu?: string | undefined | undefined;\n        dir?: string | undefined | undefined;\n        draggable?: (boolean | \"true\" | \"false\") | undefined;\n        enterKeyHint?: \"enter\" | \"done\" | \"go\" | \"next\" | \"previous\" | \"search\" | \"send\" | undefined | undefined;\n        hidden?: boolean | undefined | undefined;\n        lang?: string | undefined | undefined;\n        nonce?: string | undefined | undefined;\n        spellCheck?: (boolean | \"true\" | \"false\") | undefined;\n        tabIndex?: number | undefined | undefined;\n        translate?: \"yes\" | \"no\" | undefined | undefined;\n        radioGroup?: string | undefined | undefined;\n        role?: import(\"react\").AriaRole | undefined;\n        about?: string | undefined | undefined;\n        datatype?: string | undefined | undefined;\n        inlist?: any;\n        prefix?: string | undefined | undefined;\n        property?: string | undefined | undefined;\n        rel?: string | undefined | undefined;\n        resource?: string | undefined | undefined;\n        rev?: string | undefined | undefined;\n        typeof?: string | undefined | undefined;\n        vocab?: string | undefined | undefined;\n        autoCorrect?: string | undefined | undefined;\n        autoSave?: string | undefined | undefined;\n        itemProp?: string | undefined | undefined;\n        itemScope?: boolean | undefined | undefined;\n        itemType?: string | undefined | undefined;\n        itemID?: string | undefined | undefined;\n        itemRef?: string | undefined | undefined;\n        results?: number | undefined | undefined;\n        security?: string | undefined | undefined;\n        unselectable?: \"on\" | \"off\" | undefined | undefined;\n        popover?: \"\" | \"auto\" | \"manual\" | \"hint\" | undefined | undefined;\n        popoverTargetAction?: \"toggle\" | \"show\" | \"hide\" | undefined | undefined;\n        popoverTarget?: string | undefined | undefined;\n        inert?: boolean | undefined | undefined;\n        inputMode?: \"none\" | \"text\" | \"tel\" | \"url\" | \"email\" | \"numeric\" | \"decimal\" | \"search\" | undefined | undefined;\n        is?: string | undefined | undefined;\n        exportparts?: string | undefined | undefined;\n        part?: string | undefined | undefined;\n        \"aria-activedescendant\"?: string | undefined | undefined;\n        \"aria-atomic\"?: (boolean | \"true\" | \"false\") | undefined;\n        \"aria-autocomplete\"?: \"none\" | \"inline\" | \"list\" | \"both\" | undefined | undefined;\n        \"aria-braillelabel\"?: string | undefined | undefined;\n        \"aria-brailleroledescription\"?: string | undefined | undefined;\n        \"aria-busy\"?: (boolean | \"true\" | \"false\") | undefined;\n        \"aria-checked\"?: boolean | \"false\" | \"mixed\" | \"true\" | undefined | undefined;\n        \"aria-colcount\"?: number | undefined | undefined;\n        \"aria-colindex\"?: number | undefined | undefined;\n        \"aria-colindextext\"?: string | undefined | undefined;\n        \"aria-colspan\"?: number | undefined | undefined;\n        \"aria-controls\"?: string | undefined | undefined;\n        \"aria-current\"?: boolean | \"false\" | \"true\" | \"page\" | \"step\" | \"location\" | \"date\" | \"time\" | undefined | undefined;\n        \"aria-describedby\"?: string | undefined | undefined;\n        \"aria-description\"?: string | undefined | undefined;\n        \"aria-details\"?: string | undefined | undefined;\n        \"aria-disabled\"?: (boolean | \"true\" | \"false\") | undefined;\n        \"aria-dropeffect\"?: \"none\" | \"copy\" | \"execute\" | \"link\" | \"move\" | \"popup\" | undefined | undefined;\n        \"aria-errormessage\"?: string | undefined | undefined;\n        \"aria-expanded\"?: (boolean | \"true\" | \"false\") | undefined;\n        \"aria-flowto\"?: string | undefined | undefined;\n        \"aria-grabbed\"?: (boolean | \"true\" | \"false\") | undefined;\n        \"aria-haspopup\"?: boolean | \"false\" | \"true\" | \"menu\" | \"listbox\" | \"tree\" | \"grid\" | \"dialog\" | undefined | undefined;\n        \"aria-hidden\"?: (boolean | \"true\" | \"false\") | undefined;\n        \"aria-invalid\"?: boolean | \"false\" | \"true\" | \"grammar\" | \"spelling\" | undefined | undefined;\n        \"aria-keyshortcuts\"?: string | undefined | undefined;\n        \"aria-label\"?: string | undefined | undefined;\n        \"aria-labelledby\"?: string | undefined | undefined;\n        \"aria-level\"?: number | undefined | undefined;\n        \"aria-live\"?: \"off\" | \"assertive\" | \"polite\" | undefined | undefined;\n        \"aria-modal\"?: (boolean | \"true\" | \"false\") | undefined;\n        \"aria-multiline\"?: (boolean | \"true\" | \"false\") | undefined;\n        \"aria-multiselectable\"?: (boolean | \"true\" | \"false\") | undefined;\n        \"aria-orientation\"?: \"horizontal\" | \"vertical\" | undefined | undefined;\n        \"aria-owns\"?: string | undefined | undefined;\n        \"aria-placeholder\"?: string | undefined | undefined;\n        \"aria-posinset\"?: number | undefined | undefined;\n        \"aria-pressed\"?: boolean | \"false\" | \"mixed\" | \"true\" | undefined | undefined;\n        \"aria-readonly\"?: (boolean | \"true\" | \"false\") | undefined;\n        \"aria-relevant\"?: \"additions\" | \"additions removals\" | \"additions text\" | \"all\" | \"removals\" | \"removals additions\" | \"removals text\" | \"text\" | \"text additions\" | \"text removals\" | undefined | undefined;\n        \"aria-required\"?: (boolean | \"true\" | \"false\") | undefined;\n        \"aria-roledescription\"?: string | undefined | undefined;\n        \"aria-rowcount\"?: number | undefined | undefined;\n        \"aria-rowindex\"?: number | undefined | undefined;\n        \"aria-rowindextext\"?: string | undefined | undefined;\n        \"aria-rowspan\"?: number | undefined | undefined;\n        \"aria-selected\"?: (boolean | \"true\" | \"false\") | undefined;\n        \"aria-setsize\"?: number | undefined | undefined;\n        \"aria-sort\"?: \"none\" | \"ascending\" | \"descending\" | \"other\" | undefined | undefined;\n        \"aria-valuemax\"?: number | undefined | undefined;\n        \"aria-valuemin\"?: number | undefined | undefined;\n        \"aria-valuenow\"?: number | undefined | undefined;\n        \"aria-valuetext\"?: string | undefined | undefined;\n        dangerouslySetInnerHTML?: {\n            __html: string | TrustedHTML;\n        } | undefined | undefined;\n        onCopy?: import(\"react\").ClipboardEventHandler<HTMLAnchorElement> | undefined;\n        onCopyCapture?: import(\"react\").ClipboardEventHandler<HTMLAnchorElement> | undefined;\n        onCut?: import(\"react\").ClipboardEventHandler<HTMLAnchorElement> | undefined;\n        onCutCapture?: import(\"react\").ClipboardEventHandler<HTMLAnchorElement> | undefined;\n        onPaste?: import(\"react\").ClipboardEventHandler<HTMLAnchorElement> | undefined;\n        onPasteCapture?: import(\"react\").ClipboardEventHandler<HTMLAnchorElement> | undefined;\n        onCompositionEnd?: import(\"react\").CompositionEventHandler<HTMLAnchorElement> | undefined;\n        onCompositionEndCapture?: import(\"react\").CompositionEventHandler<HTMLAnchorElement> | undefined;\n        onCompositionStart?: import(\"react\").CompositionEventHandler<HTMLAnchorElement> | undefined;\n        onCompositionStartCapture?: import(\"react\").CompositionEventHandler<HTMLAnchorElement> | undefined;\n        onCompositionUpdate?: import(\"react\").CompositionEventHandler<HTMLAnchorElement> | undefined;\n        onCompositionUpdateCapture?: import(\"react\").CompositionEventHandler<HTMLAnchorElement> | undefined;\n        onFocus?: import(\"react\").FocusEventHandler<HTMLAnchorElement> | undefined;\n        onFocusCapture?: import(\"react\").FocusEventHandler<HTMLAnchorElement> | undefined;\n        onBlur?: import(\"react\").FocusEventHandler<HTMLAnchorElement> | undefined;\n        onBlurCapture?: import(\"react\").FocusEventHandler<HTMLAnchorElement> | undefined;\n        onChangeCapture?: import(\"react\").ChangeEventHandler<HTMLAnchorElement, Element> | undefined;\n        onBeforeInput?: import(\"react\").InputEventHandler<HTMLAnchorElement> | undefined;\n        onBeforeInputCapture?: import(\"react\").InputEventHandler<HTMLAnchorElement> | undefined;\n        onInput?: import(\"react\").InputEventHandler<HTMLAnchorElement> | undefined;\n        onInputCapture?: import(\"react\").InputEventHandler<HTMLAnchorElement> | undefined;\n        onReset?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onResetCapture?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onSubmit?: import(\"react\").SubmitEventHandler<HTMLAnchorElement> | undefined;\n        onSubmitCapture?: import(\"react\").SubmitEventHandler<HTMLAnchorElement> | undefined;\n        onInvalid?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onInvalidCapture?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onLoad?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onLoadCapture?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onError?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onErrorCapture?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onKeyDown?: import(\"react\").KeyboardEventHandler<HTMLAnchorElement> | undefined;\n        onKeyDownCapture?: import(\"react\").KeyboardEventHandler<HTMLAnchorElement> | undefined;\n        onKeyPress?: import(\"react\").KeyboardEventHandler<HTMLAnchorElement> | undefined;\n        onKeyPressCapture?: import(\"react\").KeyboardEventHandler<HTMLAnchorElement> | undefined;\n        onKeyUp?: import(\"react\").KeyboardEventHandler<HTMLAnchorElement> | undefined;\n        onKeyUpCapture?: import(\"react\").KeyboardEventHandler<HTMLAnchorElement> | undefined;\n        onAbort?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onAbortCapture?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onCanPlay?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onCanPlayCapture?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onCanPlayThrough?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onCanPlayThroughCapture?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onDurationChange?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onDurationChangeCapture?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onEmptied?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onEmptiedCapture?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onEncrypted?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onEncryptedCapture?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onEnded?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onEndedCapture?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onLoadedData?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onLoadedDataCapture?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onLoadedMetadata?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onLoadedMetadataCapture?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onLoadStart?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onLoadStartCapture?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onPause?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onPauseCapture?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onPlay?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onPlayCapture?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onPlaying?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onPlayingCapture?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onProgress?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onProgressCapture?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onRateChange?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onRateChangeCapture?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onSeeked?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onSeekedCapture?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onSeeking?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onSeekingCapture?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onStalled?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onStalledCapture?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onSuspend?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onSuspendCapture?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onTimeUpdate?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onTimeUpdateCapture?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onVolumeChange?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onVolumeChangeCapture?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onWaiting?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onWaitingCapture?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onAuxClick?: import(\"react\").MouseEventHandler<HTMLAnchorElement> | undefined;\n        onAuxClickCapture?: import(\"react\").MouseEventHandler<HTMLAnchorElement> | undefined;\n        onClick?: import(\"react\").MouseEventHandler<HTMLAnchorElement> | undefined;\n        onClickCapture?: import(\"react\").MouseEventHandler<HTMLAnchorElement> | undefined;\n        onContextMenu?: import(\"react\").MouseEventHandler<HTMLAnchorElement> | undefined;\n        onContextMenuCapture?: import(\"react\").MouseEventHandler<HTMLAnchorElement> | undefined;\n        onDoubleClick?: import(\"react\").MouseEventHandler<HTMLAnchorElement> | undefined;\n        onDoubleClickCapture?: import(\"react\").MouseEventHandler<HTMLAnchorElement> | undefined;\n        onDrag?: import(\"react\").DragEventHandler<HTMLAnchorElement> | undefined;\n        onDragCapture?: import(\"react\").DragEventHandler<HTMLAnchorElement> | undefined;\n        onDragEnd?: import(\"react\").DragEventHandler<HTMLAnchorElement> | undefined;\n        onDragEndCapture?: import(\"react\").DragEventHandler<HTMLAnchorElement> | undefined;\n        onDragEnter?: import(\"react\").DragEventHandler<HTMLAnchorElement> | undefined;\n        onDragEnterCapture?: import(\"react\").DragEventHandler<HTMLAnchorElement> | undefined;\n        onDragExit?: import(\"react\").DragEventHandler<HTMLAnchorElement> | undefined;\n        onDragExitCapture?: import(\"react\").DragEventHandler<HTMLAnchorElement> | undefined;\n        onDragLeave?: import(\"react\").DragEventHandler<HTMLAnchorElement> | undefined;\n        onDragLeaveCapture?: import(\"react\").DragEventHandler<HTMLAnchorElement> | undefined;\n        onDragOver?: import(\"react\").DragEventHandler<HTMLAnchorElement> | undefined;\n        onDragOverCapture?: import(\"react\").DragEventHandler<HTMLAnchorElement> | undefined;\n        onDragStart?: import(\"react\").DragEventHandler<HTMLAnchorElement> | undefined;\n        onDragStartCapture?: import(\"react\").DragEventHandler<HTMLAnchorElement> | undefined;\n        onDrop?: import(\"react\").DragEventHandler<HTMLAnchorElement> | undefined;\n        onDropCapture?: import(\"react\").DragEventHandler<HTMLAnchorElement> | undefined;\n        onMouseDown?: import(\"react\").MouseEventHandler<HTMLAnchorElement> | undefined;\n        onMouseDownCapture?: import(\"react\").MouseEventHandler<HTMLAnchorElement> | undefined;\n        onMouseEnter?: import(\"react\").MouseEventHandler<HTMLAnchorElement> | undefined;\n        onMouseLeave?: import(\"react\").MouseEventHandler<HTMLAnchorElement> | undefined;\n        onMouseMove?: import(\"react\").MouseEventHandler<HTMLAnchorElement> | undefined;\n        onMouseMoveCapture?: import(\"react\").MouseEventHandler<HTMLAnchorElement> | undefined;\n        onMouseOut?: import(\"react\").MouseEventHandler<HTMLAnchorElement> | undefined;\n        onMouseOutCapture?: import(\"react\").MouseEventHandler<HTMLAnchorElement> | undefined;\n        onMouseOver?: import(\"react\").MouseEventHandler<HTMLAnchorElement> | undefined;\n        onMouseOverCapture?: import(\"react\").MouseEventHandler<HTMLAnchorElement> | undefined;\n        onMouseUp?: import(\"react\").MouseEventHandler<HTMLAnchorElement> | undefined;\n        onMouseUpCapture?: import(\"react\").MouseEventHandler<HTMLAnchorElement> | undefined;\n        onSelect?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onSelectCapture?: import(\"react\").ReactEventHandler<HTMLAnchorElement> | undefined;\n        onTouchCancel?: import(\"react\").TouchEventHandler<HTMLAnchorElement> | undefined;\n        onTouchCancelCapture?: import(\"react\").TouchEventHandler<HTMLAnchorElement> | undefined;\n        onTouchEnd?: import(\"react\").TouchEventHandler<HTMLAnchorElement> | undefined;\n        onTouchEndCapture?: import(\"react\").TouchEventHandler<HTMLAnchorElement> | undefined;\n        onTouchMove?: import(\"react\").TouchEventHandler<HTMLAnchorElement> | undefined;\n        onTouchMoveCapture?: import(\"react\").TouchEventHandler<HTMLAnchorElement> | undefined;\n        onTouchStart?: import(\"react\").TouchEventHandler<HTMLAnchorElement> | undefined;\n        onTouchStartCapture?: import(\"react\").TouchEventHandler<HTMLAnchorElement> | undefined;\n        onPointerDown?: import(\"react\").PointerEventHandler<HTMLAnchorElement> | undefined;\n        onPointerDownCapture?: import(\"react\").PointerEventHandler<HTMLAnchorElement> | undefined;\n        onPointerMove?: import(\"react\").PointerEventHandler<HTMLAnchorElement> | undefined;\n        onPointerMoveCapture?: import(\"react\").PointerEventHandler<HTMLAnchorElement> | undefined;\n        onPointerUp?: import(\"react\").PointerEventHandler<HTMLAnchorElement> | undefined;\n        onPointerUpCapture?: import(\"react\").PointerEventHandler<HTMLAnchorElement> | undefined;\n        onPointerCancel?: import(\"react\").PointerEventHandler<HTMLAnchorElement> | undefined;\n        onPointerCancelCapture?: import(\"react\").PointerEventHandler<HTMLAnchorElement> | undefined;\n        onPointerEnter?: import(\"react\").PointerEventHandler<HTMLAnchorElement> | undefined;\n        onPointerLeave?: import(\"react\").PointerEventHandler<HTMLAnchorElement> | undefined;\n        onPointerOver?: import(\"react\").PointerEventHandler<HTMLAnchorElement> | undefined;\n        onPointerOverCapture?: import(\"react\").PointerEventHandler<HTMLAnchorElement> | undefined;\n        onPointerOut?: import(\"react\").PointerEventHandler<HTMLAnchorElement> | undefined;\n        onPointerOutCapture?: import(\"react\").PointerEventHandler<HTMLAnchorElement> | undefined;\n        onGotPointerCapture?: import(\"react\").PointerEventHandler<HTMLAnchorElement> | undefined;\n        onGotPointerCaptureCapture?: import(\"react\").PointerEventHandler<HTMLAnchorElement> | undefined;\n        onLostPointerCapture?: import(\"react\").PointerEventHandler<HTMLAnchorElement> | undefined;\n        onLostPointerCaptureCapture?: import(\"react\").PointerEventHandler<HTMLAnchorElement> | undefined;\n        onScroll?: import(\"react\").UIEventHandler<HTMLAnchorElement> | undefined;\n        onScrollCapture?: import(\"react\").UIEventHandler<HTMLAnchorElement> | undefined;\n        onScrollEnd?: import(\"react\").UIEventHandler<HTMLAnchorElement> | undefined;\n        onScrollEndCapture?: import(\"react\").UIEventHandler<HTMLAnchorElement> | undefined;\n        onWheel?: import(\"react\").WheelEventHandler<HTMLAnchorElement> | undefined;\n        onWheelCapture?: import(\"react\").WheelEventHandler<HTMLAnchorElement> | undefined;\n        onAnimationStart?: import(\"react\").AnimationEventHandler<HTMLAnchorElement> | undefined;\n        onAnimationStartCapture?: import(\"react\").AnimationEventHandler<HTMLAnchorElement> | undefined;\n        onAnimationEnd?: import(\"react\").AnimationEventHandler<HTMLAnchorElement> | undefined;\n        onAnimationEndCapture?: import(\"react\").AnimationEventHandler<HTMLAnchorElement> | undefined;\n        onAnimationIteration?: import(\"react\").AnimationEventHandler<HTMLAnchorElement> | undefined;\n        onAnimationIterationCapture?: import(\"react\").AnimationEventHandler<HTMLAnchorElement> | undefined;\n        onToggle?: import(\"react\").ToggleEventHandler<HTMLAnchorElement> | undefined;\n        onBeforeToggle?: import(\"react\").ToggleEventHandler<HTMLAnchorElement> | undefined;\n        onTransitionCancel?: import(\"react\").TransitionEventHandler<HTMLAnchorElement> | undefined;\n        onTransitionCancelCapture?: import(\"react\").TransitionEventHandler<HTMLAnchorElement> | undefined;\n        onTransitionEnd?: import(\"react\").TransitionEventHandler<HTMLAnchorElement> | undefined;\n        onTransitionEndCapture?: import(\"react\").TransitionEventHandler<HTMLAnchorElement> | undefined;\n        onTransitionRun?: import(\"react\").TransitionEventHandler<HTMLAnchorElement> | undefined;\n        onTransitionRunCapture?: import(\"react\").TransitionEventHandler<HTMLAnchorElement> | undefined;\n        onTransitionStart?: import(\"react\").TransitionEventHandler<HTMLAnchorElement> | undefined;\n        onTransitionStartCapture?: import(\"react\").TransitionEventHandler<HTMLAnchorElement> | undefined;\n        ref?: import(\"react\").Ref<HTMLAnchorElement> | undefined;\n        focused?: boolean | undefined;\n        key?: import(\"react\").Key | null | undefined;\n        target?: import(\"react\").HTMLAttributeAnchorTarget | undefined;\n        href?: string | undefined | undefined;\n        download?: any;\n        hrefLang?: string | undefined | undefined;\n        media?: string | undefined | undefined;\n        ping?: string | undefined | undefined;\n        referrerPolicy?: import(\"react\").HTMLAttributeReferrerPolicy | undefined;\n        underline?: \"none\" | \"hover\" | \"always\" | undefined;\n    }, \"ref\"> & import(\"react\").RefAttributes<HTMLAnchorElement>, \"onClick\" | \"value\"> & Omit<import(\"../../InlineList\").TInlineListProps, \"items\"> & import(\"./types\").TWithMetaProps): import(\"react\").JSX.Element;\n    displayName: string;\n};"
+  },
+  {
+   "symbol": "MultiValueLink",
+   "localName": "MultiValueLink",
+   "isType": false,
+   "from": "./components/multi",
+   "resolvedDir": "components/multi",
+   "description": "Компонент отображения нескольких ссылочных значений в строку.\n\nПри клике на элемент вызывает `onClick` с полным объектом значения.\n\n@template T - Тип объекта значения (расширяет `TMultiValueLinkValue`)\n\n@param {TMultiValueLinkProps<T>} props\n@param {T[]} props.values - Массив значений\n@param {Function} [props.onClick] - Callback клика; получает полный объект значения\n@param {ReactNode} [props.separator] - Разделитель\n@param {number} [props.maxVisibleItems] - Максимум видимых элементов\n\n@example\n<MultiValueLink\n  values={[{ text: 'Заказ №123', id: '123' }]}\n  onClick={(value) => navigate(`/orders/${value.id}`)}\n/>",
+   "propsTypeName": "TMultiValueLinkProps",
+   "propsRaw": "export type TMultiValueLinkProps<T extends TMultiValueLinkValue> = {\n    values: T[];\n    onClick?: (value: T) => void;\n} & Omit<TValueLinkProps, 'value' | 'onClick'> & Omit<TInlineListProps, 'items'>;"
+  },
+  {
+   "symbol": "TWidgetProps",
+   "localName": "TWidgetProps",
+   "isType": true,
+   "from": "./types",
+   "resolvedDir": "types",
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "TMfAssistantToolProps",
+   "localName": "TMfAssistantToolProps",
+   "isType": true,
+   "from": "./types",
+   "resolvedDir": "types",
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "TMfAssistantTool",
+   "localName": "TMfAssistantTool",
+   "isType": true,
+   "from": "./types",
+   "resolvedDir": "types",
+   "description": null,
+   "propsTypeName": "TMfAssistantToolProps",
+   "propsRaw": "export type TMfAssistantToolProps<Data = unknown> = TWidgetProps<Data> & {\n    onSuccess: (args: {\n        message: string;\n        result?: string | null;\n    }) => void;\n};"
+  },
+  {
+   "symbol": "useMutationSubmit",
+   "localName": "useMutationSubmit",
+   "isType": false,
+   "from": "./mutations/hooks/useMutationSubmit",
+   "resolvedDir": "mutations/hooks/useMutationSubmit",
+   "description": "Хук связки react-hook-form с RTK Mutation.\n\nОбрабатывает отправку: вызывает мутацию, показывает toast,\nпроставляет серверные ошибки на поля через `setError`.\n\n@template TFieldValues - Тип полей формы\n@template Response - Тип ответа мутации\n\n@param {TUseMutationSubmitPros<TFieldValues, Response>} params\n@param {UseMutation} params.useMutation - RTK Mutation hook\n@param {Function} [params.onSuccess] - Callback при успехе\n@param {Function} [params.onError] - Callback при ошибке\n@param {string} [params.targetPrefix] - Префикс для маппинга серверных ошибок на поля формы\n@param {boolean} [params.removeEmptyValues=true] - Удалять пустые значения перед отправкой\n\n@returns {{ submit, useMutationReturn }}\n\n@example\nconst { submit } = useMutationSubmit({\n  useMutation: useCreateOrderMutation,\n  onSuccess: (data) => navigate(`/orders/${data.data?.uuid}`),\n})\nreturn <form onSubmit={submit}>...</form>",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const useMutationSubmit: <TFieldValues extends FieldValues, Response extends TResponse<unknown>>({ onError, onSuccess, removeEmptyValues, targetPrefix, useMutation, }: TUseMutationSubmitPros<TFieldValues, Response>) => {\n    submit: (e?: React.BaseSyntheticEvent) => Promise<unknown>;\n    useMutationReturn: readonly [(arg: TFieldValues) => import(\"@reduxjs/toolkit/query\").MutationActionCreatorResult<import(\"@reduxjs/toolkit/query\").MutationDefinition<TFieldValues, any, string, Response, string>>, ({\n        requestId?: undefined;\n        status: import(\"@reduxjs/toolkit/query\").QueryStatus.uninitialized;\n        data?: undefined;\n        error?: undefined;\n        endpointName?: string;\n        startedTimeStamp?: undefined;\n        fulfilledTimeStamp?: undefined;\n    } & {\n        status: import(\"@reduxjs/toolkit/query\").QueryStatus.uninitialized;\n        isUninitialized: true;\n        isLoading: false;\n        isSuccess: false;\n        isError: false;\n    } & {\n        originalArgs?: TFieldValues | undefined;\n        reset: () => void;\n    }) | ({\n        status: import(\"@reduxjs/toolkit/query\").QueryStatus.fulfilled;\n    } & Omit<{\n        requestId: string;\n        data?: Response | undefined;\n        error?: any;\n        endpointName: string;\n        startedTimeStamp: number;\n        fulfilledTimeStamp?: number;\n    }, \"data\" | \"fulfilledTimeStamp\"> & Required<Pick<{\n        requestId: string;\n        data?: Response | undefined;\n        error?: any;\n        endpointName: string;\n        startedTimeStamp: number;\n        fulfilledTimeStamp?: number;\n    }, \"data\" | \"fulfilledTimeStamp\">> & {\n        error: undefined;\n    } & {\n        status: import(\"@reduxjs/toolkit/query\").QueryStatus.fulfilled;\n        isUninitialized: false;\n        isLoading: false;\n        isSuccess: true;\n        isError: false;\n    } & {\n        originalArgs?: TFieldValues | undefined;\n        reset: () => void;\n    }) | ({\n        status: import(\"@reduxjs/toolkit/query\").QueryStatus.pending;\n    } & {\n        requestId: string;\n        data?: Response | undefined;\n        error?: any;\n        endpointName: string;\n        startedTimeStamp: number;\n        fulfilledTimeStamp?: number;\n    } & {\n        data?: undefined;\n    } & {\n        status: import(\"@reduxjs/toolkit/query\").QueryStatus.pending;\n        isUninitialized: false;\n        isLoading: true;\n        isSuccess: false;\n        isError: false;\n    } & {\n        originalArgs?: TFieldValues | undefined;\n        reset: () => void;\n    }) | ({\n        status: import(\"@reduxjs/toolkit/query\").QueryStatus.rejected;\n    } & Omit<{\n        requestId: string;\n        data?: Response | undefined;\n        error?: any;\n        endpointName: string;\n        startedTimeStamp: number;\n        fulfilledTimeStamp?: number;\n    }, \"error\"> & Required<Pick<{\n        requestId: string;\n        data?: Response | undefined;\n        error?: any;\n        endpointName: string;\n        startedTimeStamp: number;\n        fulfilledTimeStamp?: number;\n    }, \"error\">> & {\n        status: import(\"@reduxjs/toolkit/query\").QueryStatus.rejected;\n        isUninitialized: false;\n        isLoading: false;\n        isSuccess: false;\n        isError: true;\n    } & {\n        originalArgs?: TFieldValues | undefined;\n        reset: () => void;\n    })];\n};"
+  },
+  {
+   "symbol": "MutationAutocomplete",
+   "localName": "MutationAutocomplete",
+   "isType": false,
+   "from": "./mutations/components/MutationAutocomplete",
+   "resolvedDir": "mutations/components/MutationAutocomplete",
+   "description": "Поле ввода с автодополнением, интегрированное с react-hook-form.\n\nРасширяет базовый `MutationAutocomplete` из cs-core поддержкой\n`meta` (валидация из схемы) и `fc` (управление режимом поля).\n\n@template TFieldValues - Тип полей формы\n@param {TMutationAutocompleteProps<TFieldValues>} props\n@param {TMetaSchemeProperty} [props.meta] - Метаданные из схемы (title, required, maxLength и др.)\n@param {TFieldControl} [props.fc] - `0` hidden, `1` readOnly, `3` optional, `7` mandatory",
+   "propsTypeName": "TMutationAutocompleteProps",
+   "propsRaw": "export type TMutationAutocompleteProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;"
+  },
+  {
+   "symbol": "MutationCheckboxGroup",
+   "localName": "MutationCheckboxGroup",
+   "isType": false,
+   "from": "./mutations/components/MutationCheckboxGroup",
+   "resolvedDir": "mutations/components/MutationCheckboxGroup",
+   "description": "Группа чекбоксов, интегрированная с react-hook-form.\n\n@template TFieldValues - Тип полей формы\n@param {MutationCheckboxGroupProps<TFieldValues>} props\n@param {TMetaSchemeProperty} [props.meta] - Метаданные из схемы",
+   "propsTypeName": "MutationCheckboxGroupProps",
+   "propsRaw": "export type MutationCheckboxGroupProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;"
+  },
+  {
+   "symbol": "MutationCombobox",
+   "localName": "MutationCombobox",
+   "isType": false,
+   "from": "./mutations/components/MutationCombobox",
+   "resolvedDir": "mutations/components/MutationCombobox",
+   "description": "Комбобокс (поиск + выбор), интегрированный с react-hook-form.\n\n@template TFieldValues - Тип полей формы\n@param {TMutationComboboxProps<TFieldValues>} props\n@param {TMetaSchemeProperty} [props.meta] - Метаданные из схемы\n@param {TFieldControl} [props.fc] - Код управления полем",
+   "propsTypeName": "TMutationComboboxProps",
+   "propsRaw": "export type TMutationComboboxProps<TFieldValues extends FieldValues> = BaseProps<TFieldValues> & TFieldOptions;"
+  },
+  {
+   "symbol": "MutationDatePicker",
+   "localName": "MutationDatePicker",
+   "isType": false,
+   "from": "./mutations/components/MutationDatePickers",
+   "resolvedDir": "mutations/components/MutationDatePickers",
+   "description": "Выбор даты, интегрированный с react-hook-form.\n\n@template TFieldValues - Тип полей формы\n@param {TMutationDatePickerProps<TFieldValues>} props\n@param {TMetaSchemeProperty} [props.meta] - Метаданные из схемы\n@param {TFieldControl} [props.fc] - Код управления полем",
+   "propsTypeName": "TMutationDatePickerProps",
+   "propsRaw": "export type TMutationDatePickerProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;"
+  },
+  {
+   "symbol": "MutationDatePickerRange",
+   "localName": "MutationDatePickerRange",
+   "isType": false,
+   "from": "./mutations/components/MutationDatePickers",
+   "resolvedDir": "mutations/components/MutationDatePickers",
+   "description": "Выбор диапазона дат, интегрированный с react-hook-form.\n\n@template TFieldValues - Тип полей формы\n@param {TMutationDatePickerRangeProps<TFieldValues>} props\n@param {TMetaSchemeProperty} [props.meta] - Метаданные из схемы\n@param {TFieldControl} [props.fc] - Код управления полем",
+   "propsTypeName": "TMutationDatePickerRangeProps",
+   "propsRaw": "export type TMutationDatePickerRangeProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;"
+  },
+  {
+   "symbol": "MutationMask",
+   "localName": "MutationMask",
+   "isType": false,
+   "from": "./mutations/components/MutationMask",
+   "resolvedDir": "mutations/components/MutationMask",
+   "description": "Поле ввода с маской, интегрированное с react-hook-form.\n\n@template TFieldValues - Тип полей формы\n@param {TMutationMaskProps<TFieldValues>} props\n@param {TMetaSchemeProperty} [props.meta] - Метаданные из схемы\n@param {TFieldControl} [props.fc] - Код управления полем",
+   "propsTypeName": "TMutationMaskProps",
+   "propsRaw": "export type TMutationMaskProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;"
+  },
+  {
+   "symbol": "MutationNumberFormat",
+   "localName": "MutationNumberFormat",
+   "isType": false,
+   "from": "./mutations/components/MutationNumberFormat",
+   "resolvedDir": "mutations/components/MutationNumberFormat",
+   "description": "Числовое поле с форматированием, интегрированное с react-hook-form.\n\n@template TFieldValues - Тип полей формы\n@param {TMutationNumberFormatProps<TFieldValues>} props\n@param {TMetaSchemeProperty} [props.meta] - Метаданные из схемы (multipleOf → decimalScale)",
+   "propsTypeName": "TMutationNumberFormatProps",
+   "propsRaw": "export type TMutationNumberFormatProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;"
+  },
+  {
+   "symbol": "MutationNumberInput",
+   "localName": "MutationNumberInput",
+   "isType": false,
+   "from": "./mutations/components/MutationNumberInput",
+   "resolvedDir": "mutations/components/MutationNumberInput",
+   "description": "Числовое поле ввода, интегрированное с react-hook-form.\n\n@template TFieldValues - Тип полей формы\n@param {TMutationNumberInputProps<TFieldValues>} props\n@param {TMetaSchemeProperty} [props.meta] - Метаданные из схемы\n@param {TFieldControl} [props.fc] - Код управления полем",
+   "propsTypeName": "TMutationNumberInputProps",
+   "propsRaw": "export type TMutationNumberInputProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;"
+  },
+  {
+   "symbol": "MutationRadioGroup",
+   "localName": "MutationRadioGroup",
+   "isType": false,
+   "from": "./mutations/components/MutationRadioGroup",
+   "resolvedDir": "mutations/components/MutationRadioGroup",
+   "description": "Группа радиокнопок, интегрированная с react-hook-form.\n\n@template TFieldValues - Тип полей формы\n@param {TMutationRadioGroupProps<TFieldValues>} props\n@param {TMetaSchemeProperty} [props.meta] - Метаданные из схемы",
+   "propsTypeName": "TMutationRadioGroupProps",
+   "propsRaw": "export type TMutationRadioGroupProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;"
+  },
+  {
+   "symbol": "MutationSelect",
+   "localName": "MutationSelect",
+   "isType": false,
+   "from": "./mutations/components/MutationSelect",
+   "resolvedDir": "mutations/components/MutationSelect",
+   "description": "Выпадающий список, интегрированный с react-hook-form.\n\n@template TFieldValues - Тип полей формы\n@param {TMutationSelectProps<TFieldValues>} props\n@param {TMetaSchemeProperty} [props.meta] - Метаданные из схемы\n@param {TFieldControl} [props.fc] - Код управления полем",
+   "propsTypeName": "TMutationSelectProps",
+   "propsRaw": "export type TMutationSelectProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;"
+  },
+  {
+   "symbol": "MutationSubmit",
+   "localName": "MutationSubmit",
+   "isType": false,
+   "from": "./mutations/components/MutationSubmit",
+   "resolvedDir": "mutations/components/MutationSubmit",
+   "description": "Кнопка отправки формы, интегрированная с react-hook-form и RTK Mutation.\n\nУправляет состоянием `isLoading` автоматически.\n\n@template TFieldValues - Тип полей формы\n@template Response - Тип ответа мутации\n\n@param {TMutationSubmitProps<TFieldValues, Response>} props\n@param {ReactNode} [props.children] - Текст кнопки\n\n@example\n<MutationSubmit useMutation={useCreateOrderMutation} onSuccess={onSuccess}>\n  Сохранить\n</MutationSubmit>",
+   "propsTypeName": "TMutationSubmitProps",
+   "propsRaw": "export type TMutationSubmitProps<TFieldValues extends FieldValues, Response extends TResponse<unknown>> = TMutationSubmit<TFieldValues, Response> & Pick<ComponentProps<typeof Button>, 'children' | 'view' | 'stretching' | 'isLoading'>;"
+  },
+  {
+   "symbol": "MutationSwitch",
+   "localName": "MutationSwitch",
+   "isType": false,
+   "from": "./mutations/components/MutationSwitch",
+   "resolvedDir": "mutations/components/MutationSwitch",
+   "description": "Переключатель (switch), интегрированный с react-hook-form.\n\n@template TFieldValues - Тип полей формы\n@param {TMutationSwitchProps<TFieldValues>} props\n@param {TMetaSchemeProperty} [props.meta] - Метаданные из схемы",
+   "propsTypeName": "TMutationSwitchProps",
+   "propsRaw": "export type TMutationSwitchProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;"
+  },
+  {
+   "symbol": "MutationTextArea",
+   "localName": "MutationTextArea",
+   "isType": false,
+   "from": "./mutations/components/MutationTextArea",
+   "resolvedDir": "mutations/components/MutationTextArea",
+   "description": "Многострочное текстовое поле, интегрированное с react-hook-form.\n\n@template TFieldValues - Тип полей формы\n@param {TMutationTextAreaProps<TFieldValues>} props\n@param {TMetaSchemeProperty} [props.meta] - Метаданные из схемы\n@param {TFieldControl} [props.fc] - Код управления полем",
+   "propsTypeName": "TMutationTextAreaProps",
+   "propsRaw": "export type TMutationTextAreaProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;"
+  },
+  {
+   "symbol": "MutationTextField",
+   "localName": "MutationTextField",
+   "isType": false,
+   "from": "./mutations/components/MutationTextField",
+   "resolvedDir": "mutations/components/MutationTextField",
+   "description": "Текстовое поле ввода, интегрированное с react-hook-form.\n\n@template TFieldValues - Тип полей формы\n@param {TMutationTextFieldProps<TFieldValues>} props\n@param {TMetaSchemeProperty} [props.meta] - Метаданные из схемы\n@param {TFieldControl} [props.fc] - Код управления полем",
+   "propsTypeName": "TMutationTextFieldProps",
+   "propsRaw": "export type TMutationTextFieldProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;"
+  },
+  {
+   "symbol": "MutationTreeCheckbox",
+   "localName": "MutationTreeCheckbox",
+   "isType": false,
+   "from": "./mutations/components/MutationTreeCheckbox",
+   "resolvedDir": "mutations/components/MutationTreeCheckbox",
+   "description": "Дерево чекбоксов, интегрированное с react-hook-form.\n\n@template TFieldValues - Тип полей формы\n@param {TMutationTreeCheckboxProps<TFieldValues>} props\n@param {TMetaSchemeProperty} [props.meta] - Метаданные из схемы",
+   "propsTypeName": "TMutationTreeCheckboxProps",
+   "propsRaw": "export type TMutationTreeCheckboxProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;"
+  },
+  {
+   "symbol": "MutationUploadSet",
+   "localName": "MutationUploadSet",
+   "isType": false,
+   "from": "./mutations/components/MutationUploadSet",
+   "resolvedDir": "mutations/components/MutationUploadSet",
+   "description": "Компонент для загрузки файлов, интегрированный с react-hook-form.\n\n@template TFieldValues - Тип полей формы\n@param {TMutationUploadSetProps<TFieldValues>} props\n@param {TMetaSchemeProperty} [props.meta] - Метаданные из схемы\n@param {TFieldControl} [props.fc] - Код управления полем",
+   "propsTypeName": "TMutationUploadSetProps",
+   "propsRaw": "export type TMutationUploadSetProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;"
+  },
+  {
+   "symbol": "FC_HIDDEN",
+   "localName": "FC_HIDDEN",
+   "isType": false,
+   "from": "./mutations/constants",
+   "resolvedDir": "mutations/constants.d.ts",
+   "description": null,
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const FC_HIDDEN = 0;"
+  },
+  {
+   "symbol": "FC_READONLY",
+   "localName": "FC_READONLY",
+   "isType": false,
+   "from": "./mutations/constants",
+   "resolvedDir": "mutations/constants.d.ts",
+   "description": null,
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const FC_READONLY = 1;"
+  },
+  {
+   "symbol": "FC_OPTIONAL",
+   "localName": "FC_OPTIONAL",
+   "isType": false,
+   "from": "./mutations/constants",
+   "resolvedDir": "mutations/constants.d.ts",
+   "description": null,
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const FC_OPTIONAL = 3;"
+  },
+  {
+   "symbol": "FC_MANDATORY",
+   "localName": "FC_MANDATORY",
+   "isType": false,
+   "from": "./mutations/constants",
+   "resolvedDir": "mutations/constants.d.ts",
+   "description": null,
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const FC_MANDATORY = 7;"
+  },
+  {
+   "symbol": "SmartUploadSet",
+   "localName": "SmartUploadSet",
+   "isType": false,
+   "from": "./smarts/SmartUploadSet",
+   "resolvedDir": "smarts/SmartUploadSet",
+   "description": "Умный компонент управления вложениями (загрузка, просмотр, переименование, удаление).\n\nПринимает RTK Query хуки для всех операций с файлами.\nПоддерживает оптимистичное обновление списка, отмену загрузки,\nскачивание одиночных файлов и архива.\n\n@param {TSmartUploadSetProps} props\n@param {string} props.entityUuid - UUID сущности-владельца файлов\n@param {string} props.entityId - ID сущности\n@param {string} [props.filter] - OData фильтр для запроса файлов\n@param {UseQuery} props.useGetFilesInfoQuery - Хук получения списка файлов\n@param {UseMutation} props.useRenameFileMutation - Хук переименования файла\n@param {UseLazyQuery} props.useLazyDownloadFileQuery - Хук скачивания одного файла\n @param {UseLazyQuery} props.useLazyDownloadPreviewFileQuery - Хук скачивания одного файла в формате PDF\n@param {UseLazyQuery} props.useLazyDownloadAllFilesQuery - Хук скачивания всех файлов архивом\n@param {UseMutation} props.useUploadFileMutation - Хук загрузки файлов\n@param {UseMutation} props.useDeleteFileMutation - Хук удаления файла\n\n@example\n<SmartUploadSet\n  entityUuid={order.uuid}\n  entityId={order.id}\n  useGetFilesInfoQuery={useGetOrderFilesQuery}\n  useUploadFileMutation={useUploadOrderFileMutation}\n  useDeleteFileMutation={useDeleteOrderFileMutation}\n  useRenameFileMutation={useUpdateOrderFileInfoMutation}\n  useLazyDownloadFileQuery={useLazyDownloadOrderFileQuery}\n  useLazyDownloadPreviewFileQuery={useLazyDownloadOrderFilePreviewQuery}\n  useLazyDownloadAllFilesQuery={useLazyDownloadAllOrderFilesQuery}\n  uploadVisible\n  deleteVisible\n/>",
+   "propsTypeName": "TSmartUploadSetProps",
+   "propsRaw": "export type TSmartUploadSetProps = {\n    entityUuid: TEntityUuid;\n    entityId: TEntityId;\n    filter?: TFilter;\n    useGetFilesInfoQuery: UseQuery<QueryDefinition<TGetFilesInfoApiArg, BaseQueryFn, string, TResponse<TResponseFile[]>>>;\n    useRenameFileMutation: UseMutation<MutationDefinition<TRenameFileApiArg, BaseQueryFn, string, TResponse<TResponseFile>>>;\n    useUploadFileMutation: UseMutation<MutationDefinition<TUploadFile, BaseQueryFn, string, TResponse<TResponseFile[]>>>;\n    useDeleteFileMutation: UseMutation<MutationDefinition<TDeleteFileWithExtraArg, BaseQueryFn, string, TResponse<TResponseFile>>>;\n    useLazyDownloadFileQuery: UseLazyQuery<QueryDefinition<TRetrieveContentsApiArg, BaseQueryFn, string, TDownloadFile>>;\n    useLazyDownloadPreviewFileQuery: UseLazyQuery<QueryDefinition<TPreviewContentsApiArg, BaseQueryFn, string, TDownloadFile>>;\n    useLazyDownloadAllFilesQuery: UseLazyQuery<QueryDefinition<TGetFilesContentApiArg, BaseQueryFn, string, TDownloadFile>>;\n} & Pick<ComponentProps<typeof UploadSet>, 'size' | 'title' | 'helperItems' | 'uploadVisible' | 'subtitle' | 'reverse' | 'downloadAllVisible' | 'deleteVisible' | 'downloadVisible' | 'openVisible' | 'renameVisible' | 'acceptedFiles'> & {\n    fileUploadExtraArg?: TEndpointExtraArg;\n    fileDeleteExtraArg?: TEndpointExtraArg;\n};"
+  },
+  {
+   "symbol": "SmartStatusTrack",
+   "localName": "SmartStatusTrack",
+   "isType": false,
+   "from": "./smarts/SmartStatusTrack",
+   "resolvedDir": "smarts/SmartStatusTrack",
+   "description": "Умный компонент трекера статусов объекта.\n\nЗагружает историю статусов через RTK Query хук и рендерит\nвизуальный трекер с опциональным кастомным описанием.\n\n@param {TSmartStatusTrackProps} props\n@param {string} props.entityUuid - UUID объекта\n@param {UseQuery} props.useStatusTrackQuery - RTK Query хук истории статусов\n@param {Function} [props.descriptionRender] - Кастомный рендер описания статуса.\n  Принимает `{ items, currentItem }`, возвращает `ReactNode`\n\n@example\n<SmartStatusTrack\n  entityUuid={order.uuid}\n  useStatusTrackQuery={useGetOrderHistoryQuery}\n  descriptionRender={({ currentItem }) => <Text>{currentItem.description}</Text>}\n/>",
+   "propsTypeName": "TSmartStatusTrackProps",
+   "propsRaw": "export type TSmartStatusTrackProps = TStatusTrackArg & {\n    useStatusTrackQuery: UseQuery<QueryDefinition<TGetHistoryForDocumentApiArg, BaseQueryFn, string, TGetHistoryForDocumentApiResponse>>;\n};"
+  },
+  {
+   "symbol": "SmartPdfViewer",
+   "localName": "SmartPdfViewer",
+   "isType": false,
+   "from": "./smarts/SmartPdfViewer",
+   "resolvedDir": "smarts/SmartPdfViewer",
+   "description": "Умный компонент просмотра PDF-документа.\n\nЗагружает PDF через RTK Query хук, отображает viewer или\nпустое состояние с ошибкой если загрузка не удалась.\n\n@template T - Тип аргумента запроса (расширяет `TBaseQueryArg`)\n\n@param {SmartPdfViewerProps<T>} props\n@param {TQueryArg<T>} props.queryArg - Аргумент RTK Query запроса\n@param {UseQuery} props.useGetPdfQuery - RTK Query хук возвращающий `Blob`\n@param {boolean} [props.skip] - Пропустить запрос\n@param {string} [props.errorDescription] - Описание при ошибке загрузки\n\n@example\n<SmartPdfViewer\n  queryArg={{ documentUuid: id }}\n  useGetPdfQuery={useGetDocumentPdfQuery}\n/>",
+   "propsTypeName": "SmartPdfViewerProps",
+   "propsRaw": "export type SmartPdfViewerProps<T extends TBaseQueryArg = TBaseQueryArg> = Prettify<{\n    queryArg: TQueryArg<T>;\n    skip?: boolean;\n    useGetPdfQuery: UseQuery<QueryDefinition<TQueryArg<T>, BaseQueryFn, string, Blob>>;\n} & {\n    errorDescription?: TPropsFromEmptyStates['description'];\n}>;"
+  },
+  {
+   "symbol": "EventDrawer",
+   "localName": "EventDrawer",
+   "isType": false,
+   "from": "./widgets/Event",
+   "resolvedDir": "widgets/Event",
+   "description": "Виджет истории событий в виде боковой панели.\n\n@param {TEventDrawerProps} props\n@param {string} props.entityUuid - UUID объекта\n@param {'s' | 'm'} [props.size] - Размер Drawer\n\n@example\n<EventDrawer entityUuid={order.uuid} size=\"m\" />",
+   "propsTypeName": "TEventDrawerProps",
+   "propsRaw": "export type TEventDrawerProps = TEventProps & Pick<TDrawerProps, 'size'>;"
+  },
+  {
+   "symbol": "Event",
+   "localName": "Event",
+   "isType": false,
+   "from": "./widgets/Event",
+   "resolvedDir": "widgets/Event",
+   "description": "Виджет истории событий объекта.\n\nЗагружает и отображает список событий. Обновляется по WebSocket.\n\n@param {TEventProps} props\n@param {string} props.entityUuid - UUID объекта\n\n@example\n<Event entityUuid={order.uuid} />",
+   "propsTypeName": "TEventProps",
+   "propsRaw": "export type TEventProps = {\n    entityUuid: string;\n};"
+  },
+  {
+   "symbol": "Tracker",
+   "localName": "Tracker",
+   "isType": false,
+   "from": "./widgets/Tracker",
+   "resolvedDir": "widgets/Tracker",
+   "description": "Виджет трекера статусов с собственным Redux store.\n\nЗагружает историю статусов через встроенный RTK Query API.\nОбновляется по WebSocket.\n\n@param {TTrackerProps} props\n@param {string} props.entityUuid - UUID объекта\n@param {Function} [props.descriptionRender] - Кастомный рендер описания статуса\n\n@example\n<Tracker\n  entityUuid={order.uuid}\n  descriptionRender={({ currentItem }) => <Text>{currentItem.description}</Text>}\n/>",
+   "propsTypeName": "TTrackerProps",
+   "propsRaw": "export type TTrackerProps = Pick<TSmartStatusTrackProps, 'entityUuid' | 'descriptionRender'>;"
+  },
+  {
+   "symbol": "Attachment",
+   "localName": "Attachment",
+   "isType": false,
+   "from": "./widgets/attachment",
+   "resolvedDir": "widgets/attachment",
+   "description": "Виджет управления вложениями для одного набора файлов.\n\n@param {TAttachmentProps} props\n@param {string} props.entityUuid - UUID сущности-владельца\n@param {string} props.entityId - ID сущности\n\n@example\n<Attachment entityUuid={order.uuid} entityId={order.id} uploadVisible deleteVisible />",
+   "propsTypeName": "TAttachmentProps",
+   "propsRaw": "export type TAttachmentProps = {\n    baseUrl?: string;\n} & Pick<TSmartUploadSetProps, 'size' | 'title' | 'helperItems' | 'uploadVisible' | 'entityUuid' | 'entityId' | 'subtitle' | 'reverse' | 'downloadAllVisible' | 'deleteVisible' | 'downloadVisible' | 'openVisible' | 'renameVisible' | 'fileUploadExtraArg' | 'fileDeleteExtraArg'>;"
+  },
+  {
+   "symbol": "MultiAttachment",
+   "localName": "MultiAttachment",
+   "isType": false,
+   "from": "./widgets/attachment",
+   "resolvedDir": "widgets/attachment",
+   "description": "Виджет управления вложениями с группировкой по заголовкам из API.\n\nЗагружает метаданные секций через `/title-info` и рендерит\nотдельный `SmartUploadSet` для каждой секции.\n\n@param {TMultiAttachmentProps} props\n@param {string} props.entityUuid - UUID сущности-владельца\n@param {string} props.entityId - ID сущности\n@param {string} [props.downloadAllText] - Текст кнопки «Скачать всё»\n\n@example\n<MultiAttachment entityUuid={order.uuid} entityId={order.id} downloadAllText=\"Скачать всё\" />",
+   "propsTypeName": "TMultiAttachmentProps",
+   "propsRaw": "export type TMultiAttachmentProps = {\n    baseUrl?: string;\n    downloadAllText?: string;\n} & Pick<TSmartUploadSetProps, 'size' | 'entityUuid' | 'entityId' | 'reverse' | 'downloadAllVisible' | 'fileUploadExtraArg' | 'fileDeleteExtraArg'>;"
+  },
+  {
+   "symbol": "invalidateAttachmentTags",
+   "localName": "invalidateAttachmentTags",
+   "isType": false,
+   "from": "./widgets/attachment",
+   "resolvedDir": "widgets/attachment",
+   "description": "Инвалидирует теги RTK Query в store виджета вложений.\n\nУдобная обёртка для вызова из внешнего кода без прямого доступа к store.\n\n@param {...Parameters<typeof api.util.invalidateTags>} args - Теги для инвалидации\n\n@example\ninvalidateAttachmentTags(['files'])\ninvalidateAttachmentTags([{ type: 'files', id: entityUuid }])",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const invalidateAttachmentTags: (...args: Parameters<typeof attachmentApi.util.invalidateTags>) => void;"
+  },
+  {
+   "symbol": "CommunicationDrawer",
+   "localName": "CommunicationDrawer",
+   "isType": false,
+   "from": "./widgets/Communication",
+   "resolvedDir": "widgets/Communication",
+   "description": "Виджет коммуникации (чата) в виде боковой панели.\n\nКнопка-триггер показывает количество непрочитанных сообщений.\nАвтоматически обновляется через WebSocket-подписку.\n\n@param {TCommunicationDrawerProps} props\n@param {string} props.documentType - Тип документа (бизнес-ключ)\n@param {string} props.documentId - ID документа\n\n@example\n<CommunicationDrawer documentType=\"ORDER\" documentId={order.id} />",
+   "propsTypeName": "TCommunicationDrawerProps",
+   "propsRaw": "export type TCommunicationDrawerProps = TDocument;"
+  },
+  {
+   "symbol": "DocChain",
+   "localName": "DocChain",
+   "isType": false,
+   "from": "./widgets/DocChain",
+   "resolvedDir": "widgets/DocChain",
+   "description": "Виджет цепочки документов (связанные документы/позиции).\n\nЗагружает список связей и визуализирует граф или список документов.\n\n@param {TDocChainProps} props\n@param {string | number | null | undefined} props.docNum - Номер документа\n@param {string} props.docKind - Код вида документа\n@param {number} [props.depth] - Глубина поиска связей\n@param {string} [props.height] - Высота контейнера виджета\n\n@example\n<DocChain docNum={order.docNum} docKind=\"ORDER\" depth={3} />",
+   "propsTypeName": "TDocChainProps",
+   "propsRaw": "export type TDocChainProps = Pick<TGetList1ApiArg, 'docKind' | 'depth'> & {\n    docNum: string | number | null | undefined;\n} & Pick<TBoxProps, 'height'>;"
+  },
+  {
+   "symbol": "useSelectItems",
+   "localName": "useSelectItems",
+   "isType": false,
+   "from": "./hooks",
+   "resolvedDir": "hooks",
+   "description": "Хук преобразования массива произвольных объектов в формат опций для Select/Combobox.\n\n@template T - Тип исходного объекта (должен расширять `object`)\n\n@param {useSelectItemsProps<T>} props\n@param {T[]} [props.data] - Исходный массив данных\n@param {keyof T} props.labelKey - Ключ поля для отображения (label)\n@param {keyof T} props.valueKey - Ключ поля для значения (value)\n\n@returns {TItems} Массив `{ label, value }[]` совместимый с Select и Combobox\n\n@example\nconst items = useSelectItems({\n  data: [{ id: '1', name: 'Москва' }],\n  labelKey: 'name',\n  valueKey: 'id',\n})\n// → [{ label: 'Москва', value: '1' }]",
+   "propsTypeName": "useSelectItemsProps",
+   "propsRaw": "export type useSelectItemsProps<T extends object> = {\n    data?: T[];\n    labelKey: keyof T;\n    valueKey: keyof T;\n};"
+  },
+  {
+   "symbol": "useActionTrigger",
+   "localName": "useActionTrigger",
+   "isType": false,
+   "from": "./hooks",
+   "resolvedDir": "hooks",
+   "description": null,
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const useActionTrigger: <ResultType, QueryArg>() => TUseActionTriggerResult<ResultType, QueryArg>;"
+  },
+  {
+   "symbol": "useAction",
+   "localName": "useAction",
+   "isType": false,
+   "from": "./hooks",
+   "resolvedDir": "hooks",
+   "description": "Хук для оборачивания RTK Mutation или callback в единый интерфейс с подтверждением.\n\nУправляет `isPending`, показывает диалог подтверждения и сообщения из ответа.\n\n@template ResultType - Тип возвращаемого результата\n@template QueryArg - Тип аргумента\n\n@param {TAction<ResultType, QueryArg>} action - RTK Mutation tuple или функция\n@param {TOptions} [options]\n@param {string} [options.actionText] - Текст действия для диалога подтверждения\n@param {TConfirmParams | boolean} [options.confirm] - Параметры диалога\n\n@returns {TUseActionResult<ResultType, QueryArg>} Кортеж `[trigger, { isPending }]`\n\n@throws {CancelledError} Если пользователь отменил диалог\n\n@example\nconst [deleteItem, { isPending }] = useAction(useDeleteMutation(), {\n  confirm: true,\n  actionText: 'удалить запись',\n})\nawait deleteItem({ id: '123' })",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const useAction: <ResultType, QueryArg>(action: TAction<ResultType, QueryArg>, options?: TActionTriggerOptions) => TUseActionResult<ResultType, QueryArg>;"
+  },
+  {
+   "symbol": "UserProvider",
+   "localName": "UserProvider",
+   "isType": false,
+   "from": "./hooks",
+   "resolvedDir": "hooks",
+   "description": null,
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const UserProvider: ({ children }: PropsWithChildren) => import(\"react\").JSX.Element;"
+  },
+  {
+   "symbol": "useUser",
+   "localName": "useUser",
+   "isType": false,
+   "from": "./hooks",
+   "resolvedDir": "hooks",
+   "description": null,
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const useUser: () => {\n    data: {\n        userType?: \"INTERNAL\" | \"SUPPLIER\";\n    } | undefined;\n    error: import(\"@reduxjs/toolkit\").SerializedError | import(\"@reduxjs/toolkit/query\").FetchBaseQueryError | undefined;\n    isError: boolean;\n    isLoading: boolean;\n};"
+  },
+  {
+   "symbol": "useUserType",
+   "localName": "useUserType",
+   "isType": false,
+   "from": "./hooks",
+   "resolvedDir": "hooks",
+   "description": null,
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const useUserType: () => {\n    error: import(\"@reduxjs/toolkit\").SerializedError | import(\"@reduxjs/toolkit/query\").FetchBaseQueryError | undefined;\n    isError: boolean;\n    isLoading: boolean;\n    data: \"INTERNAL\" | \"SUPPLIER\" | undefined;\n};"
+  },
+  {
+   "symbol": "getMessagesFromResponse",
+   "localName": "getMessagesFromResponse",
+   "isType": false,
+   "from": "./utils/responseMessages",
+   "resolvedDir": "utils/responseMessages",
+   "description": "Конвертирует ответ/ошибку бэкенда в массив `TMessagesFromResponse`.\n\nИщет сообщения по путям: `messages` → `data.messages` → `error.data.messages`.\nПри отсутствии — создаёт стандартное сообщение по HTTP-статусу.\n\n@param {unknown} response\n@returns {TMessagesFromResponse[]}\n\n@example\ngetMessagesFromResponse({ status: 404 })\n// → [{ message: '404: Запрашиваемый ресурс не найден', semantic: 'E' }]\ngetMessagesFromResponse(null) // → []",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const getMessagesFromResponse: (response: unknown) => TMessagesFromResponse[];"
+  },
+  {
+   "symbol": "getTextFromMessage",
+   "localName": "getTextFromMessage",
+   "isType": false,
+   "from": "./utils/responseMessages",
+   "resolvedDir": "utils/responseMessages",
+   "description": "Конвертирует `TResponseMessage` в строку.\n\n`message` + `description` → `'message - description'`.\n\n@param {TResponseMessage} message\n@returns {string}\n\n@example\ngetTextFromMessage({ message: 'Ошибка', description: 'Подробности' }) // → 'Ошибка - Подробности'\ngetTextFromMessage({}) // → ''",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const getTextFromMessage: ({ description, message }: TResponseMessage) => string;"
+  },
+  {
+   "symbol": "getTextMessagesFromResponse",
+   "localName": "getTextMessagesFromResponse",
+   "isType": false,
+   "from": "./utils/responseMessages",
+   "resolvedDir": "utils/responseMessages",
+   "description": "Конвертирует ответ/ошибку бэкенда в единую строку сообщений через `\\n`.\n\n@param {unknown} response\n@returns {string}\n\n@example\ngetTextMessagesFromResponse({ status: 403 }) // → '403: Доступ запрещен'",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const getTextMessagesFromResponse: (response: unknown) => string;"
+  },
+  {
+   "symbol": "getNestedValue",
+   "localName": "getNestedValue",
+   "isType": false,
+   "from": "./utils/getNestedValue",
+   "resolvedDir": "utils/getNestedValue",
+   "description": "Рекурсивно получает значение из объекта по строковому пути через точку.\n\n@template O - Тип объекта\n@template K - Строковый путь\n@param {O} obj\n@param {K} path\n@returns {TGetValue<O, K>} Значение или `undefined`\n\n@example\ngetNestedValue({ user: { name: 'Alice' } }, 'user.name') // → 'Alice'\ngetNestedValue({ user: {} }, 'user.age') // → undefined",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const getNestedValue: <O extends Record<PropertyKey, unknown>, K extends string>(obj: O, path: K) => TGetValue<O, K>;"
+  },
+  {
+   "symbol": "extractFilename",
+   "localName": "extractFilename",
+   "isType": false,
+   "from": "./utils/extractFilename",
+   "resolvedDir": "utils/extractFilename",
+   "description": "Извлекает и декодирует имя файла из заголовка `Content-Disposition`.\n\n@param {string | null} contentDisposition\n@returns {string | undefined}\n\n@example\nextractFilename('attachment; filename=\"report.pdf\"') // → 'report.pdf'\nextractFilename(null) // → undefined",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const extractFilename: (contentDisposition: string | null) => string | undefined;"
+  },
+  {
+   "symbol": "getFileExtension",
+   "localName": "getFileExtension",
+   "isType": false,
+   "from": "./utils/getFileExtension",
+   "resolvedDir": "utils/getFileExtension",
+   "description": "Извлекает расширение файла из его имени.\n\n@param {string} name\n@returns {string} Расширение без точки или пустая строка\n\n@example\ngetFileExtension('document.pdf') // → 'pdf'\ngetFileExtension('README')       // → ''",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const getFileExtension: (name: string) => string;"
+  },
+  {
+   "symbol": "createReduxStore",
+   "localName": "createReduxStore",
+   "isType": false,
+   "from": "./utils/createReduxStore",
+   "resolvedDir": "utils/createReduxStore",
+   "description": "Создаёт Redux store на основе одного или нескольких RTK Query API.\n\n@param {TApi | TApi[]} api - RTK Query API или массив API\n@param {TCreateReduxStoreOptions} [options]\n\n@returns {EnhancedStore}\n\n@example\nconst store = createReduxStore([userApi, ordersApi], {\n  middlewareOptions: { serializableCheck: false }\n})",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const createReduxStore: (api: TApi | TApi[], options?: TCreateReduxStoreOptions) => import(\"@reduxjs/toolkit\").EnhancedStore<{\n    [x: string]: any;\n}, import(\"redux\").UnknownAction, import(\"@reduxjs/toolkit\").Tuple<[import(\"redux\").StoreEnhancer<{\n    dispatch: import(\"redux-thunk\").ThunkDispatch<{\n        [x: string]: any;\n    }, undefined, import(\"redux\").UnknownAction>;\n}>, import(\"redux\").StoreEnhancer]>>;"
+  },
+  {
+   "symbol": "parseField",
+   "localName": "parseField",
+   "isType": false,
+   "from": "./utils/parseField",
+   "resolvedDir": "utils/parseField",
+   "description": "Парсит JSON-строку и извлекает значение поля по ключу.\n\nПри ошибке парсинга логирует в `console.error` и возвращает `undefined`.\n\n@template T - Тип значения, по умолчанию `string`\n@param {string} data - JSON-строка\n@param {string} field - Имя поля\n@returns {T | undefined}\n\n@example\nparseField('{\"uuid\":\"abc-123\"}', 'uuid')  // → 'abc-123'\nparseField('invalid', 'uuid')             // → undefined",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const parseField: <T = string>(data: string, field: string) => T | undefined;"
+  },
+  {
+   "symbol": "TFilter",
+   "localName": "TFilter",
+   "isType": true,
+   "from": "./utils/oDataQuery",
+   "resolvedDir": "utils/oDataQuery",
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "TSort",
+   "localName": "TSort",
+   "isType": true,
+   "from": "./utils/oDataQuery",
+   "resolvedDir": "utils/oDataQuery",
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "buildFilters",
+   "localName": "buildFilters",
+   "isType": false,
+   "from": "./utils/oDataQuery",
+   "resolvedDir": "utils/oDataQuery",
+   "description": "Формирует строку `$filter` для OData запроса.\n\n@param {TFilter[]} filters\n@param {TBuildFilterOperator} [operator='and'] - `'and'` или `'or'`\n@returns {string | undefined} `undefined` если массив пуст\n\n@example\nbuildFilters([{ key: 'status', value: 'active', filterFn: 'eq' }]) // → \"status eq 'active'\"\nbuildFilters([], 'or') // → undefined",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const buildFilters: (filters: TFilter[], operator?: TBuildFilterOperator) => string | undefined;"
+  },
+  {
+   "symbol": "buildSorts",
+   "localName": "buildSorts",
+   "isType": false,
+   "from": "./utils/oDataQuery",
+   "resolvedDir": "utils/oDataQuery",
+   "description": null,
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const buildSorts: (sorts: TSort[]) => string | undefined;"
+  },
+  {
+   "symbol": "withReduxProvider",
+   "localName": "withReduxProvider",
+   "isType": false,
+   "from": "./providers",
+   "resolvedDir": "providers",
+   "description": "HOC: оборачивает компонент в Redux `Provider`.\n\n@param {ComponentType} Component - Оборачиваемый компонент\n@param {Store} store - Redux store\n@returns {ComponentType} Обёрнутый компонент\n\n@example\nconst App = withReduxProvider(RawApp, store)",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const withReduxProvider: <ComponentProps extends import(\"../types\").EmptyObject>(WrappedComponent: import(\"react\").ComponentType<ComponentProps>, additionalProviderProps?: Omit<import(\"react-redux\").ProviderProps<import(\"redux\").Action<string>, unknown>, \"children\"> | undefined) => (props: { [K in keyof ComponentProps]: ComponentProps[K]; }) => import(\"react\").JSX.Element;"
+  },
+  {
+   "symbol": "createApp",
+   "localName": "createApp",
+   "isType": false,
+   "from": "./app",
+   "resolvedDir": "app",
+   "description": "Создаёт корневое React-приложение с routing и Redux.\n\n@param {TCreateAppProps} props\n@param {RouteObject[]} props.routes - Массив маршрутов react-router\n@param {Store} [props.store] - Redux store; если не передан — создаётся внутренний\n\n@returns Корневой компонент приложения\n\n@example\nconst App = createApp({ routes, store })\nroot.render(<App basename=\"/portal\" />)",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const createApp: ({ routes, store }: TCreateAppProps) => ({ basename, externalNavigate, segment }: import(\"@sber-front-cs-core/cs-core\").TAppProps) => import(\"react\").JSX.Element;"
+  },
+  {
+   "symbol": "getNotificationClient",
+   "localName": "getNotificationClient",
+   "isType": false,
+   "from": "./app",
+   "resolvedDir": "app",
+   "description": "Возвращает синглтон STOMP-клиента уведомлений.\n\nПри первом вызове создаёт клиент и сохраняет его в `globalThis.__PUB_SUB_CLIENT__`.\nПоследующие вызовы возвращают тот же экземпляр.\nКлиент подключается к WebSocket немедленно при создании.\n\n@returns {TPubSubConsumer} Интерфейс подписки/публикации (без методов connect/disconnect)\n\n@example\nconst client = getNotificationClient()\nconst sub = client.subscribe('/topic/my-topic', (body) => console.log(body))\nsub.unsubscribe()",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const getNotificationClient: () => TPubSubConsumer;"
+  },
+  {
+   "symbol": "createWidgetCounter",
+   "localName": "createWidgetCounter",
+   "isType": false,
+   "from": "./app",
+   "resolvedDir": "app",
+   "description": "Фабрика виджета-счётчика для использования как микрофронтенд.\n\nСоздаёт самостоятельный React-компонент с собственным Redux store,\nподключённым RTK Query хуком и навигацией.\n\n@template ResultType - Тип данных из RTK Query\n@template QueryArg - Тип аргумента запроса\n@template BaseQuery - Базовый query функции RTK\n\n@param {TCreateWidgetCounterProps<ResultType, QueryArg, BaseQuery>} props\n@param {string} props.title - Заголовок виджета\n@param {TypedUseQuery} props.useQuery - RTK Query хук для получения данных\n@param {Function} props.selectFromQueryResult - Селектор, извлекающий `count` из данных запроса\n@param {Store} props.store - Redux store с подключённым API\n@param {string} props.path - Путь для навигации\n@param {QueryArg} [props.queryArg] - Аргумент запроса (обязателен если `QueryArg !== void`)\n\n@returns Готовый React-компонент виджета\n\n@example\nconst OrdersCounter = createWidgetCounter({\n  title: 'Заказы',\n  path: '/orders',\n  useQuery: useGetOrdersCountQuery,\n  selectFromQueryResult: (data) => ({ count: data?.total }),\n  store,\n})",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const createWidgetCounter: <UseQuery extends AnyUseQuery>({ path, queryArg, selectFromQueryResult, store, title, useQuery, }: TCreateWidgetCounterProps<UseQuery>) => (props: {\n    externalNavigate?: import(\"react-router\").NavigateFunction | undefined;\n    data?: unknown;\n}) => import(\"react\").JSX.Element;"
+  },
+  {
+   "symbol": "createWidgetPieChart",
+   "localName": "createWidgetPieChart",
+   "isType": false,
+   "from": "./app",
+   "resolvedDir": "app",
+   "description": "Фабрика виджета-диаграммы (pie chart) для использования как микрофронтенд.\n\nСоздаёт самостоятельный React-компонент с собственным Redux store,\nподключённым RTK Query хуком и возможностью навигации по сегментам диаграммы.\n\n@template ResultType - Тип результата, возвращаемого RTK Query хуком\n@template QueryArg - Тип аргумента запроса\n@template BaseQuery - Тип базовой функции запроса, расширяющей `BaseQueryFn`\n\n@param {TCreateWidgetPieChartProps<ResultType, QueryArg, BaseQuery>} props\n@param {string} props.title - Заголовок виджета\n@param {TypedUseQuery<ResultType, QueryArg, BaseQuery>} props.useQuery - RTK Query хук для получения данных\n@param {(data: ResultType | undefined) => { data: TWidgetItem[] }} props.selectFromQueryResult\n- Селектор, преобразующий результат запроса в массив сегментов диаграммы типа `TWidgetItem`\n@param {Store} props.store - Redux store, в котором зарегистрирован нужный API-слайс\n@param {string} props.path - Основной путь для навигации\n@param {string} [props.paramKey] - Ключ параметра, используемый для передачи значения сегмента в URL\nдля фильтрации данных.\n@param {QueryArg} [props.queryArg] - Аргумент запроса (обязателен если `QueryArg !== void`)\n@returns Готовый React-компонент виджета\n\n@example\nconst StatusChart = createWidgetPieChart({\n  title: 'Статистика по статусам',\n  path: '/list',\n  paramKey: 'statusId',\n  useQuery: useGetStatusStatsQuery,\n   selectFromQueryResult: (data) => ({\n         data: (data?.data || []).map(({ status, value }) => ({\n         id: status?.statusId || '',\n         label: `${status?.description || ''} (${value || 0})`,\n         value: value || 0,\n     })),\n}),\n  store,\n})",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const createWidgetPieChart: <UseQuery extends AnyUseQuery>({ paramKey, path, queryArg, selectFromQueryResult, store, title, useQuery, }: TCreateWidgetPieChartProps<UseQuery>) => (props: {\n    externalNavigate?: import(\"react-router\").NavigateFunction | undefined;\n    data?: unknown;\n}) => import(\"react\").JSX.Element;"
+  },
+  {
+   "symbol": "createWidgetHorizontalBarChart",
+   "localName": "createWidgetHorizontalBarChart",
+   "isType": false,
+   "from": "./app",
+   "resolvedDir": "app",
+   "description": null,
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const createWidgetHorizontalBarChart: <UseQuery extends AnyUseQuery>({ paramKey, path, queryArg, selectFromQueryResult, store, title, useQuery, }: TCreateWidgetHorizontalBarChartProps<UseQuery>) => (props: {\n    externalNavigate?: import(\"react-router\").NavigateFunction | undefined;\n    data?: unknown;\n}) => import(\"react\").JSX.Element;"
+  },
+  {
+   "symbol": "createProtectedRouteMiddleware",
+   "localName": "createProtectedRouteMiddleware",
+   "isType": false,
+   "from": "./app",
+   "resolvedDir": "app",
+   "description": "Создаёт middleware для защищённых маршрутов react-router.\n\nИнициирует RTK Query endpoint, проверяет результат через `select`\nи выбрасывает редирект если данные не получены или доступ запрещён.\n\n@template QueryDefinition - Определение RTK Query endpoint\n\n@param {TCreateProtectedRouteMiddlewareParams<QueryDefinition>} params\n@param {Store} params.store - Redux store для dispatch endpoint\n@param {ApiEndpointQuery} params.endpoint - RTK Query endpoint для проверки доступа\n@param {Function} params.select - Селектор: принимает результат запроса, возвращает boolean\n@param {string} [params.redirectTo='/'] - Путь для редиректа при отказе в доступе\n\n@returns {TCreateProtectedRouteMiddlewareResult} Middleware-функция react-router\n\n@throws {Response} Редирект на `redirectTo` если запрос завершился ошибкой или `select` вернул false\n\n@example\nconst middleware = createProtectedRouteMiddleware({\n  store,\n  endpoint: api.endpoints.getMe,\n  select: (data) => data?.role === 'admin',\n  redirectTo: '/login',\n})",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const createProtectedRouteMiddleware: <QueryDefinition extends AnyQueryDefinition>({ endpoint, redirectTo, select, store, }: TCreateProtectedRouteMiddlewareParams<QueryDefinition>) => TCreateProtectedRouteMiddlewareResult;"
+  },
+  {
+   "symbol": "createRemoteComponent",
+   "localName": "createRemoteComponent",
+   "isType": false,
+   "from": "./remote",
+   "resolvedDir": "remote",
+   "description": "Создаёт bridge-компонент для экспорта как Module Federation remote.\n\n@template Props - Тип пропсов компонента\n@param {ComponentType<Props>} rootComponent - Корневой компонент для экспорта\n@returns {BridgeComponent<Props>}\n\n@example\n// bootstrap.tsx в remote-приложении\nexport default createRemoteComponent(App)",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const createRemoteComponent: <Props>(rootComponent: ComponentType<Props>) => () => {\n    render(info: import(\"@module-federation/bridge-react\").RenderParams): Promise<void>;\n    destroy(info: import(\"@module-federation/bridge-react\").DestroyParams): void;\n};"
+  },
+  {
+   "symbol": "RemoteComponent",
+   "localName": "RemoteComponent",
+   "isType": false,
+   "from": "./remote",
+   "resolvedDir": "remote",
+   "description": null,
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const RemoteComponent: {\n    <Props extends ComponentProps>(props: RemoteComponentProps<Props>): import(\"react\").JSX.Element;\n    displayName: string;\n};"
+  },
+  {
+   "symbol": "LazyComponent",
+   "localName": "LazyComponent",
+   "isType": false,
+   "from": "./remote",
+   "resolvedDir": "remote",
+   "description": null,
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const LazyComponent: {\n    <Props extends ComponentProps>(props: LazyComponentProps<Props>): import(\"react\").JSX.Element;\n    displayName: string;\n};"
+  },
+  {
+   "symbol": "createPubSupApi",
+   "localName": "createPubSupApi",
+   "isType": false,
+   "from": "./websocket",
+   "resolvedDir": "websocket",
+   "description": "Создаёт типизированный RTK Query API для работы с WebSocket через STOMP.\n\nГенерирует хуки `use{Name}Subscribe` и `use{Name}Publish` для каждого топика.\nSubscribe-хуки интегрируются с RTK Query кешем и автоматически\nподписываются/отписываются при монтировании/размонтировании.\n\n@template Definitions - Тип определений топиков\n\n@param {CreatePubSubApiOptions<Definitions>} options\n@param {TPubSubConsumer | (() => TPubSubConsumer)} options.client - Клиент или его фабрика\n@param {string} [options.reducerPath='pubSubApi'] - Путь в Redux store\n@param {Function} options.topics - Функция-билдер определений топиков\n\n@returns {CreatePubSubApiResult<Definitions>} API с хуками, reducer, middleware и util\n\n@example\nexport const notificationApi = createPubSupApi({\n  client: getNotificationClient,\n  topics: (build) => ({\n    orderUpdated: build.subscribe<TOrderUpdate>({\n      topic: '/topic/orders',\n    }),\n    sendMessage: build.publish<TSendMessage>({\n      topic: '/app/messages',\n    }),\n  }),\n})\n\n// В компоненте:\nconst { data } = notificationApi.useOrderUpdatedSubscribe()\nconst [send] = notificationApi.useSendMessagePublish()",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const createPubSupApi: CreatePubSubApi;"
+  },
+  {
+   "symbol": "invalidateBySubscribe",
+   "localName": "invalidateBySubscribe",
+   "isType": false,
+   "from": "./websocket",
+   "resolvedDir": "websocket",
+   "description": "Создаёт RTK Query `onCacheEntryAdded` handler для инвалидации тегов по WebSocket.\n\nПодписывается на топик при первом кеш-entry, инвалидирует теги при сообщении,\nотписывается при удалении последнего кеш-entry.\n\n@template QueryTypes\n\n@param {InvalidateBySubscribeParams<QueryTypes>} params\n@param {TPubSubConsumer | (() => TPubSubConsumer)} params.client\n@param {string} params.topic - STOMP топик\n@param {ResultDescriptionFrom<QueryTypes>} params.tags - Теги или функция `(payload) => tags[]`\n\n@returns {InvalidateBySubscribeResult<QueryTypes>}\n\n@example\ngetOrders: {\n  providesTags: ['Order'],\n  ...invalidateBySubscribe({\n    client: getNotificationClient,\n    topic: '/topic/orders',\n    tags: (payload: TSubscribeResponse) => [{ type: 'Order', id: payload?.entityUuid }],\n  }),\n}",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const invalidateBySubscribe: <QueryTypes>({ client: clientOrFn, tags, topic, }: InvalidateBySubscribeParams<QueryTypes>) => InvalidateBySubscribeResult<QueryTypes>;"
+  },
+  {
+   "symbol": "TModalComponent",
+   "localName": "TModalComponent",
+   "isType": true,
+   "from": "./modalRegistry",
+   "resolvedDir": "modalRegistry",
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "TModalProps",
+   "localName": "TModalProps",
+   "isType": true,
+   "from": "./modalRegistry",
+   "resolvedDir": "modalRegistry",
+   "description": null,
+   "propsTypeName": null,
+   "propsRaw": null
+  },
+  {
+   "symbol": "ModalRegistryProvider",
+   "localName": "ModalRegistryProvider",
+   "isType": false,
+   "from": "./modalRegistry",
+   "resolvedDir": "modalRegistry",
+   "description": "Провайдер реестра модальных окон.\n\nОборачивает дерево компонентов и предоставляет контекст\nдля `useOpenModal`, `useCloseModal` и 'useIsModalOpened'. Управляет стеком открытых модалок.\n\n@param {PropsWithChildren} props\n\n@example\n<ModalRegistryProvider>\n  <App />\n</ModalRegistryProvider>",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const ModalRegistryProvider: ({ children }: PropsWithChildren) => import(\"react\").JSX.Element;"
+  },
+  {
+   "symbol": "useCloseModal",
+   "localName": "useCloseModal",
+   "isType": false,
+   "from": "./modalRegistry",
+   "resolvedDir": "modalRegistry",
+   "description": "Хук для закрытия модального окна через реестр.\n\n@returns {TCloseModalFn}\n@throws {Error} Если используется вне `ModalRegistryProvider`\n\n@example\nconst closeModal = useCloseModal()\ncloseModal(MyModalComponent)",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const useCloseModal: () => import(\"./types\").TCloseModalFn;"
+  },
+  {
+   "symbol": "useOpenModal",
+   "localName": "useOpenModal",
+   "isType": false,
+   "from": "./modalRegistry",
+   "resolvedDir": "modalRegistry",
+   "description": "Хук для открытия модального окна через реестр.\n\nВозвращает Promise, резолвящийся при закрытии модалки.\n\n@returns {TOpenModalFn}\n@throws {Error} Если используется вне `ModalRegistryProvider`\n\n@example\nconst openModal = useOpenModal()\nawait openModal(EditModal, { itemId: '123' })\nawait openModal(ConfirmModal, undefined, { table: tableInstance })",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const useOpenModal: () => import(\"./types\").TOpenModalFn;"
+  },
+  {
+   "symbol": "useIsModalOpened",
+   "localName": "useIsModalOpened",
+   "isType": false,
+   "from": "./modalRegistry",
+   "resolvedDir": "modalRegistry",
+   "description": "Хук для проверки состояния открытия компонентов (модальные окна, дроверы и т.д.)\n\n@param component - Имя компонента (например, модального окна).\n  Если передан — возвращается `true`, если этот компонент открыт, иначе `false`.\n  Если не передан — возвращается `true`, если есть открытый через useOpenModal (любой) компонент, иначе `false`.\n\n@returns {ConstrainBoolean}\n  `boolean`: `true` или `false` в зависимости от того, открыт компонент или нет.\n\n@throws {Error} Если используется вне `ModalRegistryProvider`\n\n@example\n// Проверить, открыт ли компонент\nconst isOpenConfirmModal = useIsModalOpened(ConfirmModal) // → true | false\nconst isAnyModalOpen = useIsModalOpened() // → true | false",
+   "propsTypeName": "(signature, no dedicated Props type found)",
+   "propsRaw": "export declare const useIsModalOpened: (component?: TModalComponent) => boolean;"
+  }
+ ]
+}

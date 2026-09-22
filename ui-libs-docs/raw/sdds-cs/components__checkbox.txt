@@ -1,0 +1,25 @@
+Title: Checkbox | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/checkbox/
+---
+Checkbox — флажок с двумя состояниями. label/description accept JSX. singleLine=false (default) allows multiline label/description. indeterminate state has priority over checked.
+LIVE EDITOR
+function App() { return <Checkbox label="Чекбокс" description="Описание" defaultChecked />; }
+
+API​
+Property Type Default Description
+size "s"
+view "accent"
+disabled boolean
+name / type string — form field name/type
+onChange ChangeEventHandler<HTMLInputElement>
+defaultChecked / checked boolean
+placeholder string
+onFocus / onBlur FocusEventHandler<HTMLInputElement>
+maxLength / minLength number
+required boolean
+value string|number|readonly string[]
+appearance string default — стиль/токены UI-конфигурации
+label / description ReactNode
+singleLine boolean — title/description в одну строку
+indeterminate boolean — часть потомков не выбрана (приоритет над checked)
+checkIcon / indeterminateIcon ReactNode — кастомные иконки

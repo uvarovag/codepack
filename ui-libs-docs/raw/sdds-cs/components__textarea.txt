@@ -1,0 +1,28 @@
+Title: TextArea | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/textarea/
+---
+TextArea. appearance="default"|"clear" (hasDivider works with clear). height/width set full component size (number=rem, string=CSS value). rows/cols = fixed absolute size. autoResize (+ minAuto/maxAuto in rows) grows with content. headerSlot for content above the text. clear prop is deprecated legacy mode (ignores rows/cols/height/width/autoResize, height follows content) — use appearance="clear" instead.
+LIVE EDITOR
+function App() { return <TextArea label="Комментарий" placeholder="Введите значение" autoResize minAuto={3} maxAuto={5} leftHelper="Подсказка" />; }
+
+API​
+Property Type Default Description
+size "s"; view "default"|"negative"|"primary"; appearance "clear"|"default"
+contentRight ReactElement
+name string; status ""|"warning"|"success"|"error" — @deprecated use view
+onChange / onFocus / onBlur handlers
+placeholder string; autoComplete string; autoFocus boolean
+disabled / readOnly boolean; required boolean
+maxLength / minLength number; value string|number|readonly string[]
+height / width string|number — full component size
+label string; cols / rows number — fixed size
+hasDivider boolean; labelPlacement "outer"|"inner"
+helperText string — @deprecated use leftHelper
+leftHelper / rightHelper ReactNode; leftHelperPlacement/rightHelperPlacement "outer"|"inner" inner
+titleCaption ReactNode
+autoResize boolean; minAuto / maxAuto number
+headerSlot ReactNode — hidden when clear is set
+required boolean; requiredPlacement "right"|"left" right; hasRequiredIndicator boolean false; optional boolean; optionalText string
+hint* family (same as TextField)
+resize "none"|"both"|"horizontal"|"vertical" — @deprecated
+hintOpened boolean; labelAriaHidden boolean

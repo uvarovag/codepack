@@ -1,0 +1,31 @@
+Title: TimePicker | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/time-picker/
+---
+TimePicker. onChange(event, formattedValues: {value?: string, timeValues:{hour?,minute?,second?}}) — use formattedValues, event arg is deprecated. columnsQuantity=2(HH:mm)|3(HH:mm:ss). hasTimeFormat shows 12h AM/PM display only — value/min/max/onChange stay 24h always. min/max as "HH:mm:ss" or Date. multiplicityMinutes/multiplicitySeconds restrict step (1,5,10,15,20,30). Keyboard: Enter opens/closes, ArrowUp/Down changes value, ArrowLeft/Right moves between columns, Tab moves to next value.
+LIVE EDITOR
+function App() {
+return <TimePicker size="s" columnsQuantity={3} value="15:00:00" min="12:00:00" max="20:00:00" onChange={(_, v) => console.log(v.value)} />;
+}
+
+API​
+Property Type Default Description
+view "default"; size "s"; disabled boolean; readonly boolean
+dropdownAlign "right"|"left" — @deprecated use placement="bottom-right"
+dropdownWidth / dropdownHeight
+multiplicityMinutes / multiplicitySeconds TimePickerMultiplicity
+columnsQuantity 2|3
+hasTimeFormat boolean false — 12h display, 24h value
+min / max string|Date
+appearance "clear"|"default"|"viewMode" 'default'; hasClearDivider boolean false
+stretched boolean
+required boolean; requiredPlacement "right"|"left"; hasRequiredIndicator boolean
+value string (HH:mm:ss); defaultValue Date; placeholder string
+valueError / valueSuccess / valueEdited boolean
+leftHelper string; contentLeft/contentRight ReactElement; textBefore/textAfter string
+onChange (event, formattedValues: TimePickerChangeEvent) => void
+label string; labelPlacement string; keepPlaceholder boolean
+hint* family (same shape as other inputs)
+opened boolean; placement Placement bottom; offset [number,number]; zIndex 1000
+frame string|RefObject<HTMLElement>
+closeOnOverlayClick / closeOnEsc boolean; disableFlip boolean; usePortal boolean
+onToggle ((isOpen, event?) => void)

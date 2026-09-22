@@ -1,0 +1,12 @@
+Title: Image | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/image/
+---
+Image.
+LIVE EDITOR
+function App() { return <Image src="/img.jpg" width="320px" height="320px" alt="..." />; }
+
+API​
+Property Type Default Description
+base "img" | "div"
+ratio "1/1" | "3/4" | "4/3" | "9/16" | "16/9" | "1/2" | "2/1" (also with spaces "1 / 1" etc.)
+customRatio string

@@ -1,0 +1,26 @@
+Title: Carousel | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/carousel/
+---
+Carousel — принимает набор React-элементов, отображает горизонтальную ленту с прокруткой. Simple case: just pass children. defaultIndex sets initial slide once (uncontrolled); index+onChangeIndex for controlled mode. swipeEnabled for touch/pointer drag. controlArrowsDisabled hides built-in arrows.
+LIVE EDITOR
+function App() {
+const items = Array(10).fill(0).map((_, i) => `Слайд ${i+1}`);
+return <Carousel gap="16px">{items.map((item) => <StyledCard key={item}>{item}</StyledCard>)}</Carousel>;
+}
+
+Props (from source JSDoc, page had no rendered API table):
+Property Type Default Description
+index number — номер слайда, controlled-режим
+onChangeIndex ((index: number) => void) — callback при смене слайда
+defaultIndex number 0 — номер слайда по умолчанию, uncontrolled-режим
+scrollAlign ScrollAlign start — центрирование активного элемента при скролле
+paginationOptions { disabled?: false, visibleDots?: 10, centered?: false } — опции пагинации
+controlArrowsDisabled boolean false — вкл/выкл стрелки управления
+gap CSSProperties['gap'] 20px — отступ между слайдами
+loop boolean false — зацикливание карусели
+autoPlay boolean false — автопролистывание
+autoPlayInterval number 5000 — интервал автопролистывания, мс
+swipeEnabled boolean false — свайп/drag для touch/pointer
+virtual boolean false — виртуализация слайдов
+size string — размер контрола
+view string default — вид контрола

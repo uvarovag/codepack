@@ -1,0 +1,30 @@
+Title: Segment | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/segment/
+---
+Segment (raw sdds-cs — cs-portal re-exports cs-core's own useSegment/SegmentProvider, shadowing this one; see raw/cs-core.json). Wrap in SegmentProvider (defaultSelected=array of value strings, singleSelectedRequired forces one active). Inside, use SegmentGroup > SegmentItem[], and useSegment() -> { selectedSegmentItems }.
+LIVE EDITOR
+function App() {
+function Inner() {
+const { selectedSegmentItems } = useSegment();
+return <SegmentGroup hasBackground pilled clip={false}>{items.map((_, i) => <SegmentItem label={`Label ${i}`} value={`label_${i}`} pilled />)}</SegmentGroup>;
+}
+return <SegmentProvider defaultSelected={['label_1']}><Inner /></SegmentProvider>;
+}
+
+API​
+SegmentGroup​
+Property Type Default Description
+view "clear"|"filled"; size "xs"; disabled boolean
+pilled boolean; stretch boolean — full width, horizontal only
+orientation "vertical" (also horizontal, default)
+selectionMode "multiple"|"single" — @deprecated
+clip boolean true — scroll + arrow buttons when width constrained
+hasBackground boolean; hasDivider boolean
+filledBackground boolean — @deprecated use hasBackground
+
+SegmentItem​
+Property Type Default Description
+view "default"|"secondary"; size "xs"; pilled boolean
+label ReactNode; contentLeft/contentRight ReactNode
+customHandleSelect ((e: MouseEvent) => void)
+maxItemWidth Width<string|number>

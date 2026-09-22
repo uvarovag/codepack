@@ -1,0 +1,12 @@
+Title: Portal | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/portal/
+---
+Portal — helper, used internally by Popup/Popover (ReactDOM.createPortal as a component). disabled renders children inline instead of in the target container.
+LIVE EDITOR
+function App() { return <Portal container={containerRef.current}><BodyM>Content</BodyM></Portal>; }
+
+API​
+Property Type Default Description
+container HTMLElement | (() => HTMLElement)
+children ReactNode
+disabled boolean false

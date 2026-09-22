@@ -1,0 +1,26 @@
+Title: NumberInput | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/numberInput/
+---
+NumberInput — stepper input with increment/decrement buttons. min/max/step bound the value. precision (default 2) rounds computed step results; decimalScale (default 2) controls displayed decimal digits (independent of precision). isManualInput (default false) allows typing directly, not just arrow buttons/keys. Keyboard: Tab focuses the input only (buttons excluded); ArrowUp/Down step by `step`. displayWithoutValue "input"(default)|"increment"|"decrement" controls what shows when value is empty. limitBehavior "disabled"(default)|"hidden" for buttons at min/max. Shares thousandSeparator/decimalSeparator/thousandsGroupStyle/fixedDecimalScale/allowNegative/allowLeadingZeros/isAllowed formatting props with NumberFormat.
+LIVE EDITOR
+function App() {
+const [value, setValue] = useState(5);
+return <NumberInput value={value} min={0} max={10} step={2} width={188} isManualInput onChange={(_, v) => setValue(v)} />;
+}
+
+API​
+Property Type Default Description
+view "default"; size "s"; shape "pilled"|"cornered"
+inputBackgroundType "clear"; segmentation "default"|"segmented"|"solid" — отступы между кнопками и полем
+disabled boolean
+value / defaultValue string|number
+min / max number; step number 1; precision number 2
+thousandSeparator / decimalSeparator / thousandsGroupStyle / decimalScale(2) / fixedDecimalScale / allowNegative(true) / allowLeadingZeros(false)
+isAllowed ((values) => boolean)
+isLoading boolean; loader ReactNode
+textBefore / textAfter string
+customIncrementButton / customDecrementButton ReactNode; incrementIcon / decrementIcon ReactNode
+isManualInput boolean false
+displayWithoutValue "input"|"increment"|"decrement" 'input'
+limitBehavior "hidden"|"disabled" 'disabled'
+onChange ((event, value) => void); onIncrement / onDecrement ((value) => void)

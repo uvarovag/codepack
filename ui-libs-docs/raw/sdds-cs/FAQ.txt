@@ -1,0 +1,5 @@
+Title: FAQ | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/FAQ/
+---
+as vs forwardedAs (styled-components only): if you wrap a design-system component in styled(...) and need to change the rendered tag, use forwardedAs, not as. `as` is swallowed by the nearest styled() wrapper and swaps ITS render target — so styled(Button) with as="button" renders a bare native <button>, dropping all DS props (text/view/size) since they're invalid HTML attrs (empty unstyled button). forwardedAs passes through to the wrapped component's own `as` prop, rendering Button fully with the tag override applied inside it.
+Rule: wrapping only a styled-component → use `as`. Wrapping a DS component that itself accepts `as` (and isn't itself a styled-component) → use `forwardedAs`.

@@ -1,0 +1,22 @@
+Title: Switch | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/switch/
+---
+Switch — toggle. toggleSize="s"|"l" controls the toggle itself (separate from size).
+LIVE EDITOR
+function App() { return <Switch label="Переключатель" description="Описание" toggleSize="l" defaultChecked />; }
+
+API​
+Property Type Default Description
+size "s"; toggleSize "s"|"l"; view "default"
+disabled boolean; focused boolean
+name / type string
+onChange ChangeEventHandler<HTMLInputElement>
+defaultChecked / checked boolean
+placeholder string
+onFocus / onBlur handlers
+maxLength / minLength number; required boolean
+value string|number|readonly string[]
+labelPosition "after"|"before"
+pressed boolean — @deprecated
+outlined boolean — @deprecated (use focused)
+label ReactNode; singleLine boolean true; description string

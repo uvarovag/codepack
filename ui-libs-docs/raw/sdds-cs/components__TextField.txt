@@ -1,0 +1,27 @@
+Title: TextField | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/TextField/
+---
+TextField — base text input. This is the props shape shared/inherited by Mask, NumberFormat, Autocomplete, Combobox, Select (textfield-like target), TextArea (partially), Range fields, etc. appearance="default"|"clear" (hasDivider for clear). hint* family = tooltip icon next to the field (independent of leftHelper/rightHelper text). titleCaption = label at top-right.
+LIVE EDITOR
+function App() {
+const [text, setText] = useState('');
+return <TextField value={text} onChange={(e) => setText(e.target.value)} label="Введите имя" contentRight={text && <IconButton size="s" view="clear" onClick={() => setText('')}><IconClose color="inherit" size="s" /></IconButton>} />;
+}
+
+API​
+Property Type Default Description
+size "s"|"m"; view "default"|"negative"; appearance "clear"|"default"
+contentLeft / contentRight ReactElement
+name / type string
+onChange ChangeEventHandler<HTMLInputElement>; onFocus / onBlur handlers
+placeholder string; checked boolean (legacy)
+disabled / readOnly boolean; required boolean
+maxLength / minLength number; value string|number|readonly string[]
+label string; hasDivider boolean; labelPlacement "outer"
+textBefore / textAfter string — helper text slots inline
+keepPlaceholder boolean
+requiredPlacement "right"|"left" right; hasRequiredIndicator boolean false; optional boolean; optionalText string
+titleCaption ReactNode; leftHelper / rightHelper ReactNode
+hint* family: hintSize, hintView, hintText, hintTrigger "click"|"hover", hintTargetIcon, hintTargetPlacement "outer"|"inner" outer, hintPlacement, hintHasArrow, hintOffset [0,8], hintWidth, hintContentLeft, hintPortal
+onSearch — @deprecated (Enter callback)
+chips / onChangeChips / enumerationType / chipType / chipValidator — @deprecated legacy chip-in-field mode

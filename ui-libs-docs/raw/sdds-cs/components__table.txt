@@ -1,0 +1,25 @@
+Title: Table | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/table/
+---
+Table (raw sdds-cs — cs-core has its own, much larger Table with sorting/filtering/infinite-query built on @tanstack/react-table, and cs-portal re-exports cs-core's Table, shadowing this one; see raw/cs-core.json "Table" and cs-core/dist/table/**). This raw sdds-cs Table is simpler: required data (TableRowData[], each row needs id + arbitrary key:value matching column ids) and columns (TableColumnData[]: id, label, width?, enableSorting?, enableResizing?, enableEditing?, filters?:[{value,label}], filterFn?, renderCell?:(value,row,rowIndex)=>ReactNode, setCellProps?).
+LIVE EDITOR
+function App() {
+const data = [{ id: '0', country: 'Канада', capital: 'Оттава', population: 38 }];
+const columns = [{ id: 'country', label: 'Страна' }, { id: 'capital', label: 'Столица' }, { id: 'population', label: 'Население, млн' }];
+return <Table data={data} columns={columns} />;
+}
+
+API​
+Property Type Default Description
+view "clear"|"default"; size "s"|"m"|"l"
+data* TableRowData[]; columns* TableColumnData[]
+onChange ((data: {selected, filtered, sorted}) => void)
+borderVariant "all"|"header"|"rows" all
+enableSelection boolean false; selected RowSelectionState
+filtered / sorted state arrays
+maxHeight MaxHeight<string|number>; stickyHeader boolean false
+onCellUpdate ((rowId, columnId, value) => void)
+setRowProps ((row) => HTMLAttributes & ThHTMLAttributes)
+topContent / bottomContent / loadingSlot ReactNode
+onScroll handler
+classNames {root?, table?, header?:{wrapper?,row?,cell?}, body?:{wrapper?,row?,cell?}}

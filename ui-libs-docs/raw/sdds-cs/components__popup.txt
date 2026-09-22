@@ -1,0 +1,29 @@
+Title: Popup | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/popup/
+---
+Popup — base overlay primitive (Modal, Drawer etc. build on it). Requires <PopupProvider> at app root or nearest ancestor. frame targets a container (element, id, ref, or "document" default) instead of document. placement="center"(default)|left|right|top|bottom + combos; offset [number,number]|[string,string]. draggable enables drag; resizable enables resize handles: {disabled?, directions?, defaultSize?:{width?,height?}, minWidth?, minHeight?, maxWidth?, maxHeight?, icons?:{topRight?,bottomRight?,bottomLeft?,topLeft?}, iconSize?:'xs'|'s'|'m', hiddenIcons?}. Animation via withAnimation + styled-components targeting PopupClasses.root/.endAnimation/.endTransition.
+LIVE EDITOR
+function App() {
+const [isOpen, setIsOpen] = useState(false);
+return (
+<PopupProvider>
+<Button text="Open" onClick={() => setIsOpen(true)} />
+<Popup opened={isOpen} placement="center" offset={[0,0]} draggable>
+<Button onClick={() => setIsOpen(false)}>Close</Button>
+</Popup>
+</PopupProvider>
+);
+}
+
+API​
+Property Type Default Description
+opened boolean (isOpen deprecated)
+placement PopupPlacement — center|left|right|top|bottom + combos
+offset [number,number]|[string,string]
+frame string|RefObject<HTMLElement|null> — default document
+positionFixed boolean false
+children ReactNode; overlay ReactNode; zIndex string
+popupInfo PopupInfo
+withAnimation boolean
+draggable boolean
+resizable boolean|{disabled?, directions?, defaultSize?, minWidth?, minHeight?, maxWidth?, maxHeight?, icons?, iconSize?, hiddenIcons?}

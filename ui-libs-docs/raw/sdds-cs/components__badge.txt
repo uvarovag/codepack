@@ -1,0 +1,21 @@
+Title: Badge | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/badge/
+---
+Badge (raw sdds-cs version — cs-core's own Badge, re-exported by cs-portal, has a different/stricter discriminated-union API, see raw/cs-core.json "Badge"). size="s". pilled for round corners. view="default"|"accent"|"positive"|"negative" + appearance="default"|"clear" (clear/transparent props are deprecated, use appearance). contentLeft/contentRight for icon slots. customColor/customBackgroundColor for custom colors. Gradient text via class sdds-core-text-node.
+LIVE EDITOR
+function App() {
+return <Badge text="Бейдж" size="s" view="accent" contentLeft={<IconEye color="inherit" size="xs" />} />;
+}
+
+API​
+Property Type Default Description
+size "s" m — Размер Badge
+view "default"|"accent"|"positive"|"negative" default — Вид Badge
+maxWidth Width<string|number> 'auto' — обрезает контент по макс. ширине, добавляет ...
+text string — текстовая надпись
+customColor / customBackgroundColor string
+pilled boolean false
+clear / transparent boolean — @deprecated use appearance="clear"/"transparent"
+contentLeft / contentRight ReactNode
+appearance "clear" | "default"
+truncate boolean

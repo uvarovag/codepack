@@ -1,0 +1,52 @@
+Title: DatePicker | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/datepicker/
+---
+DatePicker — text input + dropdown calendar. DatePickerRange — two inputs (first/second) + calendar, single or double (isDoubleCalendar). format="DD.MM.YYYY" (tokens: DD/D day, MMMM/MMM/MM/M month, YYYY/YY year, Q quarter). maskWithFormat masks input to match format. lang="ru"(default)|"en". valueError/valueSuccess/valueEdited drive validation styling. onCommitDate(value, {error,success}) fires on Enter or day pick. onChangeValue(event, value, originalDate, isoDate) fires on any change. usePortal to render calendar in a portal. min/max + includeEdgeDates bound selectable dates. dateShortcuts for preset date buttons. onChangeVisibleDate(date) — visible period changed via nav (not on day/month/year drill switch).
+
+LIVE EDITOR (DatePicker)
+function App() {
+const [dateValue, setDate] = useState(new Date());
+return <DatePicker onChangeValue={(_, value, originalDate, isoDate) => setDate(value)} label="Дата" format="DD.MM.YYYY" maskWithFormat lang="ru" usePortal />;
+}
+
+LIVE EDITOR (DatePickerRange, double calendar, independent fill + auto-swap)
+function App() {
+return <DatePickerRange isDoubleCalendar usePortal label="Период" firstPlaceholder="Дата начала" secondPlaceholder="Дата окончания" format="DD.MM.YYYY" lang="ru" />;
+}
+
+API DatePicker (key props; full prop count ~60, includes hint* tooltip family shared with other inputs)​
+Property Type Default Description
+view "default"; size "s"; disabled/readOnly boolean
+appearance "clear"|"default"|"viewMode"
+value string|Date|null; defaultDate Date
+onChangeValue (event, value?, originalDate?, isoDate?) => void
+onCommitDate (value, formattedValues:{error?,success?}) => void — Enter or day pick
+onChange — @deprecated, use onChangeValue + onCommitDate
+label / placeholder / leftHelper / textBefore / textAfter string
+required boolean; requiredPlacement "right"|"left" right; hasRequiredIndicator boolean false
+valueError / valueSuccess / valueEdited boolean
+preserveInvalidOnBlur boolean
+format string `DD.MM.YYYY`; maskWithFormat boolean; lang "ru"|"en"
+min / max Date; renderFromDate Date; includeEdgeDates boolean
+eventList / disabledList / eventMonthList / disabledMonthList / eventQuarterList / disabledQuarterList / eventYearList / disabledYearList — calendar day/month/quarter/year event & disabled markers
+type "Days"|"Months"|"Years"|"Quarters"
+calendarContainerWidth / calendarContainerHeight string|number
+stretched boolean
+dateShortcuts DateShortcutItem[]; dateShortcutsWidth; dateShortcutsPlacement "right"|"left" left
+opened boolean; placement DatePickerPlacement[] ["bottom","top"]; offset [number,number] [0,0]
+frame string|RefObject<HTMLElement>; zIndex string
+closeOnOverlayClick / closeOnEsc boolean true; usePortal boolean false; closeAfterDateSelect boolean
+disableFlip boolean; onToggle (isOpen, event?) => void
+onChangeVisibleDate (date: Date) => void
+contentLeft / contentRight ReactElement
+hint* family (hintText, hintTrigger, hintView, hintSize, hintTargetIcon, hintTargetPlacement, hintPlacement, hintHasArrow, hintOffset, hintWidth, hintContentLeft, hintPortal) — tooltip config, same as Combobox
+
+API DatePickerRange (differs from DatePicker)​
+value [DateType, DateType]; defaultFirstDate/defaultSecondDate Date
+onChangeFirstValue / onChangeSecondValue / onCommitFirstDate / onCommitSecondDate — per-field callbacks
+firstPlaceholder / secondPlaceholder string
+firstValueError/secondValueError/firstValueSuccess/secondValueSuccess/firstValueEdited/secondValueEdited boolean
+firstTextfieldContentLeft/Right, secondTextfieldContentLeft/Right ReactElement
+dividerVariant "none"|"dash"|"icon"; dividerIcon ReactNode
+isDoubleCalendar boolean; isCalendarPositionedByInput boolean
+(shares min/max/format/lang/calendar event-list/placement/usePortal/etc. with DatePicker)

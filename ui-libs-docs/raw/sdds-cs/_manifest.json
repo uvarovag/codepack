@@ -1,0 +1,27 @@
+{
+  "source": "https://plasma.sberdevices.ru/sdds-cs/sitemap.xml",
+  "fetchedAt": "2026-09-22",
+  "totalSitemapUrls": 70,
+  "skippedByPlan": ["search/", "next/", "react_17/", "how-to-mcp/"],
+  "processed": 67,
+  "failed": [
+    {
+      "url": "components/price/",
+      "reason": "Redirects to homepage (https://plasma.sberdevices.ru/) — page does not exist despite being listed in sitemap.xml. Confirmed on 2 separate attempts. Stale sitemap entry."
+    },
+    {
+      "url": "components/progress/",
+      "reason": "Same as price/ — redirects to homepage, stale sitemap entry."
+    }
+  ],
+  "notes": [
+    "Site is Docusaurus; component prop tables and code examples are lazily rendered client-side (intersection-observer-driven) — pages were scraped by navigating, then scrolling incrementally through full page height (150-250ms dwell per step) before reading get_page_text, to force lazy content to mount.",
+    "javascript_tool's return value gets blocked by a 'Cookie/query string data' safety filter when it echoes raw <pre> code block text (e.g. component example source) back as a tool result — NOT triggered by get_page_text or by returning small JSON summaries (counts, h1 arrays). All page content in this run was captured via get_page_text instead of javascript_tool DOM extraction.",
+    "Raw files are hand-condensed (not verbatim get_page_text dumps): headings/description kept, near-duplicate example variations collapsed to 1-2 representative snippets, full API prop tables kept (these are the highest-value content, including Russian descriptions and @deprecated markers).",
+    "Every file that documents a component whose name collides with a cs-core/cs-portal export (Badge, Combobox, Popover, Overlay, Modal, Tabs, Table, showToast, Segment/useSegment, Mutation*) is annotated inline with a NOTE pointing to the shadowing relationship — see UI_LIBS_DOCS_PLAN.md section 2.1.",
+    "beta/popover and beta/tooltip import from '@salutejs/sdds-cs/beta', a separate entry point NOT covered by cs-portal's `export * from '@salutejs/sdds-cs'` (which only re-exports the main entry). Flagged in both files.",
+    "components/toast-legacy vs components/toast vs cs-portal's own showToast (from cs-core) are three different APIs sharing similar names — flagged in components__toast.txt and components__toast-legacy.txt.",
+    "form/components.txt, form/native-form.txt, form/react-hook-form.txt cover form-library integration, not a single component.",
+    "how-to-icons.txt and utils__mixins.txt are guide pages, not components, per the plan's file-map (feed icons.md and a mixins note respectively)."
+  ]
+}

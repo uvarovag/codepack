@@ -1,0 +1,11 @@
+Title: Indicator | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/indicator/
+---
+Indicator — small dot/status marker.
+LIVE EDITOR
+function App() { return <Indicator size="m" view="positive" />; }
+
+API​
+Property Type Default Description
+view* "default"|"accent"|"positive"|"negative"|"inactive"|"warning"|"black"
+size* "s"|"m"|"l"

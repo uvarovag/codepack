@@ -1,0 +1,10 @@
+Title: ViewContainer | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/components/viewContainer/
+---
+ViewContainer — wrapper that inverts color tokens for everything inside it, independent of the app's global theme. Use when placing components on a background that doesn't match the current app theme (e.g. a light card inside a dark-themed app) to avoid color clashes. Used in this codebase (apps import Tooltip's onDark/onLight example pattern).
+LIVE EDITOR
+function App() { return <ViewContainer view="onLight" style={{ background: '#ededed', padding: '1rem' }}><Button text="Button" /></ViewContainer>; }
+
+API​
+Property Type Default Description
+view "onLight" | "onDark"

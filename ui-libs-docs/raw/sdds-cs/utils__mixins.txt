@@ -1,0 +1,10 @@
+Title: Миксины | SDDS CS
+URL: https://plasma.sberdevices.ru/sdds-cs/utils/mixins/
+---
+Styling helper functions from @salutejs/sdds-cs, used with styled-components (or plain style objects).
+
+addFocus(options) — adds a focus ring via ::before (CSS outline, doesn't affect scroll area). Options: outlineSize '0.125rem', outlineOffset '0.125rem' (negative=inside, positive=outside), outlineColor 'var(--text-accent)', outlineRadius '30px', hasTransition boolean true, customFocusRules string (overrides focus-state styles).
+const Focusable = styled.div`${addFocus({ outlineColor: 'var(--text-accent)' })}`;
+
+applyPaper(options) — returns a style object for a "paper" background block, using sdds_cs theme tokens. Options: backgroundColor (theme color/gradient token), borderRadius (theme radius token), shadow (theme shadow token), styles (any extra CSS properties, plain object).
+<div style={applyPaper({ backgroundColor: 'surfaceAccent', borderRadius: 'borderRadiusM', shadow: 'shadowDownHardM', styles: { color: 'white' } })}>Card</div>
