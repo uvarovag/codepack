@@ -11,43 +11,50 @@ navigate function) for routing, or `onClick`/`widgetOnClick` for custom logic.
 
 ## Common props
 
-| Prop | Type | Applies to | Note |
-|---|---|---|---|
-| data | `TWidgetItem[]` (bar/pie) or series `{ id, label, unit?, data: {x,y}[] }[]` (line) | all | required |
-| tooltip | custom tooltip component | all | |
-| onClick | `(event, data) => void` | all | overrides `navigate`/`getHref` for that item |
-| getHref | `(data) => string` | all | used with `navigate` |
-| navigate | react-router navigate fn | all | fires on click if no `onClick` |
-| title, actions | `string`, `ReactNode` | Widget* only | card header |
-| href, widgetOnClick | `string`, `() => void` | Widget* only | click on the whole card; `widgetOnClick` wins |
-| isEmpty, hasFilters, isLoading | `boolean` | Widget* only | card states |
-| size | `'1x1' \| '2x1' \| '2x2' \| '4x2'` | Widget* only | card size |
-also: full Nivo `Responsive{Bar,Pie,Line}` prop set (`colors`, `colorBy`, `margin`, `theme`,
-`valueFormat`, ...) is passed through.
+| Prop                                                                                         | Type                                                                               | Applies to   | Note                                          |
+| -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ------------ | --------------------------------------------- |
+| data                                                                                         | `TWidgetItem[]` (bar/pie) or series `{ id, label, unit?, data: {x,y}[] }[]` (line) | all          | required                                      |
+| tooltip                                                                                      | custom tooltip component                                                           | all          |                                               |
+| onClick                                                                                      | `(event, data) => void`                                                            | all          | overrides `navigate`/`getHref` for that item  |
+| getHref                                                                                      | `(data) => string`                                                                 | all          | used with `navigate`                          |
+| navigate                                                                                     | react-router navigate fn                                                           | all          | fires on click if no `onClick`                |
+| title, actions                                                                               | `string`, `ReactNode`                                                              | Widget* only | card header                                   |
+| href, widgetOnClick                                                                          | `string`, `() => void`                                                             | Widget* only | click on the whole card; `widgetOnClick` wins |
+| isEmpty, hasFilters, isLoading                                                               | `boolean`                                                                          | Widget* only | card states                                   |
+| size                                                                                         | `'1x1' \| '2x1' \| '2x2' \| '4x2'`                                                 | Widget* only | card size                                     |
+| also: full Nivo `Responsive{Bar,Pie,Line}` prop set (`colors`, `colorBy`, `margin`, `theme`, |
+| `valueFormat`, ...) is passed through.                                                       |
 
 ## Per-component extras
 
-| Component | Extra props | Notes |
-|---|---|---|
-| `Pie` / `WidgetPie` | `legendTitle`, `legendItemCountVisible`, `legendMaxHeight`, `centeredMetric(Postfix)(Visible)`, `selectedId` | Overlapping-label slices collapse into "Other" (expandable in the legend). |
-| `Line` / `WidgetLine` | (Nivo `ResponsiveLine` props: `curve`, `enableArea`, ...) | Gradient-filled area line chart. |
-| `HorizontalBar` / `VerticalBar` / `Widget*Bar` | (Nivo `ResponsiveBar` props) | |
-| `WidgetStackedHorizontalBar` | `colorBy`, `colors`, `fill` | Categories stacked within one bar. |
+| Component                                      | Extra props                                                                                                  | Notes                                                                      |
+| ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------- |
+| `Pie` / `WidgetPie`                            | `legendTitle`, `legendItemCountVisible`, `legendMaxHeight`, `centeredMetric(Postfix)(Visible)`, `selectedId` | Overlapping-label slices collapse into "Other" (expandable in the legend). |
+| `Line` / `WidgetLine`                          | (Nivo `ResponsiveLine` props: `curve`, `enableArea`, ...)                                                    | Gradient-filled area line chart.                                           |
+| `HorizontalBar` / `VerticalBar` / `Widget*Bar` | (Nivo `ResponsiveBar` props)                                                                                 |                                                                            |
+| `WidgetStackedHorizontalBar`                   | `colorBy`, `colors`, `fill`                                                                                  | Categories stacked within one bar.                                         |
 
 ```tsx
 <WidgetPie
-  title="Service tickets"
-  legendTitle="Count"
-  data={[{ id: 'done', value: 92, label: 'Done', unit: 'pcs' }, { id: 'open', value: 8, label: 'Open', unit: 'pcs' }]}
-  getHref={(item) => `/tickets?status=${item.id}`}
-  navigate={navigate}
-  centeredMetricPostfixVisible
-  centeredMetricPostfix="pcs"
+    title="Service tickets"
+    legendTitle="Count"
+    data={[
+        { id: 'done', value: 92, label: 'Done', unit: 'pcs' },
+        { id: 'open', value: 8, label: 'Open', unit: 'pcs' },
+    ]}
+    getHref={(item) => `/tickets?status=${item.id}`}
+    navigate={navigate}
+    centeredMetricPostfixVisible
+    centeredMetricPostfix="pcs"
 />
 ```
+
 ```tsx
 <HorizontalBar
-  data={[{ id: 'done', value: 92, label: 'Done' }, { id: 'in-progress', value: 50, label: 'In progress' }]}
+    data={[
+        { id: 'done', value: 92, label: 'Done' },
+        { id: 'in-progress', value: 50, label: 'In progress' },
+    ]}
 />
 ```
 

@@ -1,12 +1,14 @@
 <!-- SKELETON for cs-core/data-display.md — raw material only, not the final doc. 63 symbols. -->
 
 ## Badge
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: @sber-front-cs-core/cs-core
 SHADOW NOTE: cs-portal gives the cs-core version; also defined in: sdds-cs (site)
 
 propsType: TBadgeProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [Badge](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/components-badge--docs) — компонент визуального индикатора для привлечения внимания к важной информации. Используйте его там, где он помогает быстрее считать информацию.
 
@@ -43,12 +45,15 @@ Badge предоставляется в двух видах — статус-м�
 ```
 
 ### raw props type
+
 ```ts
-export type TBadgeProps = TPrettify<TBadgeView & TPropsFromBadgeSDDS>;
+export type TBadgeProps = TPrettify<TBadgeView & TPropsFromBadgeSDDS>
 ```
 
 ### demo examples found
+
 <!-- components/Badge/ui/BadgeAllDemo.tsx -->
+
 ```tsx
 import { Badge, FlexBox, Paper } from '../../../../src'
 import { iconMap } from '../../../../src/components/Badge/lib'
@@ -95,7 +100,9 @@ export const BadgeAllDemo = () => {
     )
 }
 ```
+
 <!-- components/Badge/ui/BadgeDemo.tsx -->
+
 ```tsx
 import { Badge } from '../../../../src'
 
@@ -105,29 +112,34 @@ export const BadgeDemo = Badge
 ---
 
 ## AccordionContent
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/AccordionContentLegacy
 
 propsType: TAccordionContentLegacyProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 @deprecated Используйте AccordionContentNew
 ```
 
 ### raw props type
+
 ```ts
 export type TAccordionContentLegacyProps = {
     /** Массив объектов для отображения в аккордеоне. */
-    items: TAccordionContentLegacyItem[];
+    items: TAccordionContentLegacyItem[]
     /** Массив ID изначально открытых секций. */
-    initialItemIds?: TAccordionContentLegacyItem['id'][];
+    initialItemIds?: TAccordionContentLegacyItem['id'][]
     /** Обработчик изменения состояния секции. */
-    onChange?: (item: TAccordionContentLegacyItem, isActive: boolean) => void;
-};
+    onChange?: (item: TAccordionContentLegacyItem, isActive: boolean) => void
+}
 ```
 
 ### demo examples found
+
 <!-- components/AccordionContent/AccordionContentDemo.tsx -->
+
 ```tsx
 import { useState } from 'react'
 
@@ -143,39 +155,49 @@ export const AccordionContentDemo = () => {
 ---
 
 ## AccordionContentNew
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/AccordionContent
 
 propsType: TAccordionContentProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Компонент-аккордеон для отображения набора секций с возможностью раскрытия и закрытия.
 @remarks Свойства `label`, `content`, `value` каждой секции являются обязательными. Секции с `visible: false` скрываются при рендере.
 ```
 
 ### raw props type
+
 ```ts
 export type TAccordionContentProps = {
     /** Массив секций. */
-    items: TAccordionContentItem[];
+    items: TAccordionContentItem[]
     /** Массив открытых секций. */
-    value: string[];
+    value: string[]
     /** Обработчик изменения состояния секции. */
-    onChange?: (newValue: string[], item: TAccordionContentItem, event?: MouseEvent<HTMLElement, globalThis.MouseEvent> | number) => void;
-};
+    onChange?: (
+        newValue: string[],
+        item: TAccordionContentItem,
+        event?: MouseEvent<HTMLElement, globalThis.MouseEvent> | number
+    ) => void
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## Chat
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/Chat
 
 propsType: TChatProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [Chat](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/components-chat--docs)-
 компонент, представляющий собой интерфейс для обмена сообщениями между пользователями в реальном времени.
@@ -247,49 +269,55 @@ propsType: TChatProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export type TChatProps = TPrettify<{
     /** Компонент, который полностью заменяет отображение сообщений. */
-    Message?: FC<TMessageProps>;
+    Message?: FC<TMessageProps>
     /** Массив сообщений. */
-    messages?: TMessage[];
+    messages?: TMessage[]
     /** Коллбэк при нажатии на кнопку "Полезно/лайк". */
-    onLike?: (message: TMessage) => void;
+    onLike?: (message: TMessage) => void
     /** Коллбэк при нажатии на кнопку "Не полезно/дизлайк". */
-    onDislike?: (message: TMessage) => void;
+    onDislike?: (message: TMessage) => void
     /** Флаг включения прикрепления файлов. */
-    attachVisible?: boolean;
+    attachVisible?: boolean
     /** Коллбэк при нажатии на кнопку-помощницу. */
-    onSuggestionClick?: (message: string) => void;
+    onSuggestionClick?: (message: string) => void
     /** Коллбэк при прочтении сообщений. */
-    onChangeIsRead?: (messages?: TMessage[]) => void;
+    onChangeIsRead?: (messages?: TMessage[]) => void
     /** Коллбэк при ответе на сообщение. */
-    onReplyToMessage?: (message: TMessage) => void;
+    onReplyToMessage?: (message: TMessage) => void
     /** Объект с частью свойств из компонента Tabs для отображения табов. */
-    tabOptions?: TTabOptionsChat;
+    tabOptions?: TTabOptionsChat
     /** Флаг, отвечающий за закрытие чата. */
-    isChatClosed?: boolean;
+    isChatClosed?: boolean
     /** Флаг загрузки контента чата. */
-    isLoadingContent?: boolean;
+    isLoadingContent?: boolean
     /** Флаг загрузки табов для чата. */
-    isLoadingTabs?: boolean;
+    isLoadingTabs?: boolean
     /** Массив объектов с полем role, который показывает, кто набирает сообщение. */
-    typing?: TTyping[];
+    typing?: TTyping[]
     /** Флаг отображения экшена "скопировать" у каждого сообщения. */
-    visibleCopyMessageAction?: boolean;
+    visibleCopyMessageAction?: boolean
     /** Флаг отображения экшена "ответить" у каждого сообщения. */
-    visibleReplyMessageAction?: boolean;
+    visibleReplyMessageAction?: boolean
     /** Коллбэк при изменении состояния isPinned у сообщения. */
-    onChangeIsPinned?: (message: TMessage, newValue: boolean) => void;
+    onChangeIsPinned?: (message: TMessage, newValue: boolean) => void
     /** Массив вспомогательных дополнительных кнопок */
     suggestionButtons?: TInternalButton[] & {
-        length: 0 | 1 | 2;
-    };
-}> & TChatEventsButtonVisible & THeader & TFooter;
+        length: 0 | 1 | 2
+    }
+}> &
+    TChatEventsButtonVisible &
+    THeader &
+    TFooter
 ```
 
 ### demo examples found
+
 <!-- components/Chat/ui/ChatAIDemo.tsx -->
+
 ```tsx
 import type { TMessage, TOnMessage } from '../../../../src'
 
@@ -348,7 +376,9 @@ export const ChatAIDemo = (args: TChatProps) => {
                     ...msg,
                     [reaction]:
 ```
+
 <!-- components/Chat/ui/ChatDemo.tsx -->
+
 ```tsx
 import type { TMessage, TOnMessage } from '../../../../src'
 
@@ -405,7 +435,9 @@ export const ChatDemo = (args: TChatProps) => {
     )
 }
 ```
+
 <!-- components/Chat/ui/ChatSuggestionDemo.tsx -->
+
 ```tsx
 import type { TMessage, TOnMessage } from '../../../../src'
 
@@ -466,42 +498,48 @@ export const ChatSuggestionDemo = () => {
 ---
 
 ## CURRENCY_SYMBOL
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./utils/formatters
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
 export declare const CURRENCY_SYMBOL: {
-    rub: string;
-    RUB: string;
-    rur: string;
-    RUR: string;
-    usd: string;
-    USD: string;
-    eur: string;
-    EUR: string;
-    cny: string;
-    CNY: string;
-};
+    rub: string
+    RUB: string
+    rur: string
+    RUR: string
+    usd: string
+    USD: string
+    eur: string
+    EUR: string
+    cny: string
+    CNY: string
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## DisplayBoolean
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/display
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Отображение boolean значения
 
@@ -512,37 +550,43 @@ propsType: (signature, no dedicated Props type found) (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export declare const DisplayBoolean: {
-    (props: {
-        value: import("../../../utils/formatters").TFormatterValue<boolean>;
-        size?: ("s" | "m") | undefined;
-        showCopyButton?: boolean | undefined;
-        bold?: boolean | undefined;
-        color?: string | undefined;
-        className?: string | undefined | undefined;
-        as?: keyof import("@salutejs/plasma-new-hope").AllowedTextHTMLElements | undefined;
-        breakWord?: boolean | undefined;
-    } & {
-        label?: string;
-        meta?: import("../../..").TMetaSchemeProperty;
-        textTooltip?: string;
-    } & Pick<import("../../../layouts/Box").TBoxProps, "alignItems" | "flexDirection" | "gap" | "justifyContent">): import("react").JSX.Element;
-    displayName: string;
-};
+    (
+        props: {
+            value: import('../../../utils/formatters').TFormatterValue<boolean>
+            size?: ('s' | 'm') | undefined
+            showCopyButton?: boolean | undefined
+            bold?: boolean | undefined
+            color?: string | undefined
+            className?: string | undefined | undefined
+            as?: keyof import('@salutejs/plasma-new-hope').AllowedTextHTMLElements | undefined
+            breakWord?: boolean | undefined
+        } & {
+            label?: string
+            meta?: import('../../..').TMetaSchemeProperty
+            textTooltip?: string
+        } & Pick<import('../../../layouts/Box').TBoxProps, 'alignItems' | 'flexDirection' | 'gap' | 'justifyContent'>
+    ): import('react').JSX.Element
+    displayName: string
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## DisplayDate
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/display
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Отображение даты
 
@@ -555,39 +599,45 @@ propsType: (signature, no dedicated Props type found) (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export declare const DisplayDate: {
-    (props: {
-        value: import("../../..").TValue<string>;
-        UTC?: boolean | undefined;
-        template?: import("../../..").TDateTemplate | undefined;
-        size?: ("s" | "m") | undefined;
-        showCopyButton?: boolean | undefined;
-        bold?: boolean | undefined;
-        color?: string | undefined;
-        className?: string | undefined | undefined;
-        as?: keyof import("@salutejs/plasma-new-hope").AllowedTextHTMLElements | undefined;
-        breakWord?: boolean | undefined;
-    } & {
-        label?: string;
-        meta?: import("../../..").TMetaSchemeProperty;
-        textTooltip?: string;
-    } & Pick<import("../../../layouts/Box").TBoxProps, "alignItems" | "flexDirection" | "gap" | "justifyContent">): import("react").JSX.Element;
-    displayName: string;
-};
+    (
+        props: {
+            value: import('../../..').TValue<string>
+            UTC?: boolean | undefined
+            template?: import('../../..').TDateTemplate | undefined
+            size?: ('s' | 'm') | undefined
+            showCopyButton?: boolean | undefined
+            bold?: boolean | undefined
+            color?: string | undefined
+            className?: string | undefined | undefined
+            as?: keyof import('@salutejs/plasma-new-hope').AllowedTextHTMLElements | undefined
+            breakWord?: boolean | undefined
+        } & {
+            label?: string
+            meta?: import('../../..').TMetaSchemeProperty
+            textTooltip?: string
+        } & Pick<import('../../../layouts/Box').TBoxProps, 'alignItems' | 'flexDirection' | 'gap' | 'justifyContent'>
+    ): import('react').JSX.Element
+    displayName: string
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## DisplayDateRange
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/display
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Отображение периода дат
 
@@ -601,40 +651,46 @@ propsType: (signature, no dedicated Props type found) (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export declare const DisplayDateRange: {
-    (props: {
-        from: import("../../..").TValue<string>;
-        to: import("../../..").TValue<string>;
-        UTC?: boolean | undefined;
-        template?: import("../../..").TDateTemplate | undefined;
-        size?: ("s" | "m") | undefined;
-        showCopyButton?: boolean | undefined;
-        bold?: boolean | undefined;
-        color?: string | undefined;
-        className?: string | undefined | undefined;
-        as?: keyof import("@salutejs/plasma-new-hope").AllowedTextHTMLElements | undefined;
-        breakWord?: boolean | undefined;
-    } & {
-        label?: string;
-        meta?: import("../../..").TMetaSchemeProperty;
-        textTooltip?: string;
-    } & Pick<import("../../../layouts/Box").TBoxProps, "alignItems" | "flexDirection" | "gap" | "justifyContent">): import("react").JSX.Element;
-    displayName: string;
-};
+    (
+        props: {
+            from: import('../../..').TValue<string>
+            to: import('../../..').TValue<string>
+            UTC?: boolean | undefined
+            template?: import('../../..').TDateTemplate | undefined
+            size?: ('s' | 'm') | undefined
+            showCopyButton?: boolean | undefined
+            bold?: boolean | undefined
+            color?: string | undefined
+            className?: string | undefined | undefined
+            as?: keyof import('@salutejs/plasma-new-hope').AllowedTextHTMLElements | undefined
+            breakWord?: boolean | undefined
+        } & {
+            label?: string
+            meta?: import('../../..').TMetaSchemeProperty
+            textTooltip?: string
+        } & Pick<import('../../../layouts/Box').TBoxProps, 'alignItems' | 'flexDirection' | 'gap' | 'justifyContent'>
+    ): import('react').JSX.Element
+    displayName: string
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## DisplayDateTime
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/display
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Отображение даты и времени
 
@@ -647,380 +703,430 @@ propsType: (signature, no dedicated Props type found) (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export declare const DisplayDateTime: {
-    (props: {
-        value: import("../../..").TValue<string>;
-        UTC?: boolean | undefined;
-        template?: import("../../..").TDateTimeTemplate | undefined;
-        size?: ("s" | "m") | undefined;
-        showCopyButton?: boolean | undefined;
-        bold?: boolean | undefined;
-        color?: string | undefined;
-        className?: string | undefined | undefined;
-        as?: keyof import("@salutejs/plasma-new-hope").AllowedTextHTMLElements | undefined;
-        breakWord?: boolean | undefined;
-    } & {
-        label?: string;
-        meta?: import("../../..").TMetaSchemeProperty;
-        textTooltip?: string;
-    } & Pick<import("../../../layouts/Box").TBoxProps, "alignItems" | "flexDirection" | "gap" | "justifyContent">): import("react").JSX.Element;
-    displayName: string;
-};
+    (
+        props: {
+            value: import('../../..').TValue<string>
+            UTC?: boolean | undefined
+            template?: import('../../..').TDateTimeTemplate | undefined
+            size?: ('s' | 'm') | undefined
+            showCopyButton?: boolean | undefined
+            bold?: boolean | undefined
+            color?: string | undefined
+            className?: string | undefined | undefined
+            as?: keyof import('@salutejs/plasma-new-hope').AllowedTextHTMLElements | undefined
+            breakWord?: boolean | undefined
+        } & {
+            label?: string
+            meta?: import('../../..').TMetaSchemeProperty
+            textTooltip?: string
+        } & Pick<import('../../../layouts/Box').TBoxProps, 'alignItems' | 'flexDirection' | 'gap' | 'justifyContent'>
+    ): import('react').JSX.Element
+    displayName: string
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## DisplayLink
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/display
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [__DisplayLink__](https://cs-core.cloud.delta.sbrf.ru/latest/?path=/docs-components-displaylink--docs) - Универсальная гиперссылка с поддержкой мета-данных.
 
 **Правильное применение ссылок:**
 - Для перехода по ссылке используйте `href + navigate`:
-  ```
-  <DisplayLink
+```
+
+<DisplayLink
     value="Ссылка"
     href="/details"
     navigate={navigate}
   />
-  ```
+
+```
 - Для пользовательской логики при клике используйте `onClick` (он имеет приоритет над navigate).
 
 @summary универсальная гиперссылка с поддержкой мета-данных
 ```
 
 ### raw props type
+
 ```ts
 export declare const DisplayLink: {
-    (props: Omit<{
-        value: import("../../../utils/formatters").TFormatterValue<string | number>;
-        navigate?: import("react-router").NavigateFunction | undefined;
-        size?: "s" | "m" | undefined;
-        showCopyButton?: boolean | undefined;
-        bold?: boolean | undefined;
-        color?: string | undefined;
-        className?: string | undefined | undefined;
-        as?: keyof import("@salutejs/plasma-new-hope").AllowedTextHTMLElements | undefined;
-        breakWord?: boolean | undefined;
-        id?: string | undefined | undefined;
-        content?: string | undefined | undefined;
-        title?: string | undefined | undefined;
-        onChange?: import("react").ChangeEventHandler<HTMLAnchorElement, Element> | undefined;
-        slot?: string | undefined | undefined;
-        style?: import("react").CSSProperties | undefined;
-        view?: "secondary" | "accent" | "negative" | "warning" | "positive" | "paragraph" | "tertiary" | "clear" | "default" | undefined;
-        disabled?: boolean | undefined;
-        type?: string | undefined | undefined;
-        defaultChecked?: boolean | undefined | undefined;
-        defaultValue?: string | number | readonly string[] | undefined;
-        suppressContentEditableWarning?: boolean | undefined | undefined;
-        suppressHydrationWarning?: boolean | undefined | undefined;
-        accessKey?: string | undefined | undefined;
-        autoCapitalize?: "off" | "none" | "on" | "sentences" | "words" | "characters" | undefined | (string & {}) | undefined;
-        autoFocus?: boolean | undefined | undefined;
-        contentEditable?: "inherit" | (boolean | "true" | "false") | "plaintext-only" | undefined;
-        contextMenu?: string | undefined | undefined;
-        dir?: string | undefined | undefined;
-        draggable?: (boolean | "true" | "false") | undefined;
-        enterKeyHint?: "enter" | "done" | "go" | "next" | "previous" | "search" | "send" | undefined | undefined;
-        hidden?: boolean | undefined | undefined;
-        lang?: string | undefined | undefined;
-        nonce?: string | undefined | undefined;
-        spellCheck?: (boolean | "true" | "false") | undefined;
-        tabIndex?: number | undefined | undefined;
-        translate?: "yes" | "no" | undefined | undefined;
-        radioGroup?: string | undefined | undefined;
-        role?: import("react").AriaRole | undefined;
-        about?: string | undefined | undefined;
-        datatype?: string | undefined | undefined;
-        inlist?: any;
-        prefix?: string | undefined | undefined;
-        property?: string | undefined | undefined;
-        rel?: string | undefined | undefined;
-        resource?: string | undefined | undefined;
-        rev?: string | undefined | undefined;
-        typeof?: string | undefined | undefined;
-        vocab?: string | undefined | undefined;
-        autoCorrect?: string | undefined | undefined;
-        autoSave?: string | undefined | undefined;
-        itemProp?: string | undefined | undefined;
-        itemScope?: boolean | undefined | undefined;
-        itemType?: string | undefined | undefined;
-        itemID?: string | undefined | undefined;
-        itemRef?: string | undefined | undefined;
-        results?: number | undefined | undefined;
-        security?: string | undefined | undefined;
-        unselectable?: "on" | "off" | undefined | undefined;
-        popover?: "" | "auto" | "manual" | "hint" | undefined | undefined;
-        popoverTargetAction?: "toggle" | "show" | "hide" | undefined | undefined;
-        popoverTarget?: string | undefined | undefined;
-        inert?: boolean | undefined | undefined;
-        inputMode?: "none" | "text" | "tel" | "url" | "email" | "numeric" | "decimal" | "search" | undefined | undefined;
-        is?: string | undefined | undefined;
-        exportparts?: string | undefined | undefined;
-        part?: string | undefined | undefined;
-        "aria-activedescendant"?: string | undefined | undefined;
-        "aria-atomic"?: (boolean | "true" | "false") | undefined;
-        "aria-autocomplete"?: "none" | "inline" | "list" | "both" | undefined | undefined;
-        "aria-braillelabel"?: string | undefined | undefined;
-        "aria-brailleroledescription"?: string | undefined | undefined;
-        "aria-busy"?: (boolean | "true" | "false") | undefined;
-        "aria-checked"?: boolean | "false" | "mixed" | "true" | undefined | undefined;
-        "aria-colcount"?: number | undefined | undefined;
-        "aria-colindex"?: number | undefined | undefined;
-        "aria-colindextext"?: string | undefined | undefined;
-        "aria-colspan"?: number | undefined | undefined;
-        "aria-controls"?: string | undefined | undefined;
-        "aria-current"?: boolean | "false" | "true" | "page" | "step" | "location" | "date" | "time" | undefined | undefined;
-        "aria-describedby"?: string | undefined | undefined;
-        "aria-description"?: string | undefined | undefined;
-        "aria-details"?: string | undefined | undefined;
-        "aria-disabled"?: (boolean | "true" | "false") | undefined;
-        "aria-dropeffect"?: "none" | "copy" | "execute" | "link" | "move" | "popup" | undefined | undefined;
-        "aria-errormessage"?: string | undefined | undefined;
-        "aria-expanded"?: (boolean | "true" | "false") | undefined;
-        "aria-flowto"?: string | undefined | undefined;
-        "aria-grabbed"?: (boolean | "true" | "false") | undefined;
-        "aria-haspopup"?: boolean | "false" | "true" | "menu" | "listbox" | "tree" | "grid" | "dialog" | undefined | undefined;
-        "aria-hidden"?: (boolean | "true" | "false") | undefined;
-        "aria-invalid"?: boolean | "false" | "true" | "grammar" | "spelling" | undefined | undefined;
-        "aria-keyshortcuts"?: string | undefined | undefined;
-        "aria-label"?: string | undefined | undefined;
-        "aria-labelledby"?: string | undefined | undefined;
-        "aria-level"?: number | undefined | undefined;
-        "aria-live"?: "off" | "assertive" | "polite" | undefined | undefined;
-        "aria-modal"?: (boolean | "true" | "false") | undefined;
-        "aria-multiline"?: (boolean | "true" | "false") | undefined;
-        "aria-multiselectable"?: (boolean | "true" | "false") | undefined;
-        "aria-orientation"?: "horizontal" | "vertical" | undefined | undefined;
-        "aria-owns"?: string | undefined | undefined;
-        "aria-placeholder"?: string | undefined | undefined;
-        "aria-posinset"?: number | undefined | undefined;
-        "aria-pressed"?: boolean | "false" | "mixed" | "true" | undefined | undefined;
-        "aria-readonly"?: (boolean | "true" | "false") | undefined;
-        "aria-relevant"?: "additions" | "additions removals" | "additions text" | "all" | "removals" | "removals additions" | "removals text" | "text" | "text additions" | "text removals" | undefined | undefined;
-        "aria-required"?: (boolean | "true" | "false") | undefined;
-        "aria-roledescription"?: string | undefined | undefined;
-        "aria-rowcount"?: number | undefined | undefined;
-        "aria-rowindex"?: number | undefined | undefined;
-        "aria-rowindextext"?: string | undefined | undefined;
-        "aria-rowspan"?: number | undefined | undefined;
-        "aria-selected"?: (boolean | "true" | "false") | undefined;
-        "aria-setsize"?: number | undefined | undefined;
-        "aria-sort"?: "none" | "ascending" | "descending" | "other" | undefined | undefined;
-        "aria-valuemax"?: number | undefined | undefined;
-        "aria-valuemin"?: number | undefined | undefined;
-        "aria-valuenow"?: number | undefined | undefined;
-        "aria-valuetext"?: string | undefined | undefined;
-        dangerouslySetInnerHTML?: {
-            __html: string | TrustedHTML;
-        } | undefined | undefined;
-        onCopy?: import("react").ClipboardEventHandler<HTMLAnchorElement> | undefined;
-        onCopyCapture?: import("react").ClipboardEventHandler<HTMLAnchorElement> | undefined;
-        onCut?: import("react").ClipboardEventHandler<HTMLAnchorElement> | undefined;
-        onCutCapture?: import("react").ClipboardEventHandler<HTMLAnchorElement> | undefined;
-        onPaste?: import("react").ClipboardEventHandler<HTMLAnchorElement> | undefined;
-        onPasteCapture?: import("react").ClipboardEventHandler<HTMLAnchorElement> | undefined;
-        onCompositionEnd?: import("react").CompositionEventHandler<HTMLAnchorElement> | undefined;
-        onCompositionEndCapture?: import("react").CompositionEventHandler<HTMLAnchorElement> | undefined;
-        onCompositionStart?: import("react").CompositionEventHandler<HTMLAnchorElement> | undefined;
-        onCompositionStartCapture?: import("react").CompositionEventHandler<HTMLAnchorElement> | undefined;
-        onCompositionUpdate?: import("react").CompositionEventHandler<HTMLAnchorElement> | undefined;
-        onCompositionUpdateCapture?: import("react").CompositionEventHandler<HTMLAnchorElement> | undefined;
-        onFocus?: import("react").FocusEventHandler<HTMLAnchorElement> | undefined;
-        onFocusCapture?: import("react").FocusEventHandler<HTMLAnchorElement> | undefined;
-        onBlur?: import("react").FocusEventHandler<HTMLAnchorElement> | undefined;
-        onBlurCapture?: import("react").FocusEventHandler<HTMLAnchorElement> | undefined;
-        onChangeCapture?: import("react").ChangeEventHandler<HTMLAnchorElement, Element> | undefined;
-        onBeforeInput?: import("react").InputEventHandler<HTMLAnchorElement> | undefined;
-        onBeforeInputCapture?: import("react").InputEventHandler<HTMLAnchorElement> | undefined;
-        onInput?: import("react").InputEventHandler<HTMLAnchorElement> | undefined;
-        onInputCapture?: import("react").InputEventHandler<HTMLAnchorElement> | undefined;
-        onReset?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onResetCapture?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onSubmit?: import("react").SubmitEventHandler<HTMLAnchorElement> | undefined;
-        onSubmitCapture?: import("react").SubmitEventHandler<HTMLAnchorElement> | undefined;
-        onInvalid?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onInvalidCapture?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onLoad?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onLoadCapture?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onError?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onErrorCapture?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onKeyDown?: import("react").KeyboardEventHandler<HTMLAnchorElement> | undefined;
-        onKeyDownCapture?: import("react").KeyboardEventHandler<HTMLAnchorElement> | undefined;
-        onKeyPress?: import("react").KeyboardEventHandler<HTMLAnchorElement> | undefined;
-        onKeyPressCapture?: import("react").KeyboardEventHandler<HTMLAnchorElement> | undefined;
-        onKeyUp?: import("react").KeyboardEventHandler<HTMLAnchorElement> | undefined;
-        onKeyUpCapture?: import("react").KeyboardEventHandler<HTMLAnchorElement> | undefined;
-        onAbort?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onAbortCapture?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onCanPlay?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onCanPlayCapture?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onCanPlayThrough?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onCanPlayThroughCapture?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onDurationChange?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onDurationChangeCapture?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onEmptied?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onEmptiedCapture?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onEncrypted?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onEncryptedCapture?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onEnded?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onEndedCapture?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onLoadedData?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onLoadedDataCapture?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onLoadedMetadata?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onLoadedMetadataCapture?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onLoadStart?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onLoadStartCapture?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onPause?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onPauseCapture?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onPlay?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onPlayCapture?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onPlaying?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onPlayingCapture?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onProgress?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onProgressCapture?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onRateChange?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onRateChangeCapture?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onSeeked?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onSeekedCapture?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onSeeking?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onSeekingCapture?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onStalled?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onStalledCapture?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onSuspend?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onSuspendCapture?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onTimeUpdate?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onTimeUpdateCapture?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onVolumeChange?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onVolumeChangeCapture?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onWaiting?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onWaitingCapture?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onAuxClick?: import("react").MouseEventHandler<HTMLAnchorElement> | undefined;
-        onAuxClickCapture?: import("react").MouseEventHandler<HTMLAnchorElement> | undefined;
-        onClick?: import("react").MouseEventHandler<HTMLAnchorElement> | undefined;
-        onClickCapture?: import("react").MouseEventHandler<HTMLAnchorElement> | undefined;
-        onContextMenu?: import("react").MouseEventHandler<HTMLAnchorElement> | undefined;
-        onContextMenuCapture?: import("react").MouseEventHandler<HTMLAnchorElement> | undefined;
-        onDoubleClick?: import("react").MouseEventHandler<HTMLAnchorElement> | undefined;
-        onDoubleClickCapture?: import("react").MouseEventHandler<HTMLAnchorElement> | undefined;
-        onDrag?: import("react").DragEventHandler<HTMLAnchorElement> | undefined;
-        onDragCapture?: import("react").DragEventHandler<HTMLAnchorElement> | undefined;
-        onDragEnd?: import("react").DragEventHandler<HTMLAnchorElement> | undefined;
-        onDragEndCapture?: import("react").DragEventHandler<HTMLAnchorElement> | undefined;
-        onDragEnter?: import("react").DragEventHandler<HTMLAnchorElement> | undefined;
-        onDragEnterCapture?: import("react").DragEventHandler<HTMLAnchorElement> | undefined;
-        onDragExit?: import("react").DragEventHandler<HTMLAnchorElement> | undefined;
-        onDragExitCapture?: import("react").DragEventHandler<HTMLAnchorElement> | undefined;
-        onDragLeave?: import("react").DragEventHandler<HTMLAnchorElement> | undefined;
-        onDragLeaveCapture?: import("react").DragEventHandler<HTMLAnchorElement> | undefined;
-        onDragOver?: import("react").DragEventHandler<HTMLAnchorElement> | undefined;
-        onDragOverCapture?: import("react").DragEventHandler<HTMLAnchorElement> | undefined;
-        onDragStart?: import("react").DragEventHandler<HTMLAnchorElement> | undefined;
-        onDragStartCapture?: import("react").DragEventHandler<HTMLAnchorElement> | undefined;
-        onDrop?: import("react").DragEventHandler<HTMLAnchorElement> | undefined;
-        onDropCapture?: import("react").DragEventHandler<HTMLAnchorElement> | undefined;
-        onMouseDown?: import("react").MouseEventHandler<HTMLAnchorElement> | undefined;
-        onMouseDownCapture?: import("react").MouseEventHandler<HTMLAnchorElement> | undefined;
-        onMouseEnter?: import("react").MouseEventHandler<HTMLAnchorElement> | undefined;
-        onMouseLeave?: import("react").MouseEventHandler<HTMLAnchorElement> | undefined;
-        onMouseMove?: import("react").MouseEventHandler<HTMLAnchorElement> | undefined;
-        onMouseMoveCapture?: import("react").MouseEventHandler<HTMLAnchorElement> | undefined;
-        onMouseOut?: import("react").MouseEventHandler<HTMLAnchorElement> | undefined;
-        onMouseOutCapture?: import("react").MouseEventHandler<HTMLAnchorElement> | undefined;
-        onMouseOver?: import("react").MouseEventHandler<HTMLAnchorElement> | undefined;
-        onMouseOverCapture?: import("react").MouseEventHandler<HTMLAnchorElement> | undefined;
-        onMouseUp?: import("react").MouseEventHandler<HTMLAnchorElement> | undefined;
-        onMouseUpCapture?: import("react").MouseEventHandler<HTMLAnchorElement> | undefined;
-        onSelect?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onSelectCapture?: import("react").ReactEventHandler<HTMLAnchorElement> | undefined;
-        onTouchCancel?: import("react").TouchEventHandler<HTMLAnchorElement> | undefined;
-        onTouchCancelCapture?: import("react").TouchEventHandler<HTMLAnchorElement> | undefined;
-        onTouchEnd?: import("react").TouchEventHandler<HTMLAnchorElement> | undefined;
-        onTouchEndCapture?: import("react").TouchEventHandler<HTMLAnchorElement> | undefined;
-        onTouchMove?: import("react").TouchEventHandler<HTMLAnchorElement> | undefined;
-        onTouchMoveCapture?: import("react").TouchEventHandler<HTMLAnchorElement> | undefined;
-        onTouchStart?: import("react").TouchEventHandler<HTMLAnchorElement> | undefined;
-        onTouchStartCapture?: import("react").TouchEventHandler<HTMLAnchorElement> | undefined;
-        onPointerDown?: import("react").PointerEventHandler<HTMLAnchorElement> | undefined;
-        onPointerDownCapture?: import("react").PointerEventHandler<HTMLAnchorElement> | undefined;
-        onPointerMove?: import("react").PointerEventHandler<HTMLAnchorElement> | undefined;
-        onPointerMoveCapture?: import("react").PointerEventHandler<HTMLAnchorElement> | undefined;
-        onPointerUp?: import("react").PointerEventHandler<HTMLAnchorElement> | undefined;
-        onPointerUpCapture?: import("react").PointerEventHandler<HTMLAnchorElement> | undefined;
-        onPointerCancel?: import("react").PointerEventHandler<HTMLAnchorElement> | undefined;
-        onPointerCancelCapture?: import("react").PointerEventHandler<HTMLAnchorElement> | undefined;
-        onPointerEnter?: import("react").PointerEventHandler<HTMLAnchorElement> | undefined;
-        onPointerLeave?: import("react").PointerEventHandler<HTMLAnchorElement> | undefined;
-        onPointerOver?: import("react").PointerEventHandler<HTMLAnchorElement> | undefined;
-        onPointerOverCapture?: import("react").PointerEventHandler<HTMLAnchorElement> | undefined;
-        onPointerOut?: import("react").PointerEventHandler<HTMLAnchorElement> | undefined;
-        onPointerOutCapture?: import("react").PointerEventHandler<HTMLAnchorElement> | undefined;
-        onGotPointerCapture?: import("react").PointerEventHandler<HTMLAnchorElement> | undefined;
-        onGotPointerCaptureCapture?: import("react").PointerEventHandler<HTMLAnchorElement> | undefined;
-        onLostPointerCapture?: import("react").PointerEventHandler<HTMLAnchorElement> | undefined;
-        onLostPointerCaptureCapture?: import("react").PointerEventHandler<HTMLAnchorElement> | undefined;
-        onScroll?: import("react").UIEventHandler<HTMLAnchorElement> | undefined;
-        onScrollCapture?: import("react").UIEventHandler<HTMLAnchorElement> | undefined;
-        onScrollEnd?: import("react").UIEventHandler<HTMLAnchorElement> | undefined;
-        onScrollEndCapture?: import("react").UIEventHandler<HTMLAnchorElement> | undefined;
-        onWheel?: import("react").WheelEventHandler<HTMLAnchorElement> | undefined;
-        onWheelCapture?: import("react").WheelEventHandler<HTMLAnchorElement> | undefined;
-        onAnimationStart?: import("react").AnimationEventHandler<HTMLAnchorElement> | undefined;
-        onAnimationStartCapture?: import("react").AnimationEventHandler<HTMLAnchorElement> | undefined;
-        onAnimationEnd?: import("react").AnimationEventHandler<HTMLAnchorElement> | undefined;
-        onAnimationEndCapture?: import("react").AnimationEventHandler<HTMLAnchorElement> | undefined;
-        onAnimationIteration?: import("react").AnimationEventHandler<HTMLAnchorElement> | undefined;
-        onAnimationIterationCapture?: import("react").AnimationEventHandler<HTMLAnchorElement> | undefined;
-        onToggle?: import("react").ToggleEventHandler<HTMLAnchorElement> | undefined;
-        onBeforeToggle?: import("react").ToggleEventHandler<HTMLAnchorElement> | undefined;
-        onTransitionCancel?: import("react").TransitionEventHandler<HTMLAnchorElement> | undefined;
-        onTransitionCancelCapture?: import("react").TransitionEventHandler<HTMLAnchorElement> | undefined;
-        onTransitionEnd?: import("react").TransitionEventHandler<HTMLAnchorElement> | undefined;
-        onTransitionEndCapture?: import("react").TransitionEventHandler<HTMLAnchorElement> | undefined;
-        onTransitionRun?: import("react").TransitionEventHandler<HTMLAnchorElement> | undefined;
-        onTransitionRunCapture?: import("react").TransitionEventHandler<HTMLAnchorElement> | undefined;
-        onTransitionStart?: import("react").TransitionEventHandler<HTMLAnchorElement> | undefined;
-        onTransitionStartCapture?: import("react").TransitionEventHandler<HTMLAnchorElement> | undefined;
-        ref?: import("react").Ref<HTMLAnchorElement> | undefined;
-        focused?: boolean | undefined;
-        key?: import("react").Key | null | undefined;
-        target?: import("react").HTMLAttributeAnchorTarget | undefined;
-        href?: string | undefined | undefined;
-        download?: any;
-        hrefLang?: string | undefined | undefined;
-        media?: string | undefined | undefined;
-        ping?: string | undefined | undefined;
-        referrerPolicy?: import("react").HTMLAttributeReferrerPolicy | undefined;
-        underline?: "none" | "hover" | "always" | undefined;
-    }, "ref"> & import("react").RefAttributes<HTMLAnchorElement> & {
-        label?: string;
-        meta?: import("../../..").TMetaSchemeProperty;
-        textTooltip?: string;
-    } & Pick<import("../../../layouts/Box").TBoxProps, "alignItems" | "flexDirection" | "gap" | "justifyContent">): import("react").JSX.Element;
-    displayName: string;
-};
+    (
+        props: Omit<
+            {
+                value: import('../../../utils/formatters').TFormatterValue<string | number>
+                navigate?: import('react-router').NavigateFunction | undefined
+                size?: 's' | 'm' | undefined
+                showCopyButton?: boolean | undefined
+                bold?: boolean | undefined
+                color?: string | undefined
+                className?: string | undefined | undefined
+                as?: keyof import('@salutejs/plasma-new-hope').AllowedTextHTMLElements | undefined
+                breakWord?: boolean | undefined
+                id?: string | undefined | undefined
+                content?: string | undefined | undefined
+                title?: string | undefined | undefined
+                onChange?: import('react').ChangeEventHandler<HTMLAnchorElement, Element> | undefined
+                slot?: string | undefined | undefined
+                style?: import('react').CSSProperties | undefined
+                view?:
+                    | 'secondary'
+                    | 'accent'
+                    | 'negative'
+                    | 'warning'
+                    | 'positive'
+                    | 'paragraph'
+                    | 'tertiary'
+                    | 'clear'
+                    | 'default'
+                    | undefined
+                disabled?: boolean | undefined
+                type?: string | undefined | undefined
+                defaultChecked?: boolean | undefined | undefined
+                defaultValue?: string | number | readonly string[] | undefined
+                suppressContentEditableWarning?: boolean | undefined | undefined
+                suppressHydrationWarning?: boolean | undefined | undefined
+                accessKey?: string | undefined | undefined
+                autoCapitalize?:
+                    'off' | 'none' | 'on' | 'sentences' | 'words' | 'characters' | undefined | (string & {}) | undefined
+                autoFocus?: boolean | undefined | undefined
+                contentEditable?: 'inherit' | (boolean | 'true' | 'false') | 'plaintext-only' | undefined
+                contextMenu?: string | undefined | undefined
+                dir?: string | undefined | undefined
+                draggable?: (boolean | 'true' | 'false') | undefined
+                enterKeyHint?: 'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send' | undefined | undefined
+                hidden?: boolean | undefined | undefined
+                lang?: string | undefined | undefined
+                nonce?: string | undefined | undefined
+                spellCheck?: (boolean | 'true' | 'false') | undefined
+                tabIndex?: number | undefined | undefined
+                translate?: 'yes' | 'no' | undefined | undefined
+                radioGroup?: string | undefined | undefined
+                role?: import('react').AriaRole | undefined
+                about?: string | undefined | undefined
+                datatype?: string | undefined | undefined
+                inlist?: any
+                prefix?: string | undefined | undefined
+                property?: string | undefined | undefined
+                rel?: string | undefined | undefined
+                resource?: string | undefined | undefined
+                rev?: string | undefined | undefined
+                typeof?: string | undefined | undefined
+                vocab?: string | undefined | undefined
+                autoCorrect?: string | undefined | undefined
+                autoSave?: string | undefined | undefined
+                itemProp?: string | undefined | undefined
+                itemScope?: boolean | undefined | undefined
+                itemType?: string | undefined | undefined
+                itemID?: string | undefined | undefined
+                itemRef?: string | undefined | undefined
+                results?: number | undefined | undefined
+                security?: string | undefined | undefined
+                unselectable?: 'on' | 'off' | undefined | undefined
+                popover?: '' | 'auto' | 'manual' | 'hint' | undefined | undefined
+                popoverTargetAction?: 'toggle' | 'show' | 'hide' | undefined | undefined
+                popoverTarget?: string | undefined | undefined
+                inert?: boolean | undefined | undefined
+                inputMode?:
+                    'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search' | undefined | undefined
+                is?: string | undefined | undefined
+                exportparts?: string | undefined | undefined
+                part?: string | undefined | undefined
+                'aria-activedescendant'?: string | undefined | undefined
+                'aria-atomic'?: (boolean | 'true' | 'false') | undefined
+                'aria-autocomplete'?: 'none' | 'inline' | 'list' | 'both' | undefined | undefined
+                'aria-braillelabel'?: string | undefined | undefined
+                'aria-brailleroledescription'?: string | undefined | undefined
+                'aria-busy'?: (boolean | 'true' | 'false') | undefined
+                'aria-checked'?: boolean | 'false' | 'mixed' | 'true' | undefined | undefined
+                'aria-colcount'?: number | undefined | undefined
+                'aria-colindex'?: number | undefined | undefined
+                'aria-colindextext'?: string | undefined | undefined
+                'aria-colspan'?: number | undefined | undefined
+                'aria-controls'?: string | undefined | undefined
+                'aria-current'?:
+                    boolean | 'false' | 'true' | 'page' | 'step' | 'location' | 'date' | 'time' | undefined | undefined
+                'aria-describedby'?: string | undefined | undefined
+                'aria-description'?: string | undefined | undefined
+                'aria-details'?: string | undefined | undefined
+                'aria-disabled'?: (boolean | 'true' | 'false') | undefined
+                'aria-dropeffect'?: 'none' | 'copy' | 'execute' | 'link' | 'move' | 'popup' | undefined | undefined
+                'aria-errormessage'?: string | undefined | undefined
+                'aria-expanded'?: (boolean | 'true' | 'false') | undefined
+                'aria-flowto'?: string | undefined | undefined
+                'aria-grabbed'?: (boolean | 'true' | 'false') | undefined
+                'aria-haspopup'?:
+                    boolean | 'false' | 'true' | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog' | undefined | undefined
+                'aria-hidden'?: (boolean | 'true' | 'false') | undefined
+                'aria-invalid'?: boolean | 'false' | 'true' | 'grammar' | 'spelling' | undefined | undefined
+                'aria-keyshortcuts'?: string | undefined | undefined
+                'aria-label'?: string | undefined | undefined
+                'aria-labelledby'?: string | undefined | undefined
+                'aria-level'?: number | undefined | undefined
+                'aria-live'?: 'off' | 'assertive' | 'polite' | undefined | undefined
+                'aria-modal'?: (boolean | 'true' | 'false') | undefined
+                'aria-multiline'?: (boolean | 'true' | 'false') | undefined
+                'aria-multiselectable'?: (boolean | 'true' | 'false') | undefined
+                'aria-orientation'?: 'horizontal' | 'vertical' | undefined | undefined
+                'aria-owns'?: string | undefined | undefined
+                'aria-placeholder'?: string | undefined | undefined
+                'aria-posinset'?: number | undefined | undefined
+                'aria-pressed'?: boolean | 'false' | 'mixed' | 'true' | undefined | undefined
+                'aria-readonly'?: (boolean | 'true' | 'false') | undefined
+                'aria-relevant'?:
+                    | 'additions'
+                    | 'additions removals'
+                    | 'additions text'
+                    | 'all'
+                    | 'removals'
+                    | 'removals additions'
+                    | 'removals text'
+                    | 'text'
+                    | 'text additions'
+                    | 'text removals'
+                    | undefined
+                    | undefined
+                'aria-required'?: (boolean | 'true' | 'false') | undefined
+                'aria-roledescription'?: string | undefined | undefined
+                'aria-rowcount'?: number | undefined | undefined
+                'aria-rowindex'?: number | undefined | undefined
+                'aria-rowindextext'?: string | undefined | undefined
+                'aria-rowspan'?: number | undefined | undefined
+                'aria-selected'?: (boolean | 'true' | 'false') | undefined
+                'aria-setsize'?: number | undefined | undefined
+                'aria-sort'?: 'none' | 'ascending' | 'descending' | 'other' | undefined | undefined
+                'aria-valuemax'?: number | undefined | undefined
+                'aria-valuemin'?: number | undefined | undefined
+                'aria-valuenow'?: number | undefined | undefined
+                'aria-valuetext'?: string | undefined | undefined
+                dangerouslySetInnerHTML?:
+                    | {
+                          __html: string | TrustedHTML
+                      }
+                    | undefined
+                    | undefined
+                onCopy?: import('react').ClipboardEventHandler<HTMLAnchorElement> | undefined
+                onCopyCapture?: import('react').ClipboardEventHandler<HTMLAnchorElement> | undefined
+                onCut?: import('react').ClipboardEventHandler<HTMLAnchorElement> | undefined
+                onCutCapture?: import('react').ClipboardEventHandler<HTMLAnchorElement> | undefined
+                onPaste?: import('react').ClipboardEventHandler<HTMLAnchorElement> | undefined
+                onPasteCapture?: import('react').ClipboardEventHandler<HTMLAnchorElement> | undefined
+                onCompositionEnd?: import('react').CompositionEventHandler<HTMLAnchorElement> | undefined
+                onCompositionEndCapture?: import('react').CompositionEventHandler<HTMLAnchorElement> | undefined
+                onCompositionStart?: import('react').CompositionEventHandler<HTMLAnchorElement> | undefined
+                onCompositionStartCapture?: import('react').CompositionEventHandler<HTMLAnchorElement> | undefined
+                onCompositionUpdate?: import('react').CompositionEventHandler<HTMLAnchorElement> | undefined
+                onCompositionUpdateCapture?: import('react').CompositionEventHandler<HTMLAnchorElement> | undefined
+                onFocus?: import('react').FocusEventHandler<HTMLAnchorElement> | undefined
+                onFocusCapture?: import('react').FocusEventHandler<HTMLAnchorElement> | undefined
+                onBlur?: import('react').FocusEventHandler<HTMLAnchorElement> | undefined
+                onBlurCapture?: import('react').FocusEventHandler<HTMLAnchorElement> | undefined
+                onChangeCapture?: import('react').ChangeEventHandler<HTMLAnchorElement, Element> | undefined
+                onBeforeInput?: import('react').InputEventHandler<HTMLAnchorElement> | undefined
+                onBeforeInputCapture?: import('react').InputEventHandler<HTMLAnchorElement> | undefined
+                onInput?: import('react').InputEventHandler<HTMLAnchorElement> | undefined
+                onInputCapture?: import('react').InputEventHandler<HTMLAnchorElement> | undefined
+                onReset?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onResetCapture?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onSubmit?: import('react').SubmitEventHandler<HTMLAnchorElement> | undefined
+                onSubmitCapture?: import('react').SubmitEventHandler<HTMLAnchorElement> | undefined
+                onInvalid?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onInvalidCapture?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onLoad?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onLoadCapture?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onError?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onErrorCapture?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onKeyDown?: import('react').KeyboardEventHandler<HTMLAnchorElement> | undefined
+                onKeyDownCapture?: import('react').KeyboardEventHandler<HTMLAnchorElement> | undefined
+                onKeyPress?: import('react').KeyboardEventHandler<HTMLAnchorElement> | undefined
+                onKeyPressCapture?: import('react').KeyboardEventHandler<HTMLAnchorElement> | undefined
+                onKeyUp?: import('react').KeyboardEventHandler<HTMLAnchorElement> | undefined
+                onKeyUpCapture?: import('react').KeyboardEventHandler<HTMLAnchorElement> | undefined
+                onAbort?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onAbortCapture?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onCanPlay?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onCanPlayCapture?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onCanPlayThrough?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onCanPlayThroughCapture?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onDurationChange?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onDurationChangeCapture?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onEmptied?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onEmptiedCapture?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onEncrypted?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onEncryptedCapture?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onEnded?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onEndedCapture?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onLoadedData?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onLoadedDataCapture?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onLoadedMetadata?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onLoadedMetadataCapture?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onLoadStart?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onLoadStartCapture?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onPause?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onPauseCapture?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onPlay?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onPlayCapture?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onPlaying?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onPlayingCapture?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onProgress?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onProgressCapture?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onRateChange?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onRateChangeCapture?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onSeeked?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onSeekedCapture?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onSeeking?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onSeekingCapture?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onStalled?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onStalledCapture?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onSuspend?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onSuspendCapture?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onTimeUpdate?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onTimeUpdateCapture?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onVolumeChange?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onVolumeChangeCapture?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onWaiting?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onWaitingCapture?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onAuxClick?: import('react').MouseEventHandler<HTMLAnchorElement> | undefined
+                onAuxClickCapture?: import('react').MouseEventHandler<HTMLAnchorElement> | undefined
+                onClick?: import('react').MouseEventHandler<HTMLAnchorElement> | undefined
+                onClickCapture?: import('react').MouseEventHandler<HTMLAnchorElement> | undefined
+                onContextMenu?: import('react').MouseEventHandler<HTMLAnchorElement> | undefined
+                onContextMenuCapture?: import('react').MouseEventHandler<HTMLAnchorElement> | undefined
+                onDoubleClick?: import('react').MouseEventHandler<HTMLAnchorElement> | undefined
+                onDoubleClickCapture?: import('react').MouseEventHandler<HTMLAnchorElement> | undefined
+                onDrag?: import('react').DragEventHandler<HTMLAnchorElement> | undefined
+                onDragCapture?: import('react').DragEventHandler<HTMLAnchorElement> | undefined
+                onDragEnd?: import('react').DragEventHandler<HTMLAnchorElement> | undefined
+                onDragEndCapture?: import('react').DragEventHandler<HTMLAnchorElement> | undefined
+                onDragEnter?: import('react').DragEventHandler<HTMLAnchorElement> | undefined
+                onDragEnterCapture?: import('react').DragEventHandler<HTMLAnchorElement> | undefined
+                onDragExit?: import('react').DragEventHandler<HTMLAnchorElement> | undefined
+                onDragExitCapture?: import('react').DragEventHandler<HTMLAnchorElement> | undefined
+                onDragLeave?: import('react').DragEventHandler<HTMLAnchorElement> | undefined
+                onDragLeaveCapture?: import('react').DragEventHandler<HTMLAnchorElement> | undefined
+                onDragOver?: import('react').DragEventHandler<HTMLAnchorElement> | undefined
+                onDragOverCapture?: import('react').DragEventHandler<HTMLAnchorElement> | undefined
+                onDragStart?: import('react').DragEventHandler<HTMLAnchorElement> | undefined
+                onDragStartCapture?: import('react').DragEventHandler<HTMLAnchorElement> | undefined
+                onDrop?: import('react').DragEventHandler<HTMLAnchorElement> | undefined
+                onDropCapture?: import('react').DragEventHandler<HTMLAnchorElement> | undefined
+                onMouseDown?: import('react').MouseEventHandler<HTMLAnchorElement> | undefined
+                onMouseDownCapture?: import('react').MouseEventHandler<HTMLAnchorElement> | undefined
+                onMouseEnter?: import('react').MouseEventHandler<HTMLAnchorElement> | undefined
+                onMouseLeave?: import('react').MouseEventHandler<HTMLAnchorElement> | undefined
+                onMouseMove?: import('react').MouseEventHandler<HTMLAnchorElement> | undefined
+                onMouseMoveCapture?: import('react').MouseEventHandler<HTMLAnchorElement> | undefined
+                onMouseOut?: import('react').MouseEventHandler<HTMLAnchorElement> | undefined
+                onMouseOutCapture?: import('react').MouseEventHandler<HTMLAnchorElement> | undefined
+                onMouseOver?: import('react').MouseEventHandler<HTMLAnchorElement> | undefined
+                onMouseOverCapture?: import('react').MouseEventHandler<HTMLAnchorElement> | undefined
+                onMouseUp?: import('react').MouseEventHandler<HTMLAnchorElement> | undefined
+                onMouseUpCapture?: import('react').MouseEventHandler<HTMLAnchorElement> | undefined
+                onSelect?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onSelectCapture?: import('react').ReactEventHandler<HTMLAnchorElement> | undefined
+                onTouchCancel?: import('react').TouchEventHandler<HTMLAnchorElement> | undefined
+                onTouchCancelCapture?: import('react').TouchEventHandler<HTMLAnchorElement> | undefined
+                onTouchEnd?: import('react').TouchEventHandler<HTMLAnchorElement> | undefined
+                onTouchEndCapture?: import('react').TouchEventHandler<HTMLAnchorElement> | undefined
+                onTouchMove?: import('react').TouchEventHandler<HTMLAnchorElement> | undefined
+                onTouchMoveCapture?: import('react').TouchEventHandler<HTMLAnchorElement> | undefined
+                onTouchStart?: import('react').TouchEventHandler<HTMLAnchorElement> | undefined
+                onTouchStartCapture?: import('react').TouchEventHandler<HTMLAnchorElement> | undefined
+                onPointerDown?: import('react').PointerEventHandler<HTMLAnchorElement> | undefined
+                onPointerDownCapture?: import('react').PointerEventHandler<HTMLAnchorElement> | undefined
+                onPointerMove?: import('react').PointerEventHandler<HTMLAnchorElement> | undefined
+                onPointerMoveCapture?: import('react').PointerEventHandler<HTMLAnchorElement> | undefined
+                onPointerUp?: import('react').PointerEventHandler<HTMLAnchorElement> | undefined
+                onPointerUpCapture?: import('react').PointerEventHandler<HTMLAnchorElement> | undefined
+                onPointerCancel?: import('react').PointerEventHandler<HTMLAnchorElement> | undefined
+                onPointerCancelCapture?: import('react').PointerEventHandler<HTMLAnchorElement> | undefined
+                onPointerEnter?: import('react').PointerEventHandler<HTMLAnchorElement> | undefined
+                onPointerLeave?: import('react').PointerEventHandler<HTMLAnchorElement> | undefined
+                onPointerOver?: import('react').PointerEventHandler<HTMLAnchorElement> | undefined
+                onPointerOverCapture?: import('react').PointerEventHandler<HTMLAnchorElement> | undefined
+                onPointerOut?: import('react').PointerEventHandler<HTMLAnchorElement> | undefined
+                onPointerOutCapture?: import('react').PointerEventHandler<HTMLAnchorElement> | undefined
+                onGotPointerCapture?: import('react').PointerEventHandler<HTMLAnchorElement> | undefined
+                onGotPointerCaptureCapture?: import('react').PointerEventHandler<HTMLAnchorElement> | undefined
+                onLostPointerCapture?: import('react').PointerEventHandler<HTMLAnchorElement> | undefined
+                onLostPointerCaptureCapture?: import('react').PointerEventHandler<HTMLAnchorElement> | undefined
+                onScroll?: import('react').UIEventHandler<HTMLAnchorElement> | undefined
+                onScrollCapture?: import('react').UIEventHandler<HTMLAnchorElement> | undefined
+                onScrollEnd?: import('react').UIEventHandler<HTMLAnchorElement> | undefined
+                onScrollEndCapture?: import('react').UIEventHandler<HTMLAnchorElement> | undefined
+                onWheel?: import('react').WheelEventHandler<HTMLAnchorElement> | undefined
+                onWheelCapture?: import('react').WheelEventHandler<HTMLAnchorElement> | undefined
+                onAnimationStart?: import('react').AnimationEventHandler<HTMLAnchorElement> | undefined
+                onAnimationStartCapture?: import('react').AnimationEventHandler<HTMLAnchorElement> | undefined
+                onAnimationEnd?: import('react').AnimationEventHandler<HTMLAnchorElement> | undefined
+                onAnimationEndCapture?: import('react').AnimationEventHandler<HTMLAnchorElement> | undefined
+                onAnimationIteration?: import('react').AnimationEventHandler<HTMLAnchorElement> | undefined
+                onAnimationIterationCapture?: import('react').AnimationEventHandler<HTMLAnchorElement> | undefined
+                onToggle?: import('react').ToggleEventHandler<HTMLAnchorElement> | undefined
+                onBeforeToggle?: import('react').ToggleEventHandler<HTMLAnchorElement> | undefined
+                onTransitionCancel?: import('react').TransitionEventHandler<HTMLAnchorElement> | undefined
+                onTransitionCancelCapture?: import('react').TransitionEventHandler<HTMLAnchorElement> | undefined
+                onTransitionEnd?: import('react').TransitionEventHandler<HTMLAnchorElement> | undefined
+                onTransitionEndCapture?: import('react').TransitionEventHandler<HTMLAnchorElement> | undefined
+                onTransitionRun?: import('react').TransitionEventHandler<HTMLAnchorElement> | undefined
+                onTransitionRunCapture?: import('react').TransitionEventHandler<HTMLAnchorElement> | undefined
+                onTransitionStart?: import('react').TransitionEventHandler<HTMLAnchorElement> | undefined
+                onTransitionStartCapture?: import('react').TransitionEventHandler<HTMLAnchorElement> | undefined
+                ref?: import('react').Ref<HTMLAnchorElement> | undefined
+                focused?: boolean | undefined
+                key?: import('react').Key | null | undefined
+                target?: import('react').HTMLAttributeAnchorTarget | undefined
+                href?: string | undefined | undefined
+                download?: any
+                hrefLang?: string | undefined | undefined
+                media?: string | undefined | undefined
+                ping?: string | undefined | undefined
+                referrerPolicy?: import('react').HTMLAttributeReferrerPolicy | undefined
+                underline?: 'none' | 'hover' | 'always' | undefined
+            },
+            'ref'
+        > &
+            import('react').RefAttributes<HTMLAnchorElement> & {
+                label?: string
+                meta?: import('../../..').TMetaSchemeProperty
+                textTooltip?: string
+            } & Pick<
+                import('../../../layouts/Box').TBoxProps,
+                'alignItems' | 'flexDirection' | 'gap' | 'justifyContent'
+            >
+    ): import('react').JSX.Element
+    displayName: string
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## DisplayNumber
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/display
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Отображение чисел
 
@@ -1032,38 +1138,44 @@ propsType: (signature, no dedicated Props type found) (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export declare const DisplayNumber: {
-    (props: {
-        value: import("../../../utils/formatters").TFormatterValue<number>;
-        hideFraction?: boolean | undefined;
-        size?: ("s" | "m") | undefined;
-        showCopyButton?: boolean | undefined;
-        bold?: boolean | undefined;
-        color?: string | undefined;
-        className?: string | undefined | undefined;
-        as?: keyof import("@salutejs/plasma-new-hope").AllowedTextHTMLElements | undefined;
-        breakWord?: boolean | undefined;
-    } & {
-        label?: string;
-        meta?: import("../../..").TMetaSchemeProperty;
-        textTooltip?: string;
-    } & Pick<import("../../../layouts/Box").TBoxProps, "alignItems" | "flexDirection" | "gap" | "justifyContent">): import("react").JSX.Element;
-    displayName: string;
-};
+    (
+        props: {
+            value: import('../../../utils/formatters').TFormatterValue<number>
+            hideFraction?: boolean | undefined
+            size?: ('s' | 'm') | undefined
+            showCopyButton?: boolean | undefined
+            bold?: boolean | undefined
+            color?: string | undefined
+            className?: string | undefined | undefined
+            as?: keyof import('@salutejs/plasma-new-hope').AllowedTextHTMLElements | undefined
+            breakWord?: boolean | undefined
+        } & {
+            label?: string
+            meta?: import('../../..').TMetaSchemeProperty
+            textTooltip?: string
+        } & Pick<import('../../../layouts/Box').TBoxProps, 'alignItems' | 'flexDirection' | 'gap' | 'justifyContent'>
+    ): import('react').JSX.Element
+    displayName: string
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## DisplayPercent
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/display
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Отображение значения со знаком процента %
 
@@ -1075,38 +1187,44 @@ propsType: (signature, no dedicated Props type found) (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export declare const DisplayPercent: {
-    (props: {
-        value: import("../../../utils/formatters").TFormatterValue<number>;
-        hideFraction?: boolean | undefined;
-        size?: ("s" | "m") | undefined;
-        showCopyButton?: boolean | undefined;
-        bold?: boolean | undefined;
-        color?: string | undefined;
-        className?: string | undefined | undefined;
-        as?: keyof import("@salutejs/plasma-new-hope").AllowedTextHTMLElements | undefined;
-        breakWord?: boolean | undefined;
-    } & {
-        label?: string;
-        meta?: import("../../..").TMetaSchemeProperty;
-        textTooltip?: string;
-    } & Pick<import("../../../layouts/Box").TBoxProps, "alignItems" | "flexDirection" | "gap" | "justifyContent">): import("react").JSX.Element;
-    displayName: string;
-};
+    (
+        props: {
+            value: import('../../../utils/formatters').TFormatterValue<number>
+            hideFraction?: boolean | undefined
+            size?: ('s' | 'm') | undefined
+            showCopyButton?: boolean | undefined
+            bold?: boolean | undefined
+            color?: string | undefined
+            className?: string | undefined | undefined
+            as?: keyof import('@salutejs/plasma-new-hope').AllowedTextHTMLElements | undefined
+            breakWord?: boolean | undefined
+        } & {
+            label?: string
+            meta?: import('../../..').TMetaSchemeProperty
+            textTooltip?: string
+        } & Pick<import('../../../layouts/Box').TBoxProps, 'alignItems' | 'flexDirection' | 'gap' | 'justifyContent'>
+    ): import('react').JSX.Element
+    displayName: string
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## DisplayPrice
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/display
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Отображение стоимостей
 
@@ -1125,45 +1243,51 @@ propsType: (signature, no dedicated Props type found) (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export declare const DisplayPrice: {
-    (props: {
-        value: import("../../../utils/formatters").TFormatterValue<number>;
-        symbol?: import("../../../utils/formatters").TFormatterValue<string>;
-        unicodeSymbol?: import("../../../utils/formatters").TFormatterValue<string>;
-        name: import("../../../utils/formatters").TFormatterValue<string>;
-        hideFraction?: boolean | undefined;
-        tooltipVisible?: boolean | undefined;
-        size?: ("s" | "m") | undefined;
-        showCopyButton?: boolean | undefined;
-        bold?: boolean | undefined;
-        color?: string | undefined;
-        className?: string | undefined | undefined;
-        as?: keyof import("@salutejs/plasma-new-hope").AllowedTextHTMLElements | undefined;
-        breakWord?: boolean | undefined;
-        portal?: (string | React.RefObject<HTMLElement | null>) | undefined;
-        frame?: import("../../../internal/types").TSDDSPortal | undefined;
-        usePortal?: boolean | undefined;
-    } & {
-        label?: string;
-        meta?: import("../../..").TMetaSchemeProperty;
-        textTooltip?: string;
-    } & Pick<import("../../../layouts/Box").TBoxProps, "alignItems" | "flexDirection" | "gap" | "justifyContent">): import("react").JSX.Element;
-    displayName: string;
-};
+    (
+        props: {
+            value: import('../../../utils/formatters').TFormatterValue<number>
+            symbol?: import('../../../utils/formatters').TFormatterValue<string>
+            unicodeSymbol?: import('../../../utils/formatters').TFormatterValue<string>
+            name: import('../../../utils/formatters').TFormatterValue<string>
+            hideFraction?: boolean | undefined
+            tooltipVisible?: boolean | undefined
+            size?: ('s' | 'm') | undefined
+            showCopyButton?: boolean | undefined
+            bold?: boolean | undefined
+            color?: string | undefined
+            className?: string | undefined | undefined
+            as?: keyof import('@salutejs/plasma-new-hope').AllowedTextHTMLElements | undefined
+            breakWord?: boolean | undefined
+            portal?: (string | React.RefObject<HTMLElement | null>) | undefined
+            frame?: import('../../../internal/types').TSDDSPortal | undefined
+            usePortal?: boolean | undefined
+        } & {
+            label?: string
+            meta?: import('../../..').TMetaSchemeProperty
+            textTooltip?: string
+        } & Pick<import('../../../layouts/Box').TBoxProps, 'alignItems' | 'flexDirection' | 'gap' | 'justifyContent'>
+    ): import('react').JSX.Element
+    displayName: string
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## DisplayText
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/display
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Отображение текста
 
@@ -1181,42 +1305,51 @@ propsType: (signature, no dedicated Props type found) (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export declare const DisplayText: {
-    (props: {
-        value: import("../../../utils/formatters").TFormatterValue<string | number>;
-        isEllipsisInfo?: boolean | undefined;
-        noWrap?: boolean | undefined;
-        portal?: (import("../../../internal/types").TSDDSPortal & (string | import("react").RefObject<HTMLElement | null>)) | undefined;
-        frame?: import("../../../internal/types").TSDDSPortal | undefined;
-        countLineClamp?: number | undefined;
-        size?: ("s" | "m") | undefined;
-        showCopyButton?: boolean | undefined;
-        bold?: boolean | undefined;
-        color?: string | undefined;
-        className?: string | undefined | undefined;
-        as?: keyof import("@salutejs/plasma-new-hope").AllowedTextHTMLElements | undefined;
-        breakWord?: boolean | undefined;
-    } & {
-        label?: string;
-        meta?: import("../../..").TMetaSchemeProperty;
-        textTooltip?: string;
-    } & Pick<import("../../../layouts/Box").TBoxProps, "alignItems" | "flexDirection" | "gap" | "justifyContent">): import("react").JSX.Element;
-    displayName: string;
-};
+    (
+        props: {
+            value: import('../../../utils/formatters').TFormatterValue<string | number>
+            isEllipsisInfo?: boolean | undefined
+            noWrap?: boolean | undefined
+            portal?:
+                | (import('../../../internal/types').TSDDSPortal &
+                      (string | import('react').RefObject<HTMLElement | null>))
+                | undefined
+            frame?: import('../../../internal/types').TSDDSPortal | undefined
+            countLineClamp?: number | undefined
+            size?: ('s' | 'm') | undefined
+            showCopyButton?: boolean | undefined
+            bold?: boolean | undefined
+            color?: string | undefined
+            className?: string | undefined | undefined
+            as?: keyof import('@salutejs/plasma-new-hope').AllowedTextHTMLElements | undefined
+            breakWord?: boolean | undefined
+        } & {
+            label?: string
+            meta?: import('../../..').TMetaSchemeProperty
+            textTooltip?: string
+        } & Pick<import('../../../layouts/Box').TBoxProps, 'alignItems' | 'flexDirection' | 'gap' | 'justifyContent'>
+    ): import('react').JSX.Element
+    displayName: string
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## DisplayTime
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/display
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Отображение времени
 
@@ -1228,38 +1361,44 @@ propsType: (signature, no dedicated Props type found) (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export declare const DisplayTime: {
-    (props: {
-        value: import("../../..").TValue<string>;
-        UTC?: boolean | undefined;
-        size?: ("s" | "m") | undefined;
-        showCopyButton?: boolean | undefined;
-        bold?: boolean | undefined;
-        color?: string | undefined;
-        className?: string | undefined | undefined;
-        as?: keyof import("@salutejs/plasma-new-hope").AllowedTextHTMLElements | undefined;
-        breakWord?: boolean | undefined;
-    } & {
-        label?: string;
-        meta?: import("../../..").TMetaSchemeProperty;
-        textTooltip?: string;
-    } & Pick<import("../../../layouts/Box").TBoxProps, "alignItems" | "flexDirection" | "gap" | "justifyContent">): import("react").JSX.Element;
-    displayName: string;
-};
+    (
+        props: {
+            value: import('../../..').TValue<string>
+            UTC?: boolean | undefined
+            size?: ('s' | 'm') | undefined
+            showCopyButton?: boolean | undefined
+            bold?: boolean | undefined
+            color?: string | undefined
+            className?: string | undefined | undefined
+            as?: keyof import('@salutejs/plasma-new-hope').AllowedTextHTMLElements | undefined
+            breakWord?: boolean | undefined
+        } & {
+            label?: string
+            meta?: import('../../..').TMetaSchemeProperty
+            textTooltip?: string
+        } & Pick<import('../../../layouts/Box').TBoxProps, 'alignItems' | 'flexDirection' | 'gap' | 'justifyContent'>
+    ): import('react').JSX.Element
+    displayName: string
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## DisplayTimeRange
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/display
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Отображение временного периода со временем
 
@@ -1272,39 +1411,45 @@ propsType: (signature, no dedicated Props type found) (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export declare const DisplayTimeRange: {
-    (props: {
-        from: import("../../..").TValue<string>;
-        to: import("../../..").TValue<string>;
-        UTC?: boolean | undefined;
-        size?: ("s" | "m") | undefined;
-        showCopyButton?: boolean | undefined;
-        bold?: boolean | undefined;
-        color?: string | undefined;
-        className?: string | undefined | undefined;
-        as?: keyof import("@salutejs/plasma-new-hope").AllowedTextHTMLElements | undefined;
-        breakWord?: boolean | undefined;
-    } & {
-        label?: string;
-        meta?: import("../../..").TMetaSchemeProperty;
-        textTooltip?: string;
-    } & Pick<import("../../../layouts/Box").TBoxProps, "alignItems" | "flexDirection" | "gap" | "justifyContent">): import("react").JSX.Element;
-    displayName: string;
-};
+    (
+        props: {
+            from: import('../../..').TValue<string>
+            to: import('../../..').TValue<string>
+            UTC?: boolean | undefined
+            size?: ('s' | 'm') | undefined
+            showCopyButton?: boolean | undefined
+            bold?: boolean | undefined
+            color?: string | undefined
+            className?: string | undefined | undefined
+            as?: keyof import('@salutejs/plasma-new-hope').AllowedTextHTMLElements | undefined
+            breakWord?: boolean | undefined
+        } & {
+            label?: string
+            meta?: import('../../..').TMetaSchemeProperty
+            textTooltip?: string
+        } & Pick<import('../../../layouts/Box').TBoxProps, 'alignItems' | 'flexDirection' | 'gap' | 'justifyContent'>
+    ): import('react').JSX.Element
+    displayName: string
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## DisplayUnit
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/display
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Отображение чисел с единицами измерения
 
@@ -1318,68 +1463,77 @@ propsType: (signature, no dedicated Props type found) (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export declare const DisplayUnit: {
-    (props: {
-        value: import("../../../utils/formatters").TFormatterValue<number>;
-        name: import("../../../utils/formatters").TFormatterValue<string>;
-        description: import("../../../utils/formatters").TFormatterValue<string>;
-        hideFraction?: boolean | undefined;
-        size?: ("s" | "m") | undefined;
-        showCopyButton?: boolean | undefined;
-        bold?: boolean | undefined;
-        color?: string | undefined;
-        className?: string | undefined | undefined;
-        as?: keyof import("@salutejs/plasma-new-hope").AllowedTextHTMLElements | undefined;
-        breakWord?: boolean | undefined;
-    } & {
-        label?: string;
-        meta?: import("../../..").TMetaSchemeProperty;
-        textTooltip?: string;
-    } & Pick<import("../../../layouts/Box").TBoxProps, "alignItems" | "flexDirection" | "gap" | "justifyContent">): import("react").JSX.Element;
-    displayName: string;
-};
+    (
+        props: {
+            value: import('../../../utils/formatters').TFormatterValue<number>
+            name: import('../../../utils/formatters').TFormatterValue<string>
+            description: import('../../../utils/formatters').TFormatterValue<string>
+            hideFraction?: boolean | undefined
+            size?: ('s' | 'm') | undefined
+            showCopyButton?: boolean | undefined
+            bold?: boolean | undefined
+            color?: string | undefined
+            className?: string | undefined | undefined
+            as?: keyof import('@salutejs/plasma-new-hope').AllowedTextHTMLElements | undefined
+            breakWord?: boolean | undefined
+        } & {
+            label?: string
+            meta?: import('../../..').TMetaSchemeProperty
+            textTooltip?: string
+        } & Pick<import('../../../layouts/Box').TBoxProps, 'alignItems' | 'flexDirection' | 'gap' | 'justifyContent'>
+    ): import('react').JSX.Element
+    displayName: string
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## DraggableRows
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/DraggableRows
 
 propsType: TDraggableRowsProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
 export type TDraggableRowsProps<T extends TBaseItem = TBaseItem> = PropsWithChildren<{
     /** Порядок, группировка и выбор элементов */
-    items: TNode<T>[];
+    items: TNode<T>[]
     /** Определяет, включен ли режим редактирования */
-    isEdit?: boolean;
+    isEdit?: boolean
     /** Разрешает объединять элементы в группы перетаскиванием */
-    isGroupable?: boolean;
+    isGroupable?: boolean
     /** Размер элементов */
-    size?: TSize;
+    size?: TSize
     /** Показывает порядковые номера у элементов верхнего уровня */
-    withIndex?: boolean;
+    withIndex?: boolean
     /** Содержимое строки справа от заголовка */
-    renderContent?: (item: TItem<T>) => ReactNode;
+    renderContent?: (item: TItem<T>) => ReactNode
     /** Обработчик, вызываемый при изменении массива элементов */
-    onChange: (items: TNode<T>[]) => void;
+    onChange: (items: TNode<T>[]) => void
     /** Обработчик удаления; без него иконка удаления не отображается */
-    onDelete?: (id: string, item: TNode<T>) => void;
-}>;
+    onDelete?: (id: string, item: TNode<T>) => void
+}>
 ```
 
 ### demo examples found
+
 <!-- components/DraggableRows/ui/DraggableRowsDemo.tsx -->
+
 ```tsx
 import { useState, type ComponentProps } from 'react'
 
@@ -1398,7 +1552,9 @@ export const DraggableRowsDemo = ({ items: initialItems, ...rest }: ComponentPro
     )
 }
 ```
+
 <!-- components/DraggableRows/ui/DraggableRowsRenderContentDemo.tsx -->
+
 ```tsx
 import type { TApprovalRow } from '../lib/mocks'
 
@@ -1467,11 +1623,13 @@ export const DraggableRowsRenderContentDemo = ({
 ---
 
 ## EllipsisInfo
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/EllipsisInfo
 
 propsType: TEllipsisInfoProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [EllipsisInfo](https://cs-core.cloud.delta.sbrf.ru/latest/?path=/docs/components-ellipsisinfo--docs) - компонент для отображения текста с возможностью эллипсиса
 (сокращения длинного текста с помощью многоточия) и показа всплывающей подсказки с полным текстом при наведении курсора.
@@ -1506,48 +1664,56 @@ propsType: TEllipsisInfoProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export type TEllipsisInfoProps = {
     /** Текст для отображения */
-    text: string;
+    text: string
     /** Компонент типографии из SDDS */
-    typographyComponent?: TSDDSTypography;
+    typographyComponent?: TSDDSTypography
     /** Максимальное количество строк для отображения */
-    countLineClamp?: number;
+    countLineClamp?: number
     /** Цвет текста */
-    colorText?: string;
+    colorText?: string
     /** Тип разрыва слова */
-    wordBreak?: CSSProperties['wordBreak'];
+    wordBreak?: CSSProperties['wordBreak']
     /** Поведение переноса слова */
-    overflowWrap?: CSSProperties['overflowWrap'];
+    overflowWrap?: CSSProperties['overflowWrap']
     /** Флаг отключения всплывающей подсказки */
-    noTooltip?: boolean;
+    noTooltip?: boolean
     /** HTML-элемент или компонент для отрисовки */
-    as?: ElementType;
+    as?: ElementType
     /** Конфигурация действия с иконкой */
-    action?: TEllipsisInfoAction;
+    action?: TEllipsisInfoAction
     /** @deprecated Используйте свойство `portal` */
-    frame?: TSDDSPortal;
+    frame?: TSDDSPortal
     /** Контейнер для всплывающей подсказки (portal) */
-    portal?: TSDDSPortal;
-    onToggle?: (isOpen: boolean, event?: MouseEvent<HTMLDivElement, globalThis.MouseEvent> | globalThis.MouseEvent) => void;
-    shrinkToContent?: boolean;
+    portal?: TSDDSPortal
+    onToggle?: (
+        isOpen: boolean,
+        event?: MouseEvent<HTMLDivElement, globalThis.MouseEvent> | globalThis.MouseEvent
+    ) => void
+    shrinkToContent?: boolean
     /**@deprecated Свойство usePortal больше не работает в sdds. Используйте свойство portal */
-    usePortal?: boolean;
-} & TPropsFromTooltip & TPropsFromTypography;
+    usePortal?: boolean
+} & TPropsFromTooltip &
+    TPropsFromTypography
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## EmptyStates
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/EmptyStates
 
 propsType: TEmptyStatesProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Компонент [EmptyStates](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/components-emptystates--docs) - это отображение состояний, когда что-то пошло не так или пользователь ещё не совершил действий.
 EmptyStates используется для обратной связи от системы:
@@ -1566,8 +1732,9 @@ EmptyStates используется для обратной связи от с�
 
 Правильное использование свойства description при ReactNode:
 ```
+
 <>
-   Запросите доступ или напишите в
+Запросите доступ или напишите в
    <Link href={'ваша ссылка'} target="_blank" view="accent">
          техническую поддержку
    </Link>
@@ -1583,6 +1750,7 @@ EmptyStates используется для обратной связи от с�
 - ничего не нашлось (`after`) - состояние, когда пользователь совершил какие-то действия, которые влияли на отображение данных (например фильтры).
 
 Виды шаблонов **для виджетов** (применяются ТОЛЬКО в виджетах размером 4x2):
+
 - тут пусто (`beforeWd`) — состояние когда в этом блоке нет данных для отображения;
 - ничего не нашлось (`afterWd`) - состояние, когда пользователь совершил какие-то действия, которые влияли на отображение данных (например фильтры).
 
@@ -1594,24 +1762,28 @@ EmptyStates используется для обратной связи от с�
 который растягивается на всю ширину и высоту, централизуя компонент.
 
 @summary для отображает состояния загрузки, что-то пошло не так или пользователь ещё не совершил действий
-```
+
+````
 
 ### raw props type
 ```ts
 export type TEmptyStatesProps = TPrettify<TViewsWithOrientation | TErrorLoadingView | TBlockerView | TIdSecureView | TWidgetViews>;
-```
+````
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## EventsHistory
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/EventsHistory
 
 propsType: TEventsHistoryProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Компонент [EventsHistory](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/components-history--docs) используется для отображения
 изменений объекта в системе.
@@ -1652,284 +1824,342 @@ propsType: TEventsHistoryProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export type TEventsHistoryProps = {
-    items: TEvent[];
-    itemsRef?: RefObject<(HTMLDivElement | null)[]>;
-} & TSkeletonType;
+    items: TEvent[]
+    itemsRef?: RefObject<(HTMLDivElement | null)[]>
+} & TSkeletonType
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## FALLBACK_VALUE
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./utils/formatters
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const FALLBACK_VALUE = "\u041D\u0435 \u0437\u0430\u043F\u043E\u043B\u043D\u0435\u043D\u043E";
+export declare const FALLBACK_VALUE = '\u041D\u0435 \u0437\u0430\u043F\u043E\u043B\u043D\u0435\u043D\u043E'
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## format
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./utils/formatters
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const format: ({ UTC, template, value }: TFormat) => string;
+export declare const format: ({ UTC, template, value }: TFormat) => string
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## formatBoolean
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./utils/formatters
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Форматирование boolean
 ```
 
 ### raw props type
+
 ```ts
-export declare const formatBoolean: (value: TFormatterValue<boolean>) => "" | "Не заполнено" | "Нет данных" | "Да" | "Нет";
+export declare const formatBoolean: (
+    value: TFormatterValue<boolean>
+) => '' | 'Не заполнено' | 'Нет данных' | 'Да' | 'Нет'
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## formatDate
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./utils/formatters
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const formatDate: ({ template, ...rest }: TFormatDate) => string;
+export declare const formatDate: ({ template, ...rest }: TFormatDate) => string
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## formatDateRange
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./utils/formatters
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const formatDateRange: ({ template, ...rest }: TFormatDateRange) => string;
+export declare const formatDateRange: ({ template, ...rest }: TFormatDateRange) => string
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## formatDateTime
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./utils/formatters
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const formatDateTime: ({ template, ...rest }: TFormatDateTime) => string;
+export declare const formatDateTime: ({ template, ...rest }: TFormatDateTime) => string
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## formatNumber
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./utils/formatters
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Форматирование чисел
 ```
 
 ### raw props type
+
 ```ts
-export declare const formatNumber: (value: TFormatterValue<number>, hideFraction?: boolean) => string;
+export declare const formatNumber: (value: TFormatterValue<number>, hideFraction?: boolean) => string
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## formatRange
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./utils/formatters
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const formatRange: ({ UTC, from, template, to }: TFormatRange) => string;
+export declare const formatRange: ({ UTC, from, template, to }: TFormatRange) => string
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## formatTime
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./utils/formatters
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const formatTime: (props: TFormatTime) => string;
+export declare const formatTime: (props: TFormatTime) => string
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## formatTimeRange
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./utils/formatters
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const formatTimeRange: (props: TFormatTimeRange) => string;
+export declare const formatTimeRange: (props: TFormatTimeRange) => string
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## FRACTION_DIGITS
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./utils/formatters
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const FRACTION_DIGITS = 2;
+export declare const FRACTION_DIGITS = 2
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## getStack
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/LinkedDocs
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const getStack: ({ items, ...document }: TNodeData) => TDocument[];
+export declare const getStack: ({ items, ...document }: TNodeData) => TDocument[]
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## HighlightComponent
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/Highlight
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const HighlightComponent: ({ nodeRef, text, contentKey }: THighlightProps) => import("react").JSX.Element;
+export declare const HighlightComponent: ({ nodeRef, text, contentKey }: THighlightProps) => import('react').JSX.Element
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## Informer
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/Informer
 
 propsType: TInformerProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [Informer](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/components-informer--docs) - информационный блок. Используется для вывода информации и привлечения внимания пользователя.
 <br/>
@@ -1947,99 +2177,117 @@ propsType: TInformerProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export type TInformerProps = {
-    view?: TInformerView;
-    title?: string;
-    content: ReactNode;
-    withCloseButton?: boolean;
-    withIcon?: boolean;
-    opened: boolean;
-    onClose?: () => void;
-    isLoading?: boolean;
-};
+    view?: TInformerView
+    title?: string
+    content: ReactNode
+    withCloseButton?: boolean
+    withIcon?: boolean
+    opened: boolean
+    onClose?: () => void
+    isLoading?: boolean
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## INVALID_VALUE
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./utils/formatters
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const INVALID_VALUE = "";
+export declare const INVALID_VALUE = ''
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## LinkedDocs
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/LinkedDocs
 
 propsType: TLinkedDocsProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 LinkedDocs - компонент для визуализации цепочек документов
 ```
 
 ### raw props type
+
 ```ts
-export type TLinkedDocsProps<TValue extends string | object = string, TItem extends TSegmentsItem<TValue> = TSegmentsItem<TValue>, RowData extends TRowData = TRowData, CustomQueryArg extends TCustomQueryArg = TCustomQueryArg, CustomInitialPageParam extends TCustomQueryArg = TCustomQueryArg> = {
+export type TLinkedDocsProps<
+    TValue extends string | object = string,
+    TItem extends TSegmentsItem<TValue> = TSegmentsItem<TValue>,
+    RowData extends TRowData = TRowData,
+    CustomQueryArg extends TCustomQueryArg = TCustomQueryArg,
+    CustomInitialPageParam extends TCustomQueryArg = TCustomQueryArg,
+> = {
     /** Массив узлов (документов) для отображения */
-    items: TNode[];
+    items: TNode[]
     /** Массив рёбер (связей между документами) */
-    edges: TEdge[];
+    edges: TEdge[]
     /** Редактор для создания новой связи */
-    editor?: ReactNode;
+    editor?: ReactNode
     /** Видимость редактора */
-    editorVisible?: boolean;
+    editorVisible?: boolean
     /** Действия по умолчанию для всех документов */
-    actions?: TAction[];
+    actions?: TAction[]
     /** Таблица стопки документов (для отображения в шторке) */
-    stackTable?: TTableInstance<RowData, CustomQueryArg, CustomInitialPageParam>;
+    stackTable?: TTableInstance<RowData, CustomQueryArg, CustomInitialPageParam>
     /** Опции для компонента сегментов (фильтрация) */
-    quickFilters?: TMultiSegmentsProps<TValue, TItem>;
+    quickFilters?: TMultiSegmentsProps<TValue, TItem>
     /** Поповер создания связи, открывается по иконке «плюс» */
-    createPopover?: TCardPopover;
+    createPopover?: TCardPopover
     /** Поповер редактирования, открывается по иконке «карандаш» */
-    editPopover?: TCardPopover;
+    editPopover?: TCardPopover
     /** Обработчик удаления документа */
-    onDelete?: (id: string, nodeId: string) => void;
+    onDelete?: (id: string, nodeId: string) => void
     /** Обработчик открытия стопки документов */
-    onSearch?: (nodeId: string) => void;
+    onSearch?: (nodeId: string) => void
     /** Обработчик создания новой связи (перетаскивание от коннектора к коннектору) */
-    onConnect?: (connection: Pick<TEdge, 'source' | 'target'>) => void;
+    onConnect?: (connection: Pick<TEdge, 'source' | 'target'>) => void
     /** Обработчик разрыва связи по клику на крестик на линии */
-    onDisconnect?: (edge: TEdge) => void;
+    onDisconnect?: (edge: TEdge) => void
     /** Подсвечивать всю цепочку до выбранной карточки */
-    enableHighlightPath?: boolean;
-} & TLinkProps;
+    enableHighlightPath?: boolean
+} & TLinkProps
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## Loader
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/Loader
 
 propsType: TLoaderProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Компонент [Loader](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/components-loader--docs) используется,
 чтобы показать, что система выполняет команду, которую дал пользователь.
@@ -2074,50 +2322,58 @@ propsType: TLoaderProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export type TLoaderProps = {
     /** Размер компонента. По умолчанию 's'. */
-    size: TLoaderSize;
+    size: TLoaderSize
     /** Текстовое сообщение, отображаемое рядом с индикатором загрузки. */
-    text?: string;
+    text?: string
     /** Выравнивание по горизонтали (передаётся в FlexBox). */
-    justifyContent?: CSSProperties['justifyContent'];
+    justifyContent?: CSSProperties['justifyContent']
     /** Выравнивание по вертикали (передаётся в FlexBox). */
-    alignItems?: CSSProperties['alignItems'];
-};
+    alignItems?: CSSProperties['alignItems']
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## NO_DATA_VALUE
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./utils/formatters
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const NO_DATA_VALUE = "\u041D\u0435\u0442 \u0434\u0430\u043D\u043D\u044B\u0445";
+export declare const NO_DATA_VALUE = '\u041D\u0435\u0442 \u0434\u0430\u043D\u043D\u044B\u0445'
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## PdfHighlighter
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/PdfHighlighter
 
 propsType: TPdfHighlighterProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 PdfHighlighter - компонент для поиска текста в pdf-документах
  Компонент может принимать в качестве источник данных:
@@ -2131,29 +2387,32 @@ PdfHighlighter - компонент для поиска текста в pdf-до
 ```
 
 ### raw props type
+
 ```ts
 export type TPdfHighlighterProps = {
     /** Строка поиска или объект TMultiSearchQuery для поиска по нескольким полям */
-    searchTerm?: string | TMultiSearchQuery;
+    searchTerm?: string | TMultiSearchQuery
     /** Массив строк контекста для поиска */
-    searchContext?: string[];
+    searchContext?: string[]
     /** Позиция боковой панели: слева или справа */
-    sideBarPosition?: 'left' | 'right';
+    sideBarPosition?: 'left' | 'right'
     /** Контент шапки боковой панели */
-    header?: ReactNode;
+    header?: ReactNode
     /** Контент подвала боковой панели */
-    footer?: ReactNode;
+    footer?: ReactNode
     /** Основное содержимое боковой панели */
-    sidebarContent?: ReactNode;
+    sidebarContent?: ReactNode
     /** Размер боковой панели: компактный или стандартный */
-    sidebarSize?: TSize;
+    sidebarSize?: TSize
     /** Определяет возможность изменения размеров блоков */
-    enableResizing?: boolean;
-} & Pick<TPdfViewerProps, 'pdfData' | 'content' | 'enableDocumentReload' | 'enableDragging'>;
+    enableResizing?: boolean
+} & Pick<TPdfViewerProps, 'pdfData' | 'content' | 'enableDocumentReload' | 'enableDragging'>
 ```
 
 ### demo examples found
+
 <!-- components/PdfHighlighter/ui/PdfHighlighterDemo.tsx -->
+
 ```tsx
 import type { ComponentProps } from 'react'
 
@@ -2218,11 +2477,13 @@ export const PdfHighlighterDemo = (args: ComponentProps<typeof PdfHighlighter>) 
 ---
 
 ## PdfViewer
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/PdfViewer
 
 propsType: TPdfViewerProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 PdfViewer - компонент просмотра pdf-документов
  Компонент может принимать в качестве источник данных:
@@ -2234,69 +2495,76 @@ PdfViewer - компонент просмотра pdf-документов
 ```
 
 ### raw props type
+
 ```ts
 export type TPdfViewerProps = {
     /** PDF-документ - может быть представлен: url-адресом, бинарными данными, строкой в формате base64 или объектом File */
-    pdfData?: TPdfData;
+    pdfData?: TPdfData
     /** Контент, расположенный над документом */
-    content?: ReactNode;
+    content?: ReactNode
     /** Число страниц документа для отображения */
-    numPages?: number;
+    numPages?: number
     /** Коллбек, вызываемый при успешной загрузке документа */
-    onLoadSuccess?: (pdf: pdfjs.PDFDocumentProxy) => void;
+    onLoadSuccess?: (pdf: pdfjs.PDFDocumentProxy) => void
     /** Коллбек, вызываемый при успешной отрисовке документа */
-    onRenderSuccess?: () => void;
+    onRenderSuccess?: () => void
     /** Коллбек, вызываемый при скачивании документа */
-    onDownload?: (file: TPdfData | undefined) => Promise<void>;
+    onDownload?: (file: TPdfData | undefined) => Promise<void>
     /** Ссылка на контейнер, в котором располагается документ */
-    containerRef?: RefObject<HTMLDivElement | null>;
+    containerRef?: RefObject<HTMLDivElement | null>
     /** Включает/выключает слой аннотаций */
-    renderAnnotationLayer?: boolean;
+    renderAnnotationLayer?: boolean
     /** Включает/выключает текстовый слой */
-    renderTextLayer?: boolean;
+    renderTextLayer?: boolean
     /** Высота компонента */
-    height?: CSSProperties['height'];
+    height?: CSSProperties['height']
     /** Определяет возможность перетаскивания документа */
-    enableDragging?: boolean;
+    enableDragging?: boolean
     /** Определяет возможность вручную заменить документ */
-    enableDocumentReload?: boolean;
+    enableDocumentReload?: boolean
     /** Определяет возможность скачивания документа */
-    enableDownload?: boolean;
+    enableDownload?: boolean
     /** Определяет возможность вращения документа */
-    enableRotate?: boolean;
-};
+    enableRotate?: boolean
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## removeDraggableRowsItem
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/DraggableRows
 
-
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
 (none found)
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## RenderItem
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/RenderItem
 
 propsType: TRenderItem (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [RenderItem](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/components-renderitem--docs) - компонент, предназначенный для изменения внешнего вида item
 в выпадающем списке (В DropDown, MutationSelect и пр.)
@@ -2313,20 +2581,23 @@ propsType: TRenderItem (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export type TRenderItem = {
-    label: string;
-    description?: string;
-    code?: string;
+    label: string
+    description?: string
+    code?: string
     action?: {
-        icon: ComponentType<IconProps>;
-        onClick: () => void;
-    };
-};
+        icon: ComponentType<IconProps>
+        onClick: () => void
+    }
+}
 ```
 
 ### demo examples found
+
 <!-- components/RenderItem/ui/RenderItemAutocompleteDemo.tsx -->
+
 ```tsx
 import type { ComponentProps } from 'react'
 
@@ -2378,7 +2649,9 @@ export const RenderItemAutocompleteDemo = (args: Partial<ComponentProps<typeof M
     )
 }
 ```
+
 <!-- components/RenderItem/ui/RenderItemComboboxDemo.tsx -->
+
 ```tsx
 import type { ComponentProps } from 'react'
 
@@ -2433,7 +2706,9 @@ export const RenderItemComboboxDemo = (
     )
 }
 ```
+
 <!-- components/RenderItem/ui/RenderItemDemo.tsx -->
+
 ```tsx
 import type { IconProps } from '@salutejs/plasma-icons'
 
@@ -2512,31 +2787,37 @@ export const RenderItemDemo = (args: Partial<ComponentProps<typeof MutationSelec
 ---
 
 ## setTopDocument
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/LinkedDocs
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const setTopDocument: (nodes: TNode[], documentId: string, nodeId?: string) => TNode[];
+export declare const setTopDocument: (nodes: TNode[], documentId: string, nodeId?: string) => TNode[]
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## SLA
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/SLA
 
 propsType: TSLAProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [SLA](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/components-sla--docs) - показывает, сколько времени прошло
 и осталось до завершения установленного периода.
@@ -2575,24 +2856,27 @@ propsType: TSLAProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export type TSLAProps = {
-    appointmentDate: string;
-    plannedDate?: string | string[];
-    datePrefix: string;
-    factDate?: string | null;
-    engineCount?: 2 | 3;
-    mulct?: TMulct;
-    detailedButton?: TMoreDetailed;
-    negativeDatePrefix?: boolean;
-    plannedTimeVisible?: boolean;
-    changePlannedDateVisible?: boolean;
-    calendarPopoverOptions?: TCalendarPopoverProps;
-};
+    appointmentDate: string
+    plannedDate?: string | string[]
+    datePrefix: string
+    factDate?: string | null
+    engineCount?: 2 | 3
+    mulct?: TMulct
+    detailedButton?: TMoreDetailed
+    negativeDatePrefix?: boolean
+    plannedTimeVisible?: boolean
+    changePlannedDateVisible?: boolean
+    calendarPopoverOptions?: TCalendarPopoverProps
+}
 ```
 
 ### demo examples found
+
 <!-- components/SLA/ui/SLADemo.tsx -->
+
 ```tsx
 import type { TSLAProps } from '../../../../src/components/SLA/types'
 
@@ -2641,11 +2925,13 @@ export const SLADemo = ({ ...rest }: TSLAProps) => {
 ---
 
 ## Spoiler
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/Spoiler
 
 propsType: TSpoilerProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Обертка над текстовым компонентом sdds возвращающая компонент со сворачивающимся,
 по правилам заданным разработчиком, текстом. Компонент принимает следующие свойства:
@@ -2658,20 +2944,23 @@ propsType: TSpoilerProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export type TSpoilerProps = {
-    text: string;
-    typographyComponent?: TSpoilerTypography;
-    visibleRows?: number;
-    color?: TViewColor;
-    hyphens?: TCSSHyphens;
-    onToggle?: (isExpanded: boolean) => void;
-    as?: ElementType;
-};
+    text: string
+    typographyComponent?: TSpoilerTypography
+    visibleRows?: number
+    color?: TViewColor
+    hyphens?: TCSSHyphens
+    onToggle?: (isExpanded: boolean) => void
+    as?: ElementType
+}
 ```
 
 ### demo examples found
+
 <!-- components/Spoiler/ui/SpoilerDemo.tsx -->
+
 ```tsx
 import type { ComponentProps } from 'react'
 
@@ -2685,11 +2974,13 @@ export const SpoilerDemo = (args: ComponentProps<typeof Spoiler>) => {
 ---
 
 ## StatusTrack
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/StatusTrack
 
 propsType: TStatusTrackProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [StatusTrack](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/components-statustrack-statustrack--docs) - является шаблонным
 компонентом для отображения событий в хронологическом порядке на временной шкале.
@@ -2724,21 +3015,25 @@ propsType: TStatusTrackProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export type TStatusTrackProps = {
     /** Заголовок компонента */
-    title?: string;
+    title?: string
     /** Массив элементов */
-    items?: TItemStatusTrack[];
+    items?: TItemStatusTrack[]
     /** Флаг сворачивания и разворачивания компонента */
-    opened?: boolean;
+    opened?: boolean
     /** Колбек для изменения флага collapsed*/
-    onOpened?: Dispatch<SetStateAction<boolean>>;
-} & TSkeletonType & TDeprecatedView;
+    onOpened?: Dispatch<SetStateAction<boolean>>
+} & TSkeletonType &
+    TDeprecatedView
 ```
 
 ### demo examples found
+
 <!-- components/StatusTrack/ui/StatusTrackCollapsedDemo.tsx -->
+
 ```tsx
 import type { TItemStatusTrack } from '../../../../src'
 
@@ -2767,7 +3062,9 @@ export const StatusTrackCollapsedDemo = (args: Props) => {
     )
 }
 ```
+
 <!-- components/StatusTrack/ui/StatusTrackDemo.tsx -->
+
 ```tsx
 import type { TItemStatusTrack } from '../../../../src'
 
@@ -2796,7 +3093,9 @@ export const StatusTrackDemo = (args: Props) => {
     )
 }
 ```
+
 <!-- components/StatusTrack/ui/StatusTrackNotDefinedDemo.tsx -->
+
 ```tsx
 import type { TItemStatusTrack } from '../../../../src'
 
@@ -2823,11 +3122,13 @@ export const StatusTrackNotDefinedDemo = (args: Props) => {
 ---
 
 ## TextCopyButton
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/TextCopyButton
 
 propsType: TTextCopyButtonProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Копирует текст в буфер обмена. Для оповещения пользователя
 используется компонент [Toast](https://plasma.sberdevices.ru/sdds-cs/components/toast/).
@@ -2840,17 +3141,20 @@ propsType: TTextCopyButtonProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export type TTextCopyButtonProps = {
-    text: string;
-    size?: 'xs' | 's' | 'm';
+    text: string
+    size?: 'xs' | 's' | 'm'
 } & TPositionTextCopyButton & {
-    [key: `data-${string}`]: string | undefined;
-};
+        [key: `data-${string}`]: string | undefined
+    }
 ```
 
 ### demo examples found
+
 <!-- components/TextCopyButton/ui/TextCopyButtonDemo.tsx -->
+
 ```tsx
 import type { ComponentProps } from 'react'
 
@@ -2869,11 +3173,13 @@ export const TextCopyButtonDemo = ({ text, top, left, right, bottom }: Component
 ---
 
 ## Thread
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/Thread
 
 propsType: TThreadProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [Thread](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/components-thread--docs) - компонент, который используется для отображения списка тредов/чатов.
 
@@ -2897,14 +3203,18 @@ propsType: TThreadProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
-export type TThreadProps = TListThreadsProps & THeader & {
-    onCreate: () => void;
-};
+export type TThreadProps = TListThreadsProps &
+    THeader & {
+        onCreate: () => void
+    }
 ```
 
 ### demo examples found
+
 <!-- components/Thread/ui/ThreadDemo.tsx -->
+
 ```tsx
 import type { ComponentProps } from 'react'
 
@@ -2922,11 +3232,13 @@ export const ThreadDemo = (args: ComponentProps<typeof Thread>) => {
 ---
 
 ## Tile
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/Tile
 
 propsType: TTileProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [Tile](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/components-tile-tile--docs)- представляет из себя небольшой прямоугольный или квадратный модуль,
 который легко встраивается в интерфейс и адаптируется под разные сценарии использования. Визуально группирует контент и обеспечивает доступ к подробной информации.
@@ -2963,29 +3275,32 @@ propsType: TTileProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export type TTileProps = {
-    title: string;
-    badges?: TBadgeProps[];
-    description?: string;
-    footer?: ReactNode;
-    onClick?: (e: MouseEvent<HTMLAnchorElement>) => void;
-    size?: TTileSize;
-    ref?: Ref<HTMLDivElement | null>;
-    showArrowAlways?: boolean;
-    action?: TActionTile | TActionTileArray;
-    view?: TViewTile;
-    suggestionText?: string;
-    href?: string;
-    navigate?: NavigateFunction;
-    titleIcon?: TIcon;
-    isLoading?: boolean;
-    textIsLoading?: string;
-} & TTestAttributes;
+    title: string
+    badges?: TBadgeProps[]
+    description?: string
+    footer?: ReactNode
+    onClick?: (e: MouseEvent<HTMLAnchorElement>) => void
+    size?: TTileSize
+    ref?: Ref<HTMLDivElement | null>
+    showArrowAlways?: boolean
+    action?: TActionTile | TActionTileArray
+    view?: TViewTile
+    suggestionText?: string
+    href?: string
+    navigate?: NavigateFunction
+    titleIcon?: TIcon
+    isLoading?: boolean
+    textIsLoading?: string
+} & TTestAttributes
 ```
 
 ### demo examples found
+
 <!-- components/Tile/ui/TileDemo.tsx -->
+
 ```tsx
 import type { ComponentProps } from 'react'
 
@@ -3019,7 +3334,9 @@ export const TileDemo = (args: ComponentProps<typeof Tile>) => {
     )
 }
 ```
+
 <!-- components/Tile/ui/TileNavigateDemo.tsx -->
+
 ```tsx
 import { BodyM } from '@salutejs/sdds-cs'
 import { useNavigate } from 'react-router'
@@ -3051,7 +3368,9 @@ export const ServicePage = () => {
     )
 }
 ```
+
 <!-- components/Tile/ui/TileWithActionDemo.tsx -->
+
 ```tsx
 import { IconDotsHorizontalOutline, IconSb } from '@salutejs/plasma-icons'
 
@@ -3094,11 +3413,13 @@ export const TileWithActionDemo = () => {
 ---
 
 ## TileContainer
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/Tile
 
 propsType: TTileContainerProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [TileContainer](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/components-tile-tilecontainer--docs)- представляет из себя контейнер
 для группировки компонента [Tile](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/components-tile-tile--docs) с одинаковым размером и группой свойств.
@@ -3119,114 +3440,141 @@ propsType: TTileContainerProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export type TTileContainerProps = {
-    items: Omit<TTileProps, TFromTileProps>[];
-    gap?: '4px' | '8px';
-    enableAdaptive?: boolean;
-} & TSkeletonType & Pick<TFlexBoxProps, 'flexDirection' | 'className' | 'overflow' | 'onScroll' | 'width' | 'flexWrap' | 'id' | 'ref'> & Pick<TTileProps, TFromTileProps>;
+    items: Omit<TTileProps, TFromTileProps>[]
+    gap?: '4px' | '8px'
+    enableAdaptive?: boolean
+} & TSkeletonType &
+    Pick<TFlexBoxProps, 'flexDirection' | 'className' | 'overflow' | 'onScroll' | 'width' | 'flexWrap' | 'id' | 'ref'> &
+    Pick<TTileProps, TFromTileProps>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## ValueBoolean
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/display
 
 propsType: TValueBooleanProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export type TValueBooleanProps = TPrettify<{
-    /** Значение для отображения. */
-    value: TFormatterValue<boolean>;
-} & TDisplayTextBaseProps>;
+export type TValueBooleanProps = TPrettify<
+    {
+        /** Значение для отображения. */
+        value: TFormatterValue<boolean>
+    } & TDisplayTextBaseProps
+>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## ValueDate
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/display
 
 propsType: TValueDateProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
 export type TValueDateProps = TPrettify<
-/** Формат даты. */
-TFormatDate & TDisplayTextBaseProps>;
+    /** Формат даты. */
+    TFormatDate & TDisplayTextBaseProps
+>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## ValueDateRange
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/display
 
 propsType: TValueDateRangeProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
 export type TValueDateRangeProps = TPrettify<
-/** Формат диапазона дат. */
-TFormatDateRange & TDisplayTextBaseProps>;
+    /** Формат диапазона дат. */
+    TFormatDateRange & TDisplayTextBaseProps
+>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## ValueDateTime
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/display
 
 propsType: TValueDateTimeProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
 export type TValueDateTimeProps = TPrettify<
-/** Формат даты и времени. */
-TFormatDateTime & TDisplayTextBaseProps>;
+    /** Формат даты и времени. */
+    TFormatDateTime & TDisplayTextBaseProps
+>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## ValueLink
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/display
 
 propsType: TValueLinkProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [__ValueLink__](https://cs-core.cloud.delta.sbrf.ru/latest/?path=/docs-components-displaylink--docs) - Универсальная гиперссылка с поддержкой роутинга и onClick.
 
@@ -3249,212 +3597,261 @@ propsType: TValueLinkProps (source: cs-core)
 
 **Правильное применение ссылок:**
 - Для перехода по ссылке используйте `href + navigate`:
-  ```
-  <ValueLink
+```
+
+<ValueLink
     value="Ссылка"
     href="/details"
     navigate={navigate}
   />
-  ```
+
+```
 - Для пользовательской логики при клике используйте `onClick` (он имеет приоритет над navigate).
 
 @summary универсальная гиперссылка с поддержкой роутинга и onClick
 ```
 
 ### raw props type
+
 ```ts
-export type TValueLinkProps = TPrettify<{
-    /** Значение для отображения (строка или число) */
-    value: TFormatterValue<string | number>;
-    /** Функция роутинга из react-router. Вызывается при клике, если не задан onClick */
-    navigate?: NavigateFunction;
-} & TDisplayTextBaseProps & TLinkRest>;
+export type TValueLinkProps = TPrettify<
+    {
+        /** Значение для отображения (строка или число) */
+        value: TFormatterValue<string | number>
+        /** Функция роутинга из react-router. Вызывается при клике, если не задан onClick */
+        navigate?: NavigateFunction
+    } & TDisplayTextBaseProps &
+        TLinkRest
+>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## ValueNumber
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/display
 
 propsType: TValueNumberProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export type TValueNumberProps = TPrettify<{
-    /** Значение для отображения. */
-    value: TFormatterValue<number>;
-    /** Флаг скрытия дробной части. По умолчанию false. */
-    hideFraction?: boolean;
-} & TDisplayTextBaseProps>;
+export type TValueNumberProps = TPrettify<
+    {
+        /** Значение для отображения. */
+        value: TFormatterValue<number>
+        /** Флаг скрытия дробной части. По умолчанию false. */
+        hideFraction?: boolean
+    } & TDisplayTextBaseProps
+>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## ValuePercent
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/display
 
 propsType: TValuePercentProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export type TValuePercentProps = TPrettify<{
-    /** Значение для отображения. */
-    value: TFormatterValue<number>;
-    /** Флаг скрытия дробной части. По умолчанию false. */
-    hideFraction?: boolean;
-} & TDisplayTextBaseProps>;
+export type TValuePercentProps = TPrettify<
+    {
+        /** Значение для отображения. */
+        value: TFormatterValue<number>
+        /** Флаг скрытия дробной части. По умолчанию false. */
+        hideFraction?: boolean
+    } & TDisplayTextBaseProps
+>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## ValuePrice
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/display
 
 propsType: TValuePriceProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export type TValuePriceProps = TPrettify<{
-    /** Значение для отображения. */
-    value: TFormatterValue<number>;
-    /** Символ валюты. */
-    symbol?: TFormatterValue<string>;
-    /** Unicode символ валюты. */
-    unicodeSymbol?: TFormatterValue<string>;
-    /** Название валюты. */
-    name: TFormatterValue<string>;
-    /** Флаг скрытия дробной части. По умолчанию false. */
-    hideFraction?: boolean;
-    /** Флаг видимости всплывающей подсказки. По умолчанию false. */
-    tooltipVisible?: boolean;
-} & TDisplayTextBaseProps & TPropsFromTooltip>;
+export type TValuePriceProps = TPrettify<
+    {
+        /** Значение для отображения. */
+        value: TFormatterValue<number>
+        /** Символ валюты. */
+        symbol?: TFormatterValue<string>
+        /** Unicode символ валюты. */
+        unicodeSymbol?: TFormatterValue<string>
+        /** Название валюты. */
+        name: TFormatterValue<string>
+        /** Флаг скрытия дробной части. По умолчанию false. */
+        hideFraction?: boolean
+        /** Флаг видимости всплывающей подсказки. По умолчанию false. */
+        tooltipVisible?: boolean
+    } & TDisplayTextBaseProps &
+        TPropsFromTooltip
+>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## ValueText
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/display
 
 propsType: TValueTextProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export type TValueTextProps = TPrettify<{
-    /** Значение для отображения. */
-    value: TFormatterValue<string | number>;
-    /** Флаг отображения с эллипсисом и подсказкой. */
-    isEllipsisInfo?: boolean;
-    /** Флаг запрета переноса текста. */
-    noWrap?: boolean;
-} & TPropsFromEllipsisInfo & TDisplayTextBaseProps>;
+export type TValueTextProps = TPrettify<
+    {
+        /** Значение для отображения. */
+        value: TFormatterValue<string | number>
+        /** Флаг отображения с эллипсисом и подсказкой. */
+        isEllipsisInfo?: boolean
+        /** Флаг запрета переноса текста. */
+        noWrap?: boolean
+    } & TPropsFromEllipsisInfo &
+        TDisplayTextBaseProps
+>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## ValueTime
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/display
 
 propsType: TValueTimeProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
 export type TValueTimeProps = TPrettify<
-/** Формат времени. */
-TFormatTime & TDisplayTextBaseProps>;
+    /** Формат времени. */
+    TFormatTime & TDisplayTextBaseProps
+>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## ValueTimeRange
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/display
 
 propsType: TValueTimeRangeProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
 export type TValueTimeRangeProps = TPrettify<
-/** Формат диапазона времени. */
-TFormatTimeRange & TDisplayTextBaseProps>;
+    /** Формат диапазона времени. */
+    TFormatTimeRange & TDisplayTextBaseProps
+>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## ValueUnit
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/display
 
 propsType: TValueUnitProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export type TValueUnitProps = TPrettify<{
-    /** Значение для отображения. */
-    value: TFormatterValue<number>;
-    /** Название единицы измерения. */
-    name: TFormatterValue<string>;
-    /** Описание единицы измерения. */
-    description: TFormatterValue<string>;
-    /** Флаг скрытия дробной части. По умолчанию false. */
-    hideFraction?: boolean;
-} & TDisplayTextBaseProps>;
+export type TValueUnitProps = TPrettify<
+    {
+        /** Значение для отображения. */
+        value: TFormatterValue<number>
+        /** Название единицы измерения. */
+        name: TFormatterValue<string>
+        /** Описание единицы измерения. */
+        description: TFormatterValue<string>
+        /** Флаг скрытия дробной части. По умолчанию false. */
+        hideFraction?: boolean
+    } & TDisplayTextBaseProps
+>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---

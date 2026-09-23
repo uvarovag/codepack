@@ -5,29 +5,35 @@ Level: `@salutejs/plasma-icons` (installed 1.249.0, site shows 1.250.0 — icons
 **Import (always):** `import { IconMagic } from '@sber-front-cs-core/cs-portal'` — cs-portal re-exports the whole icon set via `export * from '@salutejs/plasma-icons'`. Never import from `@salutejs/plasma-icons` directly in app code.
 
 ## Usage
+
 - `size` prop: `xs`=16px, `s`=24px, `m`=36px.
 - `color` prop: CSS variable, `currentColor`, `inherit`, a plain color, or a gradient. Defaults to `var(--plasma-colors-primary)`.
 - For a size outside xs/s/m, set `style={{ width, height }}` with `color="inherit"` so it follows the parent.
 - Naming: most icons come in `...Outline` / `...Fill` pairs (e.g. `IconEditOutline` / `IconEditFill`); some are single-variant with no suffix (e.g. `IconClose`, `IconSearch`, `IconPlus`, `IconArrowDown`).
+
 ```tsx
 import { IconSearch, IconStarFill } from '@sber-front-cs-core/cs-portal';
 
 <IconSearch size="s" />
 <IconStarFill color="linear-gradient(90deg, #2af598 0%, #009efd 100%)" />
 ```
+
 Gotcha: the package also exports a generic `<Icon icon="iconName" />` component that resolves an icon by string name. **Avoid it in app UI** — it can pull every icon into the bundle. Always import the specific icon component (`IconSearch`, not `Icon` + a string).
 
 ## Icons used in our apps today (22)
+
 `IconArrowDown`, `IconClose`, `IconDocumentGlassOutline`, `IconDotsHorizontalOutline`, `IconEditFill`, `IconEditOutline`, `IconFullscreenOff`, `IconFullscreenOn`, `IconHelpCircleOutline`, `IconHistory`, `IconInfoCircleOutline`, `IconMagic`, `IconMessagePersonChatOutline`, `IconPinDashFill`, `IconPinOutline`, `IconPlayOutline`, `IconPlus`, `IconResetOutline`, `IconSendFill`, `IconSendOutline`, `IconStopOutline`, `IconTrashOutline` — as of the last `resolve-levels.mjs` run; grep the app src for `Icon[A-Z]` to get the current live list.
 Of these, confirmed real by app usage but absent from the scraped list below: `IconHistory`.
 
 ## Known gaps in this list
+
 The site's Outline/Fill toggle appears to filter by name suffix, so icons with NO style suffix (single-variant icons) never render under either tab and are absent from `categories` below.
 Confirmed real (used in the local dist bundles) but not listed below: `IconArrowBack`, `IconArrowDiagRightUp`, `IconArrowDown`, `IconArrowRight`, `IconChevronRight`, `IconChevronUp`, `IconClip`, `IconClose`, `IconCross`, `IconDisclosureUp`, `IconDone`, `IconDoubleDisclosureUp`, `IconDownload`, `IconDrag`, `IconPercent`, `IconSearch`, `IconSwapVert`.
 Plausible but unverified: `IconChevronDown`, `IconDisclosureDown`, `IconDoubleDisclosureDown`, `IconDoubleDisclosureRight`, `IconInfo`, `IconRefresh`, `IconRotateCw`, `IconTree`, `IconVisible`, `IconDoneDouble`.
 If the icon you need isn't below and isn't in the gap list either, check the live site or ask a teammate rather than guessing a name.
 
 ## All icons by category
+
 One line per category: `NameEn (count)` then every icon name, comma-separated, `Outline`/`Fill` suffix as scraped.
 
 **Communication** (67): IconCallBlockFill, IconCallBlockOutline, IconCallCircleEndFill, IconCallCircleEndOutline, IconCallCircleFill, IconCallCircleOutline, IconCallDashFill, IconCallDashOutline, IconCallEndBlockFill, IconCallEndBlockOutline, IconCallEndFill, IconCallEndOutline, IconCallFill, IconCallIncomingFill, IconCallIncomingOutline, IconCallMissedFill, IconCallMissedOutline, IconCallOutgoingFill, IconCallOutgoingOutline, IconCallOutline, IconChatFill, IconChatHumanFill, IconChatHumanOutline, IconChatOutline, IconChatTranscriptionFill, IconChatTranscriptionOutline, IconFeedbackCircleFill, IconMessageAddFill, IconMessageAddOutline, IconMessageAltFill, IconMessageAltOutline, IconMessageAttentionFill, IconMessageAttentionOutline, IconMessageChatFill, IconMessageChatOutline, IconMessageCloseFill, IconMessageCloseOutline, IconMessageDraftFill, IconMessageDraftOutline, IconMessageFill, IconMessageGoToFill, IconMessageGoToOutline, IconMessageNewFill, IconMessageNewOutline, IconMessageOutline, IconMessagePersonChatFill, IconMessagePersonChatOutline, IconMessagePersonFill, IconMessagePersonOutline, IconMessageQuestionFill, IconMessageQuestionOutline, IconMessageRequestFill, IconMessageRequestOutline, IconMessageTranscriptionFill, IconMessageTranscriptionOutline, IconMessageVideoFill, IconMessageVideoOutline, IconNewsFill, IconNewsOutline, IconNewsPaperFill, IconNewsPaperOutline, IconPostFill, IconPostOutline, IconPostcardFill, IconPostcardOutline, IconSendFill, IconSendOutline
@@ -77,4 +83,5 @@ One line per category: `NameEn (count)` then every icon name, comma-separated, `
 **Weather** (12): IconBeachUmbrellaFill, IconBeachUmbrellaOutline, IconSunFill, IconSunOutline, IconSunriseFill, IconSunriseOutline, IconSunsetFill, IconSunsetOutline, IconUmbrellaFill, IconUmbrellaOutline, IconWeatherFill, IconWeatherOutline
 
 ---
+
 See also: [gotchas.md](gotchas.md) for the bundle-size note on sized entry points. [README.md](README.md) for the full cascade rule.

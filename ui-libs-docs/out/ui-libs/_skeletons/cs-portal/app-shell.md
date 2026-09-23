@@ -1,12 +1,14 @@
 <!-- SKELETON for cs-portal/app-shell.md — raw material only, not the final doc. 15 symbols. -->
 
 ## createApp
+
 tier: A · origin: cs-portal · usedByApps: true · fromSpec: ./app
 SHADOW NOTE: cs-portal gives the cs-portal version; also defined in: cs-core
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Создаёт корневое React-приложение с routing и Redux.
 
@@ -22,21 +24,32 @@ root.render(<App basename="/portal" />)
 ```
 
 ### raw props type
+
 ```ts
-export declare const createApp: ({ routes, store }: TCreateAppProps) => ({ basename, externalNavigate, segment }: import("@sber-front-cs-core/cs-core").TAppProps) => import("react").JSX.Element;
+export declare const createApp: ({
+    routes,
+    store,
+}: TCreateAppProps) => ({
+    basename,
+    externalNavigate,
+    segment,
+}: import('@sber-front-cs-core/cs-core').TAppProps) => import('react').JSX.Element
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## createProtectedRouteMiddleware
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./app
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Создаёт middleware для защищённых маршрутов react-router.
 
@@ -65,21 +78,30 @@ const middleware = createProtectedRouteMiddleware({
 ```
 
 ### raw props type
+
 ```ts
-export declare const createProtectedRouteMiddleware: <QueryDefinition extends AnyQueryDefinition>({ endpoint, redirectTo, select, store, }: TCreateProtectedRouteMiddlewareParams<QueryDefinition>) => TCreateProtectedRouteMiddlewareResult;
+export declare const createProtectedRouteMiddleware: <QueryDefinition extends AnyQueryDefinition>({
+    endpoint,
+    redirectTo,
+    select,
+    store,
+}: TCreateProtectedRouteMiddlewareParams<QueryDefinition>) => TCreateProtectedRouteMiddlewareResult
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## createPubSupApi
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./websocket
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Создаёт типизированный RTK Query API для работы с WebSocket через STOMP.
 
@@ -115,21 +137,25 @@ const [send] = notificationApi.useSendMessagePublish()
 ```
 
 ### raw props type
+
 ```ts
-export declare const createPubSupApi: CreatePubSubApi;
+export declare const createPubSupApi: CreatePubSubApi
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## createReduxStore
+
 tier: A · origin: cs-portal · usedByApps: true · fromSpec: ./utils/createReduxStore
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Создаёт Redux store на основе одного или нескольких RTK Query API.
 
@@ -145,27 +171,47 @@ const store = createReduxStore([userApi, ordersApi], {
 ```
 
 ### raw props type
+
 ```ts
-export declare const createReduxStore: (api: TApi | TApi[], options?: TCreateReduxStoreOptions) => import("@reduxjs/toolkit").EnhancedStore<{
-    [x: string]: any;
-}, import("redux").UnknownAction, import("@reduxjs/toolkit").Tuple<[import("redux").StoreEnhancer<{
-    dispatch: import("redux-thunk").ThunkDispatch<{
-        [x: string]: any;
-    }, undefined, import("redux").UnknownAction>;
-}>, import("redux").StoreEnhancer]>>;
+export declare const createReduxStore: (
+    api: TApi | TApi[],
+    options?: TCreateReduxStoreOptions
+) => import('@reduxjs/toolkit').EnhancedStore<
+    {
+        [x: string]: any
+    },
+    import('redux').UnknownAction,
+    import('@reduxjs/toolkit').Tuple<
+        [
+            import('redux').StoreEnhancer<{
+                dispatch: import('redux-thunk').ThunkDispatch<
+                    {
+                        [x: string]: any
+                    },
+                    undefined,
+                    import('redux').UnknownAction
+                >
+            }>,
+            import('redux').StoreEnhancer,
+        ]
+    >
+>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## getNotificationClient
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./app
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Возвращает синглтон STOMP-клиента уведомлений.
 
@@ -182,21 +228,25 @@ sub.unsubscribe()
 ```
 
 ### raw props type
+
 ```ts
-export declare const getNotificationClient: () => TPubSubConsumer;
+export declare const getNotificationClient: () => TPubSubConsumer
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## invalidateBySubscribe
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./websocket
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Создаёт RTK Query `onCacheEntryAdded` handler для инвалидации тегов по WebSocket.
 
@@ -224,21 +274,29 @@ getOrders: {
 ```
 
 ### raw props type
+
 ```ts
-export declare const invalidateBySubscribe: <QueryTypes>({ client: clientOrFn, tags, topic, }: InvalidateBySubscribeParams<QueryTypes>) => InvalidateBySubscribeResult<QueryTypes>;
+export declare const invalidateBySubscribe: <QueryTypes>({
+    client: clientOrFn,
+    tags,
+    topic,
+}: InvalidateBySubscribeParams<QueryTypes>) => InvalidateBySubscribeResult<QueryTypes>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## ModalRegistryProvider
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./modalRegistry
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Провайдер реестра модальных окон.
 
@@ -254,21 +312,25 @@ propsType: (signature, no dedicated Props type found) (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
-export declare const ModalRegistryProvider: ({ children }: PropsWithChildren) => import("react").JSX.Element;
+export declare const ModalRegistryProvider: ({ children }: PropsWithChildren) => import('react').JSX.Element
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## ProtectedRoute
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./components/ProtectedRoute
 
 propsType: TProtectedRouteProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Компонент защищённого маршрута на основе RTK Query.
 
@@ -294,24 +356,28 @@ propsType: TProtectedRouteProps (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
 export type TProtectedRouteProps<ResultType, QueryArg, BaseQuery extends BaseQueryFn> = PropsWithChildren<{
-    useQuery: TypedUseQuery<ResultType, QueryArg, BaseQuery>;
-    selectFromQueryResult: (data: ResultType) => boolean | undefined;
-}>;
+    useQuery: TypedUseQuery<ResultType, QueryArg, BaseQuery>
+    selectFromQueryResult: (data: ResultType) => boolean | undefined
+}>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## useCloseModal
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./modalRegistry
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Хук для закрытия модального окна через реестр.
 
@@ -324,21 +390,25 @@ closeModal(MyModalComponent)
 ```
 
 ### raw props type
+
 ```ts
-export declare const useCloseModal: () => import("./types").TCloseModalFn;
+export declare const useCloseModal: () => import('./types').TCloseModalFn
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## useIsModalOpened
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./modalRegistry
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Хук для проверки состояния открытия компонентов (модальные окна, дроверы и т.д.)
 
@@ -358,21 +428,25 @@ const isAnyModalOpen = useIsModalOpened() // → true | false
 ```
 
 ### raw props type
+
 ```ts
-export declare const useIsModalOpened: (component?: TModalComponent) => boolean;
+export declare const useIsModalOpened: (component?: TModalComponent) => boolean
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## useOpenModal
+
 tier: A · origin: cs-portal · usedByApps: true · fromSpec: ./modalRegistry
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Хук для открытия модального окна через реестр.
 
@@ -388,93 +462,111 @@ await openModal(ConfirmModal, undefined, { table: tableInstance })
 ```
 
 ### raw props type
+
 ```ts
-export declare const useOpenModal: () => import("./types").TOpenModalFn;
+export declare const useOpenModal: () => import('./types').TOpenModalFn
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## UserProvider
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./hooks
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const UserProvider: ({ children }: PropsWithChildren) => import("react").JSX.Element;
+export declare const UserProvider: ({ children }: PropsWithChildren) => import('react').JSX.Element
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## useUser
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./hooks
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
 export declare const useUser: () => {
-    data: {
-        userType?: "INTERNAL" | "SUPPLIER";
-    } | undefined;
-    error: import("@reduxjs/toolkit").SerializedError | import("@reduxjs/toolkit/query").FetchBaseQueryError | undefined;
-    isError: boolean;
-    isLoading: boolean;
-};
+    data:
+        | {
+              userType?: 'INTERNAL' | 'SUPPLIER'
+          }
+        | undefined
+    error: import('@reduxjs/toolkit').SerializedError | import('@reduxjs/toolkit/query').FetchBaseQueryError | undefined
+    isError: boolean
+    isLoading: boolean
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## useUserType
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./hooks
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
 export declare const useUserType: () => {
-    error: import("@reduxjs/toolkit").SerializedError | import("@reduxjs/toolkit/query").FetchBaseQueryError | undefined;
-    isError: boolean;
-    isLoading: boolean;
-    data: "INTERNAL" | "SUPPLIER" | undefined;
-};
+    error: import('@reduxjs/toolkit').SerializedError | import('@reduxjs/toolkit/query').FetchBaseQueryError | undefined
+    isError: boolean
+    isLoading: boolean
+    data: 'INTERNAL' | 'SUPPLIER' | undefined
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## withReduxProvider
+
 tier: A · origin: cs-portal · usedByApps: true · fromSpec: ./providers
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 HOC: оборачивает компонент в Redux `Provider`.
 
@@ -487,11 +579,17 @@ const App = withReduxProvider(RawApp, store)
 ```
 
 ### raw props type
+
 ```ts
-export declare const withReduxProvider: <ComponentProps extends import("../types").EmptyObject>(WrappedComponent: import("react").ComponentType<ComponentProps>, additionalProviderProps?: Omit<import("react-redux").ProviderProps<import("redux").Action<string>, unknown>, "children"> | undefined) => (props: { [K in keyof ComponentProps]: ComponentProps[K]; }) => import("react").JSX.Element;
+export declare const withReduxProvider: <ComponentProps extends import('../types').EmptyObject>(
+    WrappedComponent: import('react').ComponentType<ComponentProps>,
+    additionalProviderProps?:
+        Omit<import('react-redux').ProviderProps<import('redux').Action<string>, unknown>, 'children'> | undefined
+) => (props: { [K in keyof ComponentProps]: ComponentProps[K] }) => import('react').JSX.Element
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---

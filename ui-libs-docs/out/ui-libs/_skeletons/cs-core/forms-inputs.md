@@ -1,12 +1,14 @@
 <!-- SKELETON for cs-core/forms-inputs.md — raw material only, not the final doc. 8 symbols. -->
 
 ## Combobox
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: @sber-front-cs-core/cs-core
 SHADOW NOTE: cs-portal gives the cs-core version; also defined in: sdds-cs (site)
 
 propsType: TComboboxProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Компонент [Combobox](https://cs-core.cloud.delta.sbrf.ru/latest/?path=/docs/components-filterselect--docs) - для выбора фильтра с возможностью
 поиска и динамической загрузки элементов.
@@ -60,84 +62,93 @@ propsType: TComboboxProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
-export type TComboboxProps<T extends TComboboxItem = TComboboxItem, M extends boolean = true, O extends boolean = false> = {
+export type TComboboxProps<
+    T extends TComboboxItem = TComboboxItem,
+    M extends boolean = true,
+    O extends boolean = false,
+> = {
     /** Массив объектов для выбора. */
-    items: T[];
+    items: T[]
     /** Колбэк изменения строки поиска. */
-    onChangeValue?: (searchValue: string) => void;
+    onChangeValue?: (searchValue: string) => void
     /** Фиксированная высота выпадающего списка. */
-    listHeight?: string;
+    listHeight?: string
     /** Максимальная высота выпадающего списка. */
-    listMaxHeight?: string;
+    listMaxHeight?: string
     /** Ширина выпадающего списка (работает только при передаче `portal`). */
-    listWidth?: string;
+    listWidth?: string
     /** Массив избранных элементов для отображения вверху списка. */
-    favoriteItems?: T[];
+    favoriteItems?: T[]
     /** Массив предварительно выбранных элементов (для контролируемого режима). */
-    selectedItems?: T[];
+    selectedItems?: T[]
     /** Колбэк при достижении конца списка (для бесконечной подгрузки). */
-    onEndReached?: () => void;
+    onEndReached?: () => void
     /** Колбэк события скролла внутри выпадающего списка. */
-    onScroll?: (e: UIEvent) => void;
+    onScroll?: (e: UIEvent) => void
     /** Флаг загрузки дополнительных элементов при скролле. */
-    isLoadingMore?: boolean;
+    isLoadingMore?: boolean
     /** Флаг общей загрузки компонента (например, при первоначальном запросе). */
-    isLoading?: boolean;
+    isLoading?: boolean
     /** Колбэк изменения состояния открытия выпадающего списка. */
-    onToggle?: (open: boolean) => void;
+    onToggle?: (open: boolean) => void
     /** Контейнер для рендера выпадающего списка (id или ref). */
-    portal?: TPopoverProps['frame'];
+    portal?: TPopoverProps['frame']
     /** Выпадающий список всегда открыт. */
-    alwaysOpened?: boolean;
+    alwaysOpened?: boolean
     /** Контент, отображаемый после списка элементов. */
-    afterList?: ReactNode;
+    afterList?: ReactNode
     /** Вспомогательный текст под полем ввода. */
-    textHint?: string;
+    textHint?: string
     /** Флаг обязательности заполнения поля. */
-    required?: boolean;
+    required?: boolean
     /** Функция фильтрации элементов при поиске. Возвращает `true`, если элемент должен отображаться. */
-    filterValue?: (item: T, searchValue: string) => boolean;
+    filterValue?: (item: T, searchValue: string) => boolean
     /** Функция кастомного рендера элемента в выпадающем списке. */
-    renderItem?: (item: T) => ReactNode;
+    renderItem?: (item: T) => ReactNode
     /** Максимальное количество элементов для отображения поля поиска (работует если включено `alwaysOpened`). */
-    searchVisibleCount?: number;
+    searchVisibleCount?: number
     /** Флаг использования тёмной темы для выпадающего списка. */
-    onDark?: boolean;
+    onDark?: boolean
     /** CSS-класс компонента. */
-    className?: string;
+    className?: string
     /** Задержка debounced (мс). По умолчанию 350. */
-    debounceDelay?: number;
+    debounceDelay?: number
     /** Флаг включения debounced функции. */
-    enableDebounced?: boolean;
+    enableDebounced?: boolean
     /** Настройка чипсов */
-    chip?: TChip;
+    chip?: TChip
     /** Флаг, позволяющий передавать в value полные айтемы. */
-    enableObject?: O;
+    enableObject?: O
     /** Значение. */
-    value?: TValue<T, M, O>;
+    value?: TValue<T, M, O>
     /** Флаг множественного выбора. */
-    multiple?: M;
+    multiple?: M
     /** Колбэк, вызываемый при изменении выбора. */
-    onChange?: M extends true ? THandleChangeExtended<TValue<T, M, O>, T[]> : THandleChangeExtended<TValue<T, M, O>, T>;
+    onChange?: M extends true ? THandleChangeExtended<TValue<T, M, O>, T[]> : THandleChangeExtended<TValue<T, M, O>, T>
     /** Настройки кнопки массового выбора. */
-    selectAllOptions?: TSelectAllProps;
+    selectAllOptions?: TSelectAllProps
     /** Текст тултипа иконки инфо */
-    textTooltip?: string;
-} & TTextFieldProps & TVirtualOptions;
+    textTooltip?: string
+} & TTextFieldProps &
+    TVirtualOptions
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## DataField
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/DataField
 
 propsType: TDataFieldProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 DataField — компонент для отображения данных в виде метки и текста.
 
@@ -153,26 +164,30 @@ DataField — компонент для отображения данных в �
 ```
 
 ### raw props type
+
 ```ts
 export type TDataFieldProps = {
     /** Метка-подпись к элементу. */
-    label: string;
+    label: string
     /** Значение для отображения. */
-    value: string | number | ReactNode;
-};
+    value: string | number | ReactNode
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## FileUploader
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/FileUploader
 
 propsType: TFileUploaderProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Обслуживает загрузку файлов пользователем, по клику на элемент или перетаскиванием файлов на
 поле его отображения.
@@ -187,39 +202,42 @@ propsType: TFileUploaderProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export type TFileUploaderProps = {
     /**
      * Колбек при добавлении файла
      */
-    onFileUpload: (files: FileList) => void;
+    onFileUpload: (files: FileList) => void
     /**
      * Доступные типы файлов
      */
-    acceptedFiles?: string[];
+    acceptedFiles?: string[]
     /**
      * Индекс в переходе фокуса
      */
-    tabIndex?: number;
+    tabIndex?: number
     /**
      * Возможность выбрать несколько файлов
      */
-    isMultiple?: boolean;
+    isMultiple?: boolean
     /**
      * Обязательное поле
      */
-    isRequired?: boolean;
-    isError?: boolean;
-    onFocus?: () => void;
-    onBlur?: () => void;
-    className?: string;
-    hasRequiredIndicator?: boolean;
-    view?: 'default' | 'icon';
-};
+    isRequired?: boolean
+    isError?: boolean
+    onFocus?: () => void
+    onBlur?: () => void
+    className?: string
+    hasRequiredIndicator?: boolean
+    view?: 'default' | 'icon'
+}
 ```
 
 ### demo examples found
+
 <!-- components/FileUploader/components/FileUploaderDemo.tsx -->
+
 ```tsx
 import type { ComponentProps, SetStateAction } from 'react'
 
@@ -251,7 +269,9 @@ export const FileUploaderDemo = (args: ComponentProps<typeof FileUploader>) => {
     )
 }
 ```
+
 <!-- components/FileUploader/components/FileUploaderGroupDemo.tsx -->
+
 ```tsx
 import type { TFileUploaderProps } from '../../../../src/components/FileUploader/types'
 
@@ -278,31 +298,39 @@ export const FileUploaderGroupDemo = (args: TFileUploaderProps) => (
 ---
 
 ## getIsRequired
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./utils
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const getIsRequired: <TFieldValues extends FieldValues>(optionsRequired: RegisterOptions<TFieldValues, Path<TFieldValues>> | undefined) => boolean;
+export declare const getIsRequired: <TFieldValues extends FieldValues>(
+    optionsRequired: RegisterOptions<TFieldValues, Path<TFieldValues>> | undefined
+) => boolean
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## MutationCheckbox
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/mutation
 
 propsType: TMutationCheckboxProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [MutationCheckbox](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/components-mutation-mutationcomponents-mutationcheckbox--docs) относится к группе mutation-form элементов. Он адаптирует возможности
  компонента [Checkbox](https://plasma.sberdevices.ru/sdds-cs/components/checkbox/)
@@ -310,21 +338,31 @@ propsType: TMutationCheckboxProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
-export type TMutationCheckboxProps<TFieldValues extends FieldValues> = TMutationCommonProps<TFieldValues, boolean, HTMLInputElement> & TPropsFromCheckbox & TProps;
+export type TMutationCheckboxProps<TFieldValues extends FieldValues> = TMutationCommonProps<
+    TFieldValues,
+    boolean,
+    HTMLInputElement
+> &
+    TPropsFromCheckbox &
+    TProps
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## UploadList
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/upload/UploadList
 
 propsType: TUploadListProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [__UploadList__](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/components-uploadlist--docs)
 
@@ -430,18 +468,23 @@ __Цветовая схема__
 ```
 
 ### raw props type
+
 ```ts
 export type TUploadListProps = {
-    size?: 's' | 'm';
-    items: TUploadListItem[];
-    itIsInChat?: boolean;
-    isLoadingActions?: boolean;
-    view?: TUploadListView;
-} & TUploadListItemEvents & TUploadListItemEventsButtonVisible & TSkeletonType;
+    size?: 's' | 'm'
+    items: TUploadListItem[]
+    itIsInChat?: boolean
+    isLoadingActions?: boolean
+    view?: TUploadListView
+} & TUploadListItemEvents &
+    TUploadListItemEventsButtonVisible &
+    TSkeletonType
 ```
 
 ### demo examples found
+
 <!-- components/UploadList/ui/UploadListWithPopoverDemo.tsx -->
+
 ```tsx
 import type { TUploadListProps } from '../../../../src'
 
@@ -483,11 +526,13 @@ export const UploadListWithPopoverDemo = (args: TUploadListProps) => {
 ---
 
 ## UploadSet
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/upload/UploadSet
 
 propsType: TUploadSetProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [UploadSet](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/components-uploadset--docs) - компонент,
 позволяющий выбирать файлы с локального компьютера и загружать их на сервер напрямую из веб-браузера.
@@ -523,85 +568,92 @@ propsType: TUploadSetProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export type TUploadSetProps = {
     /**
      * Основной заголовок блока загрузки
      */
-    title?: string;
+    title?: string
     /**
      * Подзаголовок блока загрузки
      */
-    subtitle?: string;
+    subtitle?: string
     /**
      * Вспомогательный текст
      */
-    textHint?: string;
+    textHint?: string
     /**
      * Состояние ошибки для отображения вспомогательного текста
      */
-    isTextHintError?: boolean;
+    isTextHintError?: boolean
     /**
      * Обратный порядок файлов (самый свежий файл сверху)
      */
-    reverse?: boolean;
+    reverse?: boolean
     /**
      * Массив строк для описания требований к вложениям
 
      */
-    helperItems?: ReactNode[];
+    helperItems?: ReactNode[]
     /**
      * Видимость зоны загрузки файлов
      */
-    uploadVisible?: boolean;
+    uploadVisible?: boolean
     /**
      * Флаг, показывающий процесс одновременной загрузки всех файлов
      */
-    isDownloadingAll?: boolean;
+    isDownloadingAll?: boolean
     /**
      * Отображать кнопку для одновременной загрузки всех файлов
      */
-    downloadAllVisible?: boolean;
+    downloadAllVisible?: boolean
     /**
      * Метод, вызываемый при попытке одновременно скачать все файлы
      */
-    onDownloadAll?: () => void;
+    onDownloadAll?: () => void
     /**
      * Метод, вызываемый при фокусе зоны загрузки файлов
      */
-    onFocus?: (e?: React.FocusEvent<HTMLElement, Element>) => void;
+    onFocus?: (e?: React.FocusEvent<HTMLElement, Element>) => void
     /**
      * Метод, вызываемый при потере фокуса с зоны загрузки файлов
      */
-    onBlur?: (e?: React.FocusEvent<HTMLElement, Element>) => void;
-} & TFileUploaderProps & Omit<TUploadListProps, 'view'> & {
-    listView?: TUploadListProps['view'];
-};
+    onBlur?: (e?: React.FocusEvent<HTMLElement, Element>) => void
+} & TFileUploaderProps &
+    Omit<TUploadListProps, 'view'> & {
+        listView?: TUploadListProps['view']
+    }
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## useMutationMessages
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./hooks/useMutationMessages
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
 export declare const useMutationMessages: () => {
-    showToasts: (response: unknown) => void;
-};
+    showToasts: (response: unknown) => void
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---

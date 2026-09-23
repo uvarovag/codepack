@@ -1,11 +1,13 @@
 <!-- SKELETON for cs-core/pages-layouts.md — raw material only, not the final doc. 29 symbols. -->
 
 ## AccordionPage
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./pages/AccordionPageLegacy
 
 propsType: TAccordionPageLegacyProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 AccordionPageLegacy - компонент страницы, который состоит из:
  - header
@@ -15,12 +17,15 @@ AccordionPageLegacy - компонент страницы, который сос
 ```
 
 ### raw props type
+
 ```ts
-export type TAccordionPageLegacyProps = Pick<TPageProps, 'header' | 'footer'> & TAccordionContentLegacyProps;
+export type TAccordionPageLegacyProps = Pick<TPageProps, 'header' | 'footer'> & TAccordionContentLegacyProps
 ```
 
 ### demo examples found
+
 <!-- pages/AccordionPage/AccordionPageDemo.tsx -->
+
 ```tsx
 import { Breadcrumbs, Button } from '@salutejs/sdds-cs'
 import { useState } from 'react'
@@ -57,51 +62,63 @@ export const AccordionPageDemo = () => {
 ---
 
 ## AccordionPageNew
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./pages/AccordionPage
 
 propsType: TAccordionPageProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [AccordionPage](https://cs-core.cloud.delta.sbrf.ru/latest/?path=/docs/pages-accordionpage--docs) - Страница-обёртка, объединяющая секции аккордеона с Page.
 ```
 
 ### raw props type
+
 ```ts
-export type TAccordionPageProps = Pick<TPageProps, 'header' | 'footer'> & TAccordionContentProps;
+export type TAccordionPageProps = Pick<TPageProps, 'header' | 'footer'> & TAccordionContentProps
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## createMultiRegistryItem
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./pages/MultiRegistryPage
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const createMultiRegistryItem: <RowData extends TRowData>(item: TMultiRegistryPageItem<RowData>) => TMultiRegistryPageItem<TRowData>;
+export declare const createMultiRegistryItem: <RowData extends TRowData>(
+    item: TMultiRegistryPageItem<RowData>
+) => TMultiRegistryPageItem<TRowData>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## CSProvider
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./layouts/CSProvider
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 CSProvider - компонент провайдеров
 
@@ -115,23 +132,30 @@ CSProvider - компонент провайдеров
 ```
 
 ### raw props type
+
 ```ts
-export declare const CSProvider: ({ children, enableGlobalBulkActions, }: PropsWithChildren<{
-    enableGlobalBulkActions?: boolean;
-}>) => import("react").JSX.Element;
+export declare const CSProvider: ({
+    children,
+    enableGlobalBulkActions,
+}: PropsWithChildren<{
+    enableGlobalBulkActions?: boolean
+}>) => import('react').JSX.Element
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## EmptyPages
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./pages/EmptyPages
 
 propsType: TEmptyPagesProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Компонент [EmptyPages](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/pages-emptypages--docs) - это отображение
 экранов при глобальных ошибках в системе.
@@ -155,33 +179,40 @@ propsType: TEmptyPagesProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
-export type TEmptyPagesProps = {
-    view: 'notFound';
-    description?: never;
-    onClick?: () => void;
-} | {
-    view: 'forbidden';
-    description?: ReactNode;
-    onClick?: () => void;
-} | {
-    view: 'unavailable';
-    description?: never;
-    onClick?: () => void;
-};
+export type TEmptyPagesProps =
+    | {
+          view: 'notFound'
+          description?: never
+          onClick?: () => void
+      }
+    | {
+          view: 'forbidden'
+          description?: ReactNode
+          onClick?: () => void
+      }
+    | {
+          view: 'unavailable'
+          description?: never
+          onClick?: () => void
+      }
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## FlexBox
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./layouts/FlexBox
 
 propsType: TFlexBoxProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 FlexBox - обертка над компонентом`Box` из библиотеки `cs-core`, в режиме <code>display: flex</code>, упрощающая работу
 над позиционированием группы дочерних компонентов и ограничивающая,
@@ -189,21 +220,25 @@ FlexBox - обертка над компонентом`Box` из библиот�
 ```
 
 ### raw props type
+
 ```ts
-export type TFlexBoxProps = Pick<TBoxProps, TFlexBoxProperties>;
+export type TFlexBoxProps = Pick<TBoxProps, TFlexBoxProperties>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## FormElementFlex
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./layouts/Form
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Компонент FormElementFlex является шаблонным блоком для элемента формы.
 Принимает свойства компонента FlexBox.
@@ -211,12 +246,15 @@ FormElementFlex - дочерний компонент FormGroupFlex.
 ```
 
 ### raw props type
+
 ```ts
-export declare const FormElementFlex: ({ children, ...res }: TFlexBoxProps) => import("react").JSX.Element;
+export declare const FormElementFlex: ({ children, ...res }: TFlexBoxProps) => import('react').JSX.Element
 ```
 
 ### demo examples found
+
 <!-- layout/Form/components/FormFlex/components/FormElementFlex/ui/FormElementReadDemo.tsx -->
+
 ```tsx
 import { DataField, FormElementFlex, FormFlex, FormGroupFlex } from '../../../../../../../../src'
 
@@ -232,7 +270,9 @@ export const FormElementReadDemo = () => {
     )
 }
 ```
+
 <!-- layout/Form/components/FormFlex/components/FormElementFlex/ui/FormElementUpdateDemo.tsx -->
+
 ```tsx
 import { TextField } from '@salutejs/sdds-cs'
 
@@ -254,11 +294,13 @@ export const FormElementUpdateDemo = () => {
 ---
 
 ## FormElementGrid
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./layouts/Form
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Компонент FormElementGrid является шаблонным блоком для элемента формы.
 Принимает соедующие свойства:
@@ -276,12 +318,19 @@ FormElementGrid - дочерний компонент FormGroupGrid.
 ```
 
 ### raw props type
+
 ```ts
-export declare const FormElementGrid: ({ children, newLine, ...res }: TGridFormElementProps) => import("react").JSX.Element;
+export declare const FormElementGrid: ({
+    children,
+    newLine,
+    ...res
+}: TGridFormElementProps) => import('react').JSX.Element
 ```
 
 ### demo examples found
+
 <!-- layout/Form/components/FormGrid/components/FormElementGrid/ui/FormElementReadDemo.tsx -->
+
 ```tsx
 import { DataField, FormElementGrid, FormGrid, FormGroupGrid } from '../../../../../../../../src'
 
@@ -303,7 +352,9 @@ export const FormElementReadDemo = () => {
     )
 }
 ```
+
 <!-- layout/Form/components/FormGrid/components/FormElementGrid/ui/FormElementUpdateDemo.tsx -->
+
 ```tsx
 import { TextField } from '@salutejs/sdds-cs'
 
@@ -331,11 +382,13 @@ export const FormElementUpdateDemo = () => {
 ---
 
 ## FormFlex
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./layouts/Form
 
 propsType: TFormFlexProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Компонент FormFlex является flex-контейнером, унаследованным от компонента FlexBox, обеспечивающий размещение и позиционирование дочерних элементов.
 Компонент формы принимает свойство readonly, которое отвечает за внешний вид формы. Если передан readonly, то в форме используются только компоненты,
@@ -346,14 +399,19 @@ propsType: TFormFlexProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
-export type TFormFlexProps = PropsWithChildren<{
-    readonly?: boolean;
-} & Omit<TFlexBoxProps, 'gap' | 'columnGap' | 'rowGap'>>;
+export type TFormFlexProps = PropsWithChildren<
+    {
+        readonly?: boolean
+    } & Omit<TFlexBoxProps, 'gap' | 'columnGap' | 'rowGap'>
+>
 ```
 
 ### demo examples found
+
 <!-- layout/Form/components/FormFlex/ui/FormFlexDemo.tsx -->
+
 ```tsx
 import { BodyM, textSecondary } from '@salutejs/sdds-cs'
 
@@ -398,11 +456,13 @@ export const FormFlexDemo = () => {
 ---
 
 ## FormGrid
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./layouts/Form
 
 propsType: TFormGridProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Компонент FormGrid является flex-контейнером, унаследованным от компонента FlexBox, обеспечивающий размещение и позиционирование дочерних элементов.
 Компонент формы принимает свойство readonly, которое отчевает за внеший вид формы. Если передан readonly, то в форме используются только компоненты,
@@ -413,15 +473,18 @@ propsType: TFormGridProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export type TFormGridProps = {
-    readonly?: boolean;
-    children: ReactNode;
-} & Omit<TFlexBoxProps, 'gap' | 'columnGap' | 'rowGap' | 'flexDirection'>;
+    readonly?: boolean
+    children: ReactNode
+} & Omit<TFlexBoxProps, 'gap' | 'columnGap' | 'rowGap' | 'flexDirection'>
 ```
 
 ### demo examples found
+
 <!-- layout/Form/components/FormGrid/ui/FormGridDemo.tsx -->
+
 ```tsx
 import { BodyM, textSecondary } from '@salutejs/sdds-cs'
 
@@ -460,29 +523,34 @@ export const FormGridDemo = () => {
             <FormGrid readonly>
                 <FormGroupGrid label="Заголовок группы">
                     <FormElementGrid>
-           
+
 ```
 
 ---
 
 ## FormGroupFlex
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./layouts/Form
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Компонент FormGroupFlex используется для вставки в виде дочернего элемента в компонент FormFlex и для группировки элементов FormElementFlex.
 FormGroupFlex так же принимается дополнительное свойство label.
 ```
 
 ### raw props type
+
 ```ts
-export declare const FormGroupFlex: ({ label, children }: TFormGroupProps) => import("react").JSX.Element;
+export declare const FormGroupFlex: ({ label, children }: TFormGroupProps) => import('react').JSX.Element
 ```
 
 ### demo examples found
+
 <!-- layout/Form/components/FormFlex/components/FormGroupFlex/ui/FormGroupDemo.tsx -->
+
 ```tsx
 import { TextField } from '@salutejs/sdds-cs'
 
@@ -515,23 +583,28 @@ export const FormGroupDemo = () => {
 ---
 
 ## FormGroupGrid
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./layouts/Form
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Компонент FormGroupGrid используется для вставки в виде дочернего элемента в компонент FormGrid и для группировки элементов FormElementGrid.
 FormGroupGrid так же принимается допольнительное свойство label.
 ```
 
 ### raw props type
+
 ```ts
-export declare const FormGroupGrid: ({ label, children }: TFormGroupProps) => import("react").JSX.Element;
+export declare const FormGroupGrid: ({ label, children }: TFormGroupProps) => import('react').JSX.Element
 ```
 
 ### demo examples found
+
 <!-- layout/Form/components/FormGrid/components/FormGroupGrid/ui/FormGroupDemo.tsx -->
+
 ```tsx
 import { TextField } from '@salutejs/sdds-cs'
 
@@ -564,54 +637,64 @@ export const FormGroupDemo = () => {
 ---
 
 ## globalCSS
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./layouts/StandAloneWrapper
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 globalCSS - глобальные стили переопределяющие основные css-свойства
 ```
 
 ### raw props type
+
 ```ts
-export declare const globalCSS: import("@emotion/utils").SerializedStyles;
+export declare const globalCSS: import('@emotion/utils').SerializedStyles
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## LoaderPage
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./pages/LoaderPage
 
 propsType: TLoaderPageProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [LoaderPage](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/pages-loaderpage--docs) - компонент-шаблона страницы загрузки.
 Представляет из себя крутящийся спиннер, который позиционируется по центру родительского блока.
 ```
 
 ### raw props type
+
 ```ts
 export type TLoaderPageProps = {
-    text?: string;
-};
+    text?: string
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## MultiRegistryPage
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./pages/MultiRegistryPage
 
 propsType: TMultiRegistryPageProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Компонент страницы с множественными таблицами
 
@@ -628,19 +711,24 @@ propsType: TMultiRegistryPageProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export type TMultiRegistryPageProps<RowData extends TRowData> = {
     /** Заголовок страницы. */
-    title: string;
+    title: string
     /** Массив элементов (табов с таблицами). */
-    items: TMultiRegistryPageItem<RowData>[];
+    items: TMultiRegistryPageItem<RowData>[]
     /** Обработчик клика по кнопке "Создать". */
-    onClickCreate?: () => void;
-} & Pick<TPageHeaderProps, 'breadcrumbs'> & Pick<TTabContentProps, 'initialItemId' | 'onChange' | 'defaultValue'> & Pick<TPageProps, 'includeGlobalBulkActions'>;
+    onClickCreate?: () => void
+} & Pick<TPageHeaderProps, 'breadcrumbs'> &
+    Pick<TTabContentProps, 'initialItemId' | 'onChange' | 'defaultValue'> &
+    Pick<TPageProps, 'includeGlobalBulkActions'>
 ```
 
 ### demo examples found
+
 <!-- pages/MultiRegistryPage/ui/MultiRegistryPageDemo.tsx -->
+
 ```tsx
 import type { ComponentProps } from 'react'
 
@@ -691,7 +779,9 @@ export const MultiRegistryPageDemo = (args: ComponentProps<typeof MultiRegistryP
     )
 }
 ```
+
 <!-- pages/MultiRegistryPage/ui/MultiRegistryPageSaveTabDemo.tsx -->
+
 ```tsx
 import { BodyS, Breadcrumbs, textPrimary } from '@salutejs/sdds-cs'
 
@@ -754,27 +844,32 @@ export const MultiRegistryPageSaveTabDemo = () => {
 ---
 
 ## Page
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./pages/Page
 
 propsType: TPageProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Page - компонент страницы, который состоит из header, content и footer.
 ```
 
 ### raw props type
+
 ```ts
 export type TPageProps = {
-    contentOverflow?: TFlexBoxProps['overflow'];
-    contentBorderRadius?: TBorderRadiusSizes;
+    contentOverflow?: TFlexBoxProps['overflow']
+    contentBorderRadius?: TBorderRadiusSizes
     /** @deprecated Больше не работает, можно удалить. Теперь всегда используется GlobalBulkActions из createApp */
-    includeGlobalBulkActions?: boolean;
-} & TContent;
+    includeGlobalBulkActions?: boolean
+} & TContent
 ```
 
 ### demo examples found
+
 <!-- pages/Page/ui/PageDemo.tsx -->
+
 ```tsx
 import { IconCopyOutline, IconDownload, IconEdit } from '@salutejs/plasma-icons'
 import { Breadcrumbs, Button, IconButton, TextM } from '@salutejs/sdds-cs'
@@ -829,11 +924,13 @@ export const PageDemo = () => {
 ---
 
 ## PageHeader
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./pages/PageHeader
 
 propsType: TPageHeaderProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Компонент PageHeader является шаблоном для блока заголовка страницы.
 
@@ -851,27 +948,30 @@ propsType: TPageHeaderProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export type TPageHeaderProps = {
     /** Хлебные крошки */
-    breadcrumbs?: ReactNode;
+    breadcrumbs?: ReactNode
     /** Заголовок шапки */
-    title?: string | ReactNode;
+    title?: string | ReactNode
     /** Вспомогательный заголовок шапки */
-    subtitle?: string | ReactNode;
+    subtitle?: string | ReactNode
     /** Панель экшенов */
-    actionsToolbar?: ReactNode;
+    actionsToolbar?: ReactNode
     /** Контент шапки */
-    content?: ReactNode;
+    content?: ReactNode
     /** Флаг состояния загрузки */
-    isLoading?: boolean;
+    isLoading?: boolean
     /** Количество скелетонов */
-    skeletonCount?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
-} & TPageHeaderBadges;
+    skeletonCount?: 0 | 1 | 2 | 3 | 4 | 5 | 6
+} & TPageHeaderBadges
 ```
 
 ### demo examples found
+
 <!-- pages/PageHeader/ui/PageHeaderBreadcrumbsDemo.tsx -->
+
 ```tsx
 import type { BreadcrumbsProps } from '@salutejs/sdds-cs'
 
@@ -928,7 +1028,9 @@ export const PageHeaderBreadcrumbsDemo = () => {
                     </IconButton>
                     <Button vie
 ```
+
 <!-- pages/PageHeader/ui/PageHeaderDemo.tsx -->
+
 ```tsx
 import { IconEdit, IconDownload, IconCopyOutline } from '@salutejs/plasma-icons'
 import { Breadcrumbs, IconButton, Button } from '@salutejs/sdds-cs'
@@ -984,11 +1086,13 @@ export const PageHeaderDemo = () => {
 ---
 
 ## PageHeaderDetail
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./pages/PageHeader
 
 propsType: TPageHeaderDetailProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Компонент PageHeaderDetail предоставляет полную картину об объекте и его условиях, являясь детальной информацией, которая содержит
 важные условия карточки объекта, например, наименование сторон, предмет договора, сроки исполнения, стоимость услуг или товаров и другие
@@ -1004,14 +1108,17 @@ propsType: TPageHeaderDetailProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export type TPageHeaderDetailProps = {
-    children: ReactNode;
-};
+    children: ReactNode
+}
 ```
 
 ### demo examples found
+
 <!-- pages/PageHeaderDetail/PageHeaderDetail/ui/PageHeaderDetailFourColumnDemo.tsx -->
+
 ```tsx
 import { PageHeaderDetail, PageHeaderDetailGroup } from '../../../../../src'
 
@@ -1062,11 +1169,13 @@ export const PageHeaderDetailFourColumnDemo = () => {
 ---
 
 ## PageHeaderDetailGroup
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./pages/PageHeader
 
 propsType: TPageHeaderDetailGroupProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Компонент PageHeaderDetailGroup используется в качестве дочернего элемента компонента PageHeaderDetail.
 
@@ -1088,56 +1197,64 @@ propsType: TPageHeaderDetailGroupProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export type TPageHeaderDetailGroupProps = {
     /**Заголовочная часть группы */
-    label?: ReactNode;
+    label?: ReactNode
     /**@deprecated: используйте объект items */
-    elements?: TPageHeaderElement[];
+    elements?: TPageHeaderElement[]
     /**Массив элементов группы */
-    items?: TPageHeaderElement[];
+    items?: TPageHeaderElement[]
     /**@deprecated: используйте объект info */
-    textIconInfo?: string;
+    textIconInfo?: string
     /**Отображение тултипа с иконкой info у label группы*/
-    info?: TIconInfo;
+    info?: TIconInfo
     /**Количество строк для каждого PageHeaderDetailGroup в компоненте*/
-    maxCountRow?: 3 | 4;
-};
+    maxCountRow?: 3 | 4
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## Paper
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./layouts/Paper
 
 propsType: TPaperProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
-```
+
+````
 Paper - flex-контейнер унаследованный от компонента ```FlexBox``` обеспечивает размещение и позиционирование дочерних элементов.
 Предоставляет доступ к актуальному набору flex-свойств, а также реализует свое визуальное представление через
 значение свойства ```variant```.
-```
+````
 
 ### raw props type
+
 ```ts
-export type TPaperProps = TPaperTypeProps & TFlexBoxProps;
+export type TPaperProps = TPaperTypeProps & TFlexBoxProps
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## PaperCard
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./layouts/PaperCard
 
 propsType: TPaperCardProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [PaperCard](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/layout-papercard--docs) - представляет собой шаблон карточки, состоящий из заголовка, контента
 и футера. В свойстве content должен использоваться специальным компонент
@@ -1148,10 +1265,12 @@ propsType: TPaperCardProps (source: cs-core)
 - `content` - наполнение карточки в виде массива компонентов [PaperCardElement](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/layout-papercard-papercardelement--docs),
 т.к. тип ReactNode, то рекомендуется прокидывать компоненты в ReactFragment:
 ```
+
 <>
-   <PaperCardElementOne />
-   <PaperCardElementTwo />
+<PaperCardElementOne />
+<PaperCardElementTwo />
 </>
+
 ```
 - `footer` (опционально) - нижняя часть карточки, состоящая из ReactNode или двух свойств - buttons: ReactNode[] - массив кнопок футера, и description: string (опционально) - описание.
 - `enableScroll` (опционально) - флаг по которому контент прикрепляется и появляется скролл у контента;
@@ -1168,42 +1287,53 @@ propsType: TPaperCardProps (source: cs-core)
      - isLoading (опционально) - флаг ожидания обработки клика;
 - `actionToolbar` (опционально) - панель кнопок-иконок. Рекомендуется прокидывать иконки таким образом:
 ```
+
 actionsToolbar: [
-     {
-         icon: IconEditOutline,
-         onClick: () => {},
-         isLoading?: true/false
-     },
-     {
-         icon: IconDownload,
-         onClick: () => {},
-         isLoading?: true/false
-     },
+{
+icon: IconEditOutline,
+onClick: () => {},
+isLoading?: true/false
+},
+{
+icon: IconDownload,
+onClick: () => {},
+isLoading?: true/false
+},
 ]
+
 ```
 Также можно использовать готовый экшен, например:
 ```
+
 actionsToolbar: {
-     type: 'switch',
-     text?: string,
-     options: Pick<ComponentProps<typeof Switch>, 'onChange' | 'defaultChecked' | 'value' | 'checked'>
- ```
+type: 'switch',
+text?: string,
+options: Pick<ComponentProps<typeof Switch>, 'onChange' | 'defaultChecked' | 'value' | 'checked'>
+
+```
+
 ```
 
 ### raw props type
+
 ```ts
-export type TPaperCardProps<TValue extends string | object = string, TItem extends TSegmentsItem<TValue> = TSegmentsItem<TValue>> = {
-    header?: THeaderPaperCard;
-    content: ReactNode;
-    footer?: TFooterPaperCard | ReactNode;
-    quickFilters?: TMultiSegmentsProps<TValue, TItem>;
-    enableScroll?: boolean;
-    description?: string;
-};
+export type TPaperCardProps<
+    TValue extends string | object = string,
+    TItem extends TSegmentsItem<TValue> = TSegmentsItem<TValue>,
+> = {
+    header?: THeaderPaperCard
+    content: ReactNode
+    footer?: TFooterPaperCard | ReactNode
+    quickFilters?: TMultiSegmentsProps<TValue, TItem>
+    enableScroll?: boolean
+    description?: string
+}
 ```
 
 ### demo examples found
+
 <!-- layout/PaperCard/PaperCard/ui/PaperCardNumberInputDemo.tsx -->
+
 ```tsx
 import type { ComponentProps } from 'react'
 
@@ -1273,7 +1403,9 @@ export const PaperCardNumberInputDemo = ({ content, footer, header }: ComponentP
     )
 }
 ```
+
 <!-- layout/PaperCard/PaperCard/ui/PaperCardWithFiltersDemo.tsx -->
+
 ```tsx
 import { Button } from '@salutejs/sdds-cs'
 import { useState } from 'react'
@@ -1330,17 +1462,19 @@ const DynamicPaperCardElementExample = ({ view }: { view: TViewType }) => {
             visibleContent={
                 <FormFlex>
                     <FormGroupFlex label="Заголовок группы элементов формы">{getContent(view)}</FormGroupFlex>
-               
+
 ```
 
 ---
 
 ## PaperCardElement
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./layouts/PaperCard
 
 propsType: TPaperCardElementProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [PaperCardElement](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/layout-papercard-papercardelement--docs) - представляет собой шаблон содержимого раздела
  для карточек, состоящих из нескольких частей, и, **внимание**, является дочерним элементом компонента [PaperCard](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/layout-papercard--docs).
@@ -1384,40 +1518,48 @@ propsType: TPaperCardElementProps (source: cs-core)
 [Informer](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/components-informer--docs), **нельзя одновременно использовать со свойством image**.
 - `actionToolbar` (опционально) - панель кнопок-иконок. Рекомендуется прокидывать иконки таким образом:
 ```
+
 actionsToolbar: [
-     {
-         icon: IconEditOutline,
-         onClick: () => {},
-         isLoading?: true/false
-     },
-     {
-         icon: IconDownload,
-         onClick: () => {},
-         isLoading?: true/false
-     },
+{
+icon: IconEditOutline,
+onClick: () => {},
+isLoading?: true/false
+},
+{
+icon: IconDownload,
+onClick: () => {},
+isLoading?: true/false
+},
 ]
+
 ```
+
 ```
 
 ### raw props type
+
 ```ts
 export type TPaperCardElementProps = {
-    header?: THeaderPaperCardElement;
-    content?: ReactNode;
-    visibleContent?: ReactNode;
-    footer?: ReactNode;
-    view?: 'solid' | 'secondary' | 'selected';
-    isEdit?: boolean;
-    onClick?: () => void;
-    description?: string;
-    accordion?: TAccordion;
-    checked?: TChecked;
-    hoverView?: THoverViewPaperCardElement;
-} & TFromPaperProps & TAdditionalProps & Pick<TFlexBoxProps, 'id'>;
+    header?: THeaderPaperCardElement
+    content?: ReactNode
+    visibleContent?: ReactNode
+    footer?: ReactNode
+    view?: 'solid' | 'secondary' | 'selected'
+    isEdit?: boolean
+    onClick?: () => void
+    description?: string
+    accordion?: TAccordion
+    checked?: TChecked
+    hoverView?: THoverViewPaperCardElement
+} & TFromPaperProps &
+    TAdditionalProps &
+    Pick<TFlexBoxProps, 'id'>
 ```
 
 ### demo examples found
+
 <!-- layout/PaperCard/PaperCardElement/ui/PaperCardElementDemo.tsx -->
+
 ```tsx
 import type { TPaperCardElementProps } from '../../../../../src/layouts/PaperCard/PaperCardElement/types'
 
@@ -1438,7 +1580,9 @@ export const PaperCardElementDemo = (args: TPaperCardElementProps) => {
     )
 }
 ```
+
 <!-- layout/PaperCard/PaperCardElement/ui/PaperCardElementInformerDemo.tsx -->
+
 ```tsx
 import type { TPaperCardElementProps } from '../../../../../src/layouts/PaperCard/PaperCardElement/types'
 
@@ -1481,7 +1625,9 @@ export const PaperCardElementInformerDemo = (args: TPaperCardElementProps) => {
     )
 }
 ```
+
 <!-- layout/PaperCard/PaperCardElement/ui/PaperCardElementNestedDemo.tsx -->
+
 ```tsx
 import type { TPaperCardElementProps } from '../../../../../src/layouts/PaperCard/PaperCardElement/types'
 
@@ -1532,17 +1678,19 @@ export const PaperCardElementNestedDemo = (args: TPaperCardElementProps) => {
                                 {
                                     icon: IconCartOutline,
                                     onClick: () => console.info,
-            
+
 ```
 
 ---
 
 ## PaperCardElementCatalog
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./layouts/PaperCard
 
 propsType: TPaperCardElementCatalogProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [PaperCardElementCatalog](https://tvldw-efs003257.cloud.delta.sbrf.ru/?path=/docs/layout-papercard-papercardelementcatalog--docs) - представляет собой карточку каталога.
 
@@ -1566,21 +1714,24 @@ propsType: TPaperCardElementCatalogProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export type TPaperCardElementCatalogProps = {
     /** Заголовок раздела (обязательное свойство) */
-    header: Pick<THeaderPaperCard, 'title' | 'marks'>;
+    header: Pick<THeaderPaperCard, 'title' | 'marks'>
     /** Основное содержимое раздела */
-    content?: ReactNode;
+    content?: ReactNode
     /** Футер карточки (опциональное свойство) */
-    footer?: TFooter;
+    footer?: TFooter
     /** Отображение рейтинга в виде звёзд у карточки (опциональное свойство) */
-    rating?: TRatingSDDSProps;
-};
+    rating?: TRatingSDDSProps
+}
 ```
 
 ### demo examples found
+
 <!-- layout/PaperCard/PaperCardElementCatalog/ui/PaperCardElementCatalogDemo.tsx -->
+
 ```tsx
 import { IconCartOutline } from '@salutejs/plasma-icons'
 import { BodyM, BodyS, SegmentGroup, SegmentItem, textSecondary } from '@salutejs/sdds-cs'
@@ -1642,17 +1793,19 @@ const CatalogExample = () => {
                     icon: IconCartOutline,
                     onClick: () => {
                         enableNumberInput('numberInputCatalog2')
-                   
+
 ```
 
 ---
 
 ## RegistryPage
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./pages/RegistryPage
 
 propsType: TRegistryPageProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Компонент страницы реестра с одной таблицей
 
@@ -1668,17 +1821,23 @@ propsType: TRegistryPageProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
-export type TRegistryPageProps<RowData extends TRowData> = TPrettify<{
-    title: string;
-    table: TTableInstance<RowData>;
-    onClickCreate?: () => void;
-    count?: number;
-} & TPageHeader & Pick<TPageProps, 'includeGlobalBulkActions'>>;
+export type TRegistryPageProps<RowData extends TRowData> = TPrettify<
+    {
+        title: string
+        table: TTableInstance<RowData>
+        onClickCreate?: () => void
+        count?: number
+    } & TPageHeader &
+        Pick<TPageProps, 'includeGlobalBulkActions'>
+>
 ```
 
 ### demo examples found
+
 <!-- pages/RegistryPage/ui/RegistryPageDemo.tsx -->
+
 ```tsx
 import type { TRowData } from '../../../../src'
 import type { TRegistryPageProps } from '../../../../src/pages/RegistryPage/types'
@@ -1742,11 +1901,13 @@ export const RegistryPageDemo = (args: TRegistryPageProps<TRowData>) => {
 ---
 
 ## SplitContainer
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./pages/SplitContainer
 
 propsType: TSplitContainerProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 SplitContainer - компонент для разделения контента на две части. Master слева, detail справа. fixed позволяет переключать размер основного и
 второго модулей.  Компонент принимает следующие свойства:
@@ -1763,18 +1924,21 @@ SplitContainer - компонент для разделения контента
 ```
 
 ### raw props type
+
 ```ts
 export type TSplitContainerProps = {
-    master?: ReactNode;
-    detail?: ReactNode;
-    fixed?: 'master' | 'detail';
-    className?: string;
-    enableScroll?: boolean;
-};
+    master?: ReactNode
+    detail?: ReactNode
+    fixed?: 'master' | 'detail'
+    className?: string
+    enableScroll?: boolean
+}
 ```
 
 ### demo examples found
+
 <!-- pages/SplitContainer/ui/SplitContainerDemo.tsx -->
+
 ```tsx
 import type { ComponentProps } from 'react'
 
@@ -1808,7 +1972,9 @@ export const SplitContainerDemo = (args: ComponentProps<typeof SplitContainer>) 
     )
 }
 ```
+
 <!-- pages/SplitContainer/ui/SplitContainerEnableScrollDemo.tsx -->
+
 ```tsx
 import type { ComponentProps } from 'react'
 
@@ -1849,11 +2015,13 @@ export const SplitContainerEnableScrollDemo = (args: ComponentProps<typeof Split
 ---
 
 ## StandAloneWrapper
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./layouts/StandAloneWrapper
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 StandAloneWrapper - обертка для stand-alone приложения, с следующими свойствами:
 
@@ -1873,32 +2041,39 @@ StandAloneWrapper - обертка для stand-alone приложения, с �
 ```
 
 ### raw props type
+
 ```ts
-export declare const StandAloneWrapper: ({ children }: PropsWithChildren) => import("react").JSX.Element;
+export declare const StandAloneWrapper: ({ children }: PropsWithChildren) => import('react').JSX.Element
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## TabPage
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./pages/TabPage
 
 propsType: TTabPageProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 TabPage - компонент страницы, который состоит из header, компонента TabContent и footer.
 ```
 
 ### raw props type
+
 ```ts
-export type TTabPageProps = Pick<TPageProps, 'header' | 'footer' | 'includeGlobalBulkActions'> & TTabContentProps;
+export type TTabPageProps = Pick<TPageProps, 'header' | 'footer' | 'includeGlobalBulkActions'> & TTabContentProps
 ```
 
 ### demo examples found
+
 <!-- pages/TabPage/ui/TabPageDemo.tsx -->
+
 ```tsx
 import type { TabContent } from '../../../../src'
 
@@ -1936,7 +2111,9 @@ export const TabPageDemo = (args: TabPageDemoProps) => {
     )
 }
 ```
+
 <!-- pages/TabPage/ui/TabPageWithTimeoutDemo.tsx -->
+
 ```tsx
 import type { TabContent } from '../../../../src'
 
@@ -1988,11 +2165,13 @@ export const TabPageWithTimeoutDemo = () => {
 ---
 
 ## WizardPage
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./pages/WizardPage
 
 propsType: TWizardPageProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [WizardPage](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/pages-wizardpage--docs) — шаблонная страница для сложных и многоступенчатых процессов,
 которые состоят из объёмных форм с большим количеством элементов выбора и ввода.
@@ -2041,12 +2220,19 @@ propsType: TWizardPageProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
-export type TWizardPageProps<TFieldValues extends FieldValues, TTransformedValues = TFieldValues> = TWizardPageItem<TFieldValues, TTransformedValues> & Pick<TPageHeaderProps, 'breadcrumbs'>;
+export type TWizardPageProps<TFieldValues extends FieldValues, TTransformedValues = TFieldValues> = TWizardPageItem<
+    TFieldValues,
+    TTransformedValues
+> &
+    Pick<TPageHeaderProps, 'breadcrumbs'>
 ```
 
 ### demo examples found
+
 <!-- pages/WizardPage/WizardPage/WizardPageDemo.tsx -->
+
 ```tsx
 import type { TUseWizardHandleSubmit, TWizardItem } from '../../../../src'
 import type { FieldValues } from 'react-hook-form'
@@ -2100,11 +2286,13 @@ export const items: TWizardItem[] = wizardData.map((item) => ({
 ---
 
 ## WidgetPaper
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./widgets/WidgetPaper
 
 propsType: TWidgetPaperProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [WidgetPaper](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/components-widgetpaper--docs) - представляет из себя небольшой прямоугольный или квадратный модуль, который отображает данные в кратком виде или в виде диаграмм. Обеспечивает доступ к подробной информации.
 
@@ -2133,32 +2321,34 @@ propsType: TWidgetPaperProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export type TWidgetPaperProps = {
     /** Флаг отображения пустого состояния @default false */
-    isEmpty?: boolean;
+    isEmpty?: boolean
     /** Флаг наличия фильтров @default false */
-    hasFilters?: boolean;
+    hasFilters?: boolean
     /** Флаг состояния загрузки @default false */
-    isLoading?: boolean;
+    isLoading?: boolean
     /** Заголовок виджета (строка или ReactNode) */
-    title: string | ReactNode;
+    title: string | ReactNode
     /** Область для действий */
-    actions?: ReactNode;
+    actions?: ReactNode
     /** Обработчик клика по виджету целиком. Имеет приоритет над href и navigate */
-    widgetOnClick?: THandleLinkChange;
+    widgetOnClick?: THandleLinkChange
     /** Ссылка для перехода по виджету целиком */
-    href?: string;
+    href?: string
     /** Размер виджета @default '4x2' */
-    size?: TWidgetSize;
+    size?: TWidgetSize
     /** Функция роутинга из react-router. Вызывается при клике по виджету, если не задан widgetOnClick */
-    navigate?: NavigateFunction;
+    navigate?: NavigateFunction
     /** Флаг видимости иконки стрелки при наведении @default true */
-    arrowVisible?: boolean;
-} & Omit<TFlexBoxProps, 'height' | 'width' | 'onClick'>;
+    arrowVisible?: boolean
+} & Omit<TFlexBoxProps, 'height' | 'width' | 'onClick'>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---

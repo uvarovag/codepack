@@ -10,6 +10,7 @@ Always `import { X } from '@sber-front-cs-core/cs-portal'`.
 Full-page shells: `header` + `content`/`master`/`detail` + `footer`. Pick one, don't nest them.
 
 **Page** — plain page: `header`, `content`, `footer` (all `ReactNode`), `contentOverflow`, `contentBorderRadius`.
+
 ```tsx
 <Page
   header={<PageHeader title="..." breadcrumbs={...} />}
@@ -21,6 +22,7 @@ Full-page shells: `header` + `content`/`master`/`detail` + `footer`. Pick one, d
 **TabPage** — `Page` + `TabContent` merged: same `header`/`footer` as Page, plus `items` (tabs), `defaultValue`, `onChange`, `view: 'outer' | 'inner'`.
 
 **SplitContainer** — two-pane layout, `master` (left) + `detail` (right, optional), `fixed?: 'master' | 'detail'` toggles which side keeps its size, `enableScroll?: boolean` for independent-scroll panes + auto mobile adaptation. This is what you wrap `Page`/`TabPage`/`RegistryPage` etc. in.
+
 ```tsx
 <SplitContainer master={<Page ... />} detail={<Page ... />} />
 ```
@@ -28,12 +30,13 @@ Full-page shells: `header` + `content`/`master`/`detail` + `footer`. Pick one, d
 **RegistryPage** — single-table registry page: `title`, `table` (a `useTable`/`useSmartTable` instance — see [table.md](table.md)), `onClickCreate?`, `count?`, plus `PageHeader` props (breadcrumbs etc).
 
 **MultiRegistryPage** + **createMultiRegistryItem** — tabbed multi-table registry page. Build each tab with `createMultiRegistryItem({ label, value, table, count? })`, pass the array as `items`.
+
 ```tsx
 const items = [
-  createMultiRegistryItem({ label: 'Table 1', value: '1', table: useDeliveryTable() }),
-  createMultiRegistryItem({ label: 'Table 2', value: '2', table: useCheckTable() }),
-];
-<MultiRegistryPage title="Registries" items={items} onClickCreate={() => {}} />
+    createMultiRegistryItem({ label: 'Table 1', value: '1', table: useDeliveryTable() }),
+    createMultiRegistryItem({ label: 'Table 2', value: '2', table: useCheckTable() }),
+]
+;<MultiRegistryPage title="Registries" items={items} onClickCreate={() => {}} />
 ```
 
 **AccordionPageNew** — `Page` (header/footer) + `AccordionContentNew` sections merged; `items`, `value`, `onChange` (see [data-display.md](data-display.md#accordioncontent--accordioncontentnew)).
@@ -56,9 +59,17 @@ Gotcha: `steps` prop (Steps/stepper from sdds) is deprecated, removed in cs-core
 
 **PageHeaderDetailGroup** — one labeled group of label/value pairs. `label?`, `items: { label?, value, newLine?, iconRight? }[]`, `info?: { text, view }`, `maxCountRow?: 3 | 4`.
 Gotcha: `elements`/`textIconInfo` props are deprecated aliases for `items`/`info`.
+
 ```tsx
 <PageHeaderDetail>
-  <PageHeaderDetailGroup label="Requisites" items={[{ label: 'No.', value: '14-0184' }, { label: 'Date', value: '24.04.2026', newLine: true }]} maxCountRow={4} />
+    <PageHeaderDetailGroup
+        label="Requisites"
+        items={[
+            { label: 'No.', value: '14-0184' },
+            { label: 'Date', value: '24.04.2026', newLine: true },
+        ]}
+        maxCountRow={4}
+    />
 </PageHeaderDetail>
 ```
 
@@ -79,12 +90,17 @@ Gotcha: `elements`/`textIconInfo` props are deprecated aliases for `items`/`info
 ### Forms — flex variant
 
 `FormFlex` (container, `readonly?` toggles the whole form edit/read mode) → `FormGroupFlex` (`label?`) → `FormElementFlex` (one field, forwards `FlexBox` props).
+
 ```tsx
 <FormFlex readonly={isReadonly}>
-  <FormGroupFlex label="Group title">
-    <FormElementFlex><DataField label="label" value="text" /></FormElementFlex>
-    <FormElementFlex><TextField label="label" value="text" /></FormElementFlex>
-  </FormGroupFlex>
+    <FormGroupFlex label="Group title">
+        <FormElementFlex>
+            <DataField label="label" value="text" />
+        </FormElementFlex>
+        <FormElementFlex>
+            <TextField label="label" value="text" />
+        </FormElementFlex>
+    </FormGroupFlex>
 </FormFlex>
 ```
 
@@ -110,4 +126,5 @@ Gotcha: the select control (radio/switch/checkbox) never renders when `paddingSi
 - **WidgetPaper** — `import { WidgetPaper } from '@sber-front-cs-core/cs-portal'` · small stat/chart tile (`1x1`/`2x1`/`2x2`/`4x2` sizes) with click-through (`widgetOnClick` > `href`+`navigate`) · props: `title`, `actions`, `isLoading`, `isEmpty`, `hasFilters`, `size`, plus most `FlexBox`/`Paper` props (not `height`/`width`).
 
 ---
+
 See also: [data-display.md](data-display.md) for `AccordionContentNew`, `Badge`, `DataField`. [table.md](table.md) for `useTable`/`useSmartTable`. [feedback-modals.md](feedback-modals.md) for `useConfirm`/`ConfirmProvider`. [../cs-portal/app-shell.md](../cs-portal/app-shell.md), [../cs-portal/layout.md](../cs-portal/layout.md).

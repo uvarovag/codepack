@@ -1,130 +1,154 @@
 <!-- SKELETON for cs-portal/forms-mutations.md — raw material only, not the final doc. 30 symbols. -->
 
 ## Controller
+
 tier: A · origin: react-hook-form · usedByApps: false · fromSpec: react-hook-form
 
-
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
 (none found)
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## FC_HIDDEN
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./mutations/constants
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const FC_HIDDEN = 0;
+export declare const FC_HIDDEN = 0
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## FC_MANDATORY
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./mutations/constants
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const FC_MANDATORY = 7;
+export declare const FC_MANDATORY = 7
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## FC_OPTIONAL
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./mutations/constants
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const FC_OPTIONAL = 3;
+export declare const FC_OPTIONAL = 3
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## FC_READONLY
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./mutations/constants
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const FC_READONLY = 1;
+export declare const FC_READONLY = 1
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## FormProvider
+
 tier: A · origin: react-hook-form · usedByApps: true · fromSpec: react-hook-form
 
-
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
 (none found)
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## MutationAutocomplete
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./mutations/components/MutationAutocomplete
 SHADOW NOTE: cs-portal gives the cs-portal version; also defined in: cs-core
 
 propsType: TMutationAutocompleteProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Поле ввода с автодополнением, интегрированное с react-hook-form.
 
@@ -138,22 +162,26 @@ propsType: TMutationAutocompleteProps (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
-export type TMutationAutocompleteProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;
+export type TMutationAutocompleteProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## MutationCheckboxGroup
+
 tier: A · origin: cs-portal · usedByApps: true · fromSpec: ./mutations/components/MutationCheckboxGroup
 SHADOW NOTE: cs-portal gives the cs-portal version; also defined in: cs-core
 
 propsType: MutationCheckboxGroupProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Группа чекбоксов, интегрированная с react-hook-form.
 
@@ -163,22 +191,26 @@ propsType: MutationCheckboxGroupProps (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
-export type MutationCheckboxGroupProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;
+export type MutationCheckboxGroupProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## MutationCombobox
+
 tier: A · origin: cs-portal · usedByApps: true · fromSpec: ./mutations/components/MutationCombobox
 SHADOW NOTE: cs-portal gives the cs-portal version; also defined in: cs-core
 
 propsType: TMutationComboboxProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Комбобокс (поиск + выбор), интегрированный с react-hook-form.
 
@@ -189,12 +221,15 @@ propsType: TMutationComboboxProps (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
-export type TMutationComboboxProps<TFieldValues extends FieldValues> = BaseProps<TFieldValues> & TFieldOptions;
+export type TMutationComboboxProps<TFieldValues extends FieldValues> = BaseProps<TFieldValues> & TFieldOptions
 ```
 
 ### demo examples found
+
 <!-- components/mutation/mutationComponents/MutationCombobox/ui/MutationComboboxSelectAllDemo.tsx -->
+
 ```tsx
 import type { ComponentProps } from 'react'
 
@@ -221,12 +256,14 @@ export const MutationComboboxSelectAllDemo = ({ ...args }: ComponentProps<typeof
 ---
 
 ## MutationDatePicker
+
 tier: A · origin: cs-portal · usedByApps: true · fromSpec: ./mutations/components/MutationDatePickers
 SHADOW NOTE: cs-portal gives the cs-portal version; also defined in: cs-core
 
 propsType: TMutationDatePickerProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Выбор даты, интегрированный с react-hook-form.
 
@@ -237,22 +274,26 @@ propsType: TMutationDatePickerProps (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
-export type TMutationDatePickerProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;
+export type TMutationDatePickerProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## MutationDatePickerRange
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./mutations/components/MutationDatePickers
 SHADOW NOTE: cs-portal gives the cs-portal version; also defined in: cs-core
 
 propsType: TMutationDatePickerRangeProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Выбор диапазона дат, интегрированный с react-hook-form.
 
@@ -263,22 +304,26 @@ propsType: TMutationDatePickerRangeProps (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
-export type TMutationDatePickerRangeProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;
+export type TMutationDatePickerRangeProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## MutationMask
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./mutations/components/MutationMask
 SHADOW NOTE: cs-portal gives the cs-portal version; also defined in: cs-core
 
 propsType: TMutationMaskProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Поле ввода с маской, интегрированное с react-hook-form.
 
@@ -289,22 +334,26 @@ propsType: TMutationMaskProps (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
-export type TMutationMaskProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;
+export type TMutationMaskProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## MutationNumberFormat
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./mutations/components/MutationNumberFormat
 SHADOW NOTE: cs-portal gives the cs-portal version; also defined in: cs-core
 
 propsType: TMutationNumberFormatProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Числовое поле с форматированием, интегрированное с react-hook-form.
 
@@ -314,22 +363,26 @@ propsType: TMutationNumberFormatProps (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
-export type TMutationNumberFormatProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;
+export type TMutationNumberFormatProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## MutationNumberInput
+
 tier: A · origin: cs-portal · usedByApps: true · fromSpec: ./mutations/components/MutationNumberInput
 SHADOW NOTE: cs-portal gives the cs-portal version; also defined in: cs-core
 
 propsType: TMutationNumberInputProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Числовое поле ввода, интегрированное с react-hook-form.
 
@@ -340,22 +393,26 @@ propsType: TMutationNumberInputProps (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
-export type TMutationNumberInputProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;
+export type TMutationNumberInputProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## MutationRadioGroup
+
 tier: A · origin: cs-portal · usedByApps: true · fromSpec: ./mutations/components/MutationRadioGroup
 SHADOW NOTE: cs-portal gives the cs-portal version; also defined in: cs-core
 
 propsType: TMutationRadioGroupProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Группа радиокнопок, интегрированная с react-hook-form.
 
@@ -365,22 +422,26 @@ propsType: TMutationRadioGroupProps (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
-export type TMutationRadioGroupProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;
+export type TMutationRadioGroupProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## MutationSelect
+
 tier: A · origin: cs-portal · usedByApps: true · fromSpec: ./mutations/components/MutationSelect
 SHADOW NOTE: cs-portal gives the cs-portal version; also defined in: cs-core
 
 propsType: TMutationSelectProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Выпадающий список, интегрированный с react-hook-form.
 
@@ -391,22 +452,26 @@ propsType: TMutationSelectProps (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
-export type TMutationSelectProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;
+export type TMutationSelectProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## MutationSubmit
+
 tier: A · origin: cs-portal · usedByApps: true · fromSpec: ./mutations/components/MutationSubmit
 SHADOW NOTE: cs-portal gives the cs-portal version; also defined in: cs-core
 
 propsType: TMutationSubmitProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Кнопка отправки формы, интегрированная с react-hook-form и RTK Mutation.
 
@@ -425,12 +490,19 @@ propsType: TMutationSubmitProps (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
-export type TMutationSubmitProps<TFieldValues extends FieldValues, Response extends TResponse<unknown>> = TMutationSubmit<TFieldValues, Response> & Pick<ComponentProps<typeof Button>, 'children' | 'view' | 'stretching' | 'isLoading'>;
+export type TMutationSubmitProps<
+    TFieldValues extends FieldValues,
+    Response extends TResponse<unknown>,
+> = TMutationSubmit<TFieldValues, Response> &
+    Pick<ComponentProps<typeof Button>, 'children' | 'view' | 'stretching' | 'isLoading'>
 ```
 
 ### demo examples found
+
 <!-- components/mutation/mutationComponents/MutationSubmit/ui/MutationSubmitDemo.tsx -->
+
 ```tsx
 import type { ComponentProps } from 'react'
 
@@ -467,12 +539,14 @@ export const MutationSubmitDemo = (args: ComponentProps<typeof MutationSubmit>) 
 ---
 
 ## MutationSwitch
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./mutations/components/MutationSwitch
 SHADOW NOTE: cs-portal gives the cs-portal version; also defined in: cs-core
 
 propsType: TMutationSwitchProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Переключатель (switch), интегрированный с react-hook-form.
 
@@ -482,22 +556,26 @@ propsType: TMutationSwitchProps (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
-export type TMutationSwitchProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;
+export type TMutationSwitchProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## MutationTextArea
+
 tier: A · origin: cs-portal · usedByApps: true · fromSpec: ./mutations/components/MutationTextArea
 SHADOW NOTE: cs-portal gives the cs-portal version; also defined in: cs-core
 
 propsType: TMutationTextAreaProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Многострочное текстовое поле, интегрированное с react-hook-form.
 
@@ -508,22 +586,26 @@ propsType: TMutationTextAreaProps (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
-export type TMutationTextAreaProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;
+export type TMutationTextAreaProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## MutationTextField
+
 tier: A · origin: cs-portal · usedByApps: true · fromSpec: ./mutations/components/MutationTextField
 SHADOW NOTE: cs-portal gives the cs-portal version; also defined in: cs-core
 
 propsType: TMutationTextFieldProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Текстовое поле ввода, интегрированное с react-hook-form.
 
@@ -534,12 +616,15 @@ propsType: TMutationTextFieldProps (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
-export type TMutationTextFieldProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;
+export type TMutationTextFieldProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions
 ```
 
 ### demo examples found
+
 <!-- components/mutation/mutationComponents/MutationTextField/ui/MutationTextFieldReadOnlyDemo.tsx -->
+
 ```tsx
 import type { ComponentProps } from 'react'
 
@@ -558,12 +643,14 @@ export const MutationTextFieldReadOnlyDemo = ({ name, label, ...rest }: Componen
 ---
 
 ## MutationTreeCheckbox
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./mutations/components/MutationTreeCheckbox
 SHADOW NOTE: cs-portal gives the cs-portal version; also defined in: cs-core
 
 propsType: TMutationTreeCheckboxProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Дерево чекбоксов, интегрированное с react-hook-form.
 
@@ -573,22 +660,26 @@ propsType: TMutationTreeCheckboxProps (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
-export type TMutationTreeCheckboxProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;
+export type TMutationTreeCheckboxProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## MutationUploadSet
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./mutations/components/MutationUploadSet
 SHADOW NOTE: cs-portal gives the cs-portal version; also defined in: cs-core
 
 propsType: TMutationUploadSetProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Компонент для загрузки файлов, интегрированный с react-hook-form.
 
@@ -599,21 +690,25 @@ propsType: TMutationUploadSetProps (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
-export type TMutationUploadSetProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions;
+export type TMutationUploadSetProps<TFieldValues extends FieldValues> = TBase<TFieldValues> & TFieldOptions
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## SmartUploadSet
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./smarts/SmartUploadSet
 
 propsType: TSmartUploadSetProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Умный компонент управления вложениями (загрузка, просмотр, переименование, удаление).
 
@@ -650,131 +745,174 @@ propsType: TSmartUploadSetProps (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
 export type TSmartUploadSetProps = {
-    entityUuid: TEntityUuid;
-    entityId: TEntityId;
-    filter?: TFilter;
-    useGetFilesInfoQuery: UseQuery<QueryDefinition<TGetFilesInfoApiArg, BaseQueryFn, string, TResponse<TResponseFile[]>>>;
-    useRenameFileMutation: UseMutation<MutationDefinition<TRenameFileApiArg, BaseQueryFn, string, TResponse<TResponseFile>>>;
-    useUploadFileMutation: UseMutation<MutationDefinition<TUploadFile, BaseQueryFn, string, TResponse<TResponseFile[]>>>;
-    useDeleteFileMutation: UseMutation<MutationDefinition<TDeleteFileWithExtraArg, BaseQueryFn, string, TResponse<TResponseFile>>>;
-    useLazyDownloadFileQuery: UseLazyQuery<QueryDefinition<TRetrieveContentsApiArg, BaseQueryFn, string, TDownloadFile>>;
-    useLazyDownloadPreviewFileQuery: UseLazyQuery<QueryDefinition<TPreviewContentsApiArg, BaseQueryFn, string, TDownloadFile>>;
-    useLazyDownloadAllFilesQuery: UseLazyQuery<QueryDefinition<TGetFilesContentApiArg, BaseQueryFn, string, TDownloadFile>>;
-} & Pick<ComponentProps<typeof UploadSet>, 'size' | 'title' | 'helperItems' | 'uploadVisible' | 'subtitle' | 'reverse' | 'downloadAllVisible' | 'deleteVisible' | 'downloadVisible' | 'openVisible' | 'renameVisible' | 'acceptedFiles'> & {
-    fileUploadExtraArg?: TEndpointExtraArg;
-    fileDeleteExtraArg?: TEndpointExtraArg;
-};
+    entityUuid: TEntityUuid
+    entityId: TEntityId
+    filter?: TFilter
+    useGetFilesInfoQuery: UseQuery<
+        QueryDefinition<TGetFilesInfoApiArg, BaseQueryFn, string, TResponse<TResponseFile[]>>
+    >
+    useRenameFileMutation: UseMutation<
+        MutationDefinition<TRenameFileApiArg, BaseQueryFn, string, TResponse<TResponseFile>>
+    >
+    useUploadFileMutation: UseMutation<MutationDefinition<TUploadFile, BaseQueryFn, string, TResponse<TResponseFile[]>>>
+    useDeleteFileMutation: UseMutation<
+        MutationDefinition<TDeleteFileWithExtraArg, BaseQueryFn, string, TResponse<TResponseFile>>
+    >
+    useLazyDownloadFileQuery: UseLazyQuery<QueryDefinition<TRetrieveContentsApiArg, BaseQueryFn, string, TDownloadFile>>
+    useLazyDownloadPreviewFileQuery: UseLazyQuery<
+        QueryDefinition<TPreviewContentsApiArg, BaseQueryFn, string, TDownloadFile>
+    >
+    useLazyDownloadAllFilesQuery: UseLazyQuery<
+        QueryDefinition<TGetFilesContentApiArg, BaseQueryFn, string, TDownloadFile>
+    >
+} & Pick<
+    ComponentProps<typeof UploadSet>,
+    | 'size'
+    | 'title'
+    | 'helperItems'
+    | 'uploadVisible'
+    | 'subtitle'
+    | 'reverse'
+    | 'downloadAllVisible'
+    | 'deleteVisible'
+    | 'downloadVisible'
+    | 'openVisible'
+    | 'renameVisible'
+    | 'acceptedFiles'
+> & {
+        fileUploadExtraArg?: TEndpointExtraArg
+        fileDeleteExtraArg?: TEndpointExtraArg
+    }
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## useController
+
 tier: A · origin: react-hook-form · usedByApps: false · fromSpec: react-hook-form
 
-
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
 (none found)
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## useFieldArray
+
 tier: A · origin: react-hook-form · usedByApps: false · fromSpec: react-hook-form
 
-
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
 (none found)
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## useForm
+
 tier: A · origin: react-hook-form · usedByApps: true · fromSpec: react-hook-form
 
-
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
 (none found)
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## useFormContext
+
 tier: A · origin: react-hook-form · usedByApps: true · fromSpec: react-hook-form
 
-
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
 (none found)
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## useFormState
+
 tier: A · origin: react-hook-form · usedByApps: false · fromSpec: react-hook-form
 
-
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
 (none found)
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## useMutationSubmit
+
 tier: A · origin: cs-portal · usedByApps: true · fromSpec: ./mutations/hooks/useMutationSubmit
 SHADOW NOTE: cs-portal gives the cs-portal version; also defined in: cs-core
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Хук связки react-hook-form с RTK Mutation.
 
@@ -802,122 +940,163 @@ return <form onSubmit={submit}>...</form>
 ```
 
 ### raw props type
+
 ```ts
-export declare const useMutationSubmit: <TFieldValues extends FieldValues, Response extends TResponse<unknown>>({ onError, onSuccess, removeEmptyValues, targetPrefix, useMutation, }: TUseMutationSubmitPros<TFieldValues, Response>) => {
-    submit: (e?: React.BaseSyntheticEvent) => Promise<unknown>;
-    useMutationReturn: readonly [(arg: TFieldValues) => import("@reduxjs/toolkit/query").MutationActionCreatorResult<import("@reduxjs/toolkit/query").MutationDefinition<TFieldValues, any, string, Response, string>>, ({
-        requestId?: undefined;
-        status: import("@reduxjs/toolkit/query").QueryStatus.uninitialized;
-        data?: undefined;
-        error?: undefined;
-        endpointName?: string;
-        startedTimeStamp?: undefined;
-        fulfilledTimeStamp?: undefined;
-    } & {
-        status: import("@reduxjs/toolkit/query").QueryStatus.uninitialized;
-        isUninitialized: true;
-        isLoading: false;
-        isSuccess: false;
-        isError: false;
-    } & {
-        originalArgs?: TFieldValues | undefined;
-        reset: () => void;
-    }) | ({
-        status: import("@reduxjs/toolkit/query").QueryStatus.fulfilled;
-    } & Omit<{
-        requestId: string;
-        data?: Response | undefined;
-        error?: any;
-        endpointName: string;
-        startedTimeStamp: number;
-        fulfilledTimeStamp?: number;
-    }, "data" | "fulfilledTimeStamp"> & Required<Pick<{
-        requestId: string;
-        data?: Response | undefined;
-        error?: any;
-        endpointName: string;
-        startedTimeStamp: number;
-        fulfilledTimeStamp?: number;
-    }, "data" | "fulfilledTimeStamp">> & {
-        error: undefined;
-    } & {
-        status: import("@reduxjs/toolkit/query").QueryStatus.fulfilled;
-        isUninitialized: false;
-        isLoading: false;
-        isSuccess: true;
-        isError: false;
-    } & {
-        originalArgs?: TFieldValues | undefined;
-        reset: () => void;
-    }) | ({
-        status: import("@reduxjs/toolkit/query").QueryStatus.pending;
-    } & {
-        requestId: string;
-        data?: Response | undefined;
-        error?: any;
-        endpointName: string;
-        startedTimeStamp: number;
-        fulfilledTimeStamp?: number;
-    } & {
-        data?: undefined;
-    } & {
-        status: import("@reduxjs/toolkit/query").QueryStatus.pending;
-        isUninitialized: false;
-        isLoading: true;
-        isSuccess: false;
-        isError: false;
-    } & {
-        originalArgs?: TFieldValues | undefined;
-        reset: () => void;
-    }) | ({
-        status: import("@reduxjs/toolkit/query").QueryStatus.rejected;
-    } & Omit<{
-        requestId: string;
-        data?: Response | undefined;
-        error?: any;
-        endpointName: string;
-        startedTimeStamp: number;
-        fulfilledTimeStamp?: number;
-    }, "error"> & Required<Pick<{
-        requestId: string;
-        data?: Response | undefined;
-        error?: any;
-        endpointName: string;
-        startedTimeStamp: number;
-        fulfilledTimeStamp?: number;
-    }, "error">> & {
-        status: import("@reduxjs/toolkit/query").QueryStatus.rejected;
-        isUninitialized: false;
-        isLoading: false;
-        isSuccess: false;
-        isError: true;
-    } & {
-        originalArgs?: TFieldValues | undefined;
-        reset: () => void;
-    })];
-};
+export declare const useMutationSubmit: <TFieldValues extends FieldValues, Response extends TResponse<unknown>>({
+    onError,
+    onSuccess,
+    removeEmptyValues,
+    targetPrefix,
+    useMutation,
+}: TUseMutationSubmitPros<TFieldValues, Response>) => {
+    submit: (e?: React.BaseSyntheticEvent) => Promise<unknown>
+    useMutationReturn: readonly [
+        (
+            arg: TFieldValues
+        ) => import('@reduxjs/toolkit/query').MutationActionCreatorResult<
+            import('@reduxjs/toolkit/query').MutationDefinition<TFieldValues, any, string, Response, string>
+        >,
+        (
+            | ({
+                  requestId?: undefined
+                  status: import('@reduxjs/toolkit/query').QueryStatus.uninitialized
+                  data?: undefined
+                  error?: undefined
+                  endpointName?: string
+                  startedTimeStamp?: undefined
+                  fulfilledTimeStamp?: undefined
+              } & {
+                  status: import('@reduxjs/toolkit/query').QueryStatus.uninitialized
+                  isUninitialized: true
+                  isLoading: false
+                  isSuccess: false
+                  isError: false
+              } & {
+                  originalArgs?: TFieldValues | undefined
+                  reset: () => void
+              })
+            | ({
+                  status: import('@reduxjs/toolkit/query').QueryStatus.fulfilled
+              } & Omit<
+                  {
+                      requestId: string
+                      data?: Response | undefined
+                      error?: any
+                      endpointName: string
+                      startedTimeStamp: number
+                      fulfilledTimeStamp?: number
+                  },
+                  'data' | 'fulfilledTimeStamp'
+              > &
+                  Required<
+                      Pick<
+                          {
+                              requestId: string
+                              data?: Response | undefined
+                              error?: any
+                              endpointName: string
+                              startedTimeStamp: number
+                              fulfilledTimeStamp?: number
+                          },
+                          'data' | 'fulfilledTimeStamp'
+                      >
+                  > & {
+                      error: undefined
+                  } & {
+                      status: import('@reduxjs/toolkit/query').QueryStatus.fulfilled
+                      isUninitialized: false
+                      isLoading: false
+                      isSuccess: true
+                      isError: false
+                  } & {
+                      originalArgs?: TFieldValues | undefined
+                      reset: () => void
+                  })
+            | ({
+                  status: import('@reduxjs/toolkit/query').QueryStatus.pending
+              } & {
+                  requestId: string
+                  data?: Response | undefined
+                  error?: any
+                  endpointName: string
+                  startedTimeStamp: number
+                  fulfilledTimeStamp?: number
+              } & {
+                  data?: undefined
+              } & {
+                  status: import('@reduxjs/toolkit/query').QueryStatus.pending
+                  isUninitialized: false
+                  isLoading: true
+                  isSuccess: false
+                  isError: false
+              } & {
+                  originalArgs?: TFieldValues | undefined
+                  reset: () => void
+              })
+            | ({
+                  status: import('@reduxjs/toolkit/query').QueryStatus.rejected
+              } & Omit<
+                  {
+                      requestId: string
+                      data?: Response | undefined
+                      error?: any
+                      endpointName: string
+                      startedTimeStamp: number
+                      fulfilledTimeStamp?: number
+                  },
+                  'error'
+              > &
+                  Required<
+                      Pick<
+                          {
+                              requestId: string
+                              data?: Response | undefined
+                              error?: any
+                              endpointName: string
+                              startedTimeStamp: number
+                              fulfilledTimeStamp?: number
+                          },
+                          'error'
+                      >
+                  > & {
+                      status: import('@reduxjs/toolkit/query').QueryStatus.rejected
+                      isUninitialized: false
+                      isLoading: false
+                      isSuccess: false
+                      isError: true
+                  } & {
+                      originalArgs?: TFieldValues | undefined
+                      reset: () => void
+                  })
+        ),
+    ]
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## useWatch
+
 tier: A · origin: react-hook-form · usedByApps: false · fromSpec: react-hook-form
 
-
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
 (none found)
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---

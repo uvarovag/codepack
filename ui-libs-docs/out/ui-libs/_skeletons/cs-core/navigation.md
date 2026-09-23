@@ -1,11 +1,13 @@
 <!-- SKELETON for cs-core/navigation.md — raw material only, not the final doc. 14 symbols. -->
 
 ## AnchorMenu
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./navigations/AnchorMenu
 
 propsType: TAnchorMenuProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Компонент AnchorMenu используется для быстрого перемещения по разделам страницы.
 
@@ -38,15 +40,19 @@ AnchorMenu принимает следующие свойства:
 ```
 
 ### raw props type
+
 ```ts
-export type TAnchorMenuProps = TUseScrollSpyParams & Pick<TBaseMenu, 'items'> & {
-    isLoading?: boolean;
-    skeletonCount?: 4 | 5 | 6;
-};
+export type TAnchorMenuProps = TUseScrollSpyParams &
+    Pick<TBaseMenu, 'items'> & {
+        isLoading?: boolean
+        skeletonCount?: 4 | 5 | 6
+    }
 ```
 
 ### demo examples found
+
 <!-- navigation/AnchorMenu/ui/AnchorMenuDemo.tsx -->
+
 ```tsx
 import type { ComponentProps } from 'react'
 
@@ -84,32 +90,38 @@ export const AnchorMenuDemo = (props: ComponentProps<typeof AnchorMenu>) => {
 ---
 
 ## SegmentProvider
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: @sber-front-cs-core/cs-core
 
 propsType: TSegmentProviderProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 @deprecated Данный провайдер устарел, используйте _HostProvider_
 ```
 
 ### raw props type
+
 ```ts
-export type TSegmentProviderProps = PropsWithChildren<TSegmentContextProps>;
+export type TSegmentProviderProps = PropsWithChildren<TSegmentContextProps>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## Tabs
+
 tier: A · origin: cs-core · usedByApps: true · fromSpec: @sber-front-cs-core/cs-core
 SHADOW NOTE: cs-portal gives the cs-core version; also defined in: sdds-cs (site)
 
 propsType: TTabsProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Компонент [Tabs](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/components-tabcontent-tabs--docs) является шаблоном вкладок.
 
@@ -139,17 +151,20 @@ propsType: TTabsProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export type TTabsProps = {
     /** Массив табов.*/
-    items: Omit<TTab, 'content'>[];
+    items: Omit<TTab, 'content'>[]
     /** Свойство для Dropdown из SDDS.*/
-    portal?: string | RefObject<HTMLElement>;
-} & TTabsOnChange;
+    portal?: string | RefObject<HTMLElement>
+} & TTabsOnChange
 ```
 
 ### demo examples found
+
 <!-- components/TabContent/Tabs/ui/TabsDemo.tsx -->
+
 ```tsx
 import type { TBaseTabsProps } from '../../../../../src/components/TabContent/Tabs/types'
 
@@ -174,11 +189,13 @@ export const TabsDemo = ({ view, items }: TBaseTabsProps) => {
 ---
 
 ## TextMenu
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: ./navigations/TextMenu
 
 propsType: TTextMenuProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Компонент TextMenu используется для организации навигации по страницам.
 
@@ -208,15 +225,18 @@ TextMenu принимает следующие свойства:
 ```
 
 ### raw props type
+
 ```ts
 export type TTextMenuProps = TBaseMenu & {
-    isLoading?: boolean;
-    skeletonCount?: 4 | 5 | 6;
-};
+    isLoading?: boolean
+    skeletonCount?: 4 | 5 | 6
+}
 ```
 
 ### demo examples found
+
 <!-- navigation/TextMenu/ui/TextMenuDemo.tsx -->
+
 ```tsx
 import type { ComponentProps } from 'react'
 
@@ -250,11 +270,13 @@ export const TextMenuDemo = (props: ComponentProps<typeof TextMenu>) => {
 ---
 
 ## useSegment
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: @sber-front-cs-core/cs-core
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Хук для получения текущего сегмента приложения.
 
@@ -269,58 +291,69 @@ propsType: (signature, no dedicated Props type found) (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
-export declare const useSegment: () => import("../..").TSegment;
+export declare const useSegment: () => import('../..').TSegment
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## ExternalNavigationProvider
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./hooks/useExternalNavigate
 
 propsType: TExternalNavigationProviderProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 @deprecated Данный провайдер устарел, используйте _HostProvider_
 ```
 
 ### raw props type
+
 ```ts
-export type TExternalNavigationProviderProps = PropsWithChildren<TExternalNavigationContextProps>;
+export type TExternalNavigationProviderProps = PropsWithChildren<TExternalNavigationContextProps>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## IconTabContent
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/IconTabContent
 
 propsType: TIconTabContentProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Компонент IconTabContent является шаблоном вкладок из иконок в боковой панели страницы.
 ```
 
 ### raw props type
+
 ```ts
 export type TIconTabContentProps = {
-    items: TIconTabContent[];
+    items: TIconTabContent[]
     /** Значение выбранной вкладки по умолчанию. */
-    defaultValue?: TIconTabContent['value'];
+    defaultValue?: TIconTabContent['value']
     /** Функция, которая будет вызвана при изменении вкладки. */
-    onChange?: (iconTab: TIconTabContent) => void;
-};
+    onChange?: (iconTab: TIconTabContent) => void
+}
 ```
 
 ### demo examples found
+
 <!-- components/IconTabContent/IconTabContentDemo.tsx -->
+
 ```tsx
 import {
     IconDocumentAttachOutline,
@@ -387,37 +420,42 @@ export const argsIconTabs: ComponentProps<typeof IconTabContent> = {
                 },
                 view: 'clear',
                 value: ['qf1'],
-      
+
 ```
 
 ---
 
 ## IconTabs
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/IconTabs
 
 propsType: TIconTabsProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
 export type TIconTabsProps = {
     /** Массив табов-иконок*/
-    items: TIconTab[];
+    items: TIconTab[]
     /** Функция для изменения выбранной вкладки.*/
-    onChange: (iconTabValue: string) => void;
+    onChange: (iconTabValue: string) => void
     /** Значение выбранной вкладки.*/
-    value?: string;
+    value?: string
     /** Портал для тултипа */
-    portal?: ComponentProps<typeof Tooltip>['portal'];
-};
+    portal?: ComponentProps<typeof Tooltip>['portal']
+}
 ```
 
 ### demo examples found
+
 <!-- components/IconTabs/IconTabsDemo.tsx -->
+
 ```tsx
 import {
     IconDocumentAttachOutline,
@@ -466,29 +504,38 @@ export const IconTabsDemo = (args: ComponentProps<typeof IconTabs>) => {
 ---
 
 ## MultiSegments
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/segments
 
 propsType: TMultiSegmentsProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export type TMultiSegmentsProps<TValue extends string | object = string, TItem extends TSegmentsItem<TValue> = TSegmentsItem<TValue>> = {
+export type TMultiSegmentsProps<
+    TValue extends string | object = string,
+    TItem extends TSegmentsItem<TValue> = TSegmentsItem<TValue>,
+> = {
     /** Группы сегментов. */
-    groups: Pick<TSegmentsProps<TValue, TItem>, 'items' | 'required' | 'resetOptions' | 'renderItem'>[];
+    groups: Pick<TSegmentsProps<TValue, TItem>, 'items' | 'required' | 'resetOptions' | 'renderItem'>[]
     /** Функция, которая будет вызвана при изменении выбранного сегмента. */
-    onChange: (item: TItem) => void;
+    onChange: (item: TItem) => void
     /** CSS-класс. */
-    className?: string;
-} & TValueOptions<TValue, TItem> & Pick<TSegmentsProps<TValue, TItem>, 'view'>;
+    className?: string
+} & TValueOptions<TValue, TItem> &
+    Pick<TSegmentsProps<TValue, TItem>, 'view'>
 ```
 
 ### demo examples found
+
 <!-- components/segments/MultiSegments/ui/MultiSegmentsDemo.tsx -->
+
 ```tsx
 import type { TViewType } from '../lib/types'
 
@@ -517,7 +564,9 @@ export const MultiSegmentsDemo = ({ groups, view }: ComponentProps<typeof MultiS
     )
 }
 ```
+
 <!-- components/segments/MultiSegments/ui/MultiSegmentsSingleDemo.tsx -->
+
 ```tsx
 import type { TViewType } from '../lib/types'
 
@@ -544,57 +593,69 @@ export const MultiSegmentsSingleDemo = ({ groups, view }: ComponentProps<typeof 
 ---
 
 ## navigateFallback
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./hooks/useExternalNavigate
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const navigateFallback: NavigateFunction;
+export declare const navigateFallback: NavigateFunction
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## Segments
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/segments
 
 propsType: TSegmentsProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export type TSegmentsProps<TValue extends string | object = string, TItem extends TSegmentsItem<TValue> = TSegmentsItem<TValue>> = {
+export type TSegmentsProps<
+    TValue extends string | object = string,
+    TItem extends TSegmentsItem<TValue> = TSegmentsItem<TValue>,
+> = {
     /** Массив сегментов. */
-    items: TItem[];
+    items: TItem[]
     /** Функция, которая будет вызвана при изменении выбранного сегмента. */
-    onChange: (item: TItem) => void;
+    onChange: (item: TItem) => void
     /** Флаг обязательного выбора сегмента. */
-    required?: boolean;
+    required?: boolean
     /** Настройки кнопки сброса. */
-    resetOptions?: TResetOptions;
+    resetOptions?: TResetOptions
     /** Вид сегментов. 'default' - на белом фоне. 'clear' - на сером фоне. 'onDark' - на темном фоне.*/
-    view?: 'default' | 'onDark' | 'clear';
+    view?: 'default' | 'onDark' | 'clear'
     /** CSS-класс. */
-    className?: string;
+    className?: string
     /** Функция для отображения кастомного элемента. */
-    renderItem?: (props: TSegmentsRenderItemProps<TValue, TItem>) => ReactNode;
-} & TValueOptions<TValue, TItem>;
+    renderItem?: (props: TSegmentsRenderItemProps<TValue, TItem>) => ReactNode
+} & TValueOptions<TValue, TItem>
 ```
 
 ### demo examples found
+
 <!-- components/segments/Segments/ui/SegmentsDemo.tsx -->
+
 ```tsx
 import type { ComponentProps } from 'react'
 
@@ -621,7 +682,9 @@ export const SegmentsDemo = ({ items, view }: ComponentProps<typeof Segments<str
     )
 }
 ```
+
 <!-- components/segments/Segments/ui/SegmentsSingleDemo.tsx -->
+
 ```tsx
 import type { ComponentProps } from 'react'
 
@@ -647,11 +710,13 @@ export const SegmentsSingleDemo = ({ items, view }: ComponentProps<typeof Segmen
 ---
 
 ## TabContent
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/TabContent
 
 propsType: TTabContentProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Компонент TabContent является шаблоном вкладок.
 
@@ -674,35 +739,39 @@ items - массив объектов, предоставляющий собой
 ```
 
 ### raw props type
+
 ```ts
 export type TTabContentProps<Tab extends TTab = TTab> = {
-    items: Tab[];
+    items: Tab[]
     /**
      * @deprecated Это свойство устарело используйте defaultValue
      */
-    initialItemId?: Tab['id'];
+    initialItemId?: Tab['id']
     /** Значение выбранной вкладки по умолчанию. */
-    defaultValue?: Tab['value'];
+    defaultValue?: Tab['value']
     /** Функция, которая будет вызвана при изменении вкладки. */
-    onChange?: (tab: Tab) => void;
+    onChange?: (tab: Tab) => void
     /** Свойство для Dropdown из SDDS */
-    portal?: string | RefObject<HTMLElement>;
+    portal?: string | RefObject<HTMLElement>
     /** Вид вкладок. Вид 'outer' отвечает за расположение вне Paper, а вид 'inner' - внутри Paper */
-    view?: 'outer' | 'inner';
-} & TSkeletonType;
+    view?: 'outer' | 'inner'
+} & TSkeletonType
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## useExternalNavigate
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./hooks/useExternalNavigate
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Хук для навигации во внешних разделах приложения.
 
@@ -717,12 +786,15 @@ propsType: (signature, no dedicated Props type found) (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
-export declare const useExternalNavigate: () => import("react-router").NavigateFunction;
+export declare const useExternalNavigate: () => import('react-router').NavigateFunction
 ```
 
 ### demo examples found
+
 <!-- notifications/useExternalNavigate/ui/UseExternalNavigateDemo.tsx -->
+
 ```tsx
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism'
@@ -768,25 +840,33 @@ export const App = ({ basename, externalNavigate }: TAppProps) => {
 ---
 
 ## useTabContent
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/TabContent
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const useTabContent: <Tab extends TTabBase = TTab>({ items, defaultValue, onChange, }: TUseTabContentParams<Tab>) => {
-    selectedTab: Tab | undefined;
-    selectedTabValue: string | undefined;
-    setSelectedTabValue: (newValue: string) => void;
-};
+export declare const useTabContent: <Tab extends TTabBase = TTab>({
+    items,
+    defaultValue,
+    onChange,
+}: TUseTabContentParams<Tab>) => {
+    selectedTab: Tab | undefined
+    selectedTabValue: string | undefined
+    setSelectedTabValue: (newValue: string) => void
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---

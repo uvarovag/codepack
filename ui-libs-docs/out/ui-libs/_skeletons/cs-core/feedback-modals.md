@@ -1,12 +1,14 @@
 <!-- SKELETON for cs-core/feedback-modals.md — raw material only, not the final doc. 20 symbols. -->
 
 ## Modal
+
 tier: A · origin: cs-core · usedByApps: true · fromSpec: @sber-front-cs-core/cs-core
 SHADOW NOTE: cs-portal gives the cs-core version; also defined in: sdds-cs (site)
 
 propsType: TModalProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Modal - компонент для создания модального диалогового окна.
 Принимает следующие свойства:
@@ -26,29 +28,32 @@ Modal - компонент для создания модального диал
 ```
 
 ### raw props type
+
 ```ts
 export type TModalProps = {
     /** Заголовок окна (располагается в 1-2 строки, кнопка закрытия уже есть в компоненте) */
-    title?: string;
+    title?: string
     /** Основная текстовая и графическая информация, можно передать Fragment <></> с наполнением, если нужно разместить таблицу внутри контентной области, оберните её во flex-контейнер с заданной высотой */
-    content: ReactNode;
+    content: ReactNode
     /** Нижняя область, в которой располагаются кнопки действий, ожидает Fragment <></> с кнопками */
-    footer?: ReactNode;
+    footer?: ReactNode
     /** Может принимать значения 's' (ширина - 616px) - default | 'm' (912px) | 'l' (1208px) | 'fs' (fullscreen), высота ограничена окном браузера и зависит от контента внутри */
-    size?: 's' | 'm' | 'l' | 'fs';
+    size?: 's' | 'm' | 'l' | 'fs'
     /** @deprecated Используйте свойство portal */
-    frame?: ModalProps['frame'];
+    frame?: ModalProps['frame']
     /** В каком контейнере позиционируется (по умолчанию document), можно также указать id элемента или ref для него */
-    portal?: ModalProps['frame'];
+    portal?: ModalProps['frame']
     /** Название класса */
-    className?: string;
+    className?: string
     /** Идентификатор */
-    id?: string;
-} & Required<Pick<ModalProps, 'opened' | 'onClose'>>;
+    id?: string
+} & Required<Pick<ModalProps, 'opened' | 'onClose'>>
 ```
 
 ### demo examples found
+
 <!-- components/Modal/Modal/ui/ModalDemo.tsx -->
+
 ```tsx
 import type { ComponentProps, RefCallback } from 'react'
 
@@ -110,7 +115,9 @@ export const ModalDemo = (props: ComponentProps<typeof Modal>) => {
                     <>
                         <Button size="s" view="clear" onClic
 ```
+
 <!-- components/Modal/Modal/ui/ModalFlexDemo.tsx -->
+
 ```tsx
 import type { ComponentProps, RefCallback } from 'react'
 
@@ -163,40 +170,46 @@ export const ModalFlexDemo = (props: ComponentProps<typeof Modal>) => {
 ---
 
 ## Overlay
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: @sber-front-cs-core/cs-core
 SHADOW NOTE: cs-portal gives the cs-core version; also defined in: sdds-cs (site)
 
 propsType: TOverlayProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
 export type TOverlayProps = {
     /** Отображение Overlay */
-    opened: boolean;
+    opened: boolean
     /** Коллбек при закрытии */
-    onClose: () => void;
+    onClose: () => void
     /** Основной контент */
-    content: ReactNode;
-};
+    content: ReactNode
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## Popover
+
 tier: A · origin: cs-core · usedByApps: true · fromSpec: @sber-front-cs-core/cs-core
 SHADOW NOTE: cs-portal gives the cs-core version; also defined in: sdds-cs (site)
 
 propsType: TPopoverProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [Popover](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/components-statustrack-popover--docs) - предназначен для
 совершения действий в дополнительных сценариях. Компонент появляется после нажатия на кликабельный объект в интерфейсе.
@@ -226,21 +239,26 @@ buttonPrimary и buttonClear являются объектами и приним
 ```
 
 ### raw props type
+
 ```ts
 export type TPopoverProps = {
-    content: ReactNode | ReactNode[] | TExtendedContent[];
-    contentGap?: 0.5 | 1 | 2;
-    onToggle: THandleChange<boolean>;
+    content: ReactNode | ReactNode[] | TExtendedContent[]
+    contentGap?: 0.5 | 1 | 2
+    onToggle: THandleChange<boolean>
     /**@deprecated Свойство frame больше не работает в sdds. Используйте свойство portal */
-    frame?: TSDDSPortal;
+    frame?: TSDDSPortal
     /**@deprecated Свойство usePortal больше не работает в sdds. Используйте свойство portal */
-    usePortal?: boolean;
-    closeButtonVisible?: boolean;
-} & TTitlesPopover & TPropsFromPopoverSDDS & TPopoverButtons;
+    usePortal?: boolean
+    closeButtonVisible?: boolean
+} & TTitlesPopover &
+    TPropsFromPopoverSDDS &
+    TPopoverButtons
 ```
 
 ### demo examples found
+
 <!-- components/Popover/ui/PopoverDemo.tsx -->
+
 ```tsx
 import type { ComponentProps } from 'react'
 
@@ -258,24 +276,29 @@ export const PopoverDemo = (args: ComponentProps<typeof Popover>) => {
 ---
 
 ## showToast
+
 tier: A · origin: cs-core · usedByApps: false · fromSpec: @sber-front-cs-core/cs-core
 SHADOW NOTE: cs-portal gives the cs-core version; also defined in: sdds-cs (site)
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 @deprecated Use `globalShowToasts` from `cs-core` instead.
 This function will be removed in the next major version.
 ```
 
 ### raw props type
+
 ```ts
-export declare const showToast: ({ text, view }: TShowToastProps) => void;
+export declare const showToast: ({ text, view }: TShowToastProps) => void
 ```
 
 ### demo examples found
+
 <!-- notifications/showToast/ui/ShowToastDemo.tsx -->
+
 ```tsx
 import type { TShowToastProps } from '../../../../src/hooks/notifications/showToast/types'
 
@@ -297,11 +320,13 @@ export const ShowToastDemo = ({ text, view }: TShowToastProps) => {
 ---
 
 ## BulkActions
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/bulkActions
 
 propsType: TBulkActionsProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 @deprecated используйте компонент GlobalBulkActions
 
@@ -341,29 +366,33 @@ propsType: TBulkActionsProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export type TBulkActionsProps = {
-    items: TActionItem[];
-    selectedCountItems: number;
-    visibleCount?: 1 | 2;
-    onClearSelected: () => void;
-    portal?: string | RefObject<HTMLElement>;
-    position?: CSSProperties['position'];
-    zIndex?: CSSProperties['zIndex'];
-};
+    items: TActionItem[]
+    selectedCountItems: number
+    visibleCount?: 1 | 2
+    onClearSelected: () => void
+    portal?: string | RefObject<HTMLElement>
+    position?: CSSProperties['position']
+    zIndex?: CSSProperties['zIndex']
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## ClearButton
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/ClearButton
 
 propsType: TClearButtonProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [ClearButton](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/components-clearbutton--docs)- кастомизированная кнопка на основе
 [Button](https://plasma.sberdevices.ru/sdds-cs/components/button/) из SDDS.
@@ -385,103 +414,122 @@ propsType: TClearButtonProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export type TClearButtonProps = TButtonProps & {
     /** Ширина кнопки. По умолчанию fit-content. */
-    width?: CSSProperties['width'];
+    width?: CSSProperties['width']
     /** Высота кнопки. По умолчанию fit-content. */
-    height?: CSSProperties['height'];
+    height?: CSSProperties['height']
     /** Красный индикатор в правом верхнем углу. */
-    hasIndicator?: boolean;
+    hasIndicator?: boolean
     /** Флаг выключения кликов по кнопке (меняется также курсор на обычный). */
-    eventsNone?: boolean;
+    eventsNone?: boolean
     /** Флаг отображения лоадера. */
-    isLoading?: boolean;
+    isLoading?: boolean
     /** Текст лоадера. */
-    loaderText?: string;
+    loaderText?: string
     /** Отображение счётчика, работает только при использовании иконок. */
-    count?: number;
-};
+    count?: number
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## ConfirmModal
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/Confirm
 
 propsType: TConfirmModalProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
 export type TConfirmModalProps = {
     /** Флаг открытия модального окна. */
-    opened: boolean;
+    opened: boolean
     /** Обработчик подтверждения действия. */
-    onConfirm: () => void;
+    onConfirm: () => void
     /** Обработчик закрытия модального окна. */
-    onClose: () => void;
-} & TConfirmParams;
+    onClose: () => void
+} & TConfirmParams
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## ConfirmProvider
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/Confirm
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const ConfirmProvider: ({ children }: PropsWithChildren) => import("react").JSX.Element;
+export declare const ConfirmProvider: ({ children }: PropsWithChildren) => import('react').JSX.Element
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## EntitySearch
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/EntitySearch
 
 propsType: TEntitySearchProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export type TEntitySearchProps<RowData extends TRowData, CustomQueryArg extends TCustomQueryArg, CustomInitialPageParam extends TCustomQueryArg> = {
+export type TEntitySearchProps<
+    RowData extends TRowData,
+    CustomQueryArg extends TCustomQueryArg,
+    CustomInitialPageParam extends TCustomQueryArg,
+> = {
     /** Экземпляр таблицы для отображения и поиска */
-    table: TTableInstance<RowData, CustomQueryArg, CustomInitialPageParam>;
+    table: TTableInstance<RowData, CustomQueryArg, CustomInitialPageParam>
     /** Описание таблицы, отображаемое над ней */
-    tableDescription?: string;
+    tableDescription?: string
     /** Кастомный компонент фильтрации. Если не передан, по умолчанию будет использованы headerFilterRender из колонок.*/
     filterRender?: FC<{
-        table: TTableInstance<RowData, CustomQueryArg, CustomInitialPageParam>;
-    }>;
-};
+        table: TTableInstance<RowData, CustomQueryArg, CustomInitialPageParam>
+    }>
+}
 ```
 
 ### demo examples found
+
 <!-- components/EntitySearch/ui/EntitySearchCustomFilterDemo.tsx -->
+
 ```tsx
 import { BodyM } from '@salutejs/sdds-cs'
 
@@ -512,7 +560,9 @@ export const EntitySearchCustomFilterDemo = () => {
     )
 }
 ```
+
 <!-- components/EntitySearch/ui/EntitySearchDemo.tsx -->
+
 ```tsx
 import { dataDemo, tableColumnsDemo } from './constants'
 import { EntitySearch, useTable } from '../../../../src'
@@ -533,11 +583,13 @@ export const EntitySearchDemo = () => {
 ---
 
 ## GlobalAction
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/GlobalAction
 
 propsType: TGlobalActionProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [GlobalAction](https://cs-core.cloud.delta.sbrf.ru/dev4/?path=/docs/components-globalaction--docs) -
 панель размещения интерактивных элементов (кнопок) для бизнес-взаимодействия с интерфейсом
@@ -571,26 +623,33 @@ propsType: TGlobalActionProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
-export type TGlobalActionProps = TPrettify<{
-    items: TActionItemExtended[];
-    stretching?: ComponentProps<typeof Button>['stretching'];
-    dropdownPlacement?: TDropdownProps['placement'];
-    isLoading?: boolean;
-} & TFlexBoxPickerProps & TPropsFromDropdown>;
+export type TGlobalActionProps = TPrettify<
+    {
+        items: TActionItemExtended[]
+        stretching?: ComponentProps<typeof Button>['stretching']
+        dropdownPlacement?: TDropdownProps['placement']
+        isLoading?: boolean
+    } & TFlexBoxPickerProps &
+        TPropsFromDropdown
+>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## GlobalBulkActions
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/bulkActions
 
 propsType: TGlobalBulkActionsProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [GlobalBulkActions](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/components-bulkactions-globalbulkactions--docs)-компонент глобальных бизнес-действий.
 Компонент должен инициализироваться один раз в проекте, меняется только набор свойств. Для использования различных наборов свойство используйте
@@ -608,26 +667,29 @@ propsType: TGlobalBulkActionsProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
 export type TGlobalBulkActionsProps = {
-    buttonItems?: TActionItem[];
-    messageItems?: TShowToastProps[];
-    iconItems?: TIconButton[];
-    additionalText?: Omit<TInternalButton, 'isLoading'> | string;
-    visibleCount?: TNumber;
-    isNotAnimationScroll?: boolean;
-    animationContainerRef?: RefObject<HTMLElement | null>;
-    scrollRef?: RefObject<HTMLElement | null>;
-    portal?: TSDDSPortal;
-    onMouseEnter?: () => void;
-    onMouseLeave?: () => void;
+    buttonItems?: TActionItem[]
+    messageItems?: TShowToastProps[]
+    iconItems?: TIconButton[]
+    additionalText?: Omit<TInternalButton, 'isLoading'> | string
+    visibleCount?: TNumber
+    isNotAnimationScroll?: boolean
+    animationContainerRef?: RefObject<HTMLElement | null>
+    scrollRef?: RefObject<HTMLElement | null>
+    portal?: TSDDSPortal
+    onMouseEnter?: () => void
+    onMouseLeave?: () => void
     /** @deprecated Используйте свойство portal. */
-    frame?: TFromSDDSPopoverProps['frame'];
-};
+    frame?: TFromSDDSPopoverProps['frame']
+}
 ```
 
 ### demo examples found
+
 <!-- components/bulkActions/GlobalBulkActions/ui/GlobalBulkActionsDemo.tsx -->
+
 ```tsx
 import type { TGlobalActions } from '../../../../../src'
 
@@ -691,9 +753,11 @@ export const GlobalBulkActionsDemo = () => {
                     <FlexBox flexDirection="column" gap={2} height="300px" justifyContent="space-between">
                         Просто модалка
                         <Button
-         
+
 ```
+
 <!-- components/bulkActions/GlobalBulkActions/ui/GlobalBulkActionsWithScrollRefDemo.tsx -->
+
 ```tsx
 import { IconEditOutline } from '@salutejs/plasma-icons'
 import { Button, H4, H5 } from '@salutejs/sdds-cs'
@@ -759,7 +823,9 @@ export const GlobalBulkActionsWithScrollRef = () => {
                                     <Button onClick={handleDetailScroll}>Показать с Detail scroll</Button>
                                 </Flex
 ```
+
 <!-- components/bulkActions/GlobalBulkActions/ui/GlobalBulkActionsWithScrollRefUseEffectDemo.tsx -->
+
 ```tsx
 import { IconEditOutline } from '@salutejs/plasma-icons'
 import { H5 } from '@salutejs/sdds-cs'
@@ -831,31 +897,37 @@ export const GlobalBulkActionsWithScrollRefUseEffect = () => {
 ---
 
 ## GlobalBulkActionsProvider
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/bulkActions
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const GlobalBulkActionsProvider: ({ children }: PropsWithChildren) => import("react").JSX.Element;
+export declare const GlobalBulkActionsProvider: ({ children }: PropsWithChildren) => import('react').JSX.Element
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## globalShowToasts
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/bulkActions
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Аккумулирует сообщения и отображает их в едином стиле с поддержкой анимаций.
 Функция полезна для централизованного управления уведомлениями в приложении.
@@ -865,12 +937,15 @@ propsType: (signature, no dedicated Props type found) (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
-export declare const globalShowToasts: (messageItems: TShowToastProps[]) => void;
+export declare const globalShowToasts: (messageItems: TShowToastProps[]) => void
 ```
 
 ### demo examples found
+
 <!-- notifications/globalShowToasts/ui/GlobalShowToastsDemo.tsx -->
+
 ```tsx
 import type { TShowToastProps } from '../../../../src/hooks/notifications'
 
@@ -929,17 +1004,19 @@ export const GlobalShowToastsDemo = () => {
                     size="s"
                     text="Вызвать стандартный тост"
                     view="secondary"
-         
+
 ```
 
 ---
 
 ## MobileModal
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/Modal
 
 propsType: TMobileModalProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [MobileModal](https://cs-core.cloud.delta.sbrf.ru/?path=/docs/components-modal-mobilemodal--docs) - компонент для создания модального диалогового окна на небольших экранах, на базе компонента из sdds - [Sheet](https://plasma.sberdevices.ru/sdds-cs/components/sheet/).
 Данный компонент должен заменять собой компонент Modal на мобильных экранах. MobileModal имеет тот же самый набор свойств, что и Modal, но укороченный:
@@ -952,12 +1029,15 @@ propsType: TMobileModalProps (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
-export type TMobileModalProps = Omit<TModalProps, 'frame' | 'portal' | 'size'>;
+export type TMobileModalProps = Omit<TModalProps, 'frame' | 'portal' | 'size'>
 ```
 
 ### demo examples found
+
 <!-- components/Modal/MobileModal/ui/MobilModalDemo.tsx -->
+
 ```tsx
 import type { Modal } from '../../../../../src'
 
@@ -1022,11 +1102,13 @@ export const MobilModalDemo = ({ ...args }: ComponentProps<typeof Modal>) => {
 ---
 
 ## PopoverFrame
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/Popover/PopoverFrame
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [PopoverFrame](https://cs-core.cloud.delta.sbrf.ru/latest/?path=/docs/components-popover-popoverframe--docs)
  нужен для изоляции контекста стилей всплывающего окна компонента [Popover](https://cs-core.cloud.delta.sbrf.ru/latest/?path=/docs/components-popover--docs).
@@ -1038,40 +1120,55 @@ propsType: (signature, no dedicated Props type found) (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
-export declare const PopoverFrame: import("react").ForwardRefExoticComponent<{
-    id?: string;
-    view?: "onDark" | "onLight";
-} & {
-    children?: import("react").ReactNode | undefined;
-} & import("react").RefAttributes<HTMLDivElement>>;
+export declare const PopoverFrame: import('react').ForwardRefExoticComponent<
+    {
+        id?: string
+        view?: 'onDark' | 'onLight'
+    } & {
+        children?: import('react').ReactNode | undefined
+    } & import('react').RefAttributes<HTMLDivElement>
+>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## SearchHelpers
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/SearchHelpers
 
 propsType: SearchHelpersProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export type SearchHelpersProps<RowData extends TRowData, ComboboxData extends TComboboxItem, CustomQueryArg extends TCustomQueryArg = TCustomQueryArg, CustomInitialPageParam extends TCustomQueryArg = TCustomQueryArg> = TUseInfinityQueryWithQueryBuilder<ComboboxData, CustomQueryArg, CustomInitialPageParam, RowData> & {
-    extraArg?: TArg;
-    triggerFilters?: string[];
-} & TTableHeadFilterProps<RowData, CustomQueryArg, CustomInitialPageParam> & TPickComboboxProps;
+export type SearchHelpersProps<
+    RowData extends TRowData,
+    ComboboxData extends TComboboxItem,
+    CustomQueryArg extends TCustomQueryArg = TCustomQueryArg,
+    CustomInitialPageParam extends TCustomQueryArg = TCustomQueryArg,
+> = TUseInfinityQueryWithQueryBuilder<ComboboxData, CustomQueryArg, CustomInitialPageParam, RowData> & {
+    extraArg?: TArg
+    triggerFilters?: string[]
+} & TTableHeadFilterProps<RowData, CustomQueryArg, CustomInitialPageParam> &
+    TPickComboboxProps
 ```
 
 ### demo examples found
+
 <!-- components/SearchHelpers/ui/SearchHelpersDemo.tsx -->
+
 ```tsx
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism'
@@ -1104,22 +1201,27 @@ export const columnsTable = [
 ---
 
 ## SearchModal
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/SearchModal
 
 propsType: TSearchModalProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export type TSearchModalProps = TModalRequiredProps & TModalPartialProps;
+export type TSearchModalProps = TModalRequiredProps & TModalPartialProps
 ```
 
 ### demo examples found
+
 <!-- components/SearchModal/ui/SearchModalDemo.tsx -->
+
 ```tsx
 import type { ComponentProps } from 'react'
 
@@ -1150,7 +1252,9 @@ export const SearchModalDemo = ({ ...rest }: ComponentProps<typeof SearchModal>)
     )
 }
 ```
+
 <!-- components/SearchModal/ui/SearchModalWithEntitySearchDemo.tsx -->
+
 ```tsx
 import type { ComponentProps } from 'react'
 
@@ -1186,11 +1290,13 @@ export const SearchModalWithEntitySearchDemo = ({ ...rest }: ComponentProps<type
 ---
 
 ## TaskModal
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/TaskModal
 
 propsType: TTaskModalProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 TaskModal - компонент модального окна для отображения и управления задачей.
 Представляет собой специализированную версию Modal с предопределенной структурой для задач.
@@ -1225,23 +1331,26 @@ TaskModal - компонент модального окна для отобра
 ```
 
 ### raw props type
+
 ```ts
 export type TTaskModalProps<T extends TTask> = Omit<TModalProps, 'title' | 'footer'> & {
-    task: T;
+    task: T
     headerDetail?: {
-        label: string;
-        value: string | number;
-    }[];
+        label: string
+        value: string | number
+    }[]
     actions?: {
-        main: TInternalButton;
-        secondary?: TInternalButton;
-        clear?: TInternalButton;
-    };
-};
+        main: TInternalButton
+        secondary?: TInternalButton
+        clear?: TInternalButton
+    }
+}
 ```
 
 ### demo examples found
+
 <!-- components/TaskModal/ui/TaskModalDemo.tsx -->
+
 ```tsx
 import type { ComponentProps } from 'react'
 
@@ -1275,11 +1384,13 @@ export const TaskModalDemo = ({
 ---
 
 ## useConfirm
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./hooks/notifications
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Хук для работы с модальными окнами подтверждения действий.
 
@@ -1291,31 +1402,37 @@ propsType: (signature, no dedicated Props type found) (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
-export declare const useConfirm: () => TConfirmModalContext;
+export declare const useConfirm: () => TConfirmModalContext
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## useGlobalBulkActions
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./components/bulkActions
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const useGlobalBulkActions: TUseGlobalBulkActions;
+export declare const useGlobalBulkActions: TUseGlobalBulkActions
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---

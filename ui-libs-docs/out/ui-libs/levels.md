@@ -14,48 +14,49 @@
 
 Priority for what to reach for (not what to write as the import path — that's always
 cs-portal, see [README.md](README.md)):
+
 1. `cs-portal` for components, `plasma-icons` for icons — co-equal top priority.
 2. `cs-core` — only when cs-portal has no match.
 3. `sdds-cs` — last resort: raw primitives, or a name from the exception table below.
 
 ## Why some names need a direct import
 
-TypeScript's `export *` rule: an explicit named export always wins over a wildcard re-export. cs-portal's `index.d.ts` does `export * from` four different packages, then ALSO explicitly re-exports about 30 names by hand — for those names, the explicit line decides which origin cs-portal actually gives you, and the *other* origin's same-named export becomes unreachable through cs-portal. If you need that other one, you must import it directly from its own package.
+TypeScript's `export *` rule: an explicit named export always wins over a wildcard re-export. cs-portal's `index.d.ts` does `export * from` four different packages, then ALSO explicitly re-exports about 30 names by hand — for those names, the explicit line decides which origin cs-portal actually gives you, and the _other_ origin's same-named export becomes unreachable through cs-portal. If you need that other one, you must import it directly from its own package.
 
 ## Exception table — the only names that ever need a non-cs-portal import
 
-| Symbol | `import from cs-portal` gives you | The shadowed alternative | Import it directly with |
-|---|---|---|---|
-| Badge | cs-core | sdds-cs | `import { Badge } from '@salutejs/sdds-cs'` |
-| Combobox | cs-core | sdds-cs | `import { Combobox } from '@salutejs/sdds-cs'` |
-| createApp | cs-portal (own) | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
-| createRemoteComponent | cs-portal (own) | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
-| getMessagesFromResponse | cs-portal (own) | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
-| getNestedValue | cs-portal (own) | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
-| Modal | cs-core | sdds-cs | `import { Modal } from '@salutejs/sdds-cs'` |
-| MutationAutocomplete | cs-portal (own) | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
-| MutationCheckboxGroup | cs-portal (own) | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
-| MutationCombobox | cs-portal (own) | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
-| MutationDatePicker | cs-portal (own) | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
-| MutationDatePickerRange | cs-portal (own) | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
-| MutationMask | cs-portal (own) | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
-| MutationNumberFormat | cs-portal (own) | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
-| MutationNumberInput | cs-portal (own) | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
-| MutationRadioGroup | cs-portal (own) | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
-| MutationSelect | cs-portal (own) | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
-| MutationSubmit | cs-portal (own) | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
-| MutationSwitch | cs-portal (own) | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
-| MutationTextArea | cs-portal (own) | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
-| MutationTextField | cs-portal (own) | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
-| MutationTreeCheckbox | cs-portal (own) | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
-| MutationUploadSet | cs-portal (own) | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
-| Overlay | cs-core | sdds-cs | `import { Overlay } from '@salutejs/sdds-cs'` |
-| Popover | cs-core | sdds-cs | `import { Popover } from '@salutejs/sdds-cs'` |
-| RemoteComponent | cs-portal (own) | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
-| showToast | cs-core | sdds-cs | `import { showToast } from '@salutejs/sdds-cs'` |
-| Table | cs-core | sdds-cs | `import { Table } from '@salutejs/sdds-cs'` |
-| Tabs | cs-core | sdds-cs | `import { Tabs } from '@salutejs/sdds-cs'` |
-| useMutationSubmit | cs-portal (own) | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
+| Symbol                  | `import from cs-portal` gives you | The shadowed alternative                      | Import it directly with                                                                            |
+| ----------------------- | --------------------------------- | --------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Badge                   | cs-core                           | sdds-cs                                       | `import { Badge } from '@salutejs/sdds-cs'`                                                        |
+| Combobox                | cs-core                           | sdds-cs                                       | `import { Combobox } from '@salutejs/sdds-cs'`                                                     |
+| createApp               | cs-portal (own)                   | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
+| createRemoteComponent   | cs-portal (own)                   | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
+| getMessagesFromResponse | cs-portal (own)                   | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
+| getNestedValue          | cs-portal (own)                   | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
+| Modal                   | cs-core                           | sdds-cs                                       | `import { Modal } from '@salutejs/sdds-cs'`                                                        |
+| MutationAutocomplete    | cs-portal (own)                   | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
+| MutationCheckboxGroup   | cs-portal (own)                   | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
+| MutationCombobox        | cs-portal (own)                   | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
+| MutationDatePicker      | cs-portal (own)                   | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
+| MutationDatePickerRange | cs-portal (own)                   | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
+| MutationMask            | cs-portal (own)                   | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
+| MutationNumberFormat    | cs-portal (own)                   | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
+| MutationNumberInput     | cs-portal (own)                   | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
+| MutationRadioGroup      | cs-portal (own)                   | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
+| MutationSelect          | cs-portal (own)                   | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
+| MutationSubmit          | cs-portal (own)                   | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
+| MutationSwitch          | cs-portal (own)                   | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
+| MutationTextArea        | cs-portal (own)                   | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
+| MutationTextField       | cs-portal (own)                   | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
+| MutationTreeCheckbox    | cs-portal (own)                   | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
+| MutationUploadSet       | cs-portal (own)                   | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
+| Overlay                 | cs-core                           | sdds-cs                                       | `import { Overlay } from '@salutejs/sdds-cs'`                                                      |
+| Popover                 | cs-core                           | sdds-cs                                       | `import { Popover } from '@salutejs/sdds-cs'`                                                      |
+| RemoteComponent         | cs-portal (own)                   | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
+| showToast               | cs-core                           | sdds-cs                                       | `import { showToast } from '@salutejs/sdds-cs'`                                                    |
+| Table                   | cs-core                           | sdds-cs                                       | `import { Table } from '@salutejs/sdds-cs'`                                                        |
+| Tabs                    | cs-core                           | sdds-cs                                       | `import { Tabs } from '@salutejs/sdds-cs'`                                                         |
+| useMutationSubmit       | cs-portal (own)                   | cs-core (different implementation, same name) | _(informational only — no direct cs-core import; cs-portal's own version is always the right one)_ |
 
 `Badge`, `Combobox`, `Modal`, `Overlay`, `Popover`, `showToast`, `Table`, `Tabs` additionally exist as raw sdds-cs primitives with a different (usually lower-level, less opinionated) API than the cs-core/cs-portal version — see each one's card in `sdds-cs/*.md` for the raw shape and a note on how it differs, if the source material had one. These are the only rows above where a direct `@salutejs/sdds-cs` import is ever correct — the cs-core-shadowed rows (`Mutation*`, `createApp`, `createRemoteComponent`, `getMessagesFromResponse`, `getNestedValue`, `RemoteComponent`, `useMutationSubmit`) have no legitimate direct-cs-core-import case: cs-portal's own version is always what you want there.
 
@@ -74,4 +75,5 @@ None found. Every name that exists in more than one re-exported source is explic
 Generated from 138 cs-portal explicit exports + 152 cs-core-only exports. Regenerate with `node scripts/resolve-levels.mjs` after a dependency bump.
 
 ---
+
 See also: [README.md](README.md) for the priority rule, [gotchas.md](gotchas.md) for legacy/new pairs and other naming traps that aren't about the cascade.

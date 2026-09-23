@@ -1,11 +1,13 @@
 <!-- SKELETON for cs-portal/widgets.md — raw material only, not the final doc. 16 symbols. -->
 
 ## Attachment
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./widgets/attachment
 
 propsType: TAttachmentProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Виджет управления вложениями для одного набора файлов.
 
@@ -18,23 +20,44 @@ propsType: TAttachmentProps (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
 export type TAttachmentProps = {
-    baseUrl?: string;
-} & Pick<TSmartUploadSetProps, 'size' | 'title' | 'helperItems' | 'uploadVisible' | 'entityUuid' | 'entityId' | 'subtitle' | 'reverse' | 'downloadAllVisible' | 'deleteVisible' | 'downloadVisible' | 'openVisible' | 'renameVisible' | 'fileUploadExtraArg' | 'fileDeleteExtraArg'>;
+    baseUrl?: string
+} & Pick<
+    TSmartUploadSetProps,
+    | 'size'
+    | 'title'
+    | 'helperItems'
+    | 'uploadVisible'
+    | 'entityUuid'
+    | 'entityId'
+    | 'subtitle'
+    | 'reverse'
+    | 'downloadAllVisible'
+    | 'deleteVisible'
+    | 'downloadVisible'
+    | 'openVisible'
+    | 'renameVisible'
+    | 'fileUploadExtraArg'
+    | 'fileDeleteExtraArg'
+>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## CommunicationDrawer
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./widgets/Communication
 
 propsType: TCommunicationDrawerProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Виджет коммуникации (чата) в виде боковой панели.
 
@@ -50,21 +73,25 @@ propsType: TCommunicationDrawerProps (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
-export type TCommunicationDrawerProps = TDocument;
+export type TCommunicationDrawerProps = TDocument
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## createWidgetCounter
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./app
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Фабрика виджета-счётчика для использования как микрофронтенд.
 
@@ -96,47 +123,70 @@ const OrdersCounter = createWidgetCounter({
 ```
 
 ### raw props type
+
 ```ts
-export declare const createWidgetCounter: <UseQuery extends AnyUseQuery>({ path, queryArg, selectFromQueryResult, store, title, useQuery, }: TCreateWidgetCounterProps<UseQuery>) => (props: {
-    externalNavigate?: import("react-router").NavigateFunction | undefined;
-    data?: unknown;
-}) => import("react").JSX.Element;
+export declare const createWidgetCounter: <UseQuery extends AnyUseQuery>({
+    path,
+    queryArg,
+    selectFromQueryResult,
+    store,
+    title,
+    useQuery,
+}: TCreateWidgetCounterProps<UseQuery>) => (props: {
+    externalNavigate?: import('react-router').NavigateFunction | undefined
+    data?: unknown
+}) => import('react').JSX.Element
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## createWidgetHorizontalBarChart
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./app
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const createWidgetHorizontalBarChart: <UseQuery extends AnyUseQuery>({ paramKey, path, queryArg, selectFromQueryResult, store, title, useQuery, }: TCreateWidgetHorizontalBarChartProps<UseQuery>) => (props: {
-    externalNavigate?: import("react-router").NavigateFunction | undefined;
-    data?: unknown;
-}) => import("react").JSX.Element;
+export declare const createWidgetHorizontalBarChart: <UseQuery extends AnyUseQuery>({
+    paramKey,
+    path,
+    queryArg,
+    selectFromQueryResult,
+    store,
+    title,
+    useQuery,
+}: TCreateWidgetHorizontalBarChartProps<UseQuery>) => (props: {
+    externalNavigate?: import('react-router').NavigateFunction | undefined
+    data?: unknown
+}) => import('react').JSX.Element
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## createWidgetPieChart
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./app
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Фабрика виджета-диаграммы (pie chart) для использования как микрофронтенд.
 
@@ -177,24 +227,36 @@ const StatusChart = createWidgetPieChart({
 ```
 
 ### raw props type
+
 ```ts
-export declare const createWidgetPieChart: <UseQuery extends AnyUseQuery>({ paramKey, path, queryArg, selectFromQueryResult, store, title, useQuery, }: TCreateWidgetPieChartProps<UseQuery>) => (props: {
-    externalNavigate?: import("react-router").NavigateFunction | undefined;
-    data?: unknown;
-}) => import("react").JSX.Element;
+export declare const createWidgetPieChart: <UseQuery extends AnyUseQuery>({
+    paramKey,
+    path,
+    queryArg,
+    selectFromQueryResult,
+    store,
+    title,
+    useQuery,
+}: TCreateWidgetPieChartProps<UseQuery>) => (props: {
+    externalNavigate?: import('react-router').NavigateFunction | undefined
+    data?: unknown
+}) => import('react').JSX.Element
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## DocChain
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./widgets/DocChain
 
 propsType: TDocChainProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Виджет цепочки документов (связанные документы/позиции).
 
@@ -211,23 +273,27 @@ propsType: TDocChainProps (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
 export type TDocChainProps = Pick<TGetList1ApiArg, 'docKind' | 'depth'> & {
-    docNum: string | number | null | undefined;
-} & Pick<TBoxProps, 'height'>;
+    docNum: string | number | null | undefined
+} & Pick<TBoxProps, 'height'>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## Event
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./widgets/Event
 
 propsType: TEventProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Виджет истории событий объекта.
 
@@ -241,23 +307,27 @@ propsType: TEventProps (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
 export type TEventProps = {
-    entityUuid: string;
-};
+    entityUuid: string
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## EventDrawer
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./widgets/Event
 
 propsType: TEventDrawerProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Виджет истории событий в виде боковой панели.
 
@@ -270,21 +340,25 @@ propsType: TEventDrawerProps (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
-export type TEventDrawerProps = TEventProps & Pick<TDrawerProps, 'size'>;
+export type TEventDrawerProps = TEventProps & Pick<TDrawerProps, 'size'>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## invalidateAttachmentTags
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./widgets/attachment
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Инвалидирует теги RTK Query в store виджета вложений.
 
@@ -298,21 +372,25 @@ invalidateAttachmentTags([{ type: 'files', id: entityUuid }])
 ```
 
 ### raw props type
+
 ```ts
-export declare const invalidateAttachmentTags: (...args: Parameters<typeof attachmentApi.util.invalidateTags>) => void;
+export declare const invalidateAttachmentTags: (...args: Parameters<typeof attachmentApi.util.invalidateTags>) => void
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## MultiAttachment
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./widgets/attachment
 
 propsType: TMultiAttachmentProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Виджет управления вложениями с группировкой по заголовкам из API.
 
@@ -329,24 +407,31 @@ propsType: TMultiAttachmentProps (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
 export type TMultiAttachmentProps = {
-    baseUrl?: string;
-    downloadAllText?: string;
-} & Pick<TSmartUploadSetProps, 'size' | 'entityUuid' | 'entityId' | 'reverse' | 'downloadAllVisible' | 'fileUploadExtraArg' | 'fileDeleteExtraArg'>;
+    baseUrl?: string
+    downloadAllText?: string
+} & Pick<
+    TSmartUploadSetProps,
+    'size' | 'entityUuid' | 'entityId' | 'reverse' | 'downloadAllVisible' | 'fileUploadExtraArg' | 'fileDeleteExtraArg'
+>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## SmartPdfViewer
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./smarts/SmartPdfViewer
 
 propsType: SmartPdfViewerProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Умный компонент просмотра PDF-документа.
 
@@ -369,27 +454,33 @@ propsType: SmartPdfViewerProps (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
-export type SmartPdfViewerProps<T extends TBaseQueryArg = TBaseQueryArg> = Prettify<{
-    queryArg: TQueryArg<T>;
-    skip?: boolean;
-    useGetPdfQuery: UseQuery<QueryDefinition<TQueryArg<T>, BaseQueryFn, string, Blob>>;
-} & {
-    errorDescription?: TPropsFromEmptyStates['description'];
-}>;
+export type SmartPdfViewerProps<T extends TBaseQueryArg = TBaseQueryArg> = Prettify<
+    {
+        queryArg: TQueryArg<T>
+        skip?: boolean
+        useGetPdfQuery: UseQuery<QueryDefinition<TQueryArg<T>, BaseQueryFn, string, Blob>>
+    } & {
+        errorDescription?: TPropsFromEmptyStates['description']
+    }
+>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## SmartStatusTrack
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./smarts/SmartStatusTrack
 
 propsType: TSmartStatusTrackProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Умный компонент трекера статусов объекта.
 
@@ -411,23 +502,29 @@ propsType: TSmartStatusTrackProps (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
 export type TSmartStatusTrackProps = TStatusTrackArg & {
-    useStatusTrackQuery: UseQuery<QueryDefinition<TGetHistoryForDocumentApiArg, BaseQueryFn, string, TGetHistoryForDocumentApiResponse>>;
-};
+    useStatusTrackQuery: UseQuery<
+        QueryDefinition<TGetHistoryForDocumentApiArg, BaseQueryFn, string, TGetHistoryForDocumentApiResponse>
+    >
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## Tracker
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./widgets/Tracker
 
 propsType: TTrackerProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Виджет трекера статусов с собственным Redux store.
 
@@ -446,71 +543,89 @@ propsType: TTrackerProps (source: cs-portal)
 ```
 
 ### raw props type
+
 ```ts
-export type TTrackerProps = Pick<TSmartStatusTrackProps, 'entityUuid' | 'descriptionRender'>;
+export type TTrackerProps = Pick<TSmartStatusTrackProps, 'entityUuid' | 'descriptionRender'>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## WidgetCounter
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./components/widgets/WidgetCounter
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const WidgetCounter: ({ count, isError, ...props }: TWidgetCounterProps) => import("react").JSX.Element;
+export declare const WidgetCounter: ({ count, isError, ...props }: TWidgetCounterProps) => import('react').JSX.Element
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## WidgetHorizontalBarChart
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./components/widgets/WidgetHorizontalBarChart
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const WidgetHorizontalBarChart: ({ data, isError, ...props }: TWidgetHorizontalBarChartProps) => import("react").JSX.Element;
+export declare const WidgetHorizontalBarChart: ({
+    data,
+    isError,
+    ...props
+}: TWidgetHorizontalBarChartProps) => import('react').JSX.Element
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## WidgetPieChart
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./components/widgets/WidgetPieChart
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const WidgetPieChart: ({ data, isError, ...props }: TWidgetPieChartProps) => import("react").JSX.Element;
+export declare const WidgetPieChart: ({ data, isError, ...props }: TWidgetPieChartProps) => import('react').JSX.Element
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---

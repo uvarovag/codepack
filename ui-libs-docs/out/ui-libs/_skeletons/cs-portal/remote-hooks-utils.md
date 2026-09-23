@@ -1,11 +1,13 @@
 <!-- SKELETON for cs-portal/remote-hooks-utils.md — raw material only, not the final doc. 16 symbols. -->
 
 ## buildFilters
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./utils/oDataQuery
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Формирует строку `$filter` для OData запроса.
 
@@ -19,42 +21,50 @@ buildFilters([], 'or') // → undefined
 ```
 
 ### raw props type
+
 ```ts
-export declare const buildFilters: (filters: TFilter[], operator?: TBuildFilterOperator) => string | undefined;
+export declare const buildFilters: (filters: TFilter[], operator?: TBuildFilterOperator) => string | undefined
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## buildSorts
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./utils/oDataQuery
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const buildSorts: (sorts: TSort[]) => string | undefined;
+export declare const buildSorts: (sorts: TSort[]) => string | undefined
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## createRemoteComponent
+
 tier: A · origin: cs-portal · usedByApps: true · fromSpec: ./remote
 SHADOW NOTE: cs-portal gives the cs-portal version; also defined in: cs-core
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Создаёт bridge-компонент для экспорта как Module Federation remote.
 
@@ -68,24 +78,28 @@ export default createRemoteComponent(App)
 ```
 
 ### raw props type
+
 ```ts
 export declare const createRemoteComponent: <Props>(rootComponent: ComponentType<Props>) => () => {
-    render(info: import("@module-federation/bridge-react").RenderParams): Promise<void>;
-    destroy(info: import("@module-federation/bridge-react").DestroyParams): void;
-};
+    render(info: import('@module-federation/bridge-react').RenderParams): Promise<void>
+    destroy(info: import('@module-federation/bridge-react').DestroyParams): void
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## extractFilename
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./utils/extractFilename
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Извлекает и декодирует имя файла из заголовка `Content-Disposition`.
 
@@ -98,21 +112,25 @@ extractFilename(null) // → undefined
 ```
 
 ### raw props type
+
 ```ts
-export declare const extractFilename: (contentDisposition: string | null) => string | undefined;
+export declare const extractFilename: (contentDisposition: string | null) => string | undefined
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## getFileExtension
+
 tier: A · origin: cs-portal · usedByApps: true · fromSpec: ./utils/getFileExtension
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Извлекает расширение файла из его имени.
 
@@ -125,22 +143,26 @@ getFileExtension('README')       // → ''
 ```
 
 ### raw props type
+
 ```ts
-export declare const getFileExtension: (name: string) => string;
+export declare const getFileExtension: (name: string) => string
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## getMessagesFromResponse
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./utils/responseMessages
 SHADOW NOTE: cs-portal gives the cs-portal version; also defined in: cs-core
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Конвертирует ответ/ошибку бэкенда в массив `TMessagesFromResponse`.
 
@@ -157,22 +179,26 @@ getMessagesFromResponse(null) // → []
 ```
 
 ### raw props type
+
 ```ts
-export declare const getMessagesFromResponse: (response: unknown) => TMessagesFromResponse[];
+export declare const getMessagesFromResponse: (response: unknown) => TMessagesFromResponse[]
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## getNestedValue
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./utils/getNestedValue
 SHADOW NOTE: cs-portal gives the cs-portal version; also defined in: cs-core
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Рекурсивно получает значение из объекта по строковому пути через точку.
 
@@ -188,21 +214,28 @@ getNestedValue({ user: {} }, 'user.age') // → undefined
 ```
 
 ### raw props type
+
 ```ts
-export declare const getNestedValue: <O extends Record<PropertyKey, unknown>, K extends string>(obj: O, path: K) => TGetValue<O, K>;
+export declare const getNestedValue: <O extends Record<PropertyKey, unknown>, K extends string>(
+    obj: O,
+    path: K
+) => TGetValue<O, K>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## getTextFromMessage
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./utils/responseMessages
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Конвертирует `TResponseMessage` в строку.
 
@@ -217,21 +250,25 @@ getTextFromMessage({}) // → ''
 ```
 
 ### raw props type
+
 ```ts
-export declare const getTextFromMessage: ({ description, message }: TResponseMessage) => string;
+export declare const getTextFromMessage: ({ description, message }: TResponseMessage) => string
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## getTextMessagesFromResponse
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./utils/responseMessages
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Конвертирует ответ/ошибку бэкенда в единую строку сообщений через `\n`.
 
@@ -243,44 +280,52 @@ getTextMessagesFromResponse({ status: 403 }) // → '403: Доступ запр�
 ```
 
 ### raw props type
+
 ```ts
-export declare const getTextMessagesFromResponse: (response: unknown) => string;
+export declare const getTextMessagesFromResponse: (response: unknown) => string
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## LazyComponent
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./remote
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
 export declare const LazyComponent: {
-    <Props extends ComponentProps>(props: LazyComponentProps<Props>): import("react").JSX.Element;
-    displayName: string;
-};
+    <Props extends ComponentProps>(props: LazyComponentProps<Props>): import('react').JSX.Element
+    displayName: string
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## parseField
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./utils/parseField
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Парсит JSON-строку и извлекает значение поля по ключу.
 
@@ -297,45 +342,53 @@ parseField('invalid', 'uuid')             // → undefined
 ```
 
 ### raw props type
+
 ```ts
-export declare const parseField: <T = string>(data: string, field: string) => T | undefined;
+export declare const parseField: <T = string>(data: string, field: string) => T | undefined
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## RemoteComponent
+
 tier: A · origin: cs-portal · usedByApps: true · fromSpec: ./remote
 SHADOW NOTE: cs-portal gives the cs-portal version; also defined in: cs-core
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
 export declare const RemoteComponent: {
-    <Props extends ComponentProps>(props: RemoteComponentProps<Props>): import("react").JSX.Element;
-    displayName: string;
-};
+    <Props extends ComponentProps>(props: RemoteComponentProps<Props>): import('react').JSX.Element
+    displayName: string
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## useAction
+
 tier: A · origin: cs-portal · usedByApps: true · fromSpec: ./hooks
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Хук для оборачивания RTK Mutation или callback в единый интерфейс с подтверждением.
 
@@ -362,41 +415,52 @@ await deleteItem({ id: '123' })
 ```
 
 ### raw props type
+
 ```ts
-export declare const useAction: <ResultType, QueryArg>(action: TAction<ResultType, QueryArg>, options?: TActionTriggerOptions) => TUseActionResult<ResultType, QueryArg>;
+export declare const useAction: <ResultType, QueryArg>(
+    action: TAction<ResultType, QueryArg>,
+    options?: TActionTriggerOptions
+) => TUseActionResult<ResultType, QueryArg>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## useActionTrigger
+
 tier: A · origin: cs-portal · usedByApps: false · fromSpec: ./hooks
 
 propsType: (signature, no dedicated Props type found) (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 (none found — check cs-core/cs-portal source manually)
 ```
 
 ### raw props type
+
 ```ts
-export declare const useActionTrigger: <ResultType, QueryArg>() => TUseActionTriggerResult<ResultType, QueryArg>;
+export declare const useActionTrigger: <ResultType, QueryArg>() => TUseActionTriggerResult<ResultType, QueryArg>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## useSelectItems
+
 tier: A · origin: cs-portal · usedByApps: true · fromSpec: ./hooks
 
 propsType: useSelectItemsProps (source: cs-portal)
 
 ### raw description (RU, from JSDoc)
+
 ```
 Хук преобразования массива произвольных объектов в формат опций для Select/Combobox.
 
@@ -419,38 +483,41 @@ const items = useSelectItems({
 ```
 
 ### raw props type
+
 ```ts
 export type useSelectItemsProps<T extends object> = {
-    data?: T[];
-    labelKey: keyof T;
-    valueKey: keyof T;
-};
+    data?: T[]
+    labelKey: keyof T
+    valueKey: keyof T
+}
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## downloadBlob
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./utils
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 скачивает Blob-объект как файл с указанным именем
 ```
 
 ### raw props type
+
 ```ts
-export declare const downloadBlob: ({ blob, fileName }: {
-    blob: Blob;
-    fileName: string;
-}) => void;
+export declare const downloadBlob: ({ blob, fileName }: { blob: Blob; fileName: string }) => void
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---

@@ -1,11 +1,13 @@
 <!-- SKELETON for cs-core/charts.md — raw material only, not the final doc. 9 symbols. -->
 
 ## HorizontalBar
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./widgets/bars/HorizontalBar
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [__HorizontalBar__](https://cs-core.cloud.delta.sbrf.ru/latest/?path=/docs/widgets-horizontalbar--docs) - Компонент визуализации горизонтальных столбчатых
 диаграмм. Предоставляет удобное сравнение показателей по категориям через горизонтальные столбцы с интерактивными возможностями.
@@ -56,12 +58,25 @@ __Цветовая схема__
 ```
 
 ### raw props type
+
 ```ts
-export declare const HorizontalBar: <D extends TWidgetItem>({ data, onClick, tooltip, getHref, navigate, valueFormat: customValueFormat, enableTooltip, percentDecimalScale, ...rest }: TBarProps<D>) => import("react").JSX.Element;
+export declare const HorizontalBar: <D extends TWidgetItem>({
+    data,
+    onClick,
+    tooltip,
+    getHref,
+    navigate,
+    valueFormat: customValueFormat,
+    enableTooltip,
+    percentDecimalScale,
+    ...rest
+}: TBarProps<D>) => import('react').JSX.Element
 ```
 
 ### demo examples found
+
 <!-- widgets/Bars/HorizontalBar/HorizontalBarDemo.tsx -->
+
 ```tsx
 import type { ComponentProps } from 'react'
 
@@ -91,11 +106,13 @@ export const HorizontalBarDemo = (props: Partial<ComponentProps<typeof Horizonta
 ---
 
 ## Line
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./widgets/Line
 
 propsType: TLineProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [Line](https://cs-core.cloud.delta.sbrf.ru/latest/?path=/docs/widgets-areagradients--docs) — Компонент линейного графика с градиентными областями на основе Nivo Line.
 
@@ -135,24 +152,30 @@ __Цветовая схема__
 ```
 
 ### raw props type
+
 ```ts
 export type TLineProps<S extends TLineDatum, D extends TLineItem<S>> = {
     /** Массив серий данных */
-    data: D[];
-} & TLineTooltip<S, D> & Omit<LineSvgProps<D>, 'data' | 'tooltip' | 'height' | 'width' | 'colors'> & TClickableLayerProps<D>;
+    data: D[]
+} & TLineTooltip<S, D> &
+    Omit<LineSvgProps<D>, 'data' | 'tooltip' | 'height' | 'width' | 'colors'> &
+    TClickableLayerProps<D>
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## Pie
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./widgets/Pie
 
 propsType: TPieProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [__Pie__](https://cs-core.cloud.delta.sbrf.ru/latest/?path=/docs/components-pie--docs) - Компонент круговой диаграммы на основе Nivo Pie с расширенной интерактивностью.
 
@@ -199,52 +222,63 @@ __Цветовая схема__
 
 **Правильное применение ссылок:**
 - Для перехода на детальную страницу элемента диаграммы используйте `getHref + navigate`.
-  ```
-  <Pie
-    data={data}
-    getHref={(item) => `/detail/${item.id}`}
-    navigate={navigate}
-  />
-  ```
+```
+
+<Pie
+data={data}
+getHref={(item) => `/detail/${item.id}`}
+navigate={navigate}
+/>
+
+```
 - Для пользовательской логики при клике на элемент используйте `onClick` (он имеет приоритет над `navigate`).
 
 @summary компонент круговой диаграммы на основе Nivo с расширенной интерактивностью
 ```
 
 ### raw props type
+
 ```ts
 export type TPieProps<D extends TPieItem> = {
     /** Массив данных для диаграммы */
-    data: D[];
+    data: D[]
     /** Кастомный компонент тултипа */
-    tooltip?: FC<PieTooltipProps<D> & {
-        formatPercent: (item: D) => string;
-        groupedItems: D[];
-    }>;
+    tooltip?: FC<
+        PieTooltipProps<D> & {
+            formatPercent: (item: D) => string
+            groupedItems: D[]
+        }
+    >
     /** Заголовок легенды диаграммы */
-    legendTitle?: string;
+    legendTitle?: string
     /** Флаг видимости суммы элементов в легенде */
-    legendItemCountVisible?: boolean;
+    legendItemCountVisible?: boolean
     /** Максимальная высота легенды */
-    legendMaxHeight?: CSSProperties['height'];
+    legendMaxHeight?: CSSProperties['height']
     /** Флаг видимости постфикса метрики в центре диаграммы */
-    centeredMetricPostfixVisible?: boolean;
+    centeredMetricPostfixVisible?: boolean
     /** Текст постфикса метрики в центре диаграммы */
-    centeredMetricPostfix?: string;
+    centeredMetricPostfix?: string
     /** Кастомный компонент метрики в центре диаграммы */
-    centeredMetric?: FC<PieCustomLayerProps<D> & {
-        centeredMetricPostfixVisible?: boolean;
-        centeredMetricPostfix?: string;
-    }>;
+    centeredMetric?: FC<
+        PieCustomLayerProps<D> & {
+            centeredMetricPostfixVisible?: boolean
+            centeredMetricPostfix?: string
+        }
+    >
     /** Выбранная легенда */
-    selectedId?: string;
+    selectedId?: string
     /** Флаг включения/отключения тултипа */
-    enableTooltip?: boolean;
-} & TPropsFromResponsivePie<D> & TClickableLayerProps<D> & TPercentDecimalScale;
+    enableTooltip?: boolean
+} & TPropsFromResponsivePie<D> &
+    TClickableLayerProps<D> &
+    TPercentDecimalScale
 ```
 
 ### demo examples found
+
 <!-- components/Pie/ui/PieDemo.tsx -->
+
 ```tsx
 import type { ComponentProps } from 'react'
 
@@ -286,7 +320,9 @@ export const PieDemo = (props: ComponentProps<typeof Pie>) => {
     )
 }
 ```
+
 <!-- components/Pie/ui/PieSelectedLegendDemo.tsx -->
+
 ```tsx
 import { BodyM } from '@salutejs/sdds-cs'
 import { useState, type ComponentProps } from 'react'
@@ -328,11 +364,13 @@ export const PieSelectedLegendDemo = (props: ComponentProps<typeof Pie>) => {
 ---
 
 ## VerticalBar
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./widgets/bars/VerticalBar
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [__VerticalBar__](https://cs-core.cloud.delta.sbrf.ru/latest/?path=/docs/widgets-verticalbar--docs) - Компонент визуализации вертикальных столбчатых
 диаграмм. Предоставляет удобное сравнение показателей по категориям через вертикальные столбцы с интерактивными возможностями.
@@ -357,12 +395,25 @@ propsType: (signature, no dedicated Props type found) (source: cs-core)
 ```
 
 ### raw props type
+
 ```ts
-export declare const VerticalBar: <D extends TWidgetItem = TWidgetItem>({ data, onClick, getHref, navigate, tooltip, valueFormat: customValueFormat, enableTooltip, percentDecimalScale, ...rest }: TBarProps<D>) => import("react").JSX.Element;
+export declare const VerticalBar: <D extends TWidgetItem = TWidgetItem>({
+    data,
+    onClick,
+    getHref,
+    navigate,
+    tooltip,
+    valueFormat: customValueFormat,
+    enableTooltip,
+    percentDecimalScale,
+    ...rest
+}: TBarProps<D>) => import('react').JSX.Element
 ```
 
 ### demo examples found
+
 <!-- widgets/Bars/VerticalBar/VerticalBarDemo.tsx -->
+
 ```tsx
 import type { ComponentProps } from 'react'
 
@@ -387,11 +438,13 @@ export const VerticalBarDemo = (props: Partial<ComponentProps<typeof VerticalBar
 ---
 
 ## WidgetHorizontalBar
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./widgets/WidgetHorizontalBar
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [__WidgetHorizontalBar__](https://cs-core.cloud.delta.sbrf.ru/latest/?path=/docs/widgets-widgethorizontalbar--docs) - Компонент визуализации горизонтальных столбчатых диаграмм. Предоставляет удобное сравнение показателей по категориям через горизонтальные столбцы с интерактивными возможностями.
 
@@ -437,35 +490,46 @@ __Цветовая схема__
 
 **Правильное применение ссылок:**
 - Для перехода на детальную страницу элемента диаграммы используйте `getHref + navigate`:
-  ```
-  <WidgetHorizontalBar
-    data={data}
-    getHref={(item) => `/detail/${item.id}`}
-    navigate={navigate}
-  />
-  ```
+```
+
+<WidgetHorizontalBar
+data={data}
+getHref={(item) => `/detail/${item.id}`}
+navigate={navigate}
+/>
+
+```
 - Для пользовательской логики при клике на элемент используйте `onClick` (он имеет приоритет над `navigate`).
- 
+
 - Для перехода по виджету целиком используйте `href + navigate`:
-  ```
-  <WidgetHorizontalBar
+```
+
+<WidgetHorizontalBar
     data={data}
     href="/details"
     navigate={navigate}
   />
-  ```
+
+```
 - Для пользовательской логики при клике по всему виджету используйте `widgetOnClick` (он имеет приоритет над `href`).
 
 @summary компонент визуализации горизонтальных столбчатых диаграмм с интерактивностью для сравнения показателей по категориям
 ```
 
 ### raw props type
+
 ```ts
-export declare const WidgetHorizontalBar: <D extends TWidgetItem>({ data, navigate, ...rest }: TWidgetBarProps<D>) => import("react").JSX.Element;
+export declare const WidgetHorizontalBar: <D extends TWidgetItem>({
+    data,
+    navigate,
+    ...rest
+}: TWidgetBarProps<D>) => import('react').JSX.Element
 ```
 
 ### demo examples found
+
 <!-- widgets/WidgetHorizontalBar/WidgetHorizontalBarDemo.tsx -->
+
 ```tsx
 import type { ComponentProps } from 'react'
 
@@ -487,11 +551,13 @@ export const WidgetHorizontalBarDemo = ({ data, ...rest }: ComponentProps<typeof
 ---
 
 ## WidgetLine
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./widgets/WidgetLine
 
 propsType: TWidgetLineProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [__WidgetLine__](https://cs-core.cloud.delta.sbrf.ru/latest/?path=/docs/widgets-widgetareagradients--docs) — виджет линейного графика с градиентными областями на основе Line.
 
@@ -531,21 +597,25 @@ __Цветовая схема__
 ```
 
 ### raw props type
+
 ```ts
-export type TWidgetLineProps<D extends TLineItem<TLineDatum>> = TLineProps<TLineDatum, D> & TWidgetPaperProps;
+export type TWidgetLineProps<D extends TLineItem<TLineDatum>> = TLineProps<TLineDatum, D> & TWidgetPaperProps
 ```
 
 ### demo examples found
+
 (none — write a minimal example by hand from the props)
 
 ---
 
 ## WidgetPie
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./widgets/WidgetPie
 
 propsType: TWidgetPieProps (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [__WidgetPie__](https://cs-core.cloud.delta.sbrf.ru/latest/?path=/docs/widgets-widgetpie--docs) - Компонент визуализации круговых диаграмм с интерактивностью и настраиваемостью. Позволяет удобно отображать доли различных категорий данных и взаимодействовать с ними через клики и изменения активного состояния сегментов.
 
@@ -597,35 +667,43 @@ __Цветовая схема__
 
 **Правильное применение ссылок:**
 - Для перехода на детальную страницу элемента диаграммы используйте `getHref + navigate`:
-  ```
-  <WidgetPie
-    data={data}
-    getHref={(item) => `/detail/${item.id}`}
-    navigate={navigate}
-  />
-  ```
+```
+
+<WidgetPie
+data={data}
+getHref={(item) => `/detail/${item.id}`}
+navigate={navigate}
+/>
+
+```
 - Для пользовательской логики при клике на элемент используйте `onClick` (он имеет приоритет над `navigate`).
 
 - Для перехода по виджету целиком используйте `href + navigate`:
-  ```
-  <WidgetPie
+```
+
+<WidgetPie
     data={data}
     href="/details"
     navigate={navigate}
   />
-  ```
+
+```
 - Для пользовательской логики при клике по всему виджету используйте `widgetOnClick` (он имеет приоритет над `href`).
 
 @summary компонент визуализации круговых диаграмм с интерактивностью для отображения долей категорий
 ```
 
 ### raw props type
+
 ```ts
-export type TWidgetPieProps<WidgetItem extends TPieItem> = TPieProps<WidgetItem> & Omit<TWidgetPaperProps, 'onMouseEnter' | 'onMouseLeave' | 'ref'>;
+export type TWidgetPieProps<WidgetItem extends TPieItem> = TPieProps<WidgetItem> &
+    Omit<TWidgetPaperProps, 'onMouseEnter' | 'onMouseLeave' | 'ref'>
 ```
 
 ### demo examples found
+
 <!-- widgets/WidgetPie/WidgetPieDemo.tsx -->
+
 ```tsx
 import type { ComponentProps } from 'react'
 
@@ -683,11 +761,13 @@ export const WidgetPieDemo = <WidgetItem extends TPieItem>({
 ---
 
 ## WidgetStackedHorizontalBar
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./widgets/WidgetStackedHorizontalBar
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [__WidgetStackedHorizontalBar__](https://cs-core.cloud.delta.sbrf.ru/latest/?path=/docs/widgets-widgetstackedhorizontalbar--docs) - Компонент визуализации горизонтальных столбчатых диаграмм с разделением на категории внутри одного столбца.
 
@@ -712,35 +792,53 @@ propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 **Правильное применение ссылок:**
 - Для перехода на детальную страницу элемента диаграммы используйте `getHref + navigate`:
-  ```
-  <WidgetStackedHorizontalBar
-    data={data}
-    getHref={(item) => `/detail/${item.id}`}
-    navigate={navigate}
-  />
-  ```
+```
+
+<WidgetStackedHorizontalBar
+data={data}
+getHref={(item) => `/detail/${item.id}`}
+navigate={navigate}
+/>
+
+```
 - Для пользовательской логики при клике на элемент используйте `onClick` (он имеет приоритет над `navigate`).
 
 - Для перехода по виджету целиком используйте `href + navigate`:
-  ```
-  <WidgetStackedHorizontalBar
+```
+
+<WidgetStackedHorizontalBar
     data={data}
     href="/details"
     navigate={navigate}
   />
-  ```
+
+```
 - Для пользовательской логики при клике по всему виджету используйте `widgetOnClick` (он имеет приоритет над `href`).
 
 @summary компонент визуализации горизонтальных столбчатых диаграмм с разделением на категории внутри одного столбца
 ```
 
 ### raw props type
+
 ```ts
-export declare const WidgetStackedHorizontalBar: <D extends TStackedWidgetItem = TStackedWidgetItem>({ data, onClick, getHref, navigate, tooltip, colorBy, colors, fill, enableTooltip, ...rest }: TWidgetStackHorizontalBarProps<D>) => import("react").JSX.Element;
+export declare const WidgetStackedHorizontalBar: <D extends TStackedWidgetItem = TStackedWidgetItem>({
+    data,
+    onClick,
+    getHref,
+    navigate,
+    tooltip,
+    colorBy,
+    colors,
+    fill,
+    enableTooltip,
+    ...rest
+}: TWidgetStackHorizontalBarProps<D>) => import('react').JSX.Element
 ```
 
 ### demo examples found
+
 <!-- widgets/WidgetStackedHorizontalBar/WidgetStackedHorizontalBarDemo.tsx -->
+
 ```tsx
 import type { TWidgetStackHorizontalBarProps } from '../../../src/widgets/WidgetStackedHorizontalBar/types'
 
@@ -790,17 +888,19 @@ export const WidgetStackedHorizontalBarDemo = (props: TWidgetStackHorizontalBarP
                 if (d.id === 'прошлая неделя') {
                     return '#D5DFE6'
                 }
-         
+
 ```
 
 ---
 
 ## WidgetVerticalBar
+
 tier: B · origin: cs-core · usedByApps: false · fromSpec: ./widgets/WidgetVerticalBar
 
 propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 ### raw description (RU, from JSDoc)
+
 ```
 [__WidgetVerticalBar__](https://cs-core.cloud.delta.sbrf.ru/latest/?path=/docs/widgets-widgetverticalbar--docs) - Компонент визуализации вертикальных столбчатых диаграмм. Предоставляет удобное сравнение показателей по категориям через вертикальные столбцы с интерактивными возможностями.
 
@@ -822,35 +922,46 @@ propsType: (signature, no dedicated Props type found) (source: cs-core)
 
 **Правильное применение ссылок:**
 - Для перехода на детальную страницу элемента диаграммы используйте `getHref + navigate`:
-  ```
-  <WidgetVerticalBar
-    data={data}
-    getHref={(item) => `/detail/${item.id}`}
-    navigate={navigate}
-  />
-  ```
+```
+
+<WidgetVerticalBar
+data={data}
+getHref={(item) => `/detail/${item.id}`}
+navigate={navigate}
+/>
+
+```
 - Для пользовательской логики при клике на элемент используйте `onClick` (он имеет приоритет над `navigate`).
 
 - Для перехода по виджету целиком используйте `href + navigate`:
-  ```
-  <WidgetVerticalBar
+```
+
+<WidgetVerticalBar
     data={data}
     href="/details"
     navigate={navigate}
   />
-  ```
+
+```
 - Для пользовательской логики при клике по всему виджету используйте `widgetOnClick` (он имеет приоритет над `href`).
 
 @summary компонент визуализации вертикальных столбчатых диаграмм с интерактивностью для сравнения показателей по категориям
 ```
 
 ### raw props type
+
 ```ts
-export declare const WidgetVerticalBar: <D extends TWidgetItem = TWidgetItem>({ data, navigate, ...rest }: TWidgetBarProps<D>) => import("react").JSX.Element;
+export declare const WidgetVerticalBar: <D extends TWidgetItem = TWidgetItem>({
+    data,
+    navigate,
+    ...rest
+}: TWidgetBarProps<D>) => import('react').JSX.Element
 ```
 
 ### demo examples found
+
 <!-- widgets/WidgetVerticalBar/WidgetVerticalBarDemo.tsx -->
+
 ```tsx
 import type { TWidgetItem } from '../../../src'
 
