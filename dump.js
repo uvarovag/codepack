@@ -69,19 +69,42 @@ const excludedDirectoriesByType = {
         '.parcel-cache',
         'coverage',
         'storybook-static',
+        '.yarn',
     ],
     java: ['target', 'build', 'out', 'bin', 'generated-sources', '.gradle', '.mvn'],
-    py: ['__pycache__', '.venv', 'venv', '.mypy_cache', '.pytest_cache', '.ruff_cache', '.tox', 'dist', 'build'],
+    py: [
+        '__pycache__',
+        '.venv',
+        'venv',
+        '.mypy_cache',
+        '.pytest_cache',
+        '.ruff_cache',
+        '.tox',
+        '.ipynb_checkpoints',
+        'dist',
+        'build',
+    ],
 };
 
+const commonExcludedFileNames = ['.DS_Store'];
+
 const excludedFileNamesByType = {
-    ts: ['package-lock.json', 'yarn.lock', 'pnpm-lock.yaml', '.DS_Store'],
-    java: ['.DS_Store'],
-    py: ['poetry.lock', 'uv.lock', '.DS_Store'],
+    ts: [
+        'package-lock.json',
+        'npm-shrinkwrap.json',
+        'yarn.lock',
+        'pnpm-lock.yaml',
+        'bun.lock',
+        'bun.lockb',
+        '.pnp.cjs',
+        '.pnp.loader.mjs',
+    ],
+    java: ['gradle.lockfile', 'settings-gradle.lockfile', 'gradle-wrapper.jar', 'maven-wrapper.jar'],
+    py: ['poetry.lock', 'uv.lock', 'Pipfile.lock', 'pdm.lock'],
 };
 
 const excludedDirectories = [...commonExcludedDirectories, ...excludedDirectoriesByType[projectType]];
-const excludedFileNames = excludedFileNamesByType[projectType];
+const excludedFileNames = [...commonExcludedFileNames, ...excludedFileNamesByType[projectType]];
 
 // ----- Arguments --------------------------------------------------------------
 
