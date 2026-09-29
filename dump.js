@@ -13,8 +13,14 @@
  *
  * Если папка является git-репозиторием, состав файлов берётся из git
  * с учётом .gitignore (включая вложенные и глобальный).
- * Если git недоступен — обычный обход со списком исключений из констант ниже.
- * Поверх git дополнительно применяются excludedDirectories и excludedFileNames.
+ * Если git недоступен — обычный обход.
+ * Исключения (блок «Exclusions» одинаков в dump.js и diff-dump.js):
+ *   - lockfile'ы всех экосистем (uv.lock, package-lock.json, poetry.lock, ...),
+ *     wrapper-jar'ы, .DS_Store и кэши/зависимости (node_modules, .venv,
+ *     __pycache__, .gradle, ...) исключаются всегда, независимо от projectType;
+ *   - папки сборки (dist, build, target, bin, out, ...) — по projectType;
+ *   - прошлые дампы (.code_dump*.txt, .diff_dump*.txt) не попадают в новые.
+ * Исключения применяются и поверх git, и при обычном обходе.
  *
  * Если передана одна папка, пути в дампе считаются от неё.
  * Если передано несколько путей — от текущей директории запуска.
@@ -53,58 +59,6 @@ import path from 'path';
 const projectType = 'java'; // 'ts' | 'java' | 'py'
 
 const defaultMaxDumpLines = 10000;
-
-const commonExcludedDirectories = ['.git', '.idea', '.vscode'];
-
-const excludedDirectoriesByType = {
-    ts: [
-        'node_modules',
-        'dist',
-        'build',
-        'out',
-        '.next',
-        '.nuxt',
-        '.turbo',
-        '.cache',
-        '.parcel-cache',
-        'coverage',
-        'storybook-static',
-        '.yarn',
-    ],
-    java: ['target', 'build', 'out', 'bin', 'generated-sources', '.gradle', '.mvn'],
-    py: [
-        '__pycache__',
-        '.venv',
-        'venv',
-        '.mypy_cache',
-        '.pytest_cache',
-        '.ruff_cache',
-        '.tox',
-        '.ipynb_checkpoints',
-        'dist',
-        'build',
-    ],
-};
-
-const commonExcludedFileNames = ['.DS_Store'];
-
-const excludedFileNamesByType = {
-    ts: [
-        'package-lock.json',
-        'npm-shrinkwrap.json',
-        'yarn.lock',
-        'pnpm-lock.yaml',
-        'bun.lock',
-        'bun.lockb',
-        '.pnp.cjs',
-        '.pnp.loader.mjs',
-    ],
-    java: ['gradle.lockfile', 'settings-gradle.lockfile', 'gradle-wrapper.jar', 'maven-wrapper.jar'],
-    py: ['poetry.lock', 'uv.lock', 'Pipfile.lock', 'pdm.lock'],
-};
-
-const excludedDirectories = [...commonExcludedDirectories, ...excludedDirectoriesByType[projectType]];
-const excludedFileNames = [...commonExcludedFileNames, ...excludedFileNamesByType[projectType]];
 
 // ----- Arguments --------------------------------------------------------------
 
@@ -202,21 +156,87 @@ function toRelativePath(fullPath) {
     return path.relative(baseDirectory, path.resolve(fullPath)).split(path.sep).join('/');
 }
 
+// ----- Exclusions (keep this block identical in dump.js and diff-dump.js) -----
+
+// Tool caches, dependency folders and IDE metadata of any ecosystem: never
+// source code, so they are skipped regardless of projectType.
+const commonExcludedDirectories = [
+    '.git',
+    '.idea',
+    '.vscode',
+    'node_modules',
+    '.yarn',
+    '.next',
+    '.nuxt',
+    '.turbo',
+    '.cache',
+    '.parcel-cache',
+    '__pycache__',
+    '.venv',
+    '.mypy_cache',
+    '.pytest_cache',
+    '.ruff_cache',
+    '.tox',
+    '.ipynb_checkpoints',
+    '.gradle',
+];
+
+// Build output names that may be real source folders in another ecosystem
+// (e.g. 'bin', 'out'), so they depend on projectType.
+const excludedDirectoriesByType = {
+    ts: ['dist', 'build', 'out', 'coverage', 'storybook-static'],
+    java: ['target', 'build', 'out', 'bin', 'generated-sources', '.mvn'],
+    py: ['venv', 'dist', 'build'],
+};
+
+// Lockfiles, wrapper binaries and OS junk of any ecosystem: a java repo may
+// still carry uv.lock or package-lock.json from auxiliary tooling.
+const excludedFileNames = [
+    '.DS_Store',
+    'Thumbs.db',
+    'package-lock.json',
+    'npm-shrinkwrap.json',
+    'yarn.lock',
+    'pnpm-lock.yaml',
+    'bun.lock',
+    'bun.lockb',
+    '.pnp.cjs',
+    '.pnp.loader.mjs',
+    'gradle.lockfile',
+    'settings-gradle.lockfile',
+    'gradle-wrapper.jar',
+    'maven-wrapper.jar',
+    'poetry.lock',
+    'uv.lock',
+    'Pipfile.lock',
+    'pdm.lock',
+];
+
+// Default outputs of dump.js and diff-dump.js (including .partN batches),
+// so a previous dump never ends up inside the next one.
+const excludedFileNamePatterns = [/^\.code_dump(\.part\d+)?\.txt$/, /^\.diff_dump(\.part\d+)?\.txt$/];
+
+const excludedDirectories = [...commonExcludedDirectories, ...excludedDirectoriesByType[projectType]];
+
+function isExcludedFileName(fileName) {
+    return excludedFileNames.includes(fileName) || excludedFileNamePatterns.some((pattern) => pattern.test(fileName));
+}
+
 function isExcluded(relativePath) {
     const segments = relativePath.split('/');
-    const fileName = segments[segments.length - 1];
-
-    if (excludedFileNames.includes(fileName)) {
+    if (isExcludedFileName(segments[segments.length - 1])) {
         return true;
     }
     return segments.slice(0, -1).some((segment) => excludedDirectories.includes(segment));
 }
 
-// Returns null when the directory is not a git repository or git is unavailable
+// Returns relative paths ('/'-separated), or null when the directory is not
+// a git repository or git is unavailable. Tracked files deleted from the
+// working tree and submodule entries are dropped: they cannot be read.
 function collectByGit(directory) {
     let output;
     try {
-        output = execFileSync('git', ['-C', directory, 'ls-files', '--cached', '--others', '--exclude-standard'], {
+        output = execFileSync('git', ['-C', directory, 'ls-files', '-z', '--cached', '--others', '--exclude-standard'], {
             encoding: 'utf-8',
             maxBuffer: 256 * 1024 * 1024,
             stdio: ['ignore', 'pipe', 'ignore'],
@@ -225,14 +245,20 @@ function collectByGit(directory) {
         return null;
     }
 
-    return output
-        .split('\n')
-        .filter(Boolean)
-        .filter((relativePath) => !isExcluded(relativePath))
-        .map((relativePath) => path.join(directory, relativePath));
+    return [...new Set(output.split('\0').filter(Boolean))].filter((relativePath) => {
+        if (isExcluded(relativePath)) {
+            return false;
+        }
+        try {
+            return fs.statSync(path.join(directory, relativePath)).isFile();
+        } catch (error) {
+            return false;
+        }
+    });
 }
 
-function collectByWalk(directory, collected) {
+// Returns relative paths ('/'-separated) for a plain directory walk
+function collectByWalk(directory, rootDirectory = directory, collected = []) {
     let entries;
     try {
         entries = fs.readdirSync(directory, { withFileTypes: true });
@@ -245,16 +271,19 @@ function collectByWalk(directory, collected) {
         const fullPath = path.join(directory, entry.name);
 
         if (entry.isDirectory()) {
-            if (excludedDirectories.includes(entry.name)) {
-                continue;
+            if (!excludedDirectories.includes(entry.name)) {
+                collectByWalk(fullPath, rootDirectory, collected);
             }
-            collectByWalk(fullPath, collected);
-        } else if (entry.isFile() && !excludedFileNames.includes(entry.name)) {
-            collected.push(fullPath);
+        } else if (entry.isFile() && !isExcludedFileName(entry.name)) {
+            collected.push(path.relative(rootDirectory, fullPath).split(path.sep).join('/'));
         }
     }
 
     return collected;
+}
+
+function collectDirectory(directory) {
+    return collectByGit(directory) ?? collectByWalk(directory);
 }
 
 function collectInputPaths(paths) {
@@ -274,12 +303,7 @@ function collectInputPaths(paths) {
             continue;
         }
 
-        const gitFiles = collectByGit(inputPath);
-        if (gitFiles === null) {
-            collectByWalk(inputPath, collected);
-        } else {
-            collected.push(...gitFiles);
-        }
+        collected.push(...collectDirectory(inputPath).map((relativePath) => path.join(inputPath, relativePath)));
     }
 
     return collected;
